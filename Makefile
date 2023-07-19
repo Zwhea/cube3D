@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/12 16:44:54 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/19 11:08:55 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,17 @@ endif
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(INC_DIR)
+CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
+
+#--mlx flags-------------------------------------------------------------------#
+
+MLX_FLAGS	=	-L $(MLX_DIR)
+
+ifeq ($(OS), Darwin)
+MLX_FLAGS 	+= -framework OpenGL -framework AppKit
+else ifeq ($(OS), Linux)
+MLX_FLAGS 	+= -l m -l Xext -l X11 -I $(MLX_DIR)
+endif
 
 #--debug flags-----------------------------------------------------------------#
 
@@ -63,10 +73,12 @@ ifeq ($(OS), Darwin)
 CFLAGS 		+=	-DMACOS
 endif
 
-ifeq ($(WHO), wangthea)
+ifeq ($(WHO), twang)
 WHO 	=	Théa 🐼
+else ifeq ($(WHO), aascedu)
+WHO 	=	Arthur 🦋
 else
-WHO		=	Arthur 🦋
+WHO		=	!
 endif
 
 #--leaks flags-----------------------------------------------------------------#
@@ -76,6 +88,7 @@ LEAKS	=	valgrind --leak-check=full --track-fds=yes
 #--libs------------------------------------------------------------------------#
 
 LIBFT	=	$(LIBFT_DIR)/libft.a
+MLX		=	$(MLX_DIR)/libmlx.a
 
 #--objects---------------------------------------------------------------------#
 
@@ -89,12 +102,12 @@ OBJECTS	=	$(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
 
 all:
 	$(MAKE) header
-	$(MAKE) -C ./libraries/libft
+	$(MAKE) lib
 	$(MAKE) $(NAME) -j
 	$(MAKE) welcome
 
 $(NAME): $(OBJECTS) $(LIBFT)
-	$(CC) $^ $(CFLAGS) $(LIBFT) -o $@
+	$(CC) $^ $(CFLAGS) $(LIBFT) $(MLX) -o $@ $(MLX_FLAGS)
 	$(PRINT_CREATING)
 
 $(OBJ_DIR)/%.o: %.c $(HEADERS) 
@@ -102,10 +115,11 @@ $(OBJ_DIR)/%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 	$(PRINT_COMPILING)
 
-#--libs, debugs & bonus--------------------------------------------------------#
+#--libs, debugs----------------------------------------------------------------#
 
 lib:
 	$(MAKE) -C $(LIBFT_DIR)
+	$(MAKE) -C $(MLX_DIR)
 
 debug:
 	$(MAKE) re -j DEBUG=yes
@@ -128,9 +142,9 @@ header:
 	printf "              ____________________________\n\n"
 
 welcome:
-	printf "\n${GREEN}Welcome ${WHO}!${END}\n\n"
+	printf "\n${GREEN}Welcome ${WHO}${END}\n\n"
 
-#--re, clean & fclean----------------------------------------------------------#
+#--re, clean, fclean & norminette----------------------------------------------#
 
 re:
 	clear
@@ -139,6 +153,7 @@ re:
 
 clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
+	$(MAKE) -C $(MLX_DIR) clean
 	$(RM) -rf $(OBJECTS)
 	$(PRINT_CLEAN)
 
@@ -149,6 +164,9 @@ fclean:
 	$(RM) $(NAME)
 	$(PRINT_FCLEAN)
 
+norm:
+	norminette $(LIBFT_DIR) $(INC_DIR) $(SRC_DIR)
+
 #--PHONY-----------------------------------------------------------------------#
 
-.PHONY: all lib debug leaks header re clean fclean
+.PHONY: all lib debug leaks header welcome re clean fclean norm

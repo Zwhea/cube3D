@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    print.mk                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/29 09:43:34 by twang             #+#    #+#              #
-#    Updated: 2023/07/12 16:53:28 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/19 17:08:31 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ define    PRINT_COMPILING
 endef
 
 define    PRINT_CREATING
-    printf "\n[ ${PURPLE}creating${END} ]\t${LIGHTBLUE}$@\t${RED}[✓]${END}\n\n"
+    printf "%-95b%b" "\n[ ${PURPLE}creating${END} ]\t${LIGHTBLUE}$@${END}" "${RED}[✓]${END}\n\n"
 endef
 
 define LINE
