@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    headers.mk                                         :+:      :+:    :+:    #
+#    headers_arthur.mk                                  :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:28:43 by twang             #+#    #+#              #
-#    Updated: 2023/07/12 17:12:14 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/19 17:24:06 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,5 +16,4 @@ HEADERS	=																	\
 			incs/enums.h													\
 			incs/prototypes.h												\
 			incs/structures.h												\
-			incs/verboses.h													\
 			libraries/libft/libft.h
