@@ -6,13 +6,13 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/19 11:08:55 by twang            ###   ########.fr        #
+#    Updated: 2023/07/19 17:26:43 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config/print.mk
-include config/sources.mk
-include config/headers.mk
+include config/sources_arthur.mk
+include config/headers_arthur.mk
 
 .SILENT:
 
