@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   prototypes_arthur.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
-/*   Updated: 2023/07/12 15:21:37 by wangthea         ###   ########.fr       */
+/*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
+/*   Updated: 2023/07/20 10:21:49 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-
-/*---- libraries -------------------------------------------------------------*/
+#ifndef PROTOTYPES_ARTHUR_H
+# define PROTOTYPES_ARTHUR_H
 
 /*---- includes --------------------------------------------------------------*/
 
-# include "libft.h"
-# include "defines.h"
-# include "enums.h"
-# include "prototypes.h"
-# include "structures.h"
+# include "structures_arthur.h"
+
+/*----------------------------------------------------------------------------*/
 
 #endif

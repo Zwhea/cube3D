@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cub3D_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/20 12:55:26 by twang            ###   ########.fr       */
+/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
+/*   Updated: 2023/07/20 10:17:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-// #include "cub3D_arthur.h"
+#ifndef CUB3D_THEA_H
+# define CUB3D_THEA_H
 
-int	main(int ac, char **av, char **env)
-{
-	(void)ac;
-	(void)av;
-	(void)env;
+/*---- libraries -------------------------------------------------------------*/
 
-	printf(BLUE"Hello cub3D\n"END);
-	return (0);
-}
+/*---- includes --------------------------------------------------------------*/
+
+# include "libft.h"
+# include "defines_thea.h"
+# include "enums_thea.h"
+# include "prototypes_thea.h"
+# include "structures_thea.h"
+
+#endif

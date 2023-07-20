@@ -6,13 +6,15 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/19 17:26:43 by twang            ###   ########.fr        #
+#    Updated: 2023/07/20 11:39:07 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config/print.mk
 include config/sources_arthur.mk
 include config/headers_arthur.mk
+include config/sources_thea.mk
+include config/headers_thea.mk
 
 .SILENT:
 
@@ -28,7 +30,7 @@ TWANG		=	\e]8;;https://profile.intra.42.fr/users/twang\a\e[34mtwang\e[34m\e]8;;\
 
 #--includes & libraries--------------------------------------------------------#
 
-INC_DIR		=	incs
+INC_DIR		=	incs/
 LIB_DIR		=	libraries
 LIBFT_DIR	=	$(LIB_DIR)/libft
 
@@ -47,7 +49,7 @@ endif
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
+CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea
 
 #--mlx flags-------------------------------------------------------------------#
 
@@ -67,6 +69,10 @@ ifeq ($(DEBUG), yes)
 CFLAGS 		+=	$(DFLAGS)
 endif
 
+#--leaks flags-----------------------------------------------------------------#
+
+LEAKS	=	valgrind --leak-check=full --track-fds=yes
+
 #--define flags----------------------------------------------------------------#
 
 ifeq ($(OS), Darwin)
@@ -80,10 +86,6 @@ WHO 	=	Arthur 🦋
 else
 WHO		=	!
 endif
-
-#--leaks flags-----------------------------------------------------------------#
-
-LEAKS	=	valgrind --leak-check=full --track-fds=yes
 
 #--libs------------------------------------------------------------------------#
 
@@ -155,6 +157,7 @@ clean:
 	$(MAKE) -C $(LIBFT_DIR) clean
 	$(MAKE) -C $(MLX_DIR) clean
 	$(RM) -rf $(OBJECTS)
+	$(RM) -rf $(OBJ_DIR)
 	$(PRINT_CLEAN)
 
 fclean:

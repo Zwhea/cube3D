@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/20 12:55:26 by twang            ###   ########.fr       */
+/*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
+/*   Updated: 2023/07/20 10:19:19 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-// #include "cub3D_arthur.h"
+#ifndef PROTOTYPES_THEA_H
+# define PROTOTYPES_THEA_H
 
-int	main(int ac, char **av, char **env)
-{
-	(void)ac;
-	(void)av;
-	(void)env;
+/*---- includes --------------------------------------------------------------*/
 
-	printf(BLUE"Hello cub3D\n"END);
-	return (0);
-}
+# include "structures_thea.h"
+
+/*----------------------------------------------------------------------------*/
+
+#endif

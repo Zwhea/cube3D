@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   defines_arthur.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/20 12:55:26 by twang            ###   ########.fr       */
+/*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
+/*   Updated: 2023/07/20 10:20:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-// #include "cub3D_arthur.h"
+#ifndef DEFINES_ARTHUR_H
+# define DEFINES_ARTHUR_H
 
-int	main(int ac, char **av, char **env)
-{
-	(void)ac;
-	(void)av;
-	(void)env;
+/*---- messages --------------------------------------------------------------*/
 
-	printf(BLUE"Hello cub3D\n"END);
-	return (0);
-}
+# define ERROR "error: "
+# define WARNING "warning: "
+
+#endif
