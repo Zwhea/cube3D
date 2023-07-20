@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/20 16:41:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/20 21:40:43 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,17 @@
 
 int	main(int ac, char **av)
 {
+	t_game	g;
+
 	if (ac <= 1)
-	{
-		print_msg(2, ERROR, "wrong number arguments");
-		print_msg(2, WARNING, "please input a map");
-		print_msg(2, USAGE, "./cub3D map.cub");
-	}
+		error_switchman(&g, no_args);
 	if (ac == 2)
 	{
+		if (parsing(&g, av[1]))
+			return (-1);
 		printf("%s %s\n", av[0], av[1]);
 	}
 	else
-	{
-		print_msg(2, ERROR, "wrong number arguments");
-		print_msg(2, WARNING, "please bear in mind that this program will only be using the first argument as map");
-	}
+		error_switchman(&g, too_much_args);
 	return (0);
 }

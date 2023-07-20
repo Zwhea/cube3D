@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prints.c                                           :+:      :+:    :+:   */
+/*   error_switchman.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 10:11:24 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 21:37:25 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/20 21:06:00 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/20 21:37:55 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	print_error(bool warn, char *msg)
+void	error_switchman(t_game *g, t_error_keys error_key)
 {
-	ft_dprintf(2, GREEN BOLD"cub3d: "END);
-	if (warn == true)
-		warning();
-	else
-		error();
-	usage();
-	ft_dprintf(2, "%s\n", msg);
+	const t_errors_ft	error_tab[] = {&no_av, NULL, NULL};
+
+	(*error_tab[error_key])(g);
 }
 
-void	error(void)
+void	no_av(t_game *g)
 {
-	ft_dprintf(2, RED"error: "END);
-}
-
-void	warning(void)
-{
-	ft_dprintf(2, YELLOW"warning: "END);
-}
-
-void	usage(void)
-{
-	ft_dprintf(2, GREEN"usage: ./cub3D map.cub\n"END);
+	print_error(true, "voila ca marche");
 }
