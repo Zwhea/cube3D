@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strings.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:59:21 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/12 14:13:05 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/20 15:32:46 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
+int			ft_strcmp(char *s1, char *s2);
 char		*ft_strdup(const char *s1);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strjoin(char const *s1, char const *s2);

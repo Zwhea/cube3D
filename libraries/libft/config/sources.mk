@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/12 14:33:53 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/20 15:33:13 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,6 +53,7 @@ SOURCES =																	\
 			sources/prints/ft_putstr_fd.c									\
 			sources/strings/ft_split.c										\
 			sources/strings/ft_strchr.c										\
+			sources/strings/ft_strcmp.c										\
 			sources/strings/ft_strdup.c										\
 			sources/strings/ft_striteri.c									\
 			sources/strings/ft_strjoin.c									\

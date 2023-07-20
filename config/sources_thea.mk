@@ -6,9 +6,10 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/19 17:22:52 by twang            ###   ########.fr        #
+#    Updated: 2023/07/20 15:38:52 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
+			sources/parsing/utils/prints.c									\
 			sources/main.c

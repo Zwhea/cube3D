@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 10:20:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/20 15:45:01 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,8 @@
 
 # define ERROR "error: "
 # define WARNING "warning: "
+# define USAGE "usage: "
+
+# define NB_AV "you"
 
 #endif
