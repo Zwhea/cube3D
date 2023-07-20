@@ -78,5 +78,5 @@ $ make leaks
 
 ## Authors
 
-- [Thea Wang](https://github.com/Zwhea)
 - [Arthur Ascedu](https://github.com/aascedu)
+- [Thea Wang](https://github.com/Zwhea)
