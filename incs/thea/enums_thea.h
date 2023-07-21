@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 21:17:43 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:42:54 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ enum e_error_keys
 {
 	no_args,
 	too_much_args,
+	bad_file,
 	no_player,
 	no_collectible,
 	no_exit,

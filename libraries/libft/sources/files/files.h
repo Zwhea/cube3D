@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 12:39:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/12 14:11:31 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:45:45 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # endif
 
 /*---- prototypes ------------------------------------------------------------*/
+
+bool	check_extension(char *file, char *extension);
 
 int		close_file(int file);
 int		open_file(const char *file);

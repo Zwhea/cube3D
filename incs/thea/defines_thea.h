@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/21 15:32:32 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/21 15:57:30 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 
 # define NO_ARG "program needs a map you fool !!!"
 # define TOO_MUCH_ARG "program will only look at the first argument."
+# define NO_FILE "file does not have the right extension."
 
 #endif
