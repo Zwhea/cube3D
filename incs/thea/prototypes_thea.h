@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 21:39:06 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/21 14:51:46 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int		parsing(t_game *g, char *map);
 
 void	error_switchman(t_game *g, t_error_keys error_key);
 
-void	print_error(bool warning, char *msg);
+void	print_error(t_game *g, bool warn, bool how_to, char *msg);
 void	error(void);
 void	warning(void);
 void	usage(void);
 
-void	no_av(t_game *g);
+void	no_arg(t_game *g);
+void	too_much_arg(t_game *g);
 
 #endif
