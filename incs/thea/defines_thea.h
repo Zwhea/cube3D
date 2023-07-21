@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 15:45:01 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/21 15:32:32 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 /*---- messages --------------------------------------------------------------*/
 
-# define ERROR "error: "
 # define WARNING "warning: "
 # define USAGE "usage: "
 
-# define NB_AV "you"
+# define NO_ARG "program needs a map you fool !!!"
+# define TOO_MUCH_ARG "program will only look at the first argument."
 
 #endif
