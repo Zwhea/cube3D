@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines_thea.h                                     :+:      :+:    :+:   */
+/*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/23 12:17:59 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/22 12:28:31 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/23 12:11:46 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_THEA_H
-# define DEFINES_THEA_H
+#include "libft.h"
 
-/*---- messages --------------------------------------------------------------*/
+void	close_program(char *msg)
+{
+	program();
+	error();
+	ft_dprintf(2, "\t%s\n", msg);
+	usage();
+	exit (-1);
+}
 
-# define WARNING "warning: "
-# define USAGE "usage: "
+void	program(void)
+{
+	ft_dprintf(2, GREEN BOLD"cub3D:"END);
+}
 
-# define NO_ARG "\tprogram needs a map you fool !!!"
-# define TOO_MUCH_ARG "\tprogram will only look at the first argument."
-# define NO_FILE "\tprogram cannot open the file, check your file name & path"
+void	error(void)
+{
+	ft_dprintf(2, RED"\terror: "END);
+}
 
-#endif
+void	warning(void)
+{
+	ft_dprintf(2, YELLOW"\twarning: "END);
+}
+
+void	usage(void)
+{
+	ft_dprintf(2, GREEN"\n\tusage: "END);
+	ft_dprintf(2, "./cub3D <map.cub>\n");
+}

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/07/21 15:57:56 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/22 12:43:54 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,10 @@ int		check_map_file(char *file);
 /*--------------- utils ------------------------------------------------------*/
 /*------------------------- checkers.c ---------------------------------------*/
 
-void	is_this_first_error(t_game *g);
+void	is_this_first_mistake(t_game *g, bool is_error, bool is_warning);
 
 /*------------------------- prints.c -----------------------------------------*/
 
-void	print_error(t_game *g, bool warn, bool how_to, char *msg);
-void	error(void);
-void	warning(void);
-void	usage(void);
+void	ft_error(t_game *g, bool is_err, bool is_warn, bool how_to, char *msg);
 
 #endif
