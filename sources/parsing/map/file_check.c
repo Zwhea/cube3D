@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/22 12:56:42 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/24 11:07:36 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_map_file(char *file)
 	
 	map_fd = 0;
 	if (check_extension(file, ".cub") != true)
-		exit (-1);
+		return (-1);
 	map_fd = open_file(file);
 	return (map_fd);
 }
