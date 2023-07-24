@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/21 15:42:54 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:21:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ enum e_error_keys
 	no_args,
 	too_much_args,
 	bad_file,
-	no_player,
+	extract_fail,
+	texture_fail,
+	color_fail
+/*	no_player,
 	no_collectible,
 	no_exit,
 	no_map,
@@ -39,7 +42,7 @@ enum e_error_keys
 	right_border,
 	bottom_border,
 	left_border,
-	unsolvable
+	unsolvable*/
 };
 
 # ifndef MACOS
