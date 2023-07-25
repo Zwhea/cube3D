@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 16:56:03 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/24 17:01:30 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/25 11:42:06 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/25 12:57:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	no_file(t_game *g)
+void	read_error(int fd)
 {
-	ft_error(g, true, false, true, NO_FILE);
+	perror("read");
+	close(fd);
+	exit(-2);
 }
 
-/*
-void	failed_extract(t_game *g)
+int	get_alloc_size(const char *file)
 {
-	ft_error(g, true, false, true, NO_EXTRACT);
+	int		fd;
+	int		bytes_read;
+	int		size;
+	char	c;
+
+	fd = open_file(file);
+	bytes_read = 1;
+	size = 0;
+	c = 0;
+	while (bytes_read > 0)
+	{
+		bytes_read = read(fd, &c, 1);
+		if (bytes_read == -1)
+			read_error(fd);
+		size++;
+	}
+	close(fd);
+	return (size);
 }
-*/

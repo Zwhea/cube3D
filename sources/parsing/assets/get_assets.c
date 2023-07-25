@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:40:26 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/24 17:27:53 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:47:55 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ static int	_get_colors(t_game *g, char *file)
 	*/
 	return (-1);
 }
-
