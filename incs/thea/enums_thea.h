@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 15:51:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/24 17:21:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,35 @@
 
 /*---- typedef enums ---------------------------------------------------------*/
 
-typedef enum e_keycode	t_keycode;
-typedef enum e_keycode	t_keycode;
+typedef enum e_error_keys	t_error_keys;
+typedef enum e_keycode		t_keycode;
+typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
+
+enum e_error_keys
+{
+	no_args,
+	too_much_args,
+	bad_file,
+	extract_fail,
+	texture_fail,
+	color_fail
+/*	no_player,
+	no_collectible,
+	no_exit,
+	no_map,
+	too_much_player,
+	too_much_exit,
+	bad_char,
+	bad_size,
+	bad_format,
+	top_border,
+	right_border,
+	bottom_border,
+	left_border,
+	unsolvable*/
+};
 
 # ifndef MACOS
 

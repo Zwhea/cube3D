@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/20 15:33:13 by twang            ###   ########.fr        #
+#    Updated: 2023/07/22 12:45:54 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SOURCES =																	\
 			sources/memory/ft_memmove.c										\
 			sources/memory/ft_memset.c										\
 			sources/prints/ft_dprintf.c										\
+			sources/prints/ft_errors.c										\
 			sources/prints/ft_printf.c										\
 			sources/prints/ft_putchar_fd.c									\
 			sources/prints/ft_putdebug.c									\

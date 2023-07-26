@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/07/26 11:16:27 by twang            ###   ########.fr       */
+=======
+/*   Updated: 2023/07/21 15:22:40 by wangthea         ###   ########.fr       */
+>>>>>>> a2caee9d5bc7f5142f867a31d87fd787d319ff6f
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +19,7 @@
 
 int	main(int ac, char **av)
 {
+<<<<<<< HEAD
 	if (ac == 1)
 	{
 		print_msg(2, ERROR, "wrong number arguments");
@@ -26,10 +31,16 @@ int	main(int ac, char **av)
 	{
 		printf("%s %s\n", av[0], av[1]);
 	}
+=======
+	t_game	g;
+
+	if (ac <= 1)
+		error_switchman(&g, no_args);
+>>>>>>> a2caee9d5bc7f5142f867a31d87fd787d319ff6f
 	else
 	{
-		print_msg(2, ERROR, "wrong number arguments");
-		print_msg(2, WARNING, "please bear in mind that this program will only be using the first argument as map");
+		if (parsing(&g, ac, av))
+			return (-1);
 	}
 	return (0);
 }

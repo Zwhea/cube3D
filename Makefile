@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/20 11:39:07 by twang            ###   ########.fr        #
+#    Updated: 2023/07/20 21:15:28 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,22 +34,20 @@ INC_DIR		=	incs/
 LIB_DIR		=	libraries
 LIBFT_DIR	=	$(LIB_DIR)/libft
 
-#--sources & objects-----------------------------------------------------------#
-
-SRC_DIR		=	sources
-OBJ_DIR		=	.objs
-
-#--mlx-------------------------------------------------------------------------#
-
 ifeq ($(OS), Darwin)
 MLX_DIR 	=	$(LIB_DIR)/mlx_mac
 else ifeq ($(OS), Linux)
 MLX_DIR 	=	$(LIB_DIR)/mlx_linux
 endif
 
+#--sources & objects-----------------------------------------------------------#
+
+SRC_DIR		=	sources
+OBJ_DIR		=	.objs
+
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea
+CFLAGS		=	-Wall -Wextra -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
 
 #--mlx flags-------------------------------------------------------------------#
 

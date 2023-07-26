@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:15:09 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/12 14:33:21 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/23 12:10:52 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 int		ft_dprintf(int fd, const char *str, ...);
+void	close_program(char *msg);
+void	program(void);
+void	error(void);
+void	warning(void);
+void	usage(void);
 int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
 size_t	ft_putchar_fd(int c, int fd);
 void	ft_putendl_fd(char *s, int fd);
