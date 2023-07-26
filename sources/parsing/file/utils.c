@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_switchman.c                                  :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 21:06:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 13:00:01 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/25 11:42:06 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/25 12:57:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	error_switchman(t_game *g, t_error_keys error_key)
+void	read_error(int fd)
 {
-	const t_errors_ft	error_tab[] = {&no_arg, &too_much_arg, &no_file};
+	perror("read");
+	close(fd);
+	exit(-2);
+}
 
-	(*error_tab[error_key])(g);
+int	get_alloc_size(const char *file)
+{
+	int		fd;
+	int		bytes_read;
+	int		size;
+	char	c;
+
+	fd = open_file(file);
+	bytes_read = 1;
+	size = 0;
+	c = 0;
+	while (bytes_read > 0)
+	{
+		bytes_read = read(fd, &c, 1);
+		if (bytes_read == -1)
+			read_error(fd);
+		size++;
+	}
+	close(fd);
+	return (size);
 }

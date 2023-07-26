@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:21:43 by twang             #+#    #+#             */
-/*   Updated: 2023/07/23 11:50:52 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/25 11:44:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-int	ft_strnstr_modif(const char *haystack, const char *needle, size_t len)
+int	ft_strnstr_m(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
