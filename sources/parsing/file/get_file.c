@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 13:04:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/26 13:11:50 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	get_file(t_game *g, char *file)
 	if (!(new_file))
 	{
 		error_switchman(g, extract_fail);
+		free(new_file);
 		return (-1);
 	}
 	return (0);
@@ -58,7 +59,7 @@ static char	*_extract_file(char *original)
 
 	file = (char *)ft_calloc(get_alloc_size(original) + 1, sizeof(char));
 	if (!file)
-		exit(-3);
+		return (NULL);
 	file_fd = open_file(original);
 	i = 0;
 	bytes_read = 1;
