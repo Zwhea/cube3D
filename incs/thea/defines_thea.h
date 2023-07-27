@@ -6,14 +6,14 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/26 11:38:50 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/27 16:03:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINES_THEA_H
 # define DEFINES_THEA_H
 
-/*---- messages --------------------------------------------------------------*/
+/*---- error messages --------------------------------------------------------*/
 
 # define WARNING "warning: "
 # define USAGE "usage: "
@@ -25,5 +25,12 @@
 # define RD_FAIL "cannot read the file correctly\n"
 # define NO_MAP "the map seems corrupted, check the file\n"
 # define TEXTURES "the textures seems corrupted, check the textures paths\n"
+
+/*---- authorized charset ----------------------------------------------------*/
+
+# define TEXTURE_CHARSET "NOSOWEEA "
+# define COLOR_CHARSET "FC "
+# define COLOR_NM_CHARSET "0123456789, "
+# define MAP_CHARSET "01NSEW "
 
 #endif
