@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_search_and_replace.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/01/05 20:56:56 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/29 23:53:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int	ft_isalnum(int c)
+char	*search_and_replace(char *string, char search, char replace)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (string[i])
+	{
+		if (string[i] == search)
+			string[i] = replace;
+		i++;
+	}
+	return (string);
 }
+
+//to test

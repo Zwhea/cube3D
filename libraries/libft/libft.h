@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:34:09 by twang             #+#    #+#             */
-/*   Updated: 2023/07/19 10:29:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/30 00:09:35 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 
 /*---- includes --------------------------------------------------------------*/
 
+# include "./sources/arrays/arrays.h"
 # include "./sources/characters/characters.h"
 # include "./sources/convertions/convertions.h"
 # include "./sources/files/files.h"
