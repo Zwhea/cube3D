@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 21:40:25 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:18:56 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 /*---- typedef structures ----------------------------------------------------*/
 
 typedef struct s_map_error	t_map_error;
+typedef struct s_sprite		t_sprite;
+typedef struct s_textures	t_textures;
 typedef struct s_map		t_map;
 typedef struct s_game		t_game;
 
@@ -30,6 +32,16 @@ typedef void				(*t_errors_ft)(t_game *g);
 struct s_map_error
 {
 	bool	is_valid;
+};
+
+struct s_sprite
+{
+	void	*sprite;
+};
+
+struct s_textures
+{
+	t_sprite	walls_textures[4];
 };
 
 struct s_map

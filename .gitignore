@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.vscode
+*.json
+*.DS_Store
 
 # Object files
 *.o

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 13:04:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:01:25 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	get_file(t_game *g, char *file)
 		error_switchman(g, extract_fail);
 		return (-1);
 	}
+	
 	return (0);
 }
 

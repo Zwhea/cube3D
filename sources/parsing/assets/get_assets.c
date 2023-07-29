@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:40:26 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 11:47:55 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:59:38 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,9 @@ int	get_assets(t_game *g, char *file)
 
 static int	_get_textures(t_game *g, char *file)
 {
-	(void)g;
-	(void)file;
-	/*
-	get_north_texture();
-	get_south_texture();
-	get_west_texture();
-	get_east_texture();
-	*/
+	if (check_textures(file) == -1)
+		return (-1);
+	
 	return (-1);
 }
 
