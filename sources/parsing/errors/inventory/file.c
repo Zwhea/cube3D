@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:24:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 13:00:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/26 13:00:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	no_file(t_game *g)
 {
 	ft_error(g, false, true, NO_FILE);
 }
-/*
+
 void	failed_extract(t_game *g)
 {
 	ft_error(g, false, true, NO_EXTRACT);
+	
 }
-*/
+
