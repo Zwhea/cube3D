@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/30 00:24:17 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/30 15:05:07 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,34 +80,5 @@ static char	*_extract_file(char *original)
 
 static int	_check_file_content(t_game *g, char *file)
 {
-	int		i;
-	int		texture_nb;
-	int		colors_nb;
-	bool	first_encounter;
-	
-	/*if quand je tombe sur la map je n'ai pas tout les morceaux avant:
-	il y a une erreur-> BUMMER - count le nombre de textures, if not first
-	encounter -> BUMMER*/
-	i = 0;
-	texture_nb = 0;
-	colors_nb = 0;
-	first_encounter = false;
-
-	while (file[i])
-	{
-		if (/*appartient a texture no*/)
-		{
-			texture_nb++;
-			first_encounter = true;
-		}
-		if (/*is colors*/)
-		{
-			color_nb++;
-			first_encounter = true;
-		}
-		if (/*map && texture_nb != 4 && colors_nb != 2*/)
-		i++;
-	}
-	puts("je dois checker que le fichier commence bien par soit des textures soit des colors");
-	return (0);
+	/*split ta map connasse*/
 }

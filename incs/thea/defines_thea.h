@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/27 16:03:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/30 14:08:30 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,16 @@
 /*---- authorized charset ----------------------------------------------------*/
 
 # define TEXTURE_CHARSET "NOSOWEEA "
+# define TEXTURE_NORTH "NO"
+# define TEXTURE_SOUTH "SO"
+# define TEXTURE_WEST "WE"
+# define TEXTURE_EAST "EA"
+
 # define COLOR_CHARSET "FC "
+# define COLOR_FLOOR "F"
+# define COLOR_CEILING "C"
 # define COLOR_NM_CHARSET "0123456789, "
+
 # define MAP_CHARSET "01NSEW "
 
 #endif

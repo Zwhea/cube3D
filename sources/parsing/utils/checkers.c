@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 20:35:51 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 16:18:04 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:05:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,4 @@ void	is_this_first_mistake(t_game *g, bool is_warning)
 			error();
 		g->map.error.is_valid = true;
 	}
-}
-
-int	is_textures_charset(char c)
-{
-	
-	return (0);
-}
-
-int	is_colors_charset(char c)
-{
-	
-	return (0);
-}
-
-int	is_map_charset(char c)
-{
-	
-	return (0);
 }

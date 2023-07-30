@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 12:31:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/30 14:45:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,10 @@ char	*get_file(t_game *g, char *file);
 
 void	read_error(int fd);
 int		get_alloc_size(const char *file);
+int		is_north_texture(int start, char *s);
+int		is_south_texture(int start, char *s);
+int		is_west_texture(int start, char *s);
+int		is_east_texture(int start, char *s);
 
 /*--------------- map --------------------------------------------------------*/
 /*------------------------- get_map.c ----------------------------------------*/
