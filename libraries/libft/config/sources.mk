@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/30 00:09:03 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/31 09:34:06 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SOURCES =																	\
 			sources/lists/ft_lstsort.c										\
 			sources/memory/ft_bzero.c										\
 			sources/memory/ft_calloc.c										\
+			sources/memory/ft_free_split.c									\
 			sources/memory/ft_memchr.c										\
 			sources/memory/ft_memcmp.c										\
 			sources/memory/ft_memcpy.c										\

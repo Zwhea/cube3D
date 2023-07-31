@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prints.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:15:09 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/30 00:08:15 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/31 09:25:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ size_t	ft_putchar_fd(int c, int fd);
 void	ft_putdebug(int line, char *file);
 void	ft_putidebug(int x, int line, char *file);
 void	ft_putsdebug(const char *x, int line, char *file);
+void	ft_print_split(char **file);
 void	ft_putendl_fd(char *s, int fd);
 size_t	ft_putnbr_base(unsigned long nbr, char *base, int fd);
 size_t	ft_putnbr_fd(int n, int fd);

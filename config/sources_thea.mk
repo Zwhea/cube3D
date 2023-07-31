@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/25 16:22:51 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/31 13:10:57 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SOURCES +=																	\
 			sources/parsing/file/utils.c									\
 			sources/parsing/map/get_map.c									\
 			sources/parsing/utils/checkers.c								\
+			sources/parsing/utils/clean.c								\
 			sources/parsing/utils/prints.c									\
 			sources/parsing/parsing.c										\
 			sources/main.c

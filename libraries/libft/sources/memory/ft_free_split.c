@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_split_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 16:11:10 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/31 13:13:34 by twang            ###   ########.fr       */
+/*   Created: 2023/07/31 09:31:46 by twang             #+#    #+#             */
+/*   Updated: 2023/07/31 09:32:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-// #include "cub3D_arthur.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	*free_split(char **s, size_t len)
 {
-	t_game	g;
+	size_t	i;
 
-	ft_bzero((void *)&g, sizeof(t_game));
-	if (ac <= 1)
-		error_switchman(&g, no_args);
-	else
+	i = 0;
+	while (i < len && s[i])
 	{
-		if (parsing(&g, ac, av))
-			return (close_n_free(&g, true));
+		free(s[i]);
+		s[i] = NULL;
+		i++;
 	}
-	return (0);
+	free(s);
+	s = NULL;
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/26 13:04:23 by twang            ###   ########.fr        #
+#    Updated: 2023/07/31 10:29:58 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,7 +127,7 @@ debug:
 leaks:
 	clear
 	$(MAKE) -j VALGRIND=yes
-	$(LEAKS) ./cub3D assets/maps/map.cub 
+	$(LEAKS) ./cub3D assets/maps/map.cub
 
 #--print header----------------------------------------------------------------#
 

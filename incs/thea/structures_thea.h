@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/25 16:18:56 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/31 11:56:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
 
 typedef struct s_map_error	t_map_error;
 typedef struct s_sprite		t_sprite;
-typedef struct s_textures	t_textures;
+typedef struct s_tex		t_tex;
+typedef struct s_color		t_color;
 typedef struct s_map		t_map;
+typedef struct s_file		t_file;
 typedef struct s_game		t_game;
 
 /*---- typedef function pointer ----------------------------------------------*/
@@ -34,14 +36,18 @@ struct s_map_error
 	bool	is_valid;
 };
 
-struct s_sprite
+struct s_color
 {
-	void	*sprite;
+	char	*col_floor;
+	char	*col_ceiling;
 };
 
-struct s_textures
+struct s_tex
 {
-	t_sprite	walls_textures[4];
+	char		*tex_north;
+	char		*tex_south;
+	char		*tex_west;
+	char		*tex_east;
 };
 
 struct s_map
@@ -50,10 +56,17 @@ struct s_map
 	char		**map;
 };
 
+struct s_file
+{
+	int		file_fd;
+	int		size_file;
+	char	*origin_file;
+	char	**split_file;
+};
+
 struct s_game
 {
-	void	*mlx;
-	void	*window;
+	t_file	file;
 	t_map	map;
 };
 
