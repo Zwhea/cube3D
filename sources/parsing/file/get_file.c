@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/31 13:11:26 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/31 17:28:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 static int	_check_file(t_game *g, char *file);
-static char	*_extract_file(t_game *g, char *file);
-static int	_check_file_content(t_game *g);
+static void	_get_map_size(t_game *g, int fd);
+static bool	is_map(char *line);
 
 /*----------------------------------------------------------------------------*/
 
@@ -27,55 +27,73 @@ char	**get_file(t_game *g, char *file)
 		error_switchman(g, bad_file);
 		return (NULL);
 	}
-	if (!(_extract_file(g, file)))
-	{
-		close(g->file.file_fd);
-		error_switchman(g, extract_fail);
-		return (NULL);
-	}
-	_check_file_content(g);
 	return (g->file.split_file);
 }
 
 static int	_check_file(t_game *g, char *file)
 {
+	int		fd;
+	char	*line;
+	bool	map;
+
+	map = false;
 	if (check_extension(file, ".cub") != true)
 		return (-1);
-	g->file.file_fd = open_file(file);
-	return (g->file.file_fd);
+	fd = open_file(file);
+	if (fd < 0)
+		return (-1);
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (is_map(line) != false)
+		{
+			map = true;
+			_get_map_size(g, fd);
+			break ;
+		}
+		line = get_next_line(fd);
+	}
+	// if (map == true)
+	// 	get_map(g, fd, line);
+	return (0);
 }
 
-static char	*_extract_file(t_game *g, char *original)
+static void	_get_map_size(t_game *g, int fd)
 {
-	int		i;
-	int		bytes_read;
-	char	c;
+	char	*line;
 
-	g->file.origin_file = (char *)ft_calloc(get_alloc_size(original) + 1, sizeof(char));
-	if (!g->file.origin_file)
-		return (NULL);
-	i = 0;
-	bytes_read = 1;
-	while (bytes_read > 0)
+	line = get_next_line(fd);
+		printf("%s", line);
+	g->map.size_y = 1;
+	while (line)
 	{
-		bytes_read = read(g->file.file_fd, &c, 1);
-		if (bytes_read == -1)
-			read_error(g->file.file_fd);
-		if (bytes_read != 0)
-			g->file.origin_file[i] = c;
+		line = get_next_line(fd);
+		g->map.size_y++;
+	}
+	printf(GREEN"%d\n"END, g->map.size_y);
+}
+
+static bool	is_map(char *line)
+{
+	int	i;
+	int	player;
+
+	i = 0;
+	player = 0;
+	if (line[i] == '\n')
+		return (false);
+	while (line[i])
+	{
+		if (line[i] != '0' && line[i] != '1' && line[i] != ' ' && line[i] != '\n')
+		{
+			if (line[i] == 'N' || line[i] == 'W' || line[i] == 'E' || line[i] == 'S')
+				player++;
+			else
+				return (false);
+		}
 		i++;
 	}
-	close(g->file.file_fd);
-	return (g->file.origin_file);
-}
-
-static int	_check_file_content(t_game *g)
-{
-	g->file.split_file = ft_split(g->file.origin_file, '\n');
-	if (!g->file.split_file)
-		return (close_n_free(g, true));
-	while (g->file.split_file[g->file.size_file])
-		g->file.size_file++;
-	ft_print_split(g->file.split_file);
-	return (0);
+	if (player > 1)
+		return (false);
+	return (true);
 }

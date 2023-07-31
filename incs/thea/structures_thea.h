@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/31 11:56:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/07/31 17:15:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ struct s_tex
 struct s_map
 {
 	t_map_error	error;
+	int			size_y;
 	char		**map;
 };
 
