@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   check_assets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/25 16:07:37 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/31 11:34:24 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "cub3D_thea.h"
 
-int	ft_isalnum(int c)
+int	check_textures(t_game *g)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
-		return (1);
+	(void)g;
+	puts("je check les textures");
+	return (0);
+}
+
+int	check_colors(t_game *g)
+{
+	(void)g;
+	puts("je check les couleurs");
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 11:42:06 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 12:57:42 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/30 15:05:24 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,32 @@ int	get_alloc_size(const char *file)
 	}
 	close(fd);
 	return (size);
+}
+
+int	is_north_texture(int start, char *s)
+{
+	if (ft_strncmp(&s[start], "NO", 2) == 0)
+		return (1);
+	return (0);
+}
+
+int	is_south_texture(int start, char *s)
+{
+	if (ft_strncmp(&s[start], "SO", 2) == 0)
+		return (1);
+	return (0);
+}
+
+int	is_west_texture(int start, char *s)
+{
+	if (ft_strncmp(&s[start], "WE", 2) == 0)
+		return (1);
+	return (0);
+}
+
+int	is_east_texture(int start, char *s)
+{
+	if (ft_strncmp(&s[start], "EA", 2) == 0)
+		return (1);
+	return (0);
 }

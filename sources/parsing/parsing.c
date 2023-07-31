@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/24 16:54:33 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/07/31 13:15:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	parsing(t_game *g, int ac, char **av)
 {
 	if (ac > 2)
 		error_switchman(g, too_much_args);
-	if (get_file(g, av[1]) == -1)
-		return (-1);
-	return (0);
+	if (!(get_file(g, av[1])))
+		return (close_n_free(g, true));
+	if (get_assets(g) == -1)
+		return (close_n_free(g, true));
+	return (close_n_free(g, false));
 }

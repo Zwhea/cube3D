@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file.c                                             :+:      :+:    :+:   */
+/*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 17:24:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/26 13:00:37 by twang            ###   ########.fr       */
+/*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
+/*   Updated: 2023/07/31 11:57:09 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	no_file(t_game *g)
+int	close_n_free(t_game *g, bool is_error)
 {
-	ft_error(g, false, true, NO_FILE);
+	if (g->file.file_fd)
+		close(g->file.file_fd);
+	if (g->file.origin_file)
+		free(g->file.origin_file);
+	if (g->file.split_file)
+		free_split(g->file.split_file, g->file.size_file);
+	if (is_error == true)
+		return (-1);
+	return (0);
 }
-
-void	failed_extract(t_game *g)
-{
-	ft_error(g, false, true, NO_EXTRACT);
-	
-}
-

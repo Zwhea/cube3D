@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isfromcharset.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/12 13:53:05 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/29 23:48:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_isfromcharset(char c, char *base)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
+	while (*base && c != *base)
+		base++;
+	if (*base == c)
 		return (1);
 	return (0);
 }

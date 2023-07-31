@@ -1,21 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_rrange.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/29 23:56:20 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/29 23:56:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int     *ft_rrange(int start, int end)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
+	int	*array;
+	int	size;
+	int	i;
+
+	size = 0;
+	i = 0;
+	if (start < end)
+		size = end - start;
+	else if (start > end)
+		size = start - end;
+	array = malloc((size + 1) * sizeof(int *));
+	if (!array)
+		return (NULL);
+	while (i <= size)
+	{
+		if (start < end)
+		{
+			array[i] = end;
+			end--;
+			i++;
+		}
+		else
+		{
+			array[i] = end;
+			end++;
+			i++;
+		}
+	}
+	return (array);
 }

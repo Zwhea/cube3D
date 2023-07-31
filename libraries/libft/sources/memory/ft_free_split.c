@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_from_charset.c                                  :+:      :+:    :+:   */
+/*   free_split_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 13:53:05 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/12 13:55:01 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/31 09:31:46 by twang             #+#    #+#             */
+/*   Updated: 2023/07/31 09:32:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_from_charset(int c, char *base)
+void	*free_split(char **s, size_t len)
 {
-	while (*base && c != *base)
-		base++;
-	if (*base == c)
-		return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < len && s[i])
+	{
+		free(s[i]);
+		s[i] = NULL;
+		i++;
+	}
+	free(s);
+	s = NULL;
+	return (NULL);
 }

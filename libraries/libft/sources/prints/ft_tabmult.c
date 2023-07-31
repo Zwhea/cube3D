@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_tabmult.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/30 00:04:20 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/30 00:07:21 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_tabmult(int nb)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
+	int result;
+	int i;
+
+	i = 1;
+	result = 0;
+	while (i < 10)
+	{
+		result = i * nb;
+		ft_putstr_fd("1 x ", 2);
+		ft_putnbr_fd(nb, 2);
+		ft_putstr_fd(" = ", 2);
+		ft_putnbr_fd(result, 2);
+		write (2, "\n", 1);
+		i++;
+	}
 }

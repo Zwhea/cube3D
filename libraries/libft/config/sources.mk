@@ -3,22 +3,28 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/22 12:45:54 by wangthea         ###   ########.fr        #
+#    Updated: 2023/07/31 09:34:06 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =																	\
+			sources/arrays/ft_range.c										\
+			sources/arrays/ft_rrange.c										\
+			sources/arrays/sort_int_tab.c									\
 			sources/characters/ft_isalnum.c									\
 			sources/characters/ft_isalpha.c									\
 			sources/characters/ft_isascii.c									\
 			sources/characters/ft_isdigit.c									\
+			sources/characters/ft_isfromcharset.c							\
 			sources/characters/ft_isprint.c									\
-			sources/characters/is_from_charset.c							\
+			sources/characters/ft_iswhitespace.c							\
+			sources/convertions/ft_atoi_base.c								\
 			sources/convertions/ft_atoi.c									\
 			sources/convertions/ft_itoa.c									\
+			sources/convertions/ft_search_and_replace.c						\
 			sources/convertions/ft_tolower.c								\
 			sources/convertions/ft_toupper.c								\
 			sources/files/check_extension.c									\
@@ -30,13 +36,17 @@ SOURCES =																	\
 			sources/lists/ft_lstadd_front.c									\
 			sources/lists/ft_lstclear.c										\
 			sources/lists/ft_lstdelone.c									\
+			sources/lists/ft_lstforeach.c									\
 			sources/lists/ft_lstiter.c										\
 			sources/lists/ft_lstlast.c										\
 			sources/lists/ft_lstmap.c										\
 			sources/lists/ft_lstnew.c										\
+			sources/lists/ft_lstremove_if.c									\
 			sources/lists/ft_lstsize.c										\
+			sources/lists/ft_lstsort.c										\
 			sources/memory/ft_bzero.c										\
 			sources/memory/ft_calloc.c										\
+			sources/memory/ft_free_split.c									\
 			sources/memory/ft_memchr.c										\
 			sources/memory/ft_memcmp.c										\
 			sources/memory/ft_memcpy.c										\
@@ -52,6 +62,7 @@ SOURCES =																	\
 			sources/prints/ft_putnbr_fd.c									\
 			sources/prints/ft_putnbr_unsigned_fd.c							\
 			sources/prints/ft_putstr_fd.c									\
+			sources/prints/ft_tabmult.c										\
 			sources/strings/ft_split.c										\
 			sources/strings/ft_strchr.c										\
 			sources/strings/ft_strcmp.c										\

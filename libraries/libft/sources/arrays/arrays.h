@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   arrays.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 09:17:57 by twang             #+#    #+#             */
-/*   Updated: 2023/07/29 23:43:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/29 23:53:34 by wangthea          #+#    #+#             */
+/*   Updated: 2023/07/30 00:10:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef ARRAYS_H
+# define ARRAYS_H
 
-int	ft_isalnum(int c)
-{
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
-}
+/*---- includes --------------------------------------------------------------*/
+
+# include "libft.h"
+
+/*---- prototypes ------------------------------------------------------------*/
+
+int		*ft_range(int start, int end);
+int		*ft_rrange(int start, int end);
+void	sort_int_tab(int *tab, int size);
+
+#endif

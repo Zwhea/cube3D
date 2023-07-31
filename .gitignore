@@ -1,5 +1,8 @@
 # Prerequisites
 *.d
+*.vscode
+*.json
+*.DS_Store
 
 # Object files
 *.o
@@ -50,6 +53,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-
+*.vscode
+*.json
 # Parasite files
-cube3D
+cub3D
