@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/24 17:21:23 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/01 14:40:00 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 /*---- typedef enums ---------------------------------------------------------*/
 
-typedef enum e_error_keys	t_error_keys;
-typedef enum e_keycode		t_keycode;
+typedef enum e_keyerror		t_keyerror;
+typedef enum e_keyassets	t_keyassets;
 typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
 
-enum e_error_keys
+enum e_keyerror
 {
 	no_args,
 	too_much_args,
@@ -43,6 +43,17 @@ enum e_error_keys
 	bottom_border,
 	left_border,
 	unsolvable*/
+};
+
+enum e_keyassets
+{
+	north_texture,
+	south_texture,
+	west_texture,
+	east_texture,
+	ceiling_color,
+	floor_color,
+	no_asset
 };
 
 # ifndef MACOS
