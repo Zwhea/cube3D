@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 15:32:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/01 18:07:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,14 @@ char	**get_file(t_game *g, char *file)
 		error_switchman(g, bad_file);
 		return (NULL);
 	}
-	return (g->file.split_file);
+	return (g->map.map);
 }
 
 static int	_check_file(t_game *g, char *file)
 {
 	int		fd;
 	char	*line;
-	bool	map;
 
-	map = false;
 	fd = _file_property(file);
 	if (fd < 0)
 		return (-1);
@@ -49,7 +47,6 @@ static int	_check_file(t_game *g, char *file)
 	if (line)
 	{
 		free(line);
-		map = true;
 		get_map(g, fd);
 	}
 	return (0);

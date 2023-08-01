@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/01 14:42:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/01 18:02:13 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ typedef void				(*t_assets_ft)(t_game *g, char *line);
 
 /*---- structures ------------------------------------------------------------*/
 
+struct s_sprite
+{
+	void	*sprite;
+};
+
 struct s_map_error
 {
 	bool	is_valid;
@@ -45,10 +50,8 @@ struct s_color
 
 struct s_tex
 {
-	char		*tex_north;
-	char		*tex_south;
-	char		*tex_west;
-	char		*tex_east;
+	t_sprite	walls[6];
+	/*toujours a 6, si on capte les textures sup, elles remplaceront les couleurs*/
 };
 
 struct s_map
@@ -61,9 +64,6 @@ struct s_map
 struct s_file
 {
 	int		file_fd;
-	int		size_file;
-	char	*origin_file;
-	char	**split_file;
 };
 
 struct s_game

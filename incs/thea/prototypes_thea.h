@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/01 15:23:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/01 18:03:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,22 @@ int			check_colors(t_game *g, char *line);
 
 /*------------------------- get_assets.c -------------------------------------*/
 
-void	get_assets(t_game *g, char *line, t_keyassets asset_key);
-void	get_north_texture(t_game *g, char *line);
-void	get_south_texture(t_game *g, char *line);
-void	get_west_texture(t_game *g, char *line);
-void	get_east_texture(t_game *g, char *line);
+void	which_asset(t_game *g, char *line);
+
+/*------------------------- get_colors.c -------------------------------------*/
+
 void	get_ceiling_color(t_game *g, char *line);
 void	get_floor_color(t_game *g, char *line);
 void	error_asset(t_game *g, char *line);
 
-/*------------------------- utils.c -------------------------------------*/
+/*------------------------- get_textures.c -----------------------------------*/
 
-void	which_asset(t_game *g, char *line);
+void	get_north_texture(t_game *g, char *line);
+void	get_south_texture(t_game *g, char *line);
+void	get_west_texture(t_game *g, char *line);
+void	get_east_texture(t_game *g, char *line);
+
+/*------------------------- utils.c -------------------------------------*/
 
 /*--------------- errors -----------------------------------------------------*/
 /*---------------------- inventory -------------------------------------------*/
