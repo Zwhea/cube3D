@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/01 15:57:50 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 19:05:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,11 @@
 
 /*---- error messages --------------------------------------------------------*/
 
-# define WARNING "warning: "
-# define USAGE "usage: "
-
 # define NO_ARG "\tprogram needs a map you fool !!!\n"
-# define TOO_MUCH_ARG "program will only look at the first argument.\n"
-# define NO_FILE "program cannot open the file, check your file name & path\n"
-# define NO_EXTRACT "\tprogram cannot extract the informations from the file\n"
-# define RD_FAIL "cannot read the file correctly\n"
-# define NO_MAP "the map seems corrupted, check the file\n"
-# define TEXTURES "the textures seems corrupted, check the textures paths\n"
+# define MUCH_ARG "program will only accept the first argument.\n"
+
+# define WRONG_FILE "program encounter issues with given file\n"
+
 
 /*---- authorized charset ----------------------------------------------------*/
 

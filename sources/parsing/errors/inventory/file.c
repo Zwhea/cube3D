@@ -6,18 +6,15 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:24:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 18:38:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 19:14:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	no_file(t_game *g)
+void	_wrong_file(t_game *g)
 {
-	ft_error(g, false, true, NO_FILE);
-}
-
-void	failed_extract(t_game *g)
-{
-	ft_error(g, false, true, NO_EXTRACT);
+	if (g->file.fd)
+		close(g->file.fd);
+	ft_error(g, false, true, WRONG_FILE);
 }

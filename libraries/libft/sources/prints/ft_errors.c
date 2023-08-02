@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 12:28:31 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/24 10:47:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:04:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,5 @@ void	usage(void)
 {
 	ft_dprintf(2, GREEN"\tusage:\t"END);
 	ft_dprintf(2, "./cub3D <map.cub>\n");
+	ft_dprintf(2, "check name & rights of file\n");
 }

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 13:17:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 19:00:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,8 @@ typedef enum e_keycode		t_keycode;
 enum e_keyerror
 {
 	no_args,
-	too_much_args,
-	bad_file,
-	extract_fail,
-	texture_fail,
-	color_fail,
-	asset_fail,
-/*	no_player,
-	no_collectible,
-	no_exit,
-	no_map,
-	too_much_player,
-	too_much_exit,
-	bad_char,
-	bad_size,
-	bad_format,
-	top_border,
-	right_border,
-	bottom_border,
-	left_border,
-	unsolvable*/
+	much_args,
+	wrong_file
 };
 
 enum e_keyassets

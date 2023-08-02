@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument.c                                         :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 16:55:13 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 19:12:55 by twang            ###   ########.fr       */
+/*   Created: 2023/08/02 19:08:11 by twang             #+#    #+#             */
+/*   Updated: 2023/08/02 19:10:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	_no_arg(t_game *g)
+int	check_file(t_game *game, char *file)
 {
-	ft_error(g, false, true, NO_ARG);
-}
-
-void	_much_arg(t_game *g)
-{
-	ft_error(g, true, true, MUCH_ARG);
+	if (check_extension(file, ".cub") != true)
+		return (-1);
+	g->file.fd = open_file(file);
+	if (g->file.fd < 0)
+		return (-1);
+	g->file.file = file;
+	return (fd);
 }
