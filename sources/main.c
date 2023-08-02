@@ -1,4 +1,3 @@
-
 #include "cub3D_thea.h"
 // #include "cub3D_arthur.h"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:58:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 19:31:55 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:40:01 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,31 @@ static size_t	_get_map_size(t_game *g, int fd);
 
 /*----------------------------------------------------------------------------*/
 
-void	get_map(t_game *g, int fd)
+void	get_map(t_game *g, int fd, int start_map)
 {
-	g->map.map = (char **)ft_calloc(_get_map_size(g, fd), sizeof(char *));
-	free(g->map.map);
+	int		i;
+	char	*tmp_line;
+
+	i = 0;
+	tmp_line = NULL;
+	g->map.map = (char **)ft_calloc(_get_map_size(g, fd) + 1, sizeof(char *));
+	fd = open_file(g->file.file);
+	while (start_map >= 0)
+	{
+		free(tmp_line);
+		tmp_line = get_next_line(fd);
+		start_map--;
+	}
+	while (tmp_line)
+	{
+		g->map.map[i] = tmp_line;
+		tmp_line = get_next_line(fd);
+		// printf("%s", g->map.map[i]);
+		i++;
+	}
+	g->map.map[i] = NULL;
+	close(fd);
+	free_split(g->map.map, ft_arraylen((void **)g->map.map));
 }
 
 static size_t	_get_map_size(t_game *g, int fd)
@@ -29,50 +50,15 @@ static size_t	_get_map_size(t_game *g, int fd)
 	char	*line;
 
 	line = get_next_line(fd);
-	g->map.size_y = 1;
+	g->map.size.y = 1;
 	while (line)
 	{
 		free(line);
 		line = get_next_line(fd);
-		g->map.size_y++;
+		g->map.size.y++;
 	}
 	if (line)
 		free(line);
-	// printf(GREEN"size : %d\n"END, g->map.size_y);
-	return (g->map.size_y);
-}
-
-void	ft_memdel(void **p)
-{
-	if (p == NULL || *p == NULL)
-		return ;
-	free(*p);
-	*p = NULL;
-}
-
-void	**ft_realloc_array(void **p, int height)
-{
-	void	**pt;
-	int		old_height;
-	int		i;
-	
-	pt = NULL;
-	old_height = ft_arraylen(p);
-	i = 0;
-	if (height > 0 && old_height < height)
-	{
-		pt = (void **)ft_calloc(height, sizeof(void *));
-		if (p != NULL && pt != NULL)
-		{
-			while (i < old_height)
-			{
-				pt[i] = (void *)ft_calloc(ft_strlen(p[i]), sizeof(void));
-				ft_memcpy(pt[i], p[i], ft_strlen(p[i]));
-				ft_memdel(&p[i]);
-				i++;
-			}
-			ft_memdel(&p);
-		}
-	}
-	return (pt);
+	close(fd);
+	return (g->map.size.y);
 }

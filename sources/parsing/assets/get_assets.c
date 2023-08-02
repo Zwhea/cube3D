@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_assets.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:40:26 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 17:42:33 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:39:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,23 @@ void	which_asset(t_game *g, char *line)
 
 static void	_get_assets(t_game *g, char *line, t_keyassets asset_key)
 {
-	const t_assets_ft	assets_tab[] = {&get_north_texture, &get_south_texture,\
-										&get_west_texture, &get_east_texture,\
-										&get_ceiling_color, &get_floor_color,\
+	const t_assets_ft	assets_tab[] = {&get_north_texture, &get_south_texture, \
+										&get_west_texture, &get_east_texture, \
+										&get_ceiling_color, &get_floor_color, \
 										&error_asset};
 
 	(*assets_tab[asset_key])(g, line);
+}
+
+void	error_asset(t_game *g, char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i] && ft_iswhitespace(line[i]))
+		i++;
+	if (!line[i])
+		return ;
+	else
+		error_switchman(g, texture_fail);
 }

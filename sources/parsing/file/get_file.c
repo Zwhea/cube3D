@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_file.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:22:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 18:07:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:06:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,26 @@ char	**get_file(t_game *g, char *file)
 static int	_check_file(t_game *g, char *file)
 {
 	int		fd;
+	int		i;
 	char	*line;
 
 	fd = _file_property(file);
 	if (fd < 0)
 		return (-1);
+	g->file.file = file;
 	line = get_next_line(fd);
+	i = 1;
 	while (line && !(is_map(line)))
 	{
 		which_asset(g, line);
 		free(line);
 		line = get_next_line(fd);
+		i++;
 	}
 	if (line)
 	{
 		free(line);
-		get_map(g, fd);
+		get_map(g, fd, i - 1);
 	}
 	return (0);
 }

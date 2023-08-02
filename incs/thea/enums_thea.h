@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/01 14:40:00 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 13:17:35 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ enum e_keyerror
 	bad_file,
 	extract_fail,
 	texture_fail,
-	color_fail
+	color_fail,
+	asset_fail,
 /*	no_player,
 	no_collectible,
 	no_exit,

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tabmult.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 00:04:20 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/30 00:07:21 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:56:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_tabmult(int nb)
 {
-	int result;
-	int i;
+	int	i;
+	int	result;
 
 	i = 1;
 	result = 0;

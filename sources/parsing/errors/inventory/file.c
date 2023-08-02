@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:24:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 15:02:59 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 18:38:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ void	failed_extract(t_game *g)
 {
 	ft_error(g, false, true, NO_EXTRACT);
 }
-

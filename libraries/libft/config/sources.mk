@@ -6,12 +6,14 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/07/31 09:34:06 by twang            ###   ########.fr        #
+#    Updated: 2023/08/02 15:48:37 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =																	\
+			sources/arrays/ft_arraylen.c									\
 			sources/arrays/ft_range.c										\
+			sources/arrays/ft_realloc_array.c								\
 			sources/arrays/ft_rrange.c										\
 			sources/arrays/sort_int_tab.c									\
 			sources/characters/ft_isalnum.c									\
@@ -50,6 +52,7 @@ SOURCES =																	\
 			sources/memory/ft_memchr.c										\
 			sources/memory/ft_memcmp.c										\
 			sources/memory/ft_memcpy.c										\
+			sources/memory/ft_memdel.c										\
 			sources/memory/ft_memmove.c										\
 			sources/memory/ft_memset.c										\
 			sources/prints/ft_dprintf.c										\

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:27:25 by wangthea          #+#    #+#             */
-/*   Updated: 2023/01/06 18:25:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 15:49:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*get_stash(char *stash)
 	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (stash[i] == '\0')
-	{	
+	{
 		free(stash);
 		return (NULL);
 	}

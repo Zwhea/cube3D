@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/01 17:40:57 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/02 13:47:29 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
 			sources/parsing/assets/get_assets.c								\
 			sources/parsing/assets/get_colors.c								\
-			sources/parsing/assets/get_textures.c								\
+			sources/parsing/assets/get_textures.c							\
 			sources/parsing/assets/utils.c									\
 			sources/parsing/errors/inventory/argument.c						\
 			sources/parsing/errors/inventory/asset.c						\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_colors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 17:39:41 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 18:41:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	get_ceiling_color(t_game *g, char *line)
 {
-	(void)g;
 	int	i;
 
 	i = 0;
@@ -32,7 +31,6 @@ void	get_ceiling_color(t_game *g, char *line)
 
 void	get_floor_color(t_game *g, char *line)
 {
-	(void)g;
 	int	i;
 
 	i = 0;
@@ -47,18 +45,3 @@ void	get_floor_color(t_game *g, char *line)
 		puts("");
 	return ;
 }
-
-void	error_asset(t_game *g, char *line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i] && ft_iswhitespace(line[i]))
-		i++;
-	if (!line[i])
-		return ;
-	else
-		error_switchman(g, texture_fail);
-}
-
-

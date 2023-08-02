@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:09:15 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/01 17:21:14 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:17:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ t_list		*ft_lstnew(void *content);
 
 void		ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)());
 int			ft_lstsize(t_list *lst);
-t_lst		*ft_lstsort(t_lst* lst, int (*cmp)(int, int));
+t_lst		*ft_lstsort(t_lst *lst, int (*cmp)(int, int));
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstremove_if.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 00:02:12 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/30 00:11:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:18:30 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
+	t_list	*lst_ptr;
+
 	if (begin_list == 0 || *begin_list == 0)
 		return ;
-
-	t_list	*lst_ptr;
 	lst_ptr = *begin_list;
 	if (cmp(lst_ptr->content, data_ref) == 0)
 	{

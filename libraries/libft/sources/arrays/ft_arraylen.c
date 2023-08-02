@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 15:22:38 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 15:23:15 by twang            ###   ########.fr       */
+/*   Created: 2023/08/02 13:37:16 by twang             #+#    #+#             */
+/*   Updated: 2023/08/02 17:16:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*free_split(char **s, size_t len)
+int	ft_arraylen(void **array)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < len && s[i])
-	{
-		free(s[i]);
-		s[i] = NULL;
+	while (array[i])
 		i++;
-	}
-	free(s);
-	s = NULL;
-	return (NULL);
+	return (i);
 }
