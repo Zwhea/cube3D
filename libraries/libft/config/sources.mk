@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/02 15:48:37 by twang            ###   ########.fr        #
+#    Updated: 2023/08/02 22:18:33 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,6 +66,7 @@ SOURCES =																	\
 			sources/prints/ft_putnbr_unsigned_fd.c							\
 			sources/prints/ft_putstr_fd.c									\
 			sources/prints/ft_tabmult.c										\
+			sources/strings/ft_skipwhitespaces.c							\
 			sources/strings/ft_split.c										\
 			sources/strings/ft_strchr.c										\
 			sources/strings/ft_strcmp.c										\
