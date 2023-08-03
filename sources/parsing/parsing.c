@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/03 13:53:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:32:18 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	parsing(t_game *g, int ac, char **av)
 	else
 	{
 		error_switchman(g, wrong_file);
-		return(1);
+		return (1);
 	}
 	return (0);
 }
@@ -72,7 +72,9 @@ static void	_pathfinder(t_game *g)
 static void	_monitor(t_game *g)
 {
 	puts("gotta check those bitches");
-	/*_map_checker(g);
+	/*
+	_map_checker(g);
 	_textures_checker(g);
-	_textures_checker(g);*/
+	_textures_checker(g);
+	*/
 }

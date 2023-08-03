@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/03 13:25:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:33:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_game		t_game;
 /*---- typedef function pointer ----------------------------------------------*/
 
 typedef void				(*t_errors_ft)(t_game *g);
-typedef void 				(*t_assets_ft)(t_game *g, char *line);
+typedef void				(*t_assets_ft)(t_game *g, char *line);
 
 /*---- structures ------------------------------------------------------------*/
 
@@ -39,7 +39,6 @@ struct s_lst_assets
 	const char	*asset;
 	t_assets_ft	func;
 };
-
 
 struct s_sprite
 {

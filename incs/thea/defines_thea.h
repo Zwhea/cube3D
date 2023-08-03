@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/03 11:44:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:26:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
-
 
 /*---- authorized charset ----------------------------------------------------*/
 
