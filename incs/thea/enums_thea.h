@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/24 17:21:23 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:42:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,29 @@
 
 /*---- typedef enums ---------------------------------------------------------*/
 
-typedef enum e_error_keys	t_error_keys;
-typedef enum e_keycode		t_keycode;
+typedef enum e_keyerror		t_keyerror;
+typedef enum e_keyassets	t_keyassets;
 typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
 
-enum e_error_keys
+enum e_keyerror
 {
 	no_args,
-	too_much_args,
-	bad_file,
-	extract_fail,
-	texture_fail,
-	color_fail
-/*	no_player,
-	no_collectible,
-	no_exit,
-	no_map,
-	too_much_player,
-	too_much_exit,
-	bad_char,
-	bad_size,
-	bad_format,
-	top_border,
-	right_border,
-	bottom_border,
-	left_border,
-	unsolvable*/
+	much_args,
+	wrong_file,
+	wrong_asset
+};
+
+enum e_keyassets
+{
+	north_texture,
+	south_texture,
+	west_texture,
+	east_texture,
+	ceiling_color,
+	floor_color,
+	no_asset
 };
 
 # ifndef MACOS

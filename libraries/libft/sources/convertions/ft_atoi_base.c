@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 23:49:57 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/29 23:50:12 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:53:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 static int	base(char c, int base_size)
 {
-	char *base_lowcase = "0123456789abcdef";
-	char *base_upcase = "0123456789ABCDEF";
-	int  i = 0;
+	int		i;
+	char	*base_lowcase;
+	char	*base_upcase;
 
+	i = 0;
+	base_lowcase = "0123456789abcdef";
+	base_upcase = "0123456789ABCDEF";
 	while (i < base_size)
 	{
 		if (c == base_lowcase[i] || c == base_upcase[i])
@@ -27,12 +30,15 @@ static int	base(char c, int base_size)
 	return (-1);
 }
 
-int ft_atoi_base(const char *str, int str_base)
+int	ft_atoi_base(const char *str, int str_base)
 {
-	int nb = 0;
-	int negativ = 0;
-	int	i = 0;
-	
+	int	i;
+	int	nb;
+	int	negativ;
+
+	i = 0;
+	nb = 0;
+	negativ = 0;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')

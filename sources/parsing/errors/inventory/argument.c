@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   argument.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:55:13 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 11:56:32 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:12:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	no_arg(t_game *g)
+void	_no_arg(t_game *g)
 {
 	ft_error(g, false, true, NO_ARG);
 }
 
-void	too_much_arg(t_game *g)
+void	_much_arg(t_game *g)
 {
-	ft_error(g, true, true, TOO_MUCH_ARG);
+	ft_error(g, true, true, MUCH_ARG);
 }

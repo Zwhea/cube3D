@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_skipwhitespaces.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 15:22:38 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 15:23:15 by twang            ###   ########.fr       */
+/*   Created: 2023/08/02 22:14:18 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/02 22:18:48 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*free_split(char **s, size_t len)
+int	ft_skipwhitespace(int savepoint, char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len && s[i])
-	{
-		free(s[i]);
-		s[i] = NULL;
-		i++;
-	}
-	free(s);
-	s = NULL;
-	return (NULL);
+	while (s[savepoint] && ft_iswhitespace(s[savepoint]))
+		savepoint++;
+	return (savepoint);
 }

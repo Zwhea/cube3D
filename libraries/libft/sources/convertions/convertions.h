@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convertions.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:12:43 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/29 23:52:57 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 15:50:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-int 	ft_atoi_base(const char *str, int str_base);
+int		ft_atoi_base(const char *str, int str_base);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	*search_and_replace(char *string, char search, char replace);

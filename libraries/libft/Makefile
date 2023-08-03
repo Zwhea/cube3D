@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/03 11:55:03 by wangthea          #+#    #+#              #
-#    Updated: 2023/07/04 12:29:57 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/03 14:21:17 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ $(OBJ_DIR)/%.o:	%.c $(HEADERS)
 
 clean	:
 			$(RM) -rf $(OBJECTS)
+			$(RM) -rf $(OBJ_DIR)
 			$(PRINT_CLEAN)
 
 fclean	:	

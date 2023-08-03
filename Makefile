@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/07/31 10:29:58 by twang            ###   ########.fr        #
+#    Updated: 2023/08/02 15:27:24 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ OBJ_DIR		=	.objs
 
 #--flags-----------------------------------------------------------------------#
 
-CFLAGS		=	-Wall -Wextra -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
 
 #--mlx flags-------------------------------------------------------------------#
 

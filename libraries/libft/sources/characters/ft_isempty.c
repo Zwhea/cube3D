@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_assets.c                                     :+:      :+:    :+:   */
+/*   ft_isempty.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/25 16:07:37 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/31 11:34:24 by twang            ###   ########.fr       */
+/*   Created: 2023/08/03 14:12:53 by twang             #+#    #+#             */
+/*   Updated: 2023/08/03 14:13:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "libft.h"
 
-int	check_textures(t_game *g)
+int	ft_isempty(char *s)
 {
-	(void)g;
-	puts("je check les textures");
-	return (0);
-}
+	int	i;
 
-int	check_colors(t_game *g)
-{
-	(void)g;
-	puts("je check les couleurs");
-	return (0);
+	i = 0;
+	while (s[i] && ft_iswhitespace(s[i]))
+		i++;
+	if (s[i])
+		return (0);
+	return (1);
 }

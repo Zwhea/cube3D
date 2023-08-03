@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 16:34:00 by mmosca            #+#    #+#             */
-/*   Updated: 2023/07/31 09:28:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/02 15:55:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_putsdebug(const char *x, int line, char *file)
 void	ft_print_split(char **file)
 {
 	int	i;
-	
+
 	i = 0;
 	ft_dprintf(2, "\n\n");
 	while (file[i])

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/31 11:56:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 13:25:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@
 
 /*---- typedef structures ----------------------------------------------------*/
 
-typedef struct s_map_error	t_map_error;
+typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_sprite		t_sprite;
+typedef struct s_map_error	t_map_error;
 typedef struct s_tex		t_tex;
 typedef struct s_color		t_color;
+typedef struct s_vector		t_vector;
 typedef struct s_map		t_map;
 typedef struct s_file		t_file;
 typedef struct s_game		t_game;
@@ -28,8 +30,21 @@ typedef struct s_game		t_game;
 /*---- typedef function pointer ----------------------------------------------*/
 
 typedef void				(*t_errors_ft)(t_game *g);
+typedef void 				(*t_assets_ft)(t_game *g, char *line);
 
 /*---- structures ------------------------------------------------------------*/
+
+struct s_lst_assets
+{
+	const char	*asset;
+	t_assets_ft	func;
+};
+
+
+struct s_sprite
+{
+	void	*sprite;
+};
 
 struct s_map_error
 {
@@ -44,24 +59,26 @@ struct s_color
 
 struct s_tex
 {
-	char		*tex_north;
-	char		*tex_south;
-	char		*tex_west;
-	char		*tex_east;
+	t_sprite	walls[6];
+};
+
+struct s_vector
+{
+	int		x;
+	int		y;
 };
 
 struct s_map
 {
 	t_map_error	error;
+	t_vector	size;
 	char		**map;
 };
 
 struct s_file
 {
-	int		file_fd;
-	int		size_file;
-	char	*origin_file;
-	char	**split_file;
+	int		fd;
+	char	*file;
 };
 
 struct s_game

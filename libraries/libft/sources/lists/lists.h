@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lists.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:09:15 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/30 00:03:50 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/02 17:17:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 /*---- typedef structures ----------------------------------------------------*/
 
 typedef struct s_list	t_list;
+typedef struct s_lst	t_lst;
 
 /*---- structures ------------------------------------------------------------*/
 
@@ -27,6 +28,12 @@ struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+};
+
+struct s_lst
+{
+	int				content;
+	struct s_lst	*next;
 };
 
 /*---- prototypes ------------------------------------------------------------*/
@@ -46,6 +53,6 @@ t_list		*ft_lstnew(void *content);
 
 void		ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)());
 int			ft_lstsize(t_list *lst);
-t_list		*ft_lstsort(t_list* lst, int (*cmp)(int, int));
+t_lst		*ft_lstsort(t_lst *lst, int (*cmp)(int, int));
 
 #endif

@@ -3,11 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   asset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 11:47:24 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/03 11:45:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
+
+void	_wrong_asset(t_game *g)
+{
+	ft_error(g, false, false, WRONG_ASSET);
+}
