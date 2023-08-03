@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/02 22:18:33 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/03 14:14:08 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SOURCES =																	\
 			sources/characters/ft_isalpha.c									\
 			sources/characters/ft_isascii.c									\
 			sources/characters/ft_isdigit.c									\
+			sources/characters/ft_isempty.c									\
 			sources/characters/ft_isfromcharset.c							\
 			sources/characters/ft_isprint.c									\
 			sources/characters/ft_iswhitespace.c							\

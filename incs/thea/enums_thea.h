@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 19:00:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 11:42:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ enum e_keyerror
 {
 	no_args,
 	much_args,
-	wrong_file
+	wrong_file,
+	wrong_asset
 };
 
 enum e_keyassets

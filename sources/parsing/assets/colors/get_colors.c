@@ -6,14 +6,15 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 18:41:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 12:01:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	get_ceiling_color(t_game *g, char *line)
+void	handle_ceiling_color(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;
@@ -29,8 +30,9 @@ void	get_ceiling_color(t_game *g, char *line)
 	return ;
 }
 
-void	get_floor_color(t_game *g, char *line)
+void	handle_floor_color(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;
@@ -44,4 +46,17 @@ void	get_floor_color(t_game *g, char *line)
 	if (line[i] == '\n')
 		puts("");
 	return ;
+}
+
+void	handle_no_asset(t_game *g, char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i] && ft_iswhitespace(line[i]))
+		i++;
+	if (!line[i])
+		return ;
+	else
+		error_switchman(g, wrong_asset);
 }

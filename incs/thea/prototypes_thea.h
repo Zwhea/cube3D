@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 19:13:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 16:18:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,34 @@
 
 /*----------------------------------------------------------------------------*/
 
-/*---- parsing ---------------------------------------------------------------*/
+/*---- parsing/ --------------------------------------------------------------*/
 
 int		parsing(t_game *g, int ac, char **av);
 
-/*--------------- assets -----------------------------------------------------*/
-/*------------------------- check_assets.c -----------------------------------*/
+/*--------------- assets/ ----------------------------------------------------*/
 
-int		check_textures(t_game *g, char *line);
-int		check_colors(t_game *g, char *line);
+void	asset_switchman(t_game *g, char *line);
 
-/*------------------------- get_assets.c -------------------------------------*/
-
-void	which_asset(t_game *g, char *line);
-
+/*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- get_colors.c -------------------------------------*/
 
-void	get_ceiling_color(t_game *g, char *line);
-void	get_floor_color(t_game *g, char *line);
-void	error_asset(t_game *g, char *line);
+void	handle_ceiling_color(t_game *g, char *line);
+void	handle_floor_color(t_game *g, char *line);
+void	handle_no_asset(t_game *g, char *line);
 
+/*---------------------- textures/ -------------------------------------------*/
 /*------------------------- get_textures.c -----------------------------------*/
 
-void	get_north_texture(t_game *g, char *line);
-void	get_south_texture(t_game *g, char *line);
-void	get_west_texture(t_game *g, char *line);
-void	get_east_texture(t_game *g, char *line);
+void	handle_north_texture(t_game *g, char *line);
+void	handle_south_texture(t_game *g, char *line);
+void	handle_west_texture(t_game *g, char *line);
+void	handle_east_texture(t_game *g, char *line);
 
-/*------------------------- utils.c ------------------------------------------*/
+/*--------------- errors/ ----------------------------------------------------*/
 
-/*--------------- errors -----------------------------------------------------*/
-/*---------------------- \inventory ------------------------------------------*/
+void	error_switchman(t_game *g, t_keyerror error_key);
+
+/*---------------------- inventory/ ------------------------------------------*/
 /*------------------------- argument.c ---------------------------------------*/
 
 void	_no_arg(t_game *g);
@@ -57,7 +54,7 @@ void	_much_arg(t_game *g);
 
 /*------------------------- asset.c ------------------------------------------*/
 
-void	bad_asset(t_game *g);
+void	_wrong_asset(t_game *g);
 
 /*------------------------- file.c -------------------------------------------*/
 
@@ -65,21 +62,7 @@ void	_wrong_file(t_game *g);
 
 /*------------------------- map.c --------------------------------------------*/
 
-/*------------------------- error_switchman.c --------------------------------*/
-
-void	error_switchman(t_game *g, t_keyerror error_key);
-
-/*--------------- file -------------------------------------------------------*/
-/*------------------------- get_file.c ---------------------------------------*/
-
-char	**get_file(t_game *g, char *file);
-
-/*------------------------- utils.c ------------------------------------------*/
-
-void	read_error(int fd);
-int		get_alloc_size(const char *file);
-
-/*--------------- map --------------------------------------------------------*/
+/*--------------- map/ -------------------------------------------------------*/
 /*------------------------- get_map.c ----------------------------------------*/
 
 void	get_map(t_game *g, int fd, int start_map);
@@ -87,8 +70,9 @@ void	get_map(t_game *g, int fd, int start_map);
 /*------------------------- utils.c ------------------------------------------*/
 
 bool	is_map(char *s);
+size_t	set_map_height(t_game *g, int fd);
 
-/*--------------- utils ------------------------------------------------------*/
+/*--------------- utils/ -----------------------------------------------------*/
 /*------------------------- checkers.c ---------------------------------------*/
 
 void	is_this_first_mistake(t_game *g, bool is_warning);

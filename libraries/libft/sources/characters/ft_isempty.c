@@ -1,13 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_isempty.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 10:14:19 by twang             #+#    #+#             */
-/*   Updated: 2023/08/01 17:25:59 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/03 14:12:53 by twang             #+#    #+#             */
+/*   Updated: 2023/08/03 14:13:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "libft.h"
+
+int	ft_isempty(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && ft_iswhitespace(s[i]))
+		i++;
+	if (s[i])
+		return (0);
+	return (1);
+}

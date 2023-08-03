@@ -6,14 +6,15 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:38:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 18:41:07 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 11:39:51 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	get_north_texture(t_game *g, char *line)
+void	handle_north_texture(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;
@@ -29,8 +30,9 @@ void	get_north_texture(t_game *g, char *line)
 	return ;
 }
 
-void	get_south_texture(t_game *g, char *line)
+void	handle_south_texture(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;
@@ -46,8 +48,9 @@ void	get_south_texture(t_game *g, char *line)
 	return ;
 }
 
-void	get_west_texture(t_game *g, char *line)
+void	handle_west_texture(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;
@@ -63,8 +66,9 @@ void	get_west_texture(t_game *g, char *line)
 	return ;
 }
 
-void	get_east_texture(t_game *g, char *line)
+void	handle_east_texture(t_game *g, char *line)
 {
+	(void)g;
 	int	i;
 
 	i = 0;

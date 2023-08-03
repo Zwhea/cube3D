@@ -6,13 +6,13 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 18:38:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/03 11:45:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	bad_asset(t_game *g)
+void	_wrong_asset(t_game *g)
 {
-	ft_error(g, false, false, "bad assets\n");
+	ft_error(g, false, false, WRONG_ASSET);
 }
