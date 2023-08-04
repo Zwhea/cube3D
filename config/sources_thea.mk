@@ -6,11 +6,13 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/03 13:55:41 by twang            ###   ########.fr        #
+#    Updated: 2023/08/04 19:48:13 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
+			sources/init/mlx/init_mlx.c										\
+			sources/init/struct/init_struct.c								\
 			sources/parsing/assets/colors/get_colors.c						\
 			sources/parsing/assets/textures/get_textures.c					\
 			sources/parsing/assets/asset_switchman.c						\

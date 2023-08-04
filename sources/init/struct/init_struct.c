@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checkers.c                                         :+:      :+:    :+:   */
+/*   init_struct.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 20:35:51 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/04 19:44:20 by twang            ###   ########.fr       */
+/*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
+/*   Updated: 2023/08/04 19:53:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	is_this_first_mistake(t_game *g, bool is_warning)
+void	init_struct(t_game *g)
 {
-	if (g->map.error == false)
-	{
-		program();
-		if (is_warning == true)
-			warning();
-		else
-			error();
-		g->map.error = true;
-	}
+	ft_bzero((void *)g, sizeof(t_game));
+	ft_bzero((void *)&g->file, sizeof(t_file));
+	ft_bzero((void *)&g->map, sizeof(t_map));
+	ft_bzero((void *)&g->textures, sizeof(t_tex));
+}
+
+void	set_vector(t_vector *vector, int x, int y)
+{
+	vector->x = x;
+	vector->y = y;
 }
