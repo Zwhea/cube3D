@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 14:05:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 18:06:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	map_checker(t_game *g)
 	int	i;
 
 	i = -1;
-	while (g->map.map[i++])
-		printf("%s", g->map.map[i]);
+	while (g->map.map[++i])
+	{
+		if (ft_isempty(g->map.map[i]))
+			error_switchman(g, wrong_map);
+	}
 }

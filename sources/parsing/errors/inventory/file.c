@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:24:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 19:14:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 18:23:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void	_wrong_file(t_game *g)
 	if (g->file.fd)
 		close(g->file.fd);
 	ft_error(g, false, true, WRONG_FILE);
+	clean(g);
 }

@@ -3,11 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:03:17 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 11:47:28 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/05 18:13:49 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
+
+void	_wrong_map(t_game *g)
+{
+	ft_error(g, false, false, WRONG_MAP);
+	clean(g);
+}

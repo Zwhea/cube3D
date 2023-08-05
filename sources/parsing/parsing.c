@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/05 13:49:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 18:29:16 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	parsing(t_game *g, int ac, char **av)
 {
 	if (ac > 2)
 		error_switchman(g, much_args);
-	if (_check_file(g, av[1]))
+	if (_check_file(g, av[1]) > 0)
 	{
 		_pathfinder(g);
 		_monitor(g);
