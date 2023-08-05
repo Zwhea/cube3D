@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/04 19:46:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 12:27:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ void	handle_south_texture(t_game *g, char *line);
 void	handle_west_texture(t_game *g, char *line);
 void	handle_east_texture(t_game *g, char *line);
 
+/*------------------------- textures_checker.c -------------------------------*/
+
+void	textures_checker(t_game *g);
+
 /*--------------- errors/ ----------------------------------------------------*/
 
 void	error_switchman(t_game *g, t_keyerror error_key);
@@ -77,6 +81,10 @@ void	_wrong_file(t_game *g);
 
 void	get_map(t_game *g, int fd, int start_map);
 
+/*------------------------- map_checker.c ------------------------------------*/
+
+void	map_checker(t_game *g);
+
 /*------------------------- utils.c ------------------------------------------*/
 
 bool	is_map(char *s);
@@ -90,6 +98,8 @@ void	is_this_first_mistake(t_game *g, bool is_warning);
 /*------------------------- clean.c ------------------------------------------*/
 
 int		close_n_free(t_game *g, bool is_error);
+int		clean(t_game *g);
+void	clean_map(t_game *g);
 
 /*------------------------- prints.c -----------------------------------------*/
 

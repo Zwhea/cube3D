@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/04 18:00:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 11:50:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ struct s_sprite
 struct s_tex
 {
 	t_sprite	walls[6];
+	t_vector	size;
 };
 
 struct s_map

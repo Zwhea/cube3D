@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/03 12:01:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 11:38:40 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ void	handle_ceiling_color(t_game *g, char *line)
 {
 	(void)g;
 	int	i;
+	char	*s;
 
 	i = 0;
 	while (line[i] && ft_strchr(COLOR_CEILING, line[i]))
 		i++;
-	while (line[i] && line[i] != '\n')
-	{
-		printf("%c", line[i]);
+	s = &line[i];
+	while (line[i] && !(ft_iswhitespace(line[i])))
 		i++;
-	}
-	if (line[i] == '\n')
-		puts("");
+	if (line[i])
+		line[i] = '\0';
+	// printf("%s\n", s);
 	return ;
 }
 
@@ -34,17 +34,17 @@ void	handle_floor_color(t_game *g, char *line)
 {
 	(void)g;
 	int	i;
+	char	*s;
 
 	i = 0;
 	while (line[i] && ft_strchr(COLOR_FLOOR, line[i]))
 		i++;
-	while (line[i] && line[i] != '\n')
-	{
-		printf("%c", line[i]);
+	s = &line[i];
+	while (line[i] && !(ft_iswhitespace(line[i])))
 		i++;
-	}
-	if (line[i] == '\n')
-		puts("");
+	if (line[i])
+		line[i] = '\0';
+	// printf("%s\n", s);
 	return ;
 }
 

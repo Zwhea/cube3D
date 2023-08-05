@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/03 16:32:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 12:19:00 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,9 @@ static void	_pathfinder(t_game *g)
 
 static void	_monitor(t_game *g)
 {
-	puts("gotta check those bitches");
+	textures_checker(g);
+	map_checker(g);
 	/*
-	_map_checker(g);
-	_textures_checker(g);
-	_textures_checker(g);
+	colors_checker(g);
 	*/
 }

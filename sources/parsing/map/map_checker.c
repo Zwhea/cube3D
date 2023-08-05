@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D_thea.h                                       :+:      :+:    :+:   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 11:19:35 by twang            ###   ########.fr       */
+/*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
+/*   Updated: 2023/08/05 12:21:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_THEA_H
-# define CUB3D_THEA_H
+#include "cub3D_thea.h"
 
-/*---- libraries -------------------------------------------------------------*/
+void	map_checker(t_game *g)
+{
+	int	i;
 
-/*---- includes --------------------------------------------------------------*/
-
-# include "libft.h"
-# include "mlx.h"
-# include "defines_thea.h"
-# include "enums_thea.h"
-# include "prototypes_thea.h"
-# include "structures_thea.h"
-
-#endif
+	i = -1;
+	while (g->map.map[i++])
+		printf("%s", g->map.map[i]);
+}

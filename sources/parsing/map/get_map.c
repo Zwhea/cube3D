@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:58:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/03 16:18:30 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 12:18:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,12 @@ void	get_map(t_game *g, int fd, int start_map)
 		tmp_line = get_next_line(fd);
 		start_map--;
 	}
-	puts("map ");
 	while (tmp_line)
 	{
 		g->map.map[i] = tmp_line;
 		tmp_line = get_next_line(fd);
-		printf("%s", g->map.map[i]);
 		i++;
 	}
 	g->map.map[i] = NULL;
 	close(fd);
-	free_split(g->map.map, ft_arraylen((void **)g->map.map));
 }
