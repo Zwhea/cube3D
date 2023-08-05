@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 12:27:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 13:38:49 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,9 @@ void	is_this_first_mistake(t_game *g, bool is_warning);
 /*------------------------- clean.c ------------------------------------------*/
 
 int		close_n_free(t_game *g, bool is_error);
-int		clean(t_game *g);
+void	clean_textures(t_game *g);
 void	clean_map(t_game *g);
+int		clean(t_game *g);
 
 /*------------------------- prints.c -----------------------------------------*/
 
