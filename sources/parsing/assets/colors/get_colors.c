@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/05 11:38:40 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 14:05:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	handle_ceiling_color(t_game *g, char *line)
 {
 	(void)g;
-	int	i;
+	int		i;
 	char	*s;
 
 	i = 0;
@@ -33,7 +33,7 @@ void	handle_ceiling_color(t_game *g, char *line)
 void	handle_floor_color(t_game *g, char *line)
 {
 	(void)g;
-	int	i;
+	int		i;
 	char	*s;
 
 	i = 0;

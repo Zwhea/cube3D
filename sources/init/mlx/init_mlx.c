@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 12:27:08 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 14:04:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	init_mlx(t_game *g)
 {
-	set_vector(&g->window_size, 500, 500); /*to change cause i don't know definitive size yet*/
+	set_vector(&g->window_size, 500, 500);
+	/*to change cause i don't know definitive size yet*/
 	g->mlx = mlx_init();
 	if (g->mlx == NULL)
 		clean(g);
