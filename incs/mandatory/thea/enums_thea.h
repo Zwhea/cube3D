@@ -1,23 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums_arthur.h                                     :+:      :+:    :+:   */
+/*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 10:21:38 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/05 18:05:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUMS_ARTHUR_H
-# define ENUMS_ARTHUR_H
+#ifndef ENUMS_THEA_H
+# define ENUMS_THEA_H
 
 /*---- typedef enums ---------------------------------------------------------*/
 
-typedef enum e_keycode	t_keycode;
+typedef enum e_keyerror		t_keyerror;
+typedef enum e_keyassets	t_keyassets;
+typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
+
+enum e_keyerror
+{
+	no_args,
+	much_args,
+	wrong_file,
+	wrong_asset,
+	wrong_map
+};
+
+enum e_keyassets
+{
+	north_texture,
+	south_texture,
+	west_texture,
+	east_texture,
+	ceiling_color,
+	floor_color,
+	no_asset
+};
 
 # ifndef MACOS
 

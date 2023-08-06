@@ -1,5 +1,5 @@
 #include "cub3D_thea.h"
-// #include "cub3D_arthur.h"
+#include "cub3D_arthur.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -31,11 +31,12 @@ static int	_key_press(t_keycode key, t_game *g)
 {
 	if (key == esc_key)
 		clean(g);
+	else if (key == m_key)
+		mini_map_init(g);
 	return (0);
 }
 
 /*
-
 mlx
 
 - afficher une texture sur la window

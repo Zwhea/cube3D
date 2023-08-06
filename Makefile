@@ -6,15 +6,19 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/08/02 15:27:24 by twang            ###   ########.fr        #
+#    Updated: 2023/08/06 15:18:15 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config/print.mk
-include config/sources_arthur.mk
-include config/headers_arthur.mk
-include config/sources_thea.mk
-include config/headers_thea.mk
+include config/mandatory/sources_arthur.mk
+include config/mandatory/headers_arthur.mk
+include config/mandatory/sources_thea.mk
+include config/mandatory/headers_thea.mk
+include config/bonus/sources_arthur.mk
+include config/bonus/headers_arthur.mk
+include config/bonus/sources_thea.mk
+include config/bonus/headers_thea.mk
 
 .SILENT:
 
@@ -23,6 +27,7 @@ include config/headers_thea.mk
 NAME		=	cub3D
 DEBUG		=	no
 VALGRIND	=	no
+BONUS		=	no
 OS			=	$(shell uname)
 WHO			=	$(shell whoami)
 AASCEDU		=	\e]8;;https://profile.intra.42.fr/users/aascedu\a\e[34maascedu\e[34m\e]8;;\a
@@ -30,7 +35,10 @@ TWANG		=	\e]8;;https://profile.intra.42.fr/users/twang\a\e[34mtwang\e[34m\e]8;;\
 
 #--includes & libraries--------------------------------------------------------#
 
-INC_DIR		=	incs/
+INC_DIR		=	incs/mandatory/
+
+INC_B_DIR	=	incs/bonus/
+
 LIB_DIR		=	libraries
 LIBFT_DIR	=	$(LIB_DIR)/libft
 
@@ -42,12 +50,20 @@ endif
 
 #--sources & objects-----------------------------------------------------------#
 
-SRC_DIR		=	sources
+SRC_DIR		=	sources/mandatory
 OBJ_DIR		=	.objs
 
-#--flags-----------------------------------------------------------------------#
+#--sources & objects bonus ----------------------------------------------------#
 
+SRC_B_DIR		=	sources/bonus
+
+#--flags mandatory & bonus ----------------------------------------------------#
+
+ifeq ($(BONUS), no)
 CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
+else
+CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+endif
 
 #--mlx flags-------------------------------------------------------------------#
 
@@ -90,9 +106,13 @@ endif
 LIBFT	=	$(LIBFT_DIR)/libft.a
 MLX		=	$(MLX_DIR)/libmlx.a
 
-#--objects---------------------------------------------------------------------#
+#--objects mandatory & bonus --------------------------------------------------#
 
+ifeq ($(BONUS), no)
 OBJECTS	=	$(addprefix $(OBJ_DIR)/, $(SOURCES:.c=.o))
+else
+OBJECTS	=	$(addprefix $(OBJ_DIR)/, $(SOURCES_BONUS:.c=.o))
+endif
 
 #--global rules----------------------------------------------------------------#
 
@@ -110,24 +130,34 @@ $(NAME): $(OBJECTS) $(LIBFT)
 	$(CC) $^ $(CFLAGS) $(LIBFT) $(MLX) -o $@ $(MLX_FLAGS)
 	$(PRINT_CREATING)
 
+ifeq ($(BONUS), no)
 $(OBJ_DIR)/%.o: %.c $(HEADERS) 
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 	$(PRINT_COMPILING)
+else
+$(OBJ_DIR)/%.o: %.c $(HEADERS_BONUS) 
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+	$(PRINT_COMPILING)
+endif
 
-#--libs, debugs----------------------------------------------------------------#
+#--libs, debugs & bonus -------------------------------------------------------#
 
 lib:
 	$(MAKE) -C $(LIBFT_DIR)
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re -j DEBUG=yes
+	$(MAKE) re -j DEBUG=yes BONUS=yes
 
 leaks:
 	clear
 	$(MAKE) -j VALGRIND=yes
 	$(LEAKS) ./cub3D assets/maps/map.cub
+
+bonus:
+	$(MAKE) re -j BONUS=yes
 
 #--print header----------------------------------------------------------------#
 
@@ -166,8 +196,8 @@ fclean:
 	$(PRINT_FCLEAN)
 
 norm:
-	norminette $(LIBFT_DIR) $(INC_DIR) $(SRC_DIR)
+	norminette $(LIBFT_DIR) $(INC_DIR) $(SRC_DIR) $(INC_B_DIR) $(SRC_B_DIR)
 
 #--PHONY-----------------------------------------------------------------------#
 
-.PHONY: all lib debug leaks header welcome re clean fclean norm
+.PHONY: all lib debug leaks bonus header welcome re clean fclean norm
