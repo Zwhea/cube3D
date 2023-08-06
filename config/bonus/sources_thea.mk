@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/06 15:26:43 by twang            ###   ########.fr        #
+#    Updated: 2023/08/06 17:03:46 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,4 +30,5 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/utils/checkers.c					\
 					sources/bonus/parsing/utils/prints.c					\
 					sources/bonus/parsing/parsing.c							\
+					sources/bonus/mlx_pixel_put.c							\
 					sources/bonus/main.c

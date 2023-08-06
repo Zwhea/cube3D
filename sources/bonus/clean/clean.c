@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 15:06:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/06 16:31:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,10 @@ int	clean(t_game *g)
 	exit(0);
 }
 
+int	clean_mini_map(t_game *g)
+{
+	printf(RED"closing mini map\n"END);
+	mlx_destroy_window(g->mlx, g->map_window);
+	g->map_window = NULL;
+	return (0);
+}

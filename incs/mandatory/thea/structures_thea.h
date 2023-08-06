@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 11:50:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/06 16:52:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_tex		t_tex;
 typedef struct s_sprite		t_sprite;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_vector		t_vector;
+typedef struct s_draw		t_draw;
 
 /*---- typedef function pointer ----------------------------------------------*/
 
@@ -31,6 +32,15 @@ typedef void				(*t_errors_ft)(t_game *g);
 typedef void				(*t_assets_ft)(t_game *g, char *line);
 
 /*---- structures ------------------------------------------------------------*/
+
+struct s_draw
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+};
 
 struct s_vector
 {
@@ -70,6 +80,7 @@ struct s_file
 
 struct s_game
 {
+	t_draw		draw;
 	t_file		file;
 	t_map		map;
 	t_vector	window_size;

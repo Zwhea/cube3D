@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 15:25:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/06 16:51:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		close_n_free(t_game *g, bool is_error);
 void	clean_textures(t_game *g);
 void	clean_map(t_game *g);
 int		clean(t_game *g);
+int		clean_mini_map(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- mlx/ -------------------------------------------------------*/
@@ -113,5 +114,8 @@ void	is_this_first_mistake(t_game *g, bool is_warning);
 /*------------------------- prints.c -----------------------------------------*/
 
 void	ft_error(t_game *g, bool is_warn, bool how_to, char *msg);
+
+
+void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color);
 
 #endif
