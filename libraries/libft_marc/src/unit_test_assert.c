@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_checker.c                                      :+:      :+:    :+:   */
+/*   unit_test_assert.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 11:14:43 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/02 15:51:28 by mmosca            #+#    #+#             */
+/*   Updated: 2023/08/02 15:52:34 by mmosca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "unit_test.h"
 
-void	map_checker(t_game *g)
+bool
+	ut_assert(char *file, uint32_t line, char *expr, bool pass)
 {
-	int	i;
-	int	j;
-
-	i = -1;
-	while (g->map.map[++i])
-	{
-		if (ft_isempty(g->map.map[i]))
-			error_switchman(g, wrong_map);
-		j = -1;
-		while (g->map.map[i][++j])
-		{
-			
-		}
-	}
+	g_ut.current_expression = expr;
+	g_ut.current_file = file;
+	g_ut.current_line = line;
+	g_ut.current_test_failed = !pass;
+	return (pass);
 }
