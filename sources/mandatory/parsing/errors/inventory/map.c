@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:03:17 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/05 18:13:49 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 11:59:08 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,11 @@
 void	_wrong_map(t_game *g)
 {
 	ft_error(g, false, false, WRONG_MAP);
+	clean(g);
+}
+
+void	_wrong_char(t_game *g)
+{
+	ft_error(g, false, false, WRONG_CHAR);
 	clean(g);
 }

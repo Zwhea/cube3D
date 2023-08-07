@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 11:14:43 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/07 12:07:13 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ void	map_checker(t_game *g)
 		j = -1;
 		while (g->map.map[i][++j])
 		{
-			
+			if (g->map.map[i] && !ft_strchr(MAP_CHARSET, g->map.map[i][j]))
+			{
+				printf(RED"-%c-\n"END, g->map.map[i][j]);
+				error_switchman(g, wrong_char);
+			}
 		}
 	}
 }

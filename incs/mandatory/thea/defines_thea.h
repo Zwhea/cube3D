@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 18:09:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 12:07:43 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
 # define WRONG_MAP "program encounter issues with given map\n"
+# define WRONG_CHAR "you have an unwanted character in your map\n"
 
 /*---- authorized charset ----------------------------------------------------*/
 
@@ -35,7 +36,7 @@
 # define COLOR_CEILING "C "
 # define COLOR_NM_CHARSET "0123456789, "
 
-# define MAP_CHARSET "01NSEW "
+# define MAP_CHARSET "01NSEW \n"
 
 /*---- sizes (windows, textures, images) -------------------------------------*/
 

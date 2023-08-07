@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_colors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/05 16:07:33 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 12:03:28 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	handle_ceiling_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	// printf("%s\n", s);
+	printf("%s\n", s);
 	return ;
 }
 
@@ -44,7 +44,7 @@ void	handle_floor_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	// printf("%s\n", s);
+	printf("%s\n", s);
 	return ;
 }
 

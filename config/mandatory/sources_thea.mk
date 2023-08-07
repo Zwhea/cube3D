@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/06 16:51:37 by twang            ###   ########.fr        #
+#    Updated: 2023/08/07 12:04:18 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,5 +29,4 @@ SOURCES +=																	\
 			sources/mandatory/parsing/utils/clean.c							\
 			sources/mandatory/parsing/utils/prints.c						\
 			sources/mandatory/parsing/parsing.c								\
-			sources/mandatory/mlx_pixel_put.c								\
 			sources/mandatory/main.c

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_switchman.c                                  :+:      :+:    :+:   */
+/*   unit_test_assert.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmosca <mmosca@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/20 21:06:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/07 11:58:00 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/02 15:51:28 by mmosca            #+#    #+#             */
+/*   Updated: 2023/08/02 15:52:34 by mmosca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "unit_test.h"
 
-void	error_switchman(t_game *g, t_keyerror error_key)
+bool
+	ut_assert(char *file, uint32_t line, char *expr, bool pass)
 {
-	const t_errors_ft	error_tab[] = {&_no_arg, &_much_arg, &_wrong_file, \
-									&_wrong_asset, &_wrong_map, &_wrong_char};
-
-	(*error_tab[error_key])(g);
+	g_ut.current_expression = expr;
+	g_ut.current_file = file;
+	g_ut.current_line = line;
+	g_ut.current_test_failed = !pass;
+	return (pass);
 }

@@ -4,11 +4,11 @@
 
 
 
-WE ./assets/images/west.xpm                          
+WE ./assets/textures/xpm/brick_wall.xpm                          
 
-      NO             ./assets/images/north.xpm
-SO ./assets/images/south.xpm     
-EA        ./assets/images/east.xpm
+      NO             ./assets/textures/xpm/brick_wall.xpm
+SO ./assets/textures/xpm/brick_wall.xpm     
+EA        ./assets/textures/xpm/brick_wall.xpm
             F         51,51,51
                                                  
 C    0,191,255

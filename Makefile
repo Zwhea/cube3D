@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/08/06 15:18:15 by twang            ###   ########.fr        #
+#    Updated: 2023/08/07 12:03:57 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,9 +43,9 @@ LIB_DIR		=	libraries
 LIBFT_DIR	=	$(LIB_DIR)/libft
 
 ifeq ($(OS), Darwin)
-MLX_DIR 	=	$(LIB_DIR)/mlx_mac
+MLX_DIR		=	$(LIB_DIR)/mlx_mac
 else ifeq ($(OS), Linux)
-MLX_DIR 	=	$(LIB_DIR)/mlx_linux
+MLX_DIR		=	$(LIB_DIR)/mlx_linux
 endif
 
 #--sources & objects-----------------------------------------------------------#
@@ -55,7 +55,7 @@ OBJ_DIR		=	.objs
 
 #--sources & objects bonus ----------------------------------------------------#
 
-SRC_B_DIR		=	sources/bonus
+SRC_B_DIR	=	sources/bonus
 
 #--flags mandatory & bonus ----------------------------------------------------#
 
@@ -70,9 +70,9 @@ endif
 MLX_FLAGS	=	-L $(MLX_DIR)
 
 ifeq ($(OS), Darwin)
-MLX_FLAGS 	+= -framework OpenGL -framework AppKit
+MLX_FLAGS	+= -framework OpenGL -framework AppKit
 else ifeq ($(OS), Linux)
-MLX_FLAGS 	+= -l m -l Xext -l X11 -I $(MLX_DIR)
+MLX_FLAGS	+= -l m -l Xext -l X11 -I $(MLX_DIR)
 endif
 
 #--debug flags-----------------------------------------------------------------#
@@ -80,7 +80,7 @@ endif
 DFLAGS		=	-g3 -fsanitize=address
 
 ifeq ($(DEBUG), yes)
-CFLAGS 		+=	$(DFLAGS)
+CFLAGS		+=	$(DFLAGS)
 endif
 
 #--leaks flags-----------------------------------------------------------------#
@@ -90,13 +90,13 @@ LEAKS	=	valgrind --leak-check=full --track-fds=yes
 #--define flags----------------------------------------------------------------#
 
 ifeq ($(OS), Darwin)
-CFLAGS 		+=	-DMACOS
+CFLAGS	+=	-DMACOS
 endif
 
 ifeq ($(WHO), twang)
-WHO 	=	Théa 🐼
+WHO		=	Théa 🐼
 else ifeq ($(WHO), aascedu)
-WHO 	=	Arthur 🦋
+WHO		=	Arthur 🦋
 else
 WHO		=	!
 endif
@@ -149,7 +149,7 @@ lib:
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re -j DEBUG=yes BONUS=yes
+	$(MAKE) re -j DEBUG=yes
 
 leaks:
 	clear
