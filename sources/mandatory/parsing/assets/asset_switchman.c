@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:40:26 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/07 11:51:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:16:55 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	asset_switchman(t_game *g, char *line)
 	i = 0;
 	j = 1;
 	i += ft_skipwhitespace(i, line);
-	set_vector(&g->textures.size, 96, 96); 
-	/*to change cause i don't know definitive size yet*/
+	set_vector(&g->textures.size, 96, 96);
 	while (j < 7)
 	{
 		if (!(ft_strncmp(&line[i], list[j].asset, ft_strlen(list[j].asset))))

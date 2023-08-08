@@ -6,14 +6,16 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/07 12:04:18 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/08 13:57:34 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
 			sources/mandatory/init/mlx/init_mlx.c							\
 			sources/mandatory/init/struct/init_struct.c						\
+			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
+			sources/mandatory/parsing/assets/colors/utils.c					\
 			sources/mandatory/parsing/assets/textures/get_textures.c		\
 			sources/mandatory/parsing/assets/textures/textures_checker.c	\
 			sources/mandatory/parsing/assets/asset_switchman.c				\

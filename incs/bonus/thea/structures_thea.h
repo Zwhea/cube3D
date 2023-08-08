@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 16:44:49 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 14:55:14 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ struct s_map
 {
 	t_vector	size;
 	char		**map;
+	char		**b_map;
 	bool		error;
 };
 

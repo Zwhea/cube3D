@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 16:52:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/08 15:26:29 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 typedef struct s_game		t_game;
 typedef struct s_file		t_file;
 typedef struct s_map		t_map;
+typedef struct s_player		t_player;
 typedef struct s_tex		t_tex;
+typedef struct s_color		t_color;
+typedef struct s_rgb		t_rgb;
 typedef struct s_sprite		t_sprite;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_vector		t_vector;
@@ -59,16 +62,40 @@ struct s_sprite
 	void	*sprite;
 };
 
+struct s_rgb
+{
+	int		r;
+	int		g;
+	int		b;
+};
+
+struct s_color
+{
+	t_rgb	rgb[2];
+};
+
 struct s_tex
 {
 	t_sprite	walls[6];
 	t_vector	size;
 };
 
+struct s_player
+{
+	t_vector	pos;
+	int			player;
+	bool		north;
+	bool		south;
+	bool		west;
+	bool		east;
+};
+
 struct s_map
 {
 	t_vector	size;
+	int			*line_len;
 	char		**map;
+	char		**b_map;
 	bool		error;
 };
 
@@ -83,8 +110,10 @@ struct s_game
 	t_draw		draw;
 	t_file		file;
 	t_map		map;
+	t_player	player;
 	t_vector	window_size;
 	t_tex		textures;
+	t_color		colors;
 	void		*mlx;
 	void		*window;
 };

@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_struct.c                                      :+:      :+:    :+:   */
+/*   ft_strlen_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 14:32:06 by wangthea         ###   ########.fr       */
+/*   Created: 2022/11/08 12:41:50 by twang             #+#    #+#             */
+/*   Updated: 2023/08/07 12:57:31 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "libft.h"
 
-void	init_struct(t_game *g)
+int	ft_strlen_char(const char *s, char c)
 {
-	ft_bzero((void *)g, sizeof(t_game));
-	ft_bzero((void *)&g->file, sizeof(t_file));
-	ft_bzero((void *)&g->map, sizeof(t_map));
-	ft_bzero((void *)&g->player, sizeof(t_player));
-	ft_bzero((void *)&g->textures, sizeof(t_tex));
-}
+	int	i;
 
-void	set_vector(t_vector *vector, int x, int y)
-{
-	vector->x = x;
-	vector->y = y;
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 12:01:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:59:25 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,21 @@ int		parsing(t_game *g, int ac, char **av);
 void	asset_switchman(t_game *g, char *line);
 
 /*---------------------- colors/ ---------------------------------------------*/
+/*------------------------- colors_checker.c ---------------------------------*/
+
+void	colors_checker(t_game *g, char *line);
+void	extract_colors(t_game *g, char *line, t_keyassets color_id);
+
 /*------------------------- get_colors.c -------------------------------------*/
 
 void	handle_ceiling_color(t_game *g, char *line);
 void	handle_floor_color(t_game *g, char *line);
 void	handle_no_asset(t_game *g, char *line);
+
+/*------------------------- utils.c ------------------------------------------*/
+
+void	extract_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
+int		create_rgb(int r, int g, int b);
 
 /*---------------------- textures/ -------------------------------------------*/
 /*------------------------- get_textures.c -----------------------------------*/
@@ -69,6 +79,8 @@ void	_much_arg(t_game *g);
 /*------------------------- asset.c ------------------------------------------*/
 
 void	_wrong_asset(t_game *g);
+void	_wrong_texture(t_game *g);
+void	_wrong_color(t_game *g);
 
 /*------------------------- file.c -------------------------------------------*/
 
@@ -78,6 +90,7 @@ void	_wrong_file(t_game *g);
 
 void	_wrong_map(t_game *g);
 void	_wrong_char(t_game *g);
+void	_wrong_player(t_game *g);
 
 /*--------------- map/ -------------------------------------------------------*/
 /*------------------------- get_map.c ----------------------------------------*/
@@ -92,6 +105,8 @@ void	map_checker(t_game *g);
 
 bool	is_map(char *s);
 size_t	set_map_height(t_game *g, int fd);
+void	set_map_width(t_game *g, char *line);
+void	set_direction(t_game *g, char c);
 
 /*--------------- utils/ -----------------------------------------------------*/
 /*------------------------- checkers.c ---------------------------------------*/

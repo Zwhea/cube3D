@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_checker.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:05:36 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 14:01:51 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/08 11:34:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	textures_checker(t_game *g)
 	while (i < 4 - 1)
 	{
 		if (i < 4 - 1 && !(g->textures.walls[i].sprite))
-		{
-			ft_error(g, false, false, " issue with items's textures\n");
-			clean(g);
-		}
+			error_switchman(g, wrong_texture);
 		i++;
 	}
 }

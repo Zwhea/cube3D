@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/07 12:03:28 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:17:27 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	handle_ceiling_color(t_game *g, char *line)
 {
-	(void)g;
-	int		i;
 	char	*s;
+	int		i;
 
 	i = 0;
 	while (line[i] && ft_strchr(COLOR_CEILING, line[i]))
@@ -26,13 +25,14 @@ void	handle_ceiling_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	printf("%s\n", s);
+	colors_checker(g, s);
+	extract_colors(g, s, ceiling_color);
+	create_rgb(g->colors.rgb[0].r, g->colors.rgb[0].g, g->colors.rgb[0].b);
 	return ;
 }
 
 void	handle_floor_color(t_game *g, char *line)
 {
-	(void)g;
 	int		i;
 	char	*s;
 
@@ -44,7 +44,9 @@ void	handle_floor_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	printf("%s\n", s);
+	colors_checker(g, s);
+	extract_colors(g, s, floor_color);
+	create_rgb(g->colors.rgb[1].r, g->colors.rgb[1].g, g->colors.rgb[1].b);
 	return ;
 }
 

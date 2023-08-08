@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:59:21 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 22:18:04 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:49:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
+char	**ft_copy_split(char **src, char **dst);
 int		ft_skipwhitespace(int savepoint, char *s);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
@@ -28,6 +29,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int		ft_strlen_char(const char *s, char c);
 size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);

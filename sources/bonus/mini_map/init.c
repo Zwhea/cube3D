@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:20:20 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 18:17:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 16:14:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,36 +52,40 @@ static void	_mini_map_render(t_game *g)
 	end.x = MINI_MAP_Y;
 	end.y = MINI_MAP_X;
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
-	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, &g->draw.line_length,
-								&g->draw.endian);
-	// _draw_square(g, 50, 50, 0xffffff);
-	_draw_line(g, start, end, 0xffffff);
+	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
+										&g->draw.line_length, &g->draw.endian);
+	_draw_square(g, 50, 50, WHITE);
+	_draw_line(g, start, end, WHITE);
 	mlx_put_image_to_window(g->mlx, g->map_window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
 }
 
 static void	_draw_line(t_game *g, t_vector start, t_vector end, int color)
 {
-	int dx, dy, p, x, y;
+	int	dx;
+	int	dy;
+	int	p;
+	int	x;
+	int	y;
 	
-	dx=end.x-start.x;
-	dy=end.y-end.x;
-	x=start.x;  
-	y=start.y;  
-	p=2*dy-dx;  
-	while(x<end.x)  
-	{  
-		if(p>=0)  
-		{  
+	dx = end.x - start.x;
+	dy = end.y - end.x;
+	x = start.x;
+	y = start.y;
+	p = 2 * dy - dx;
+	while (x < end.x)
+	{
+		if (p >= 0)
+		{
 			my_mlx_pixel_put(&g->draw, x, y, color);
-			y=y+1;  
-			p=p+2*dy-2*dx;  
-		}  
-		else  
-		{  
+			y = y + 1;
+			p = p + 2 * dy - 2 * dx;
+		}
+		else
+		{
 			my_mlx_pixel_put(&g->draw, x, y, color);
-			p=p+2*dy;
-			x=x+1;
+			p = p + 2 * dy;
+			x = x + 1;
 		}
 	}
 }

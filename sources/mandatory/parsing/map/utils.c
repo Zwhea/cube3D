@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:04:52 by twang             #+#    #+#             */
-/*   Updated: 2023/08/03 16:18:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/07 15:23:01 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,22 @@ size_t	set_map_height(t_game *g, int fd)
 		free(line);
 	close(fd);
 	return (g->map.size.y);
+}
+
+void	set_map_width(t_game *g, char *line)
+{
+	if (ft_strlen_char(line, '\n') > g->map.size.x)
+			g->map.size.x = ft_strlen_char(line, '\n');
+}
+
+void	set_direction(t_game *g, char c)
+{
+	if (c == north)
+		g->player.north = true;
+	else if (c == south)
+		g->player.south = true;
+	else if (c == west)
+		g->player.west = true;
+	else
+		g->player.east = true;
 }
