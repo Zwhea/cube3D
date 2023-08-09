@@ -6,7 +6,7 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/08 16:47:56 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/09 14:32:41 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SOURCES =																	\
 			sources/memory/ft_memset.c										\
 			sources/prints/ft_dprintf.c										\
 			sources/prints/ft_errors.c										\
+			sources/prints/ft_print_array.c									\
 			sources/prints/ft_printf.c										\
 			sources/prints/ft_putchar_fd.c									\
 			sources/prints/ft_putdebug.c									\

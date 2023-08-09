@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/08 15:26:29 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/09 12:12:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ struct s_sprite
 
 struct s_rgb
 {
-	int		r;
-	int		g;
-	int		b;
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
 };
 
 struct s_color
