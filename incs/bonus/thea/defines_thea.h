@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/08 11:26:01 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:00:58 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
+# define WRONG_TEXTURE "program encounter issues with given textures\n"
+# define WRONG_COLOR "program encounter issues with given colors\n"
 # define WRONG_MAP "program encounter issues with given map\n"
 # define WRONG_CHAR "you have an unwanted character in your map\n"
 # define WRONG_PLAYER "you have an issue with player character in your map\n"

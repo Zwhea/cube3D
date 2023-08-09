@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 18:05:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/09 16:00:15 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,24 @@
 
 /*---- typedef enums ---------------------------------------------------------*/
 
+typedef enum e_tile			t_tile;
 typedef enum e_keyerror		t_keyerror;
 typedef enum e_keyassets	t_keyassets;
 typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
+
+enum e_tile
+{
+	empty	= ' ',
+	space	= '0',
+	wall	= '1',
+	north	= 'N',
+	south	= 'S',
+	east	= 'E',
+	west	= 'W',
+	bloup	= '-'
+};
 
 enum e_keyerror
 {
@@ -27,7 +40,11 @@ enum e_keyerror
 	much_args,
 	wrong_file,
 	wrong_asset,
-	wrong_map
+	wrong_texture,
+	wrong_color,
+	wrong_map,
+	wrong_char,
+	wrong_player
 };
 
 enum e_keyassets

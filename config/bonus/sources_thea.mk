@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/06 17:03:46 by twang            ###   ########.fr        #
+#    Updated: 2023/08/09 16:40:47 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,9 @@ SOURCES_BONUS +=															\
 					sources/bonus/init/mlx/init_mlx.c						\
 					sources/bonus/init/struct/init_struct.c					\
 					sources/bonus/mini_map/init.c							\
+					sources/bonus/parsing/assets/colors/colors_checker.c	\
 					sources/bonus/parsing/assets/colors/get_colors.c		\
+					sources/bonus/parsing/assets/colors/utils.c				\
 					sources/bonus/parsing/assets/textures/get_textures.c	\
 					sources/bonus/parsing/assets/textures/textures_checker.c\
 					sources/bonus/parsing/assets/asset_switchman.c			\

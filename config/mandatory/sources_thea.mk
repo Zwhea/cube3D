@@ -6,11 +6,12 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/08 13:57:34 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/09 16:41:18 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
+			sources/mandatory/clean/clean.c									\
 			sources/mandatory/init/mlx/init_mlx.c							\
 			sources/mandatory/init/struct/init_struct.c						\
 			sources/mandatory/parsing/assets/colors/colors_checker.c		\
@@ -28,7 +29,6 @@ SOURCES +=																	\
 			sources/mandatory/parsing/map/map_checker.c						\
 			sources/mandatory/parsing/map/utils.c							\
 			sources/mandatory/parsing/utils/checkers.c						\
-			sources/mandatory/parsing/utils/clean.c							\
 			sources/mandatory/parsing/utils/prints.c						\
 			sources/mandatory/parsing/parsing.c								\
 			sources/mandatory/main.c

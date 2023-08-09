@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 15:17:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/09 16:15:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_mlx(t_game *g)
 	if (g->mlx == NULL)
 		clean(g);
 	g->window = mlx_new_window(g->mlx, g->window_size.x, g->window_size.y, \
-																		"Cub3D");
+								"Cub3D");
 	if (g->window == NULL)
 		clean(g);
 }

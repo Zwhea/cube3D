@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 14:55:14 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:19:45 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@
 typedef struct s_game		t_game;
 typedef struct s_file		t_file;
 typedef struct s_map		t_map;
+typedef struct s_player		t_player;
 typedef struct s_tex		t_tex;
 typedef struct s_sprite		t_sprite;
+typedef struct s_color		t_color;
+typedef struct s_rgb		t_rgb;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_vector		t_vector;
 typedef struct s_draw		t_draw;
@@ -54,6 +57,19 @@ struct s_lst_assets
 	t_assets_ft	func;
 };
 
+struct s_rgb
+{
+	u_int32_t		color;
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
+};
+
+struct s_color
+{
+	t_rgb	rgb[2];
+};
+
 struct s_sprite
 {
 	void	*sprite;
@@ -65,9 +81,20 @@ struct s_tex
 	t_vector	size;
 };
 
+struct s_player
+{
+	t_vector	pos;
+	int			player;
+	bool		north;
+	bool		south;
+	bool		west;
+	bool		east;
+};
+
 struct s_map
 {
 	t_vector	size;
+	int			*line_len;
 	char		**map;
 	char		**b_map;
 	bool		error;
@@ -81,13 +108,15 @@ struct s_file
 
 struct s_game
 {
-	t_draw		draw;
 	t_file		file;
 	t_map		map;
+	t_player	player;
 	t_vector	window_size;
 	t_vector	map_window_size;
 	t_vector	legend_window_size;
 	t_tex		textures;
+	t_color		colors;
+	t_draw		draw;
 	void		*mlx;
 	void		*window;
 	void		*map_window;

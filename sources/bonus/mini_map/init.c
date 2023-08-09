@@ -6,16 +6,20 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:20:20 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 16:14:23 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/09 16:36:30 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
+/*---- prototypes ------------------------------------------------------------*/
+
 static int	_map_key_press(t_keycode key, t_game *g);
 static void	_mini_map_render(t_game *g);
 static void	_draw_square(t_game *g, int x, int y, int color);
 static void	_draw_line(t_game *g, t_vector start, t_vector end, int color);
+
+/*----------------------------------------------------------------------------*/
 
 void	mini_map_init(t_game *g)
 {
@@ -54,8 +58,8 @@ static void	_mini_map_render(t_game *g)
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
-	_draw_square(g, 50, 50, WHITE);
-	_draw_line(g, start, end, WHITE);
+	_draw_square(g, 50, 50, H_WHITE);
+	_draw_line(g, start, end, H_WHITE);
 	mlx_put_image_to_window(g->mlx, g->map_window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
 }
