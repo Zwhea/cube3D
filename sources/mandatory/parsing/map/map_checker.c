@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/09 14:35:16 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:15:32 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	map_checker(t_game *g)
 	if (g->player.player != 1)
 		error_switchman(g, wrong_player);
 	g->map.b_map = ft_copy_split(g->map.map, g->map.b_map);
-	ft_print_array(g->map.b_map);
 	_backtracking(g, g->player.pos.x, g->player.pos.y);
-	free_split(g->map.b_map, g->map.size.y);
+	if (g->map.b_map)
+		free_split(g->map.b_map, g->map.size.y);
 }
 
 static void	_check_char(t_game *g)
