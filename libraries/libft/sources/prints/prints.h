@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prints.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:15:09 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/31 09:25:26 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/09 14:32:17 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	program(void);
 void	error(void);
 void	warning(void);
 void	usage(void);
+void	ft_print_array(char **array);
 int		ft_printf(const char *str, ...) __attribute__((format(printf, 1, 2)));
 size_t	ft_putchar_fd(int c, int fd);
 void	ft_putdebug(int line, char *file);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/03 14:14:08 by twang            ###   ########.fr        #
+#    Updated: 2023/08/09 14:32:41 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ SOURCES =																	\
 			sources/memory/ft_memset.c										\
 			sources/prints/ft_dprintf.c										\
 			sources/prints/ft_errors.c										\
+			sources/prints/ft_print_array.c									\
 			sources/prints/ft_printf.c										\
 			sources/prints/ft_putchar_fd.c									\
 			sources/prints/ft_putdebug.c									\
@@ -67,6 +68,7 @@ SOURCES =																	\
 			sources/prints/ft_putnbr_unsigned_fd.c							\
 			sources/prints/ft_putstr_fd.c									\
 			sources/prints/ft_tabmult.c										\
+			sources/strings/ft_copy_split.c									\
 			sources/strings/ft_skipwhitespaces.c							\
 			sources/strings/ft_split.c										\
 			sources/strings/ft_strchr.c										\
@@ -76,6 +78,7 @@ SOURCES =																	\
 			sources/strings/ft_strjoin.c									\
 			sources/strings/ft_strlcat.c									\
 			sources/strings/ft_strlcpy.c									\
+			sources/strings/ft_strlen_char.c								\
 			sources/strings/ft_strlen.c										\
 			sources/strings/ft_strmapi.c									\
 			sources/strings/ft_strncmp.c									\
