@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:03:33 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/10 15:43:50 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	_check_around(t_game *g, int x, int y);
 
 void	map_checker(t_game *g)
 {
+	if (!g->map.map)
+		error_switchman(g, wrong_map);
 	_check_char(g);
 	if (g->player.player != 1)
 		error_switchman(g, wrong_player);
@@ -40,7 +42,9 @@ static void	_check_char(t_game *g)
 	while (g->map.map[++i])
 	{
 		if (ft_isempty(g->map.map[i]))
+		{
 			error_switchman(g, wrong_map);
+		}
 		set_map_width(g, g->map.map[i]);
 		j = -1;
 		while (g->map.map[i][++j])
