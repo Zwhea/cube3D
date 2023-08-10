@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/08 14:31:25 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:23:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	extract_colors(t_game *g, char *line, t_keyassets color_id)
 {
 	char	**color;
 	int		id;
-	
+
 	color = (char **)ft_calloc(4, sizeof(char *));
 	color = ft_split(line, ',');
 	if (!color)
-		puts("cheh"); //protege sa connasse
+		puts("cheh");
 	id = 0;
 	while (color[id])
 	{

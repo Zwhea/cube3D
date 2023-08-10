@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/09 16:19:45 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:19:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_player		t_player;
 typedef struct s_tex		t_tex;
 typedef struct s_sprite		t_sprite;
 typedef struct s_color		t_color;
-typedef struct s_rgb		t_rgb;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_vector		t_vector;
 typedef struct s_draw		t_draw;
@@ -57,17 +56,12 @@ struct s_lst_assets
 	t_assets_ft	func;
 };
 
-struct s_rgb
+struct s_color
 {
 	u_int32_t		color;
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
-};
-
-struct s_color
-{
-	t_rgb	rgb[2];
 };
 
 struct s_sprite
@@ -115,7 +109,7 @@ struct s_game
 	t_vector	map_window_size;
 	t_vector	legend_window_size;
 	t_tex		textures;
-	t_color		colors;
+	t_color		color[2];
 	t_draw		draw;
 	void		*mlx;
 	void		*window;

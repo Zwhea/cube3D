@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean.c                                            :+:      :+:    :+:   */
+/*   clean_assets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/09 16:37:59 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 11:41:02 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,28 +38,4 @@ void	clean_map(t_game *g)
 {
 	free_split(g->map.map, g->map.size.y);
 	exit(0);
-}
-
-int	clean(t_game *g)
-{
-	printf(RED"closing program\n"END);
-	if (g->map.map)
-		clean_map(g);
-	clean_textures(g);
-	if (g->window)
-		mlx_destroy_window(g->mlx, g->window);
-	if (g->map_window)
-		mlx_destroy_window(g->mlx, g->map_window);
-	// if (g->mlx)
-	// 	mlx_destroy_display(g->mlx);
-	free(g->mlx);
-	exit(0);
-}
-
-int	clean_mini_map(t_game *g)
-{
-	printf(RED"closing mini map\n"END);
-	mlx_destroy_window(g->mlx, g->map_window);
-	g->map_window = NULL;
-	return (0);
 }

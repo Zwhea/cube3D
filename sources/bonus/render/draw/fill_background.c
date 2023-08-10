@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_pixel_put.c                                    :+:      :+:    :+:   */
+/*   fill_background.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/06 16:41:16 by twang             #+#    #+#             */
-/*   Updated: 2023/08/06 16:43:24 by twang            ###   ########.fr       */
+/*   Created: 2023/08/10 11:51:33 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 12:01:56 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color)
+void	fill_background(t_game *g, int size_x, int size_y, int color)
 {
-	char	*dst;
+	int	i;
+	int	j;
 
-	dst = draw->addr + (y * draw->line_length + x * (draw->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	i = 0;
+	while (i < size_x)
+	{
+		j = 0;
+		while (j < size_y)
+		{
+			my_mlx_pixel_put(&g->draw, i, j, color);
+			j++;
+		}
+		i++;
+	}
 }

@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums_arthur.h                                     :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:05:29 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
+/*   Updated: 2023/08/10 10:52:20 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUMS_ARTHUR_H
-# define ENUMS_ARTHUR_H
+#include "cub3D_thea.h"
 
-/*---- typedef enums ---------------------------------------------------------*/
-
-/*---- enums -----------------------------------------------------------------*/
-
-#endif
+void	init_mlx(t_game *g)
+{
+	set_vector(&g->window_size, WINDOW_X, WINDOW_Y);
+	g->mlx = mlx_init();
+	if (g->mlx == NULL)
+		clean(g);
+	g->window = mlx_new_window(g->mlx, g->window_size.x, g->window_size.y, \
+								"Cub3D");
+	if (g->window == NULL)
+		clean(g);
+}

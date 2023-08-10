@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/08 13:59:25 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/10 11:34:19 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,49 @@
 # include "structures_thea.h"
 
 /*----------------------------------------------------------------------------*/
+/*---- clean/ ----------------------------------------------------------------*/
+/*------------------------- clean.c ------------------------------------------*/
+
+int		close_n_free(t_game *g, bool is_error);
+void	clean_textures(t_game *g);
+void	clean_map(t_game *g);
+int		clean_mini_map(t_game *g);
+int		clean(t_game *g);
+
+/*---- errors/ ---------------------------------------------------------------*/
+
+void	error_switchman(t_game *g, t_keyerror error_key);
+
+/*--------------- inventory/ -------------------------------------------------*/
+/*------------------------- argument.c ---------------------------------------*/
+
+void	_no_arg(t_game *g);
+void	_much_arg(t_game *g);
+
+/*------------------------- asset.c ------------------------------------------*/
+
+void	_wrong_asset(t_game *g);
+void	_wrong_texture(t_game *g);
+void	_wrong_color(t_game *g);
+
+/*------------------------- file.c -------------------------------------------*/
+
+void	_wrong_file(t_game *g);
+
+/*------------------------- map.c --------------------------------------------*/
+
+void	_wrong_map(t_game *g);
+void	_wrong_char(t_game *g);
+void	_wrong_player(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- mlx/ -------------------------------------------------------*/
+/*------------------------- init.c -------------------------------------------*/
 
 void	init_mlx(t_game *g);
 
 /*--------------- struct/ ----------------------------------------------------*/
+/*------------------------- init.c -------------------------------------------*/
 
 void	init_struct(t_game *g);
 void	set_vector(t_vector *vector, int x, int y);
@@ -66,32 +102,6 @@ void	handle_east_texture(t_game *g, char *line);
 
 void	textures_checker(t_game *g);
 
-/*--------------- errors/ ----------------------------------------------------*/
-
-void	error_switchman(t_game *g, t_keyerror error_key);
-
-/*---------------------- inventory/ ------------------------------------------*/
-/*------------------------- argument.c ---------------------------------------*/
-
-void	_no_arg(t_game *g);
-void	_much_arg(t_game *g);
-
-/*------------------------- asset.c ------------------------------------------*/
-
-void	_wrong_asset(t_game *g);
-void	_wrong_texture(t_game *g);
-void	_wrong_color(t_game *g);
-
-/*------------------------- file.c -------------------------------------------*/
-
-void	_wrong_file(t_game *g);
-
-/*------------------------- map.c --------------------------------------------*/
-
-void	_wrong_map(t_game *g);
-void	_wrong_char(t_game *g);
-void	_wrong_player(t_game *g);
-
 /*--------------- map/ -------------------------------------------------------*/
 /*------------------------- get_map.c ----------------------------------------*/
 
@@ -113,15 +123,22 @@ void	set_direction(t_game *g, char c);
 
 void	is_this_first_mistake(t_game *g, bool is_warning);
 
-/*------------------------- clean.c ------------------------------------------*/
-
-int		close_n_free(t_game *g, bool is_error);
-void	clean_textures(t_game *g);
-void	clean_map(t_game *g);
-int		clean(t_game *g);
-
 /*------------------------- prints.c -----------------------------------------*/
 
 void	ft_error(t_game *g, bool is_warn, bool how_to, char *msg);
+
+/*---- render/ ---------------------------------------------------------------*/
+/*--------------- draw/ ------------------------------------------------------*/
+/*------------------------- draw_line.c --------------------------------------*/
+
+void	draw_line(t_game *g, t_vector start, t_vector end, int color);
+
+/*------------------------- draw_square.c ------------------------------------*/
+
+void	draw_square(t_game *g, int x, int y, int color);
+
+/*------------------------- mlx_pixel_put.c ----------------------------------*/
+
+void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color);
 
 #endif

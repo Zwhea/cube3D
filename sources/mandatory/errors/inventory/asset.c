@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums_arthur.h                                     :+:      :+:    :+:   */
+/*   asset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:05:29 by wangthea         ###   ########.fr       */
+/*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 12:03:55 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUMS_ARTHUR_H
-# define ENUMS_ARTHUR_H
+#include "cub3D_thea.h"
 
-/*---- typedef enums ---------------------------------------------------------*/
+void	_wrong_asset(t_game *g)
+{
+	ft_error(g, false, false, WRONG_ASSET);
+}
 
-/*---- enums -----------------------------------------------------------------*/
+void	_wrong_texture(t_game *g)
+{
+	ft_error(g, false, false, WRONG_TEXTURE);
+	clean(g);
+}
 
-#endif
+void	_wrong_color(t_game *g)
+{
+	ft_error(g, false, false, WRONG_COLOR);
+	clean(g);
+}

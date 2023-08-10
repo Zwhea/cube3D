@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums_arthur.h                                     :+:      :+:    :+:   */
+/*   mlx_pixel_put.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:05:29 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/06 16:41:16 by twang             #+#    #+#             */
+/*   Updated: 2023/08/10 12:01:51 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUMS_ARTHUR_H
-# define ENUMS_ARTHUR_H
+#include "cub3D_thea.h"
 
-/*---- typedef enums ---------------------------------------------------------*/
+void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color)
+{
+	char	*dst;
 
-/*---- enums -----------------------------------------------------------------*/
-
-#endif
+	dst = draw->addr + (y * draw->line_length + x * (draw->bits_per_pixel / 8));
+	*(unsigned int *)dst = color;
+}

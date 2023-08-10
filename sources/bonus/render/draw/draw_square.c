@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enums_arthur.h                                     :+:      :+:    :+:   */
+/*   draw_square.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:05:29 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 10:33:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENUMS_ARTHUR_H
-# define ENUMS_ARTHUR_H
+#include "cub3D_thea.h"
 
-/*---- typedef enums ---------------------------------------------------------*/
+void	draw_square(t_game *g, int x, int y, int color)
+{
+	int	i;
+	int	j;
 
-/*---- enums -----------------------------------------------------------------*/
-
-#endif
+	i = 0;
+	while (i < 100)
+	{
+		j = 0;
+		while (j < 100)
+		{
+			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+			j++;
+		}
+		i++;
+	}
+}

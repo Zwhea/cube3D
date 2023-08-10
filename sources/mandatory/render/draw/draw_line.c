@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   asset.c                                            :+:      :+:    :+:   */
+/*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/08 11:30:54 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/10 10:27:05 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 12:04:48 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	_wrong_asset(t_game *g)
+void	draw_line(t_game *g, t_vector start, t_vector end, int color)
 {
-	ft_error(g, false, false, WRONG_ASSET);
-}
+	int	dx;
+	int	dy;
+	int	p;
+	int	x;
+	int	y;
 
-void	_wrong_texture(t_game *g)
-{
-	ft_error(g, false, false, WRONG_TEXTURE);
-	clean(g);
-}
-
-void	_wrong_color(t_game *g)
-{
-	ft_error(g, false, false, WRONG_COLOR);
-	clean(g);
+	dx = end.x - start.x;
+	dy = end.y - end.x;
+	x = start.x;
+	y = start.y;
+	p = 2 * dy - dx;
+	while (x < end.x)
+	{
+		if (p >= 0)
+		{
+			my_mlx_pixel_put(&g->draw, x, y, color);
+			y = y + 1;
+			p = p + 2 * dy - 2 * dx;
+		}
+		else
+		{
+			my_mlx_pixel_put(&g->draw, x, y, color);
+			p = p + 2 * dy;
+			x = x + 1;
+		}
+	}
 }

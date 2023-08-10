@@ -1,25 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_mlx.c                                         :+:      :+:    :+:   */
+/*   draw_line.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:05:07 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/10 10:27:05 by wangthea          #+#    #+#             */
+/*   Updated: 2023/08/10 12:01:21 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	init_mlx(t_game *g)
+void	draw_line(t_game *g, t_vector start, t_vector end, int color)
 {
-	set_vector(&g->window_size, WINDOW_X, WINDOW_Y);
-	g->mlx = mlx_init();
-	if (g->mlx == NULL)
-		clean(g);
-	g->window = mlx_new_window(g->mlx, g->window_size.x, g->window_size.y, \
-									"Cub3D");
-	if (g->window == NULL)
-		clean(g);
+	int	dx;
+	int	dy;
+	int	p;
+	int	x;
+	int	y;
+
+	dx = end.x - start.x;
+	dy = end.y - end.x;
+	x = start.x;
+	y = start.y;
+	p = 2 * dy - dx;
+	while (x < end.x)
+	{
+		if (p >= 0)
+		{
+			my_mlx_pixel_put(&g->draw, x, y, color);
+			y = y + 1;
+			p = p + 2 * dy - 2 * dx;
+		}
+		else
+		{
+			my_mlx_pixel_put(&g->draw, x, y, color);
+			p = p + 2 * dy;
+			x = x + 1;
+		}
+	}
 }

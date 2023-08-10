@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/09 14:47:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/10 10:19:09 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	handle_ceiling_color(t_game *g, char *line)
 		line[i] = '\0';
 	colors_checker(g, s);
 	extract_colors(g, s, ceiling_color);
-	g->colors.rgb[0].color = create_rgb(g->colors.rgb[0].r, g->colors.rgb[0].g, g->colors.rgb[0].b);
+	g->color[0].color = create_rgb(g->color[0].r, g->color[0].g, g->color[0].b);
 	return ;
 }
 
@@ -46,7 +46,7 @@ void	handle_floor_color(t_game *g, char *line)
 		line[i] = '\0';
 	colors_checker(g, s);
 	extract_colors(g, s, floor_color);
-	g->colors.rgb[1].color = create_rgb(g->colors.rgb[1].r, g->colors.rgb[1].g, g->colors.rgb[1].b);
+	g->color[1].color = create_rgb(g->color[1].r, g->color[1].g, g->color[1].b);
 	return ;
 }
 
