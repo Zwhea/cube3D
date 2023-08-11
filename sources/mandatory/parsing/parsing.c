@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/08 15:19:49 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:20:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ static void	_monitor(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
-int	parsing(t_game *g, int ac, char **av)
+int	parsing(t_game *g, char **av)
 {
-	if (ac > 2)
-		error_switchman(g, much_args);
-	if (_check_file(g, av[1]) > 0)
+	if (_check_file(g, av[1]) != -1)
 	{
+		init_mlx(g);
 		_pathfinder(g);
 		_monitor(g);
+		init_mlx_functions(g);
 	}
 	else
 	{

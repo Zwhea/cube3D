@@ -6,7 +6,7 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/10 11:54:50 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/11 14:46:34 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/map/get_map.c						\
 					sources/bonus/parsing/map/map_checker.c					\
 					sources/bonus/parsing/map/utils.c						\
-					sources/bonus/parsing/utils/checkers.c					\
-					sources/bonus/parsing/utils/prints.c					\
 					sources/bonus/parsing/parsing.c							\
 					sources/bonus/render/draw/draw_line.c					\
 					sources/bonus/render/draw/draw_square.c					\

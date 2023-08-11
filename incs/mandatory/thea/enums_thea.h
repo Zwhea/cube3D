@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/08 11:29:31 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:04:28 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,16 @@ enum e_tile
 enum e_keyerror
 {
 	no_args,
-	much_args,
 	wrong_file,
 	wrong_asset,
 	wrong_texture,
+	wrong_textures,
 	wrong_color,
+	wrong_colors,
 	wrong_map,
 	wrong_char,
-	wrong_player
+	wrong_player,
+	trapped_player
 };
 
 enum e_keyassets

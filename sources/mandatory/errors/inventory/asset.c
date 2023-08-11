@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:03:55 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:43:30 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,30 @@
 
 void	_wrong_asset(t_game *g)
 {
-	ft_error(g, false, false, WRONG_ASSET);
+	(void)g;
+	ft_error(false, WRONG_ASSET);
 }
 
 void	_wrong_texture(t_game *g)
 {
-	ft_error(g, false, false, WRONG_TEXTURE);
+	ft_error(false, WRONG_TEXTURE);
+	clean(g);
+}
+
+void	_wrong_textures(t_game *g)
+{
+	ft_error(false, WRONG_TEXTURES);
 	clean(g);
 }
 
 void	_wrong_color(t_game *g)
 {
-	ft_error(g, false, false, WRONG_COLOR);
+	ft_error(false, WRONG_COLOR);
+	clean(g);
+}
+
+void	_wrong_colors(t_game *g)
+{
+	ft_error(false, WRONG_COLORS);
 	clean(g);
 }

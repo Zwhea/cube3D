@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 10:41:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:04:50 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,20 @@ int		clean(t_game *g);
 /*---- errors/ ---------------------------------------------------------------*/
 
 void	error_switchman(t_game *g, t_keyerror error_key);
+void	ft_error(bool how_to, char *msg);
 
 /*--------------- inventory/ -------------------------------------------------*/
 /*------------------------- argument.c ---------------------------------------*/
 
 void	_no_arg(t_game *g);
-void	_much_arg(t_game *g);
 
 /*------------------------- asset.c ------------------------------------------*/
 
 void	_wrong_asset(t_game *g);
 void	_wrong_texture(t_game *g);
+void	_wrong_textures(t_game *g);
 void	_wrong_color(t_game *g);
+void	_wrong_colors(t_game *g);
 
 /*------------------------- file.c -------------------------------------------*/
 
@@ -52,12 +54,14 @@ void	_wrong_file(t_game *g);
 void	_wrong_map(t_game *g);
 void	_wrong_char(t_game *g);
 void	_wrong_player(t_game *g);
+void	_trapped_player(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- mlx/ -------------------------------------------------------*/
 /*------------------------- init.c -------------------------------------------*/
 
 void	init_mlx(t_game *g);
+void	init_mlx_functions(t_game *g);
 
 /*--------------- struct/ ----------------------------------------------------*/
 /*------------------------- init.c -------------------------------------------*/
@@ -67,7 +71,7 @@ void	set_vector(t_vector *vector, int x, int y);
 
 /*---- parsing/ --------------------------------------------------------------*/
 
-int		parsing(t_game *g, int ac, char **av);
+int		parsing(t_game *g, char **av);
 
 /*--------------- assets/ ----------------------------------------------------*/
 
@@ -117,15 +121,7 @@ bool	is_map(char *s);
 size_t	set_map_height(t_game *g, int fd);
 void	set_map_width(t_game *g, char *line);
 void	set_direction(t_game *g, char c);
-
-/*--------------- utils/ -----------------------------------------------------*/
-/*------------------------- checkers.c ---------------------------------------*/
-
-//void	is_this_first_mistake(t_game *g, bool is_warning);
-
-/*------------------------- prints.c -----------------------------------------*/
-
-void	ft_error(t_game *g, bool is_warn, bool how_to, char *msg);
+void	check_around(t_game *g, int x, int y);
 
 /*---- render/ ---------------------------------------------------------------*/
 /*--------------- draw/ ------------------------------------------------------*/

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 10:05:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:40:01 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 /*---- error messages --------------------------------------------------------*/
 
 # define NO_ARG "program needs a map you fool !!!\n"
-# define MUCH_ARG "program will only accept the first argument.\n"
-
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
 # define WRONG_TEXTURE "program encounter issues with given textures\n"
+# define WRONG_TEXTURES "a bit too much textures don't you think ?\n"
 # define WRONG_COLOR "program encounter issues with given colors\n"
+# define WRONG_COLORS "and that's too much colors right ?\n"
 # define WRONG_MAP "program encounter issues with given map\n"
 # define WRONG_CHAR "you have an unwanted character in your map\n"
 # define WRONG_PLAYER "you have an issue with player character in your map\n"

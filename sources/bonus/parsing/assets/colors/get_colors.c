@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:37:45 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 10:19:09 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:38:08 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	handle_ceiling_color(t_game *g, char *line)
 	int		i;
 
 	i = 0;
+	if (g->color[0].color)
+		error_switchman(g, wrong_colors);
 	while (line[i] && ft_strchr(COLOR_CEILING, line[i]))
 		i++;
 	s = &line[i];
@@ -37,6 +39,8 @@ void	handle_floor_color(t_game *g, char *line)
 	char	*s;
 
 	i = 0;
+	if (g->color[1].color)
+		error_switchman(g, wrong_colors);
 	while (line[i] && ft_strchr(COLOR_FLOOR, line[i]))
 		i++;
 	s = &line[i];

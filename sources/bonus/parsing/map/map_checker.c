@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 10:23:37 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:14:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	_check_char(t_game *g);
 static void	_backtracking(t_game *g, int x, int y);
-static void	_check_around(t_game *g, int x, int y);
+static void	_check_map(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
@@ -27,6 +27,7 @@ void	map_checker(t_game *g)
 		error_switchman(g, wrong_player);
 	g->map.b_map = ft_copy_split(g->map.map, g->map.b_map);
 	_backtracking(g, g->player.pos.x, g->player.pos.y);
+	_check_map(g);
 	if (g->map.b_map)
 		free_split(g->map.b_map, g->map.size.y);
 }
@@ -59,7 +60,7 @@ static void	_check_char(t_game *g)
 
 static void	_backtracking(t_game *g, int x, int y)
 {
-	_check_around(g, x, y);
+	check_around(g, x, y);
 	if (g->map.b_map[x][y + 1] != wall)
 	{
 		g->map.b_map[x][y + 1] = wall;
@@ -83,12 +84,14 @@ static void	_backtracking(t_game *g, int x, int y)
 	g->map.b_map[x][y] = wall;
 }
 
-static void	_check_around(t_game *g, int x, int y)
+static void	_check_map(t_game *g)
 {
-	if (x == 0 || y == 0 || x == g->map.size.y || y == g->map.line_len[x] - 1)
-		error_switchman(g, wrong_map);
-	if (g->map.line_len[x + 1] <= y || g->map.line_len[x - 1] <= y \
-		|| g->map.b_map[x + 1][y] == empty || g->map.b_map[x - 1][y] == empty \
-		|| g->map.b_map[x][y + 1] == empty || g->map.b_map[x][y - 1] == empty)
-		error_switchman(g, wrong_map);
+	int	i;
+
+	i = -1;
+	while (g->map.b_map[++i])
+	{
+		if (ft_strchr(g->map.b_map[i], '0'))
+			error_switchman(g, trapped_player);
+	}
 }
