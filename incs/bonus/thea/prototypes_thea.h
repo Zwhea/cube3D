@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 14:47:18 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 16:08:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ void	_no_arg(t_game *g);
 
 void	_wrong_asset(t_game *g);
 void	_wrong_texture(t_game *g);
+void	_wrong_textures(t_game *g);
 void	_wrong_color(t_game *g);
+void	_wrong_colors(t_game *g);
 
 /*------------------------- file.c -------------------------------------------*/
 
@@ -56,6 +58,7 @@ void	_wrong_file(t_game *g);
 void	_wrong_map(t_game *g);
 void	_wrong_char(t_game *g);
 void	_wrong_player(t_game *g);
+void	_trapped_player(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- legend/ ----------------------------------------------------*/
@@ -132,6 +135,7 @@ bool	is_map(char *s);
 size_t	set_map_height(t_game *g, int fd);
 void	set_map_width(t_game *g, char *line);
 void	set_direction(t_game *g, char c);
+void	check_around(t_game *g, int x, int y);
 
 /*---- render/ ---------------------------------------------------------------*/
 /*--------------- draw/ ------------------------------------------------------*/

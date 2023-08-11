@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:38:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/09 16:13:06 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:33:09 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	handle_north_texture(t_game *g, char *line)
 	char	*s;
 
 	i = 0;
+	if (g->textures.walls[north_texture].sprite)
+		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_NORTH, line[i]))
 		i++;
 	s = &line[i];
@@ -36,6 +38,8 @@ void	handle_south_texture(t_game *g, char *line)
 	char	*s;
 
 	i = 0;
+	if (g->textures.walls[south_texture].sprite)
+		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_SOUTH, line[i]))
 		i++;
 	s = &line[i];
@@ -54,6 +58,8 @@ void	handle_west_texture(t_game *g, char *line)
 	char	*s;
 
 	i = 0;
+	if (g->textures.walls[west_texture].sprite)
+		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_WEST, line[i]))
 		i++;
 	s = &line[i];
@@ -72,6 +78,8 @@ void	handle_east_texture(t_game *g, char *line)
 	char	*s;
 
 	i = 0;
+	if (g->textures.walls[east_texture].sprite)
+		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_EAST, line[i]))
 		i++;
 	s = &line[i];

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 14:26:59 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:20:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	parsing(t_game *g, char **av)
 	if (_check_file(g, av[1]) != -1)
 	{
 		init_mlx(g);
-		init_mlx_functions(g);
 		_pathfinder(g);
 		_monitor(g);
+		init_mlx_functions(g);
 	}
 	else
 	{

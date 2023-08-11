@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:55:13 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 14:39:42 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 15:02:28 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	_no_arg(t_game *g)
 {
+	(void)g;
 	ft_error(true, NO_ARG);
 }
