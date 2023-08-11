@@ -6,7 +6,7 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/10 10:47:47 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/11 12:05:57 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ SOURCES +=																	\
 			sources/mandatory/errors/inventory/file.c						\
 			sources/mandatory/errors/inventory/map.c						\
 			sources/mandatory/errors/error_switchman.c						\
-			sources/mandatory/init/mlx/init_mlx.c							\
-			sources/mandatory/init/struct/init_struct.c						\
+			sources/mandatory/init/mlx/init.c								\
+			sources/mandatory/init/struct/init.c							\
 			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
 			sources/mandatory/parsing/assets/colors/utils.c					\
@@ -28,8 +28,6 @@ SOURCES +=																	\
 			sources/mandatory/parsing/map/get_map.c							\
 			sources/mandatory/parsing/map/map_checker.c						\
 			sources/mandatory/parsing/map/utils.c							\
-			sources/mandatory/parsing/utils/checkers.c						\
-			sources/mandatory/parsing/utils/prints.c						\
 			sources/mandatory/parsing/parsing.c								\
 			sources/mandatory/render/draw/draw_line.c						\
 			sources/mandatory/render/draw/draw_square.c						\

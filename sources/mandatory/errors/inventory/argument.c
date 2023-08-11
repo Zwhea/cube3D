@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 16:55:13 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 10:28:50 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:39:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 void	_no_arg(t_game *g)
 {
-	ft_error(g, false, true, NO_ARG);
-}
-
-void	_much_arg(t_game *g)
-{
-	ft_error(g, true, false, MUCH_ARG);
+	ft_error(true, NO_ARG);
 }

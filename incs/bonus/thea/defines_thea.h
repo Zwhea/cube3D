@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 10:05:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 14:42:46 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 /*---- error messages --------------------------------------------------------*/
 
 # define NO_ARG "program needs a map you fool !!!\n"
-# define MUCH_ARG "program will only accept the first argument.\n"
-
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
 # define WRONG_TEXTURE "program encounter issues with given textures\n"
