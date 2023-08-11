@@ -38,5 +38,6 @@ static int	_key_press(t_keycode key, t_game *g)
 - revoir gestion d'erreurs
 
 leaks, fds, mlx leaks, clean EVERYTHING YUP.
+window opening no matter what
 
 */

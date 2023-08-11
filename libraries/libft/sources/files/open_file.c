@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 11:48:21 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/25 11:44:28 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 10:39:18 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	open_file(const char *file)
 	}
 	fd = open(file, O_RDONLY, 0644);
 	if (fd == -1)
-	{
-		program();
-		ft_dprintf(2, "\t");
-		perror("open");
 		close(fd);
-	}
 	return (fd);
 }

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/09 16:00:58 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/11 10:05:36 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /*---- error messages --------------------------------------------------------*/
 
-# define NO_ARG "\tprogram needs a map you fool !!!\n"
+# define NO_ARG "program needs a map you fool !!!\n"
 # define MUCH_ARG "program will only accept the first argument.\n"
 
 # define WRONG_FILE "program encounter issues with given file\n"
