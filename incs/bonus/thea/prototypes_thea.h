@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 16:08:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:11:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	_wrong_file(t_game *g);
 void	_wrong_map(t_game *g);
 void	_wrong_char(t_game *g);
 void	_wrong_player(t_game *g);
-void	_trapped_player(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- legend/ ----------------------------------------------------*/
