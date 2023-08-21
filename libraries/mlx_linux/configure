@@ -1,0 +1,133 @@
+#!/usr/bin/env sh
+
+set -e
+
+BOLD="\033[1m"
+RESET="\033[0m"
+LIGHT_RED="\033[91m"
+LIGHT_GREEN="\033[92m"
+LIGHT_CYAN="\033[96m"
+PURPLE="\033[35m"
+LIGHTBLUE="\033[36m"
+RED="\033[31m"
+GREEN="\033[32m"
+
+logging(){
+	local type=$1; shift
+	printf "[ %b ]\t%b\n" "$type" "${LIGHTBLUE}$*${RESET}"
+}
+log_info(){
+	printf "%-95b%b" "[ ${PURPLE}compiling${RESET} ]\t${LIGHTBLUE}$@${RESET}" "${GREEN}[✓]${RESET}\n"
+}
+log_clean(){
+	logging "${RED}removing${RESET}" "$@"
+}
+log_error(){
+	logging "${LIGHT_RED}error${RESET}" "$@" >&2
+}
+
+# find and print x11 header path
+get_xlib_include_path(){
+	local result=""
+
+	for inc in \
+		/usr/X11/include          \
+		/usr/X11R6/include        \
+		/usr/X11R5/include        \
+		/usr/X11R4/include        \
+								\
+		/usr/include              \
+		/usr/include/X11          \
+		/usr/include/X11R6        \
+		/usr/include/X11R5        \
+		/usr/include/X11R4        \
+								\
+		/usr/local/X11/include    \
+		/usr/local/X11R6/include  \
+		/usr/local/X11R5/include  \
+		/usr/local/X11R4/include  \
+								\
+		/usr/local/include/X11    \
+		/usr/local/include/X11R6  \
+		/usr/local/include/X11R5  \
+		/usr/local/include/X11R4  \
+								\
+		/usr/X386/include         \
+		/usr/x386/include         \
+		/usr/XFree86/include/X11  \
+								\
+		/usr/local/include        \
+		/usr/athena/include       \
+		/usr/local/x11r5/include  \
+		/usr/lpp/Xamples/include  \
+								\
+		/usr/openwin/include      \
+		/usr/openwin/share/include
+	do
+		if [ -f "$inc/X11/Xlib.h" -a -f "$inc/X11/extensions/XShm.h" ]; then
+			result=$inc
+			break
+		fi
+	done
+	echo $result
+}
+
+show_help(){
+cat <<EOF
+Usage :
+$0              Auto-configure and make MinilibX
+$0 clean        Execute the clean rule of both Makefile.gen
+EOF
+}
+
+clean(){
+	log_clean 'mlx_linux binaries files'
+	${MAKE} -f Makefile.gen clean
+	log_clean 'mlx_linux binaries files'
+	${MAKE} -f Makefile.gen -C test/ --no-print-directory clean
+}
+
+parse_args(){
+	case "$1" in
+		--help | -h)
+			show_help
+			exit 0;;
+		clean)
+			clean
+			exit 0;;
+		"") return;;
+		*)
+			log_error "unknown command \"$1\"\nRun \"./configure --help\" for usage."
+			exit 1;;
+	esac
+}
+
+main(){
+	local xlib_inc="$(get_xlib_include_path)"
+
+	case $(uname) in
+		FreeBSD) MAKE=gmake ;;
+		*) MAKE=make ;;
+	esac
+
+	parse_args "$@"
+	if [ -z "$xlib_inc" ]; then
+		log_error "can't find a suitable X11 include directory."
+		exit 1
+	fi
+	log_info "found X11 & include path directory"
+
+	log_info 'makefile.gen from template makefile.mk'
+		echo "INC=$xlib_inc"  	 	    	>  Makefile.gen 
+		cat Makefile.mk | grep -v %%%%  	>> Makefile.gen
+	log_info 'makefile.gen from template makefile.mk'
+		echo "INC=$xlib_inc"				>  test/Makefile.gen
+		cat test/Makefile.mk | grep -v %%%% >> test/Makefile.gen
+
+	log_info 'generate test/makefile.gen'
+		${MAKE} -f Makefile.gen all
+	log_info 'make all from mlx_linux'
+		(cd test ; ${MAKE} -f Makefile.gen all )
+}
+
+main "$@"
