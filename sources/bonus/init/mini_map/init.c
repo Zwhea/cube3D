@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:20:20 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 13:23:57 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/21 14:09:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	_map_key_press(t_keycode key, t_game *g)
 {
 	if (key == esc_key || key == m_key)
 		clean_mini_map(g);
-	else if (l_key)
+	else if (key == l_key)
 		legend_init(g);
 	return (0);
 }

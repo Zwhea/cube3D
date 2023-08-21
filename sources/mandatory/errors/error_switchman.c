@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_switchman.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:06:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 16:08:19 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:10:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	error_switchman(t_game *g, t_keyerror error_key)
 								&_wrong_asset, &_wrong_texture, \
 								&_wrong_textures, &_wrong_color, \
 								&_wrong_colors, &_wrong_map, &_wrong_char, \
-								&_wrong_player, &_trapped_player};
+								&_wrong_player};
 
 	(*error_tab[error_key])(g);
 }
