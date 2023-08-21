@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 10:23:12 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:45:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	extract_colors(t_game *g, char *line, t_keyassets color_id)
 	char	**color;
 	int		id;
 
-	color = (char **)ft_calloc(4, sizeof(char *));
 	color = ft_split(line, ',');
 	if (!color)
 		puts("cheh");
