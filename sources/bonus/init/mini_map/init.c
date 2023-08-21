@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:20:20 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 11:59:06 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 13:23:57 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@ void	mini_map_init(t_game *g)
 {
 	if (g->map_window)
 		clean_mini_map(g);
-	set_vector(&g->map_window_size, MINI_MAP_X, MINI_MAP_Y);
-	g->map_window = mlx_new_window(g->mlx, g->map_window_size.x, \
+	else
+	{
+		set_vector(&g->map_window_size, MINI_MAP_X, MINI_MAP_Y);
+		g->map_window = mlx_new_window(g->mlx, g->map_window_size.x, \
 									g->map_window_size.y, "mini_map");
-	if (!g->map_window)
-		clean(g);
-	mini_map_render(g);
-	mlx_key_hook(g->map_window, _map_key_press, g);
-	mlx_hook(g->map_window, 17, 1L << 17, clean_mini_map, g);
+		if (!g->map_window)
+			clean(g);
+		mini_map_render(g);
+		mlx_key_hook(g->map_window, _map_key_press, g);
+		mlx_hook(g->map_window, 17, 1L << 17, clean_mini_map, g);
+	}
 }
 
 static int	_map_key_press(t_keycode key, t_game *g)
