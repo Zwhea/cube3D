@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_windows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 12:01:04 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 11:03:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	clean(t_game *g)
 		clean_mini_map(g);
 	if (g->legend_window)
 		clean_legend(g);
-	// if (g->mlx)
-	// 	mlx_destroy_display(g->mlx);
+	if (g->mlx)
+		mlx_destroy_display(g->mlx);
 	free(g->mlx);
 	exit(0);
 }

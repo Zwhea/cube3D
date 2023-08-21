@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/07 12:02:56 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 11:45:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ void	clean_textures(t_game *g)
 	}
 }
 
+void	clean_colors(t_game *g) //add proto
+{
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		if (i < 2 && (g->color[2].colors))
+			//free colors
+		i++;
+	}
+}
+
 void	clean_map(t_game *g)
 {
 	free_split(g->map.map, g->map.size.y);
@@ -48,8 +61,8 @@ int	clean(t_game *g)
 	clean_textures(g);
 	if (g->window)
 		mlx_destroy_window(g->mlx, g->window);
-	// if (g->mlx)
-		// mlx_destroy_display(g->mlx);
+	if (g->mlx)
+		mlx_destroy_display(g->mlx);
 	free(g->mlx);
 	exit(0);
 }
