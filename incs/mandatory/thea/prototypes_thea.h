@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 11:48:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/21 12:46:49 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 int		close_n_free(t_game *g, bool is_error);
 void	clean_textures(t_game *g);
-void	clean_colors(t_game *g);
 void	clean_map(t_game *g);
 int		clean_mini_map(t_game *g);
 int		clean(t_game *g);
