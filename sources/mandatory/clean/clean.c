@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 11:44:01 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/21 11:45:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ void	clean_textures(t_game *g)
 	{
 		if (i < 4 && (g->textures.walls[i].sprite))
 			mlx_destroy_image(g->mlx, g->textures.walls[i].sprite);
+		i++;
+	}
+}
+
+void	clean_colors(t_game *g) //add proto
+{
+	int	i;
+
+	i = 0;
+	while (i < 2)
+	{
+		if (i < 2 && (g->color[2].colors))
+			//free colors
 		i++;
 	}
 }
