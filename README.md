@@ -75,6 +75,10 @@ $ make leaks
 ## Resources
 
 - [MiniLibX Documentation](https://github.com/42Paris/minilibx-linux)
+- [Cub3D Documentation](https://harm-smits.github.io/42docs/projects/cub3d)
+- [Cub3D Tutorial](http://forums.mediabox.fr/wiki/tutoriaux/flashplatform/affichage/3d/raycasting)
+- [Lode Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
+- [Wolf Explications](https://guy-grave.developpez.com/tutoriels/jeux/doom-wolfenstein-raycasting/)
 
 ## Authors
 
