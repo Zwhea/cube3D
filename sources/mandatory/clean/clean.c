@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 12:47:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/21 15:44:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	clean_map(t_game *g)
 int	clean(t_game *g)
 {
 	printf(RED"closing program\n"END);
+	if (g->file.fd)
+		close_file(g->file.fd);
 	if (g->map.map)
 		clean_map(g);
 	clean_textures(g);
