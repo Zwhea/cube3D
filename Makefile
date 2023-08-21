@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/08/21 11:16:50 by twang            ###   ########.fr        #
+#    Updated: 2023/08/21 12:43:41 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,7 @@ endif
 
 #--leaks flags-----------------------------------------------------------------#
 
-LEAKS	=	valgrind --leak-check=full --track-fds=yes
+LEAKS	=	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes
 
 #--define flags----------------------------------------------------------------#
 
