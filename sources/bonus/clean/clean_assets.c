@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_assets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 11:41:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:52:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void	clean_textures(t_game *g)
 void	clean_map(t_game *g)
 {
 	free_split(g->map.map, g->map.size.y);
-	exit(0);
+	free(g->map.line_len);
+	return ;
 }
