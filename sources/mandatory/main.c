@@ -21,6 +21,5 @@ int	main(int ac, char **av)
 - revoir gestion d'erreurs
 
 leaks, fds, mlx leaks, clean EVERYTHING YUP.
-window opening no matter what
 
 */

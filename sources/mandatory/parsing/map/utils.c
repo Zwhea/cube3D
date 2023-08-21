@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:04:52 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 15:51:33 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/21 16:07:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ size_t	set_map_height(t_game *g, int fd)
 void	set_map_width(t_game *g, char *line)
 {
 	if (ft_strlen_char(line, '\n') > g->map.size.x)
-			g->map.size.x = ft_strlen_char(line, '\n');
+		g->map.size.x = ft_strlen_char(line, '\n');
 }
 
 void	set_direction(t_game *g, char c)
