@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 14:51:25 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:02:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ static int	_key_press(t_keycode key, t_game *g)
 {
 	if (key == esc_key)
 		clean(g);
-	else if (key == m_key)
-		mini_map_init(g);
 	else if (key == l_key)
 		legend_init(g);
 	return (0);

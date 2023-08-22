@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 15:16:00 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:06:05 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	parsing(t_game *g, int ac, char **av)
 		init_mlx(g);
 		_pathfinder(g);
 		_monitor(g);
-		init_mlx_functions(g);
 	}
 	else
 	{

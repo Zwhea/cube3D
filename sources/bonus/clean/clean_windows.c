@@ -6,19 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 11:03:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/22 16:03:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
-
-int	clean_mini_map(t_game *g)
-{
-	printf(RED"closing mini map\n"END);
-	mlx_destroy_window(g->mlx, g->map_window);
-	g->map_window = NULL;
-	return (0);
-}
 
 int	clean_legend(t_game *g)
 {
@@ -36,8 +28,6 @@ int	clean(t_game *g)
 	clean_textures(g);
 	if (g->window)
 		mlx_destroy_window(g->mlx, g->window);
-	if (g->map_window)
-		clean_mini_map(g);
 	if (g->legend_window)
 		clean_legend(g);
 	if (g->mlx)

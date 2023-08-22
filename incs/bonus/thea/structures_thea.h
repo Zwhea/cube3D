@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/10 10:19:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/22 16:04:50 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,14 +106,12 @@ struct s_game
 	t_map		map;
 	t_player	player;
 	t_vector	window_size;
-	t_vector	map_window_size;
 	t_vector	legend_window_size;
 	t_tex		textures;
 	t_color		color[2];
 	t_draw		draw;
 	void		*mlx;
 	void		*window;
-	void		*map_window;
 	void		*legend_window;
 };
 
