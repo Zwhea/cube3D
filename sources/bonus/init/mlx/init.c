@@ -41,8 +41,6 @@ static int	_key_press(t_keycode key, t_game *g)
 {
 	if (key == esc_key)
 		clean(g);
-	else if (key == m_key)
-		mini_map_init(g);
 	else if (key == l_key)
 		legend_init(g);
 	return (0);

@@ -60,9 +60,9 @@ SRC_B_DIR	=	sources/bonus
 #--flags mandatory & bonus ----------------------------------------------------#
 
 ifeq ($(BONUS), no)
-CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea -Werror
 else
-CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea -Werror
 endif
 
 #--mlx flags-------------------------------------------------------------------#
@@ -149,7 +149,7 @@ lib:
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re -j DEBUG=yes
+	$(MAKE) re -j DEBUG=yes BONUS=yes
 
 leaks:
 	clear

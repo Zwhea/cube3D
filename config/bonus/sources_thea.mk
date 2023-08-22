@@ -19,7 +19,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/errors/inventory/map.c					\
 					sources/bonus/errors/error_switchman.c					\
 					sources/bonus/init/legend/init.c						\
-					sources/bonus/init/mini_map/init.c						\
 					sources/bonus/init/mlx/init.c							\
 					sources/bonus/init/struct/init.c						\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\
@@ -37,5 +36,5 @@ SOURCES_BONUS +=															\
 					sources/bonus/render/draw/fill_background.c				\
 					sources/bonus/render/draw/mlx_pixel_put.c				\
 					sources/bonus/render/legend/core.c						\
-					sources/bonus/render/mini_map/core.c					\
+					sources/bonus/render/map/core.c							\
 					sources/bonus/main.c

@@ -43,10 +43,10 @@
 
 /*---- sizes (windows, textures, images) -------------------------------------*/
 
-# define WINDOW_X			1600
-# define WINDOW_Y			1400
-# define MINI_MAP_X			600
-# define MINI_MAP_Y			400
+# define WINDOW_X			1920
+# define WINDOW_Y			1080
+# define MINI_MAP_X			310
+# define MINI_MAP_Y			310
 # define LEGEND_X			600
 # define LEGEND_Y			400
 

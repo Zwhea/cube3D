@@ -19,7 +19,6 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)&g->map, sizeof(t_map));
 	ft_bzero((void *)&g->player, sizeof(t_player));
 	ft_bzero((void *)&g->window_size, sizeof(t_vector));
-	ft_bzero((void *)&g->map_window_size, sizeof(t_vector));
 	ft_bzero((void *)&g->legend_window_size, sizeof(t_vector));
 	ft_bzero((void *)&g->textures, sizeof(t_tex));
 	ft_bzero((void *)&g->color, sizeof(t_color));
