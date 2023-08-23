@@ -24,10 +24,12 @@ int	main(int ac, char **av)
 	{
 		if (parsing(&g, av))
 			return (close_n_free(&g, true));
+		init_mlx_functions(&g);
 		clean(&g);
 	}
 	return (0);
 }
+<<<<<<< HEAD
 
 /*
 - revoir gestion d'erreurs
@@ -35,3 +37,5 @@ int	main(int ac, char **av)
 leaks, fds, mlx leaks, clean EVERYTHING YUP.
 
 */
+=======
+>>>>>>> c34d98654ae1c58689fc312bec068a1bd952bfab

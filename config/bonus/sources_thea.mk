@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/11 14:46:34 by wangthea         ###   ########.fr        #
+#    Updated: 2023/08/23 10:10:37 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/assets/asset_switchman.c			\
 					sources/bonus/parsing/map/get_map.c						\
 					sources/bonus/parsing/map/map_checker.c					\
+					sources/bonus/parsing/map/mini_map.c					\
 					sources/bonus/parsing/map/utils.c						\
 					sources/bonus/parsing/parsing.c							\
 					sources/bonus/render/draw/draw_line.c					\

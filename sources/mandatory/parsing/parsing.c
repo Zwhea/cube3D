@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/21 15:42:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/22 09:32:05 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	parsing(t_game *g, char **av)
 		init_mlx(g);
 		_pathfinder(g);
 		_monitor(g);
-		init_mlx_functions(g);
 	}
 	else
 	{
 		error_switchman(g, wrong_file);
 		return (1);
 	}
+
 	return (0);
 }
 
