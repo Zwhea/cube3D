@@ -29,13 +29,3 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
-<<<<<<< HEAD
-
-/*
-- revoir gestion d'erreurs
-
-leaks, fds, mlx leaks, clean EVERYTHING YUP.
-
-*/
-=======
->>>>>>> c34d98654ae1c58689fc312bec068a1bd952bfab
