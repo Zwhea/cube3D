@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 15:16:00 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/23 09:48:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ static void	_monitor(t_game *g)
 {
 	textures_checker(g);
 	map_checker(g);
+	get_mini_map(g);
 }

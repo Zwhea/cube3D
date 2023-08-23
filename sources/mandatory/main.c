@@ -12,14 +12,8 @@ int	main(int ac, char **av)
 	{
 		if (parsing(&g, av))
 			return (close_n_free(&g, true));
+		init_mlx_functions(&g);
 		clean(&g);
 	}
 	return (0);
 }
-
-/*
-- revoir gestion d'erreurs
-
-leaks, fds, mlx leaks, clean EVERYTHING YUP.
-
-*/
