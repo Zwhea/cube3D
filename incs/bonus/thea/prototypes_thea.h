@@ -148,7 +148,7 @@ void	draw_square(t_game *g, int x, int y, int color);
 
 void	fill_background(t_game *g, int size_x, int size_y, int color);
 void	draw_frame(t_game *g, int size_x, int size_y, int color);
-void	init_map(t_game *g, int x, int y);
+void	init_map(t_game *g);
 
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 

@@ -23,5 +23,6 @@
 # include "enums_thea.h"
 # include "prototypes_thea.h"
 # include "structures_thea.h"
+# include <math.h>
 
 #endif
