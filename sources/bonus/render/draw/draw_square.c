@@ -18,10 +18,10 @@ void	draw_square(t_game *g, int x, int y, int color)
 	int	j;
 
 	i = 0;
-	while (i < 100)
+	while (i < 27)
 	{
 		j = 0;
-		while (j < 100)
+		while (j < 27)
 		{
 			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;

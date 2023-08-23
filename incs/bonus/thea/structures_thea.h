@@ -106,14 +106,12 @@ struct s_game
 	t_map		map;
 	t_player	player;
 	t_vector	window_size;
-	t_vector	map_window_size;
 	t_vector	legend_window_size;
 	t_tex		textures;
 	t_color		color[2];
 	t_draw		draw;
 	void		*mlx;
 	void		*window;
-	void		*map_window;
 	void		*legend_window;
 };
 

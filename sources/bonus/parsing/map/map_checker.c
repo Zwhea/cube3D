@@ -25,7 +25,7 @@ void	map_checker(t_game *g)
 	if (g->player.player != 1)
 		error_switchman(g, wrong_player);
 	g->map.b_map = ft_copy_split(g->map.map, g->map.b_map);
-	_backtracking(g, g->player.pos.x, g->player.pos.y);
+	_backtracking(g, g->player.pos.y, g->player.pos.x);
 	if (g->map.b_map)
 		free_split(g->map.b_map, g->map.size.y);
 }
@@ -50,7 +50,7 @@ static void	_check_char(t_game *g)
 			{
 				g->player.player++;
 				set_direction(g, g->map.map[i][j]);
-				set_vector(&g->player.pos, i, j);
+				set_vector(&g->player.pos, j, i);
 			}
 		}
 	}

@@ -29,7 +29,6 @@ int	parsing(t_game *g, int ac, char **av)
 		init_mlx(g);
 		_pathfinder(g);
 		_monitor(g);
-		init_mlx_functions(g);
 	}
 	else
 	{

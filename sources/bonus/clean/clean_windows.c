@@ -12,14 +12,6 @@
 
 #include "cub3D_thea.h"
 
-int	clean_mini_map(t_game *g)
-{
-	printf(RED"closing mini map\n"END);
-	mlx_destroy_window(g->mlx, g->map_window);
-	g->map_window = NULL;
-	return (0);
-}
-
 int	clean_legend(t_game *g)
 {
 	printf(RED"closing legend\n"END);
@@ -36,8 +28,6 @@ int	clean(t_game *g)
 	clean_textures(g);
 	if (g->window)
 		mlx_destroy_window(g->mlx, g->window);
-	if (g->map_window)
-		clean_mini_map(g);
 	if (g->legend_window)
 		clean_legend(g);
 	if (g->mlx)
