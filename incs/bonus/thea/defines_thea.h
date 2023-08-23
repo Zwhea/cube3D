@@ -45,8 +45,8 @@
 
 # define WINDOW_X			1920
 # define WINDOW_Y			1080
-# define MINI_MAP_X			310
-# define MINI_MAP_Y			310
+# define MINI_MAP_X			270
+# define MINI_MAP_Y			270
 # define LEGEND_X			600
 # define LEGEND_Y			400
 
