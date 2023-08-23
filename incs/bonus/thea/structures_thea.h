@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:04:50 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 09:48:05 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ struct s_map
 	int			*line_len;
 	char		**map;
 	char		**b_map;
+	char		**mini_map;
 	bool		error;
 };
 

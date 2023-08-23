@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/22 16:06:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 09:48:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,5 @@ static void	_monitor(t_game *g)
 {
 	textures_checker(g);
 	map_checker(g);
+	get_mini_map(g);
 }
