@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:11:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 08:48:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@
 
 # define WINDOW_X			1920
 # define WINDOW_Y			1080
-# define MINI_MAP_X			310
-# define MINI_MAP_Y			310
-# define LEGEND_X			300
-# define LEGEND_Y			600
+# define MINI_MAP_X			270
+# define MINI_MAP_Y			270
+# define LEGEND_X			600
+# define LEGEND_Y			400
 
 /*---- colors ----------------------------------------------------------------*/
 

@@ -17,6 +17,11 @@
 
 # include "structures_thea.h"
 
+
+
+void	map_render(t_game *g);
+
+
 /*----------------------------------------------------------------------------*/
 /*---- clean/ ----------------------------------------------------------------*/
 /*------------------------- clean_assets.c -----------------------------------*/
@@ -143,6 +148,8 @@ void	draw_square(t_game *g, int x, int y, int color);
 /*------------------------- fill_background.c --------------------------------*/
 
 void	fill_background(t_game *g, int size_x, int size_y, int color);
+void	draw_frame(t_game *g, int size_x, int size_y, int color);
+void	init_map(t_game *g, int x, int y);
 
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 

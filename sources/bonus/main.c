@@ -10,8 +10,9 @@ int	main(int ac, char **av)
 		error_switchman(&g, no_args);
 	else
 	{
-		if (parsing(&g, ac, av))
+		if (parsing(&g, ac, av) != 0)
 			return (close_n_free(&g, true));
+		map_render(&g);
 		init_mlx_functions(&g);
 		clean(&g);
 	}
