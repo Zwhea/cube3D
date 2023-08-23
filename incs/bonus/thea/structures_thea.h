@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 09:48:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 14:46:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ struct s_tex
 {
 	t_sprite	walls[6];
 	t_vector	size;
+	bool		bonus;
+	bool		ceiling;
+	bool		floor;
 };
 
 struct s_player

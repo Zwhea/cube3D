@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 16:08:52 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:23:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ enum e_keyassets
 	south_texture,
 	west_texture,
 	east_texture,
+	ceiling_texture,
+	floor_texture,
 	ceiling_color,
 	floor_color,
 	no_asset
