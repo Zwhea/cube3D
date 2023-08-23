@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 09:49:25 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 11:53:30 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 12:46:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	get_mini_map(t_game *g)
 		g->map.mini_map[j] = _ft_fill(g, g->map.mini_map[j]);
 		j++;
 	}
-	ft_print_array(g->map.mini_map);
 }
 
 static char	*_ft_fill(t_game *g, char *s)
@@ -49,7 +48,7 @@ static char	*_ft_fill(t_game *g, char *s)
 		return (NULL);
 	i = -1;
 	while (++i < g->map.size.x + 10)
-		s[i] = space;
+		s[i] = bloup;
 	s[i] = '\n';
 	return (s);
 }
@@ -65,12 +64,12 @@ static char	*_ft_dup_fill(t_game *g, char *src, char *dst)
 	i = 0;
 	j = -1;
 	while (++j < 5)
-		dst[j] = space;
+		dst[j] = bloup;
 	while (src[i])
 		dst[j++] = src[i++];
 	j--;
 	while (j < g->map.size.x + 10)
-		dst[j++] = space;
+		dst[j++] = bloup;
 	dst[j] = '\n';
 	return (dst);
 }
