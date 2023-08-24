@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 14:23:30 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 08:43:07 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,17 @@ void	extract_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int		create_rgb(int r, int g, int b);
 
 /*---------------------- textures/ -------------------------------------------*/
+/*------------------------- bonus_textures.c ---------------------------------*/
+
+void	handle_ceiling_texture(t_game *g, char *line);
+void	handle_floor_texture(t_game *g, char *line);
+
 /*------------------------- get_textures.c -----------------------------------*/
 
 void	handle_north_texture(t_game *g, char *line);
 void	handle_south_texture(t_game *g, char *line);
 void	handle_west_texture(t_game *g, char *line);
 void	handle_east_texture(t_game *g, char *line);
-void	handle_ceiling_texture(t_game *g, char *line);
-void	handle_floor_texture(t_game *g, char *line);
 
 /*------------------------- textures_checker.c -------------------------------*/
 
