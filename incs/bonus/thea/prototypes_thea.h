@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 14:19:49 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:52:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	init_mlx_functions(t_game *g);
 
 void	init_struct(t_game *g);
 void	set_vector(t_vector *vector, int x, int y);
-void	set_vector_f(t_vector_f *vector, int x, int y);
+void	set_vector_f(t_vector_f *vector, float x, float y);
 
 /*---- motions/ --------------------------------------------------------------*/
 /*------------------------- a_move.c -----------------------------------------*/
