@@ -148,6 +148,7 @@ void	draw_line(t_game *g, t_vector start, t_vector end, int color);
 /*------------------------- draw_square.c ------------------------------------*/
 
 void	draw_square(t_game *g, int x, int y, int color);
+void	draw_player_map_square(t_game *g, int x, int y, int color);
 
 /*------------------------- fill_background.c --------------------------------*/
 
