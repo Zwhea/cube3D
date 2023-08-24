@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 08:48:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/23 14:22:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@
 # define TEXTURE_SOUTH		"SO "
 # define TEXTURE_WEST		"WE "
 # define TEXTURE_EAST		"EA "
+# define TEXTURE_CEILING	"CE "
+# define TEXTURE_FLOOR		"FL "
 
 # define COLOR_FLOOR		"F "
 # define COLOR_CEILING		"C "

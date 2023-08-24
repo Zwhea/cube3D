@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/23 09:48:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 08:50:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static void	_monitor(t_game *g);
 int	parsing(t_game *g, int ac, char **av)
 {
 	if (ac > 2)
-		puts("switch to more textures - true");
+		if (!ft_strcmp("fun", av[2]))
+			g->textures.bonus = true;
 	if (_check_file(g, av[1]) > 0)
 	{
 		init_mlx(g);
