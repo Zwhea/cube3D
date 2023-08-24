@@ -29,3 +29,21 @@ void	draw_square(t_game *g, int x, int y, int color)
 		i++;
 	}
 }
+
+void	draw_player_map_square(t_game *g, int x, int y, int color)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < 8)
+	{
+		j = 0;
+		while (j < 8)
+		{
+			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+			j++;
+		}
+		i++;
+	}
+}
