@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:14:43 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:32:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	map_checker(t_game *g)
 	_backtracking(g, g->player.pos.y, g->player.pos.x);
 	if (g->map.b_map)
 		free_split(g->map.b_map, g->map.size.y);
+	printf(RED"%c\t%f\t%f\n"END, g->map.map[g->player.pos.y][g->player.pos.x],g->player.view.x, g->player.view.y);
 }
 
 static void	_check_char(t_game *g)

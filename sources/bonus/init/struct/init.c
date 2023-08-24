@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:03:40 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:21:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ void	init_struct(t_game *g)
 }
 
 void	set_vector(t_vector *vector, int x, int y)
+{
+	vector->x = x;
+	vector->y = y;
+}
+
+void	set_vector_f(t_vector_f *vector, int x, int y)
 {
 	vector->x = x;
 	vector->y = y;

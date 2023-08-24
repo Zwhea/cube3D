@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:04:52 by twang             #+#    #+#             */
-/*   Updated: 2023/08/21 16:06:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:22:16 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,25 @@ void	set_map_width(t_game *g, char *line)
 void	set_direction(t_game *g, char c)
 {
 	if (c == north)
+	{
 		g->player.north = true;
+		set_vector_f(&g->player.view, 0, -1);
+	}
 	else if (c == south)
+	{
 		g->player.south = true;
+		set_vector_f(&g->player.view, 0, 1);
+	}
 	else if (c == west)
+	{
 		g->player.west = true;
+		set_vector_f(&g->player.view, -1, 0);
+	}
 	else
+	{
 		g->player.east = true;
+		set_vector_f(&g->player.view, 1, 0);
+	}
 }
 
 void	check_around(t_game *g, int x, int y)

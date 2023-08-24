@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 14:46:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 13:42:19 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,16 @@ typedef struct s_tex		t_tex;
 typedef struct s_sprite		t_sprite;
 typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
+typedef struct s_lst_react	t_lst_react;
 typedef struct s_vector		t_vector;
+typedef struct s_vector_f	t_vector_f;
 typedef struct s_draw		t_draw;
 
 /*---- typedef function pointer ----------------------------------------------*/
 
 typedef void				(*t_errors_ft)(t_game *g);
 typedef void				(*t_assets_ft)(t_game *g, char *line);
+typedef int					(*t_keys_ft)(t_game *g);
 
 /*---- structures ------------------------------------------------------------*/
 
@@ -50,10 +53,22 @@ struct s_vector
 	int		y;
 };
 
+struct s_vector_f
+{
+	float	x;
+	float	y;
+};
+
 struct s_lst_assets
 {
 	const char	*asset;
 	t_assets_ft	func;
+};
+
+struct s_lst_react
+{
+	t_keycode	key;
+	t_keys_ft	func;
 };
 
 struct s_color
@@ -81,6 +96,8 @@ struct s_tex
 struct s_player
 {
 	t_vector	pos;
+	t_vector_f	posf;
+	t_vector_f	view;
 	int			player;
 	bool		north;
 	bool		south;

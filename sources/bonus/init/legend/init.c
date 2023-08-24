@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 15:20:20 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:02:27 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 10:32:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	_legend_key_press(t_keycode key, t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
-void	legend_init(t_game *g)
+int	legend_init(t_game *g)
 {
 	if (g->legend_window)
 		clean_legend(g);
@@ -33,6 +33,7 @@ void	legend_init(t_game *g)
 		mlx_key_hook(g->legend_window, _legend_key_press, g);
 		mlx_hook(g->legend_window, 17, 1L << 17, clean_legend, g);
 	}
+	return (0);
 }
 
 static int	_legend_key_press(t_keycode key, t_game *g)

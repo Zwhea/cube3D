@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:02:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 13:46:43 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,19 @@ void	init_mlx_functions(t_game *g)
 
 static int	_key_press(t_keycode key, t_game *g)
 {
-	if (key == esc_key)
-		clean(g);
-	else if (key == l_key)
-		legend_init(g);
+	int					i;
+	const t_lst_react	react_tab[] = {{esc_key, &clean}, \
+										{l_key, &legend_init}, \
+										{w_key, &w_move}, \
+										{a_key, &a_move}, \
+										{s_key, &s_move}, \
+										{d_key, &d_move}};
+
+	i = -1;
+	while (++i < 6)
+	{
+		if (key == react_tab[i].key)
+			return (react_tab[i].func(g));
+	}
 	return (0);
 }
