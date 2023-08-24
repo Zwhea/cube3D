@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_windows.c                                    :+:      :+:    :+:   */
+/*   a_move.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 10:34:05 by twang            ###   ########.fr       */
+/*   Created: 2023/08/24 12:00:21 by twang             #+#    #+#             */
+/*   Updated: 2023/08/24 12:30:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-int	clean_legend(t_game *g)
+int	a_move(t_game *g)
 {
-	printf(RED"closing legend\n"END);
-	mlx_destroy_window(g->mlx, g->legend_window);
-	g->legend_window = NULL;
+	(void)g;
+	puts(RED"je bouge avec a"END);
 	return (0);
-}
-
-int	clean(t_game *g)
-{
-	printf(RED"closing program\n"END);
-	clean_maps(g);
-	clean_textures(g);
-	if (g->window)
-		mlx_destroy_window(g->mlx, g->window);
-	if (g->legend_window)
-		clean_legend(g);
-	if (g->mlx)
-		mlx_destroy_display(g->mlx);
-	free(g->mlx);
-	exit(0);
 }

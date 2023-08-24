@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/23 14:26:09 by twang            ###   ########.fr        #
+#    Updated: 2023/08/24 12:00:35 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,10 @@ SOURCES_BONUS +=															\
 					sources/bonus/init/legend/init.c						\
 					sources/bonus/init/mlx/init.c							\
 					sources/bonus/init/struct/init.c						\
+					sources/bonus/motions/a_move.c							\
+					sources/bonus/motions/d_move.c							\
+					sources/bonus/motions/s_move.c							\
+					sources/bonus/motions/w_move.c							\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\
 					sources/bonus/parsing/assets/colors/get_colors.c		\
 					sources/bonus/parsing/assets/colors/utils.c				\

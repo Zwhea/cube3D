@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:14:43 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/24 14:59:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static void	_check_char(t_game *g)
 				g->player.player++;
 				set_direction(g, g->map.map[i][j]);
 				set_vector(&g->player.pos, j, i);
+				set_vector_f(&g->player.posf, j + 0.5, i + 0.5);
 			}
 		}
 	}
