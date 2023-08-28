@@ -19,19 +19,19 @@ void	down_left_corner(t_game *g)
 	int	x;
 
 	y = g->player.pos.y;
-	while (g->map.map[y] && y < g->player.pos.y + 5)
+	while (g->map.map[y] && y < g->player.pos.y + 6)
 	{
 		x = g->player.pos.x;
-		while (x >= 0 && g->map.map[y][x] && x > g->player.posf.x - 5)
+		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
 		{
 			if (g->map.map[y][x] == wall)
-				draw_square(g, 30 + ((4 + x - g->player.posf.x)) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_GREY);
-			if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
+				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
+			else if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
 				g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
-				draw_square(g, 30 + ((4 + x - g->player.posf.x)) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x--;
 		}
 		y++;
@@ -44,19 +44,22 @@ void	down_right_corner(t_game *g)
 	int	x;
 
 	y = g->player.pos.y;
-	while (g->map.map[y] && y < g->player.pos.y + 5)
+	while (g->map.map[y] && y < g->player.pos.y + 6)
 	{
 		x = g->player.pos.x;
-		while (g->map.map[y][x] && x < g->player.pos.x + 5)
+		while (g->map.map[y][x] && x < g->player.pos.x + 6)
 		{
 			if (g->map.map[y][x] == wall)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_GREY);
-			if (g->map.map[y][x] == space || g->map.map[y][x] == south \
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
+			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+			else
+				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_BLUE);
 			x++;
 		}
 		y++;
@@ -69,19 +72,22 @@ void	up_right_corner(t_game *g)
 	int	x;
 
 	y = g->player.pos.y;
-	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 5)
+	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 6)
 	{
 		x = g->player.pos.x;
-		while (g->map.map[y][x] && x < g->player.pos.x + 5)
+		while (g->map.map[y][x] && x < g->player.pos.x + 6)
 		{
 			if (g->map.map[y][x] == wall)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_GREY);
-			if (g->map.map[y][x] == space || g->map.map[y][x] == south \
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
+			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);			
+			else
+				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_BLUE);
 			x++;
 		}
 		y--;
@@ -94,19 +100,22 @@ void	up_left_corner(t_game *g)
 	int	x;
 
 	y = g->player.pos.y;
-	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 5)
+	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 6)
 	{
 		x = g->player.pos.x;
-		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 5)
+		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
 		{
 			if (g->map.map[y][x] == wall)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_GREY);
-			if (g->map.map[y][x] == space || g->map.map[y][x] == south \
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
+			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
-				draw_square(g, 30 + (4 + x - g->player.posf.x) * 30, \
-				30 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
+			else
+				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_BLUE);
 			x--;
 		}
 		y--;

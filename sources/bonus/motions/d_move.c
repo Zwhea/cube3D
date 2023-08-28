@@ -16,7 +16,9 @@ int	d_move(t_game *g)
 {
 	puts(BLUE"je bouge avec d"END);
 	g->player.posf.x = g->player.posf.x + 0.10000;
-		// printf("x=%f et y=%f\n", g->player.posf.x, g->player.posf.y);
+	printf("x:%f y:%f\n", g->player.posf.x, g->player.posf.y);
+	if (g->player.pos.x != g->player.posf.x)
+		g->player.pos.x = g->player.posf.x;
 	map_render(g);
 	return (0);
 }

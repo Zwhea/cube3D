@@ -16,8 +16,10 @@
 int	w_move(t_game *g)
 {
 	puts(GREEN"je bouge avec w"END);
-	g->player.posf.y = g->player.posf.y - 0.10000;
-		// printf("x=%f et y=%f\n", g->player.posf.x, g->player.posf.y);
+	g->player.posf.y = g->player.posf.y - 0.10000; 
+	printf("x:%f y:%f\n", g->player.posf.x, g->player.posf.y);
+	if (g->player.pos.y != g->player.posf.y)
+		g->player.pos.y = g->player.posf.y;
 	map_render(g);
 	return (0);
 }
