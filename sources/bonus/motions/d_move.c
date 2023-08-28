@@ -14,8 +14,9 @@
 
 int	d_move(t_game *g)
 {
-	(void)g;
-
 	puts(BLUE"je bouge avec d"END);
+	g->player.posf.x = g->player.posf.x + 0.10000;
+		// printf("x=%f et y=%f\n", g->player.posf.x, g->player.posf.y);
+	map_render(g);
 	return (0);
 }
