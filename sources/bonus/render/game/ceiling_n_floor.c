@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   textures_checker.c                                 :+:      :+:    :+:   */
+/*   ceiling_n_floor.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/05 12:05:36 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 16:23:04 by twang            ###   ########.fr       */
+/*   Created: 2023/08/28 10:20:59 by twang             #+#    #+#             */
+/*   Updated: 2023/08/28 16:28:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	textures_checker(t_game *g)
+void	render_colored_ceil_floor(t_game *g)
 {
 	int	i;
 
-	i = 0;
-	if (g->textures.ceiling == true)
-		if (!(g->textures.walls[ceiling_texture].sprite))
-			error_switchman(g, wrong_texture);
-	if (g->textures.floor == true)
-		if (!(g->textures.walls[floor_texture].sprite))
-			error_switchman(g, wrong_texture);
-	while (i < 3)
+	i = -1;
+	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
+	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
+										&g->draw.line_length, &g->draw.endian);
+	while (++i < WINDOW_Y / 2)
 	{
-		if (i < 3 && !(g->textures.walls[i].sprite))
-			error_switchman(g, wrong_texture);
-		i++;
+		draw_line(g, g->size, g->window_size, g->color[0].color);
+		g->size.y++;
+	}
+	while (++i < WINDOW_Y)
+	{
+		draw_line(g, g->size, g->window_size, g->color[1].color);
+		g->size.y++;
 	}
 }

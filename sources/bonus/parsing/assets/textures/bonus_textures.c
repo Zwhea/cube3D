@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:02:23 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 16:08:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:23:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	handle_ceiling_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	g->textures.walls[ceiling_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+	g->textures.walls[ceiling_texture].sprite = mlx_xpm_file_to_image(g->mlx, \
+								s, &g->textures.size.x, &g->textures.size.y);
 	g->textures.ceiling = true;
 	return ;
 }

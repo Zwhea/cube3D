@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/22 09:32:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:30:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	parsing(t_game *g, char **av)
 		error_switchman(g, wrong_file);
 		return (1);
 	}
-
 	return (0);
 }
 

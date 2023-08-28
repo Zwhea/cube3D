@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   asset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 15:43:30 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/28 13:23:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	_wrong_asset(t_game *g)
 {
-	(void)g;
 	ft_error(false, WRONG_ASSET);
+	clean(g);
 }
 
 void	_wrong_texture(t_game *g)

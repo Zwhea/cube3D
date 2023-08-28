@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 09:54:57 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 11:51:24 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ struct s_game
 	t_file		file;
 	t_map		map;
 	t_player	player;
+	t_vector	size;
 	t_vector	window_size;
 	t_tex		textures;
 	t_color		color[2];
