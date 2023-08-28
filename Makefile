@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/08/28 09:39:07 by twang            ###   ########.fr        #
+#    Updated: 2023/08/28 15:25:49 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,9 @@ SRC_B_DIR	=	sources/bonus
 #--flags mandatory & bonus ----------------------------------------------------#
 
 ifeq ($(BONUS), no)
-CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea -Werror
+CFLAGS		=	-Wall -Wextra -O3 -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea -Werror
 else
-CFLAGS		=	-Wall -Wextra -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -O3 -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
 endif
 
 #--mlx flags-------------------------------------------------------------------#

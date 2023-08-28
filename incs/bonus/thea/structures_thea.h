@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 13:42:19 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 13:39:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ struct s_game
 	t_file		file;
 	t_map		map;
 	t_player	player;
+	t_vector	size;
 	t_vector	window_size;
 	t_vector	legend_window_size;
 	t_tex		textures;

@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/28 09:50:59 by twang            ###   ########.fr        #
+#    Updated: 2023/08/28 12:18:26 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,4 +36,5 @@ SOURCES +=																	\
 			sources/mandatory/render/draw/draw_line.c						\
 			sources/mandatory/render/draw/draw_square.c						\
 			sources/mandatory/render/draw/mlx_pixel_put.c					\
+			sources/mandatory/render/game/ceiling_n_floor.c					\
 			sources/mandatory/main.c

@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/24 12:00:35 by twang            ###   ########.fr        #
+#    Updated: 2023/08/28 15:20:28 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,4 +43,5 @@ SOURCES_BONUS +=															\
 					sources/bonus/render/draw/mlx_pixel_put.c				\
 					sources/bonus/render/legend/core.c						\
 					sources/bonus/render/map/core.c							\
+					sources/bonus/render/game/ceiling_n_floor.c				\
 					sources/bonus/main.c

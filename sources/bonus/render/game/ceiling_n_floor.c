@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   core.c                                             :+:      :+:    :+:   */
+/*   ceiling_n_floor.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/28 16:16:57 by twang            ###   ########.fr       */
+/*   Created: 2023/08/28 10:20:59 by twang             #+#    #+#             */
+/*   Updated: 2023/08/28 16:16:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
-#include "cub3D_arthur.h"
 
-void	init_map(t_game *g)
+void	render_colored_ceil_floor(t_game *g)
 {
-	down_left_corner(g);
-	down_right_corner(g);
-	up_right_corner(g);
-	up_left_corner(g);
-	draw_player_map_square(g, 161, 161, H_RED);
-}
-
-void	map_render(t_game *g)
-{
+	int	i;
+	
+	i = -1;
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
-	// fill_background(g, WINDOW_X, WINDOW_Y, H_GREEN);
-	render_colored_ceil_floor(g);
-	init_map(g);
-	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
-	mlx_destroy_image(g->mlx, g->draw.img);
+	while (++i < WINDOW_Y / 2)
+	{
+		draw_line(g, g->size, g->window_size, g->color[0].color);
+		g->size.y++;
+	}
+	while (++i < WINDOW_Y)
+	{
+		draw_line(g, g->size, g->window_size, g->color[1].color);
+		g->size.y++;
+	}
 }
