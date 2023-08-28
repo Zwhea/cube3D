@@ -29,6 +29,7 @@ void	map_render(t_game *g)
 										&g->draw.line_length, &g->draw.endian);
 	fill_background(g, WINDOW_X, WINDOW_Y, H_GREEN);
 	init_map(g);
+	draw_frame(g, MINI_MAP_X, MINI_MAP_Y, H_ORANGE);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
 }

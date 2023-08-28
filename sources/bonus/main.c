@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	{
 		if (parsing(&g, ac, av) != 0)
 			return (close_n_free(&g, true));
+		printf("%f, %f\n", g.player.posf.x, g.player.posf.y);
 		map_render(&g);
 		init_mlx_functions(&g);
 		clean(&g);

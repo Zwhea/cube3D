@@ -23,7 +23,8 @@ void	draw_square(t_game *g, int x, int y, int color)
 		j = 0;
 		while (j < 30)
 		{
-			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 && y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;
 		}
 		i++;
