@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 13:46:43 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 09:47:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_mlx(t_game *g)
 
 void	init_mlx_functions(t_game *g)
 {
-	mlx_key_hook(g->window, _key_press, g);
+	mlx_hook(g->window, 2, 1L << 0, _key_press, g);
 	mlx_hook(g->window, 17, 1L << 17, clean, g);
 	mlx_loop(g->mlx);
 }

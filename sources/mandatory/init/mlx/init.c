@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 11:59:27 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/11 14:51:44 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/28 09:55:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,25 @@ void	init_mlx(t_game *g)
 
 void	init_mlx_functions(t_game *g)
 {
-	mlx_key_hook(g->window, _key_press, g);
+	mlx_hook(g->window, 2, 1L << 0, _key_press, g);
 	mlx_hook(g->window, 17, 1L << 17, clean, g);
 	mlx_loop(g->mlx);
 }
 
 static int	_key_press(t_keycode key, t_game *g)
 {
-	if (key == esc_key)
-		clean(g);
+	int					i;
+	const t_lst_react	react_tab[] = {{esc_key, &clean}, \
+										{w_key, &w_move}, \
+										{a_key, &a_move}, \
+										{s_key, &s_move}, \
+										{d_key, &d_move}};
+
+	i = -1;
+	while (++i < 6)
+	{
+		if (key == react_tab[i].key)
+			return (react_tab[i].func(g));
+	}
 	return (0);
 }

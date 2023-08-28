@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/11 11:08:50 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/28 09:54:57 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_tex		t_tex;
 typedef struct s_sprite		t_sprite;
 typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
+typedef struct s_lst_react	t_lst_react;
 typedef struct s_vector		t_vector;
 typedef struct s_draw		t_draw;
 
@@ -32,6 +33,7 @@ typedef struct s_draw		t_draw;
 
 typedef void				(*t_errors_ft)(t_game *g);
 typedef void				(*t_assets_ft)(t_game *g, char *line);
+typedef int					(*t_keys_ft)(t_game *g);
 
 /*---- structures ------------------------------------------------------------*/
 
@@ -54,6 +56,12 @@ struct s_lst_assets
 {
 	const char	*asset;
 	t_assets_ft	func;
+};
+
+struct s_lst_react
+{
+	t_keycode	key;
+	t_keys_ft	func;
 };
 
 struct s_color
