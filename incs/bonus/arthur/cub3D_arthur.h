@@ -21,7 +21,7 @@
 
 # include "defines_arthur.h"
 # include "enums_arthur.h"
-# include "prototypes_arthur.h"
 # include "structures_arthur.h"
+# include "prototypes_arthur.h"
 
 #endif

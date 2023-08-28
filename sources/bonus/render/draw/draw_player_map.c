@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_frame.c                                       :+:      :+:    :+:   */
+/*   draw_player_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 08:47:07 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/23 08:47:08 by aascedu          ###   ########.fr       */
+/*   Created: 2023/08/28 07:41:37 by aascedu           #+#    #+#             */
+/*   Updated: 2023/08/28 07:41:38 by aascedu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	draw_frame(t_game *g, int size_x, int size_y, int color)
+void	draw_player_square_map(t_game *g, int r)
 {
-	int	i;
-	int	j;
+	int	pos_x;
+	int	pos_y;
 
-	i = 0;
-	while (i < size_x)
+	pos_x = 0;
+	while (pos_x <= MINI_MAP_X)
 	{
-		j = 0;
-		while (j < size_y)
+		pos_y = 0;
+		while (pos_y <= MINI_MAP_Y)
 		{
-			if (i % 30 == 0 || j % 30 == 0)
-				my_mlx_pixel_put(&g->draw, i, j, color);
-			if (i < 5 || j < 5 || j > size_y - 5 || i > size_x - 5)
-				my_mlx_pixel_put(&g->draw, i, j, color);
-			j++;
+			if (pow(r, 2) == 36450 + pow(pos_x, 2) + pow(pos_y, 2) - \
+				(270 * pos_x) - (270 * pos_y))
+				my_mlx_pixel_put(&g->draw, pos_x, pos_y, H_RED);
+			pos_y = pos_y + 1;
 		}
-		i++;
+		pos_x = pos_x + 1;
 	}
 }
