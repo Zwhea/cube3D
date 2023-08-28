@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 11:54:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:30:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,3 @@ void	set_vector(t_vector *vector, int x, int y)
 	vector->x = x;
 	vector->y = y;
 }
-
-

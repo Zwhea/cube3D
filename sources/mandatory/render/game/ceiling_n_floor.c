@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 10:20:59 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 13:47:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:30:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	render_colored_ceil_floor(t_game *g)
 {
 	int	i;
-	
+
 	i = -1;
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \

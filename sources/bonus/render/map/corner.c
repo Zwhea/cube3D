@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 07:41:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/28 07:41:25 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/08/28 16:28:11 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	up_right_corner(t_game *g)
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
-				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);			
+				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			else
 				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_BLUE);

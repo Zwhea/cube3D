@@ -6,14 +6,18 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 09:49:25 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 12:46:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/28 16:26:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
+/*---- prototypes ------------------------------------------------------------*/
+
 static char	*_ft_fill(t_game *g, char *s);
 static char	*_ft_dup_fill(t_game *g, char *src, char *dst);
+
+/*----------------------------------------------------------------------------*/
 
 void	get_mini_map(t_game *g)
 {
@@ -42,7 +46,7 @@ void	get_mini_map(t_game *g)
 static char	*_ft_fill(t_game *g, char *s)
 {
 	int	i;
-	
+
 	s = (char *)ft_calloc(g->map.size.x + 12, sizeof(char));
 	if (!s)
 		return (NULL);
@@ -57,7 +61,7 @@ static char	*_ft_dup_fill(t_game *g, char *src, char *dst)
 {
 	int	i;
 	int	j;
-	
+
 	dst = (char *)ft_calloc(g->map.size.x + 12, sizeof(char));
 	if (!dst)
 		return (NULL);
