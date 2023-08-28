@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/23 10:10:09 by twang            ###   ########.fr        #
+#    Updated: 2023/08/28 09:50:59 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,10 @@ SOURCES +=																	\
 			sources/mandatory/errors/error_switchman.c						\
 			sources/mandatory/init/mlx/init.c								\
 			sources/mandatory/init/struct/init.c							\
+			sources/mandatory/motions/a_move.c								\
+			sources/mandatory/motions/d_move.c								\
+			sources/mandatory/motions/s_move.c								\
+			sources/mandatory/motions/w_move.c								\
 			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
 			sources/mandatory/parsing/assets/colors/utils.c					\
