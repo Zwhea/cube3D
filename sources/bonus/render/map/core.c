@@ -15,8 +15,8 @@
 
 void	init_map(t_game *g)
 {
-	down_right_corner(g);
 	down_left_corner(g);
+	down_right_corner(g);
 	up_right_corner(g);
 	up_left_corner(g);
 	draw_player_map_square(g, 161, 161, H_RED);
