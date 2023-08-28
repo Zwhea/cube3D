@@ -18,5 +18,9 @@
 # include "structures_arthur.h"
 
 /*----------------------------------------------------------------------------*/
+void	down_left_corner(t_game *g);
+void	down_right_corner(t_game *g);
+void	up_right_corner(t_game *g);
+void	up_left_corner(t_game *g);
 
 #endif
