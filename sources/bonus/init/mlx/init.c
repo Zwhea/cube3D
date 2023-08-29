@@ -32,10 +32,6 @@ void	init_mlx(t_game *g)
 
 void	init_mlx_functions(t_game *g)
 {
-<<<<<<< HEAD
-	// render_colored_ceil_floor(g);
-=======
->>>>>>> 66656537bf524d83c7e1b1d7aa2198e24425bca6
 	mlx_hook(g->window, 2, 1L << 0, _key_press, g);
 	mlx_hook(g->window, 17, 1L << 17, clean, g);
 	mlx_loop(g->mlx);

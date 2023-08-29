@@ -8,12 +8,14 @@ float	get_angle_degree(t_game *g)
 
 	scalar = g->player.view.x;
 	if (g->player.view.y < 0)
-		return ((acos(scalar) * -1) * (180 / M_PI));
-	return (acos(scalar) * (180 / M_PI));
+		return ((acos(scalar) * -1));
+	return (acos(scalar));
 }
 
 void	show_fov(t_game *g)
 {
-	printf("angle=%f et view_x = %f : et view_y = %f\n", get_angle_degree(g), g->player.view.x, g->player.view.y);
-	
+	float	angle;
+
+	angle = get_angle_degree(g);
+	ray_minimap(g, angle);
 }

@@ -97,6 +97,7 @@ struct s_player
 {
 	t_vector	pos;
 	t_vector_f	posf;
+	t_vector_f	view;
 	float		angle_view;
 	int			player;
 	bool		north;
