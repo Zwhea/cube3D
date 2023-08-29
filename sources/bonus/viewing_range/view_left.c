@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ceiling_n_floor.c                                  :+:      :+:    :+:   */
+/*   view_left.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 10:20:59 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 16:28:33 by twang            ###   ########.fr       */
+/*   Created: 2023/08/29 10:29:44 by twang             #+#    #+#             */
+/*   Updated: 2023/08/29 10:37:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-void	render_colored_ceil_floor(t_game *g)
+int	view_left(t_game *g)
 {
+<<<<<<< HEAD:sources/bonus/render/game/ceiling_n_floor.c
 	int	i;
 
 	i = -1;
@@ -30,4 +31,9 @@ void	render_colored_ceil_floor(t_game *g)
 		draw_line(g, g->size, g->window_size, g->color[1].color);
 		g->size.y++;
 	}
+=======
+	(void)g;
+	puts("je regarde a gauche");
+	return (0);
+>>>>>>> 66656537bf524d83c7e1b1d7aa2198e24425bca6:sources/bonus/viewing_range/view_left.c
 }

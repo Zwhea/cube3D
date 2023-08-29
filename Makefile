@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/08/28 15:25:49 by twang            ###   ########.fr        #
+#    Updated: 2023/08/29 10:21:26 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -164,6 +164,7 @@ bonus:
 header:
 	printf "\n${PURPLE}project:\t${END}${BLUE}cub3D${END}\n"
 	printf "${PURPLE}author:\t\t${END}${BLUE}${AASCEDU} && ${TWANG}${END}\n"
+	printf "${PURPLE}bonus mode:\t${END}${BLUE}${BONUS}${END}\n"
 	printf "${PURPLE}leaks mode:\t${END}${BLUE}${VALGRIND}${END}\n"
 	printf "${PURPLE}debug mode:\t${END}${BLUE}${DEBUG}${END}\n"
 	printf "${PURPLE}compiler:\t${END}${BLUE}${CC}${END}\n"
