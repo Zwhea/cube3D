@@ -1,7 +1,7 @@
-NO ./textures/bob/bob.xpm
-SO ./textures/bob/carlo.xpm
-EA ./textures/bob/pinapple.xpm
-WE ./textures/bob/patrick.xpm
+NO ./assets/textures/xpm/brick_wall.xpm
+SO ./assets/textures/xpm/brick_wall.xpm
+EA ./assets/textures/xpm/brick_wall.xpm
+WE ./assets/textures/xpm/brick_wall.xpm
  
 C 149,242,223
 F 229,241,217
