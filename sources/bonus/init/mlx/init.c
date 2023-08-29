@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 15:14:28 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/29 10:38:08 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	init_mlx(t_game *g)
 
 void	init_mlx_functions(t_game *g)
 {
-	render_colored_ceil_floor(g);
 	mlx_hook(g->window, 2, 1L << 0, _key_press, g);
 	mlx_hook(g->window, 17, 1L << 17, clean, g);
 	mlx_loop(g->mlx);
@@ -46,10 +45,12 @@ static int	_key_press(t_keycode key, t_game *g)
 										{w_key, &w_move}, \
 										{a_key, &a_move}, \
 										{s_key, &s_move}, \
-										{d_key, &d_move}};
+										{d_key, &d_move}, \
+										{left_key, &view_left}, \
+										{right_key, &view_right}};
 
 	i = -1;
-	while (++i < 6)
+	while (++i < 8)
 	{
 		if (key == react_tab[i].key)
 			return (react_tab[i].func(g));
