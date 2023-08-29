@@ -66,12 +66,12 @@ void	set_direction(t_game *g, char c)
 	if (c == north)
 	{
 		g->player.north = true;
-		set_vector_f(&g->player.view, 0, -1);
+		set_vector_f(&g->player.view, 0, 1);
 	}
 	else if (c == south)
 	{
 		g->player.south = true;
-		set_vector_f(&g->player.view, 0, 1);
+		set_vector_f(&g->player.view, 0, -1);
 	}
 	else if (c == west)
 	{

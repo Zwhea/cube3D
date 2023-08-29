@@ -17,9 +17,9 @@ void	render_colored_ceil_floor(t_game *g)
 	int	i;
 
 	i = -1;
-	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
-	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
-										&g->draw.line_length, &g->draw.endian);
+	// g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
+	// g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
+	// 									&g->draw.line_length, &g->draw.endian);
 	while (++i < WINDOW_Y / 2)
 	{
 		draw_line(g, g->size, g->window_size, g->color[0].color);
