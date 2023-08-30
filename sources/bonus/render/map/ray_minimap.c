@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ray_minimap.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/30 17:50:18 by twang             #+#    #+#             */
+/*   Updated: 2023/08/30 17:50:24 by twang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
@@ -8,7 +20,7 @@ void	ray_minimap(t_game *g, float angle)
 	float	throw_y;
 	float	degree;
 
-	printf("%f\n", angle);
+	// printf("%f\n", angle);
 	degree = angle + M_PI / 6;
 	while (degree >= angle - M_PI / 6)
 	{

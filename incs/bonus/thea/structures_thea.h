@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 15:57:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:01:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ struct s_player
 	float		angle_view;
 	int			player;
 	int			last_pov;
+	int			diff_pov;
 	bool		north;
 	bool		south;
 	bool		west;

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 14:51:50 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:54:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)&g->textures, sizeof(t_tex));
 	ft_bzero((void *)&g->color, sizeof(t_color));
 	ft_bzero((void *)&g->draw, sizeof(t_draw));
+	g->player.diff_pov = 1;
 }
 
 void	set_vector(t_vector *vector, int x, int y)
