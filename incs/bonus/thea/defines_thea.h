@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 14:22:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 11:21:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@
 # define H_BLACK			0x000000
 # define H_RED				0xff0000
 # define H_GREEN			0x00ff00
+# define H_DARKGREEN		0x01452c
 # define H_BLUE				0x0000ff
 # define H_YELLOW			0xffff00
 # define H_ORANGE			0xffa500
