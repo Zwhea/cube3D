@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/30 09:28:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 11:11:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,14 +74,14 @@ void	draw_circle(t_game *g, int x, int y, int color)
 	float	dst;
 	
 	i = 0;
-	while (i < 120)
+	while (i < 20)
 	{
 		j = 0;
-		while (j < 170)
+		while (j < 20)
 		{
-			dst = sqrt(pow((i - 110), 2) + pow((j - 160), 2));
+			dst = sqrt(pow((i - 10), 2) + pow((j - 10), 2));
 			if (dst < 5)
-				my_mlx_pixel_put(&g->draw, j + x, i + y, color);
+				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;
 		}
 		i++;
