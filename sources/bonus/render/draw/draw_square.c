@@ -67,23 +67,42 @@ void	draw_player_map_square(t_game *g, int x, int y, int color)
 	}
 }
 
+// void	draw_circle(t_game *g, int x, int y, int color)
+// {
+// 	int		i;
+// 	int		j;
+// 	float	dst;
+	
+// 	i = 0;
+// 	while (i < 20)
+// 	{
+// 		j = 0;
+// 		while (j < 20)
+// 		{
+// 			dst = sqrt(pow((j - x), 2) + pow((i - y), 2));
+// 			if (dst < 5)
+// 				my_mlx_pixel_put(&g->draw, j + x, i + y, color);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
+
 void	draw_circle(t_game *g, int x, int y, int color)
 {
-	int		i;
-	int		j;
-	float	dst;
-	
-	i = 0;
-	while (i < 120)
+	int	x1;
+	int	y1;
+
+	x1 = 0;
+	while (x1 <= 20)
 	{
-		j = 0;
-		while (j < 170)
+		y1 = 0;
+		while (y1 <= 20)
 		{
-			dst = sqrt(pow((i - 110), 2) + pow((j - 160), 2));
-			if (dst < 5)
-				my_mlx_pixel_put(&g->draw, j + x, i + y, color);
-			j++;
+			if (25 == pow((x1 - x), 2) + pow((y1 - y), 2))
+				my_mlx_pixel_put(&g->draw, x1 + x, y1 + 1, H_RED);
+			y1++;
 		}
-		i++;
+		x1++;
 	}
 }

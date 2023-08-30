@@ -19,7 +19,7 @@ void	init_map(t_game *g)
 	down_right_corner(g);
 	up_right_corner(g);
 	up_left_corner(g);
-	draw_circle(g, 161, 161, H_RED);
+	// draw_circle(g, 161, 161, H_RED);
 }
 
 void	map_render(t_game *g)
