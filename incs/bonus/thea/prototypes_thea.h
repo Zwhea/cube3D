@@ -182,6 +182,7 @@ void	init_map(t_game *g);
 
 // void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color);
 void    my_mlx_pixel_put(t_draw *data, int x, int y, int color);
+unsigned int	my_mlx_pixel_get(t_game *g, int x, int y);
 
 /*--------------- legend/ ----------------------------------------------------*/
 /*------------------------- core.c -------------------------------------------*/
@@ -206,5 +207,8 @@ int		view_left(t_game *g);
 /*------------------------- view_right.c -------------------------------------*/
 
 int		view_right(t_game *g);
+
+// show_fov.c
+float	get_angle_degree(t_game *g);
 
 #endif
