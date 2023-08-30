@@ -16,5 +16,7 @@ int	view_right(t_game *g)
 {
 	(void)g;
 	puts("je regarde a droite");
+	g->player.angle_view += M_PI / 48;
+	map_render(g);
 	return (0);
 }

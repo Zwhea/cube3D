@@ -180,7 +180,8 @@ void	init_map(t_game *g);
 
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 
-void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color);
+// void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color);
+void    my_mlx_pixel_put(t_draw *data, int x, int y, int color);
 
 /*--------------- legend/ ----------------------------------------------------*/
 /*------------------------- core.c -------------------------------------------*/
