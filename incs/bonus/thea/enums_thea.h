@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/23 14:23:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 12:48:11 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,11 @@ enum e_keyassets
 
 enum e_keycode
 {
+	m_left_key	=	1,
+	scroll_key	=	2,
+	m_right_key	=	3,
+	m_down_key	=	4,
+	m_up_key	=	5,
 	a_key		=	97,
 	b_key		=	98,
 	c_key		=	99,
