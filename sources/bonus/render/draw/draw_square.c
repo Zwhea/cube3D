@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/30 11:11:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:16:57 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,6 @@ void	draw_square(t_game *g, int x, int y, int color)
 	{
 		j = 0;
 		while (j < 30)
-		{
-			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
-			j++;
-		}
-		i++;
-	}
-}
-
-void	draw_player_map_square(t_game *g, int x, int y, int color)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < 8)
-	{
-		j = 0;
-		while (j < 8)
 		{
 			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;

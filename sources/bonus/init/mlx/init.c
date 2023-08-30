@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 16:17:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 17:11:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,20 @@ void	init_mlx_functions(t_game *g)
 	mlx_hook(g->window, 17, 1L << 17, clean, g);
 	mlx_loop(g->mlx);
 }
+
 static int	_mouse_move(int x, int y, t_game *g)
 {
 	(void)y;
-	if (g->player.last_pov > x + 5)
+	if (g->player.last_pov > x + 0.5)
+	{
+		g->player.diff_pov = (g->player.last_pov - x) / 5;
 		view_left(g);
-	if (g->player.last_pov < x - 5)
+	}
+	if (g->player.last_pov < x - 0.5)
+	{
+		g->player.diff_pov = (x - g->player.last_pov) / 5;
 		view_right(g);
+	}
 	g->player.last_pov = x;
 	return (0);
 }
