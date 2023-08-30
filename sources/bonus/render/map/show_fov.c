@@ -4,7 +4,6 @@
 float	get_angle_degree(t_game *g)
 {
 	float	scalar;
-	float	norm;
 
 	scalar = g->player.view.x;
 	if (g->player.view.y > 0)
