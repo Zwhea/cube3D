@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/29 10:38:08 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 10:04:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,13 @@ static int	_key_press(t_keycode key, t_game *g)
 										{a_key, &a_move}, \
 										{s_key, &s_move}, \
 										{d_key, &d_move}, \
+										{up_key, &w_move}, \
+										{down_key, &s_move}, \
 										{left_key, &view_left}, \
 										{right_key, &view_right}};
 
 	i = -1;
-	while (++i < 8)
+	while (++i < 10)
 	{
 		if (key == react_tab[i].key)
 			return (react_tab[i].func(g));
