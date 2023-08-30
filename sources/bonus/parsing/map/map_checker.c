@@ -52,6 +52,7 @@ static void	_check_char(t_game *g)
 				set_direction(g, g->map.map[i][j]);
 				set_vector(&g->player.pos, j, i);
 				set_vector_f(&g->player.posf, j + 0.5, i + 0.5);
+				set_vector_f(&g->player.start, j + 0.5, i + 0.5);
 			}
 		}
 	}
