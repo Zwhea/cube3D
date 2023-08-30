@@ -30,4 +30,7 @@ void	show_fov(t_game *g);
 // raycasting.c
 void	ray_minimap(t_game *g, float angle);
 
+// mlx_pixel_get.c
+unsigned int	my_mlx_pixel_get(t_game *g, int x, int y);
+
 #endif

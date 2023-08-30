@@ -12,10 +12,15 @@
 
 #include "cub3D_thea.h"
 
-void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color)
-{
-	char	*dst;
+// void	my_mlx_pixel_put(t_draw *draw, int x, int y, int color)
+// {
+// 	char	*dst;
 
-	dst = draw->addr + (y * draw->line_length + x * (draw->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
-}
+// 	dst = draw->addr + (y * draw->line_length + x * (draw->bits_per_pixel / 8));
+// 	*(unsigned int *)dst = color;
+// }
+
+void    my_mlx_pixel_put(t_draw *data, int x, int y, int color)
+{
+    ((int *)data->addr)[y * (data->line_length >> 2) + x] = color;
+} 
