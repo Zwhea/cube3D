@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/29 10:24:01 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/30 08:09:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	init_map(t_game *g)
 	down_right_corner(g);
 	up_right_corner(g);
 	up_left_corner(g);
-	draw_player_map_square(g, 161, 161, H_RED);
+	draw_circle(g, 161, 161, H_RED);
 }
 
 void	map_render(t_game *g)

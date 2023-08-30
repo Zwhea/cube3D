@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:37 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/23 08:46:38 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/08/30 09:29:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int ac, char **av)
 	{
 		if (parsing(&g, ac, av) != 0)
 			return (close_n_free(&g, true));
-		printf("%f, %f\n", g.player.posf.x, g.player.posf.y);
 		map_render(&g);
 		init_mlx_functions(&g);
 		clean(&g);
