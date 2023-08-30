@@ -66,12 +66,12 @@ void	set_direction(t_game *g, char c)
 	if (c == north)
 	{
 		g->player.north = true;
-		set_vector_f(&g->player.view, 0, -1);
+		set_vector_f(&g->player.view, 0, 1);
 	}
 	else if (c == south)
 	{
 		g->player.south = true;
-		set_vector_f(&g->player.view, 0, 1);
+		set_vector_f(&g->player.view, 0, -1);
 	}
 	else if (c == west)
 	{
@@ -83,6 +83,7 @@ void	set_direction(t_game *g, char c)
 		g->player.east = true;
 		set_vector_f(&g->player.view, 1, 0);
 	}
+	g->player.angle_view = get_angle_degree(g);
 }
 
 void	check_around(t_game *g, int x, int y)

@@ -12,7 +12,7 @@
 
 #include "cub3D_thea.h"
 
-void	draw_square(t_game *g, int x, int y, int color)
+void	draw_square_map(t_game *g, int x, int y, int color)
 {
 	int	i;
 	int	j;
@@ -25,6 +25,24 @@ void	draw_square(t_game *g, int x, int y, int color)
 		{
 			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 && y + i <= 30 + MINI_MAP_Y && y + i >= 30)
 				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	draw_square(t_game *g, int x, int y, int color)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < 30)
+	{
+		j = 0;
+		while (j < 30)
+		{
+			my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;
 		}
 		i++;

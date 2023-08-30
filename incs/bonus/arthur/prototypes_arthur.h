@@ -17,10 +17,17 @@
 
 # include "structures_arthur.h"
 
-/*----------------------------------------------------------------------------*/
+// corner.c
 void	down_left_corner(t_game *g);
 void	down_right_corner(t_game *g);
 void	up_right_corner(t_game *g);
 void	up_left_corner(t_game *g);
+
+// show_fov.c
+float	get_angle_degree(t_game *g);
+void	show_fov(t_game *g);
+
+// raycasting.c
+void	ray_minimap(t_game *g, float angle);
 
 #endif

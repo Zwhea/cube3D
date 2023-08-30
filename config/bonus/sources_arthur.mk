@@ -13,4 +13,6 @@
 SOURCES_BONUS =																	\
 					sources/bonus/render/draw/draw_frame.c						\
 					sources/bonus/render/draw/draw_player_map.c					\
-					sources/bonus/render/map/corner.c
+					sources/bonus/render/map/corner.c							\
+					sources/bonus/render/map/show_fov.c							\
+					sources/bonus/render/map/ray_minimap.c
