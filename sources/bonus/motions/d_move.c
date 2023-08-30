@@ -15,7 +15,7 @@
 int	d_move(t_game *g)
 {
 	puts(BLUE"je bouge avec d"END);
-	g->player.posf.x = g->player.posf.x + 0.10000 * sin(g->player.angle_view);
+	g->player.posf.x = g->player.posf.x - 0.10000 * sin(g->player.angle_view);
 	g->player.posf.y = g->player.posf.y + 0.10000 * cos(g->player.angle_view);
 	if (g->player.pos.x != g->player.posf.x)
 		g->player.pos.x = g->player.posf.x;

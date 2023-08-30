@@ -84,6 +84,6 @@ void	draw_circle(t_game *g, int x, int y, int color)
 				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;
 		}
-		x1++;
+		i++;
 	}
 }
