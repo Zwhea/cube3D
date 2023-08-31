@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 12:32:19 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:53:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define WRONG_MAP "program encounter issues with given map\n"
 # define WRONG_CHAR "you have an unwanted character in your map\n"
 # define WRONG_PLAYER "you have an issue with player character in your map\n"
+# define WRONG_DOOR "you have an issue with door character in your map\n"
 
 /*---- authorized charset ----------------------------------------------------*/
 
@@ -40,7 +41,7 @@
 # define COLOR_CEILING		"C "
 # define COLOR_CHARSET		"0123456789,"
 
-# define MAP_CHARSET		"01NSEW \n"
+# define MAP_CHARSET		"01NSEW- \n"
 # define PLAYER_CHARSET		"NSEW"
 
 /*---- sizes (windows, textures, images) -------------------------------------*/

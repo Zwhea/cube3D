@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:54:49 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void			_wrong_file(t_game *g);
 void			_wrong_map(t_game *g);
 void			_wrong_char(t_game *g);
 void			_wrong_player(t_game *g);
+void			_wrong_door(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- legend/ ----------------------------------------------------*/
