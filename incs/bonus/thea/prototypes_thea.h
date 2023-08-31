@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:47:46 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 14:43:35 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 /*---- includes --------------------------------------------------------------*/
 
 # include "structures_thea.h"
+
+
+int				move_door(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 /*---- clean/ ----------------------------------------------------------------*/
@@ -57,6 +60,7 @@ void			_wrong_file(t_game *g);
 void			_wrong_map(t_game *g);
 void			_wrong_char(t_game *g);
 void			_wrong_player(t_game *g);
+void			_wrong_door(t_game *g);
 
 /*---- init/ -----------------------------------------------------------------*/
 /*--------------- legend/ ----------------------------------------------------*/
@@ -116,7 +120,7 @@ void			handle_no_asset(t_game *g, char *line);
 
 /*------------------------- utils.c ------------------------------------------*/
 
-void			extract_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
+void			extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int				create_rgb(int r, int g, int b);
 
 /*---------------------- textures/ -------------------------------------------*/

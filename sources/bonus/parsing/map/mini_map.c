@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 09:49:25 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 16:26:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:33:35 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	*_ft_fill(t_game *g, char *s)
 		return (NULL);
 	i = -1;
 	while (++i < g->map.size.x + 10)
-		s[i] = bloup;
+		s[i] = door;
 	s[i] = '\n';
 	return (s);
 }
@@ -68,12 +68,12 @@ static char	*_ft_dup_fill(t_game *g, char *src, char *dst)
 	i = 0;
 	j = -1;
 	while (++j < 5)
-		dst[j] = bloup;
+		dst[j] = door;
 	while (src[i])
 		dst[j++] = src[i++];
 	j--;
 	while (j < g->map.size.x + 10)
-		dst[j++] = bloup;
+		dst[j++] = door;
 	dst[j] = '\n';
 	return (dst);
 }

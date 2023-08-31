@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 11:58:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:09:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	clean_map(t_game *g)
 	free(g->map.line_len);
 	return ;
 }
-# ifndef MACOS
+#ifndef MACOS
 
 int	clean(t_game *g)
 {
@@ -54,7 +54,7 @@ int	clean(t_game *g)
 	free(g->mlx);
 	exit(0);
 }
-# else
+#else
 
 int	clean(t_game *g)
 {
@@ -67,4 +67,4 @@ int	clean(t_game *g)
 	exit(0);
 }
 
-# endif
+#endif

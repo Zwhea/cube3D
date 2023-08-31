@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_square.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/30 17:16:57 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:07:38 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	draw_square_map(t_game *g, int x, int y, int color)
 		j = 0;
 		while (j < 30)
 		{
-			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 && y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+				&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
 				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
 			j++;
 		}
@@ -54,7 +55,7 @@ void	draw_circle(t_game *g, int x, int y, int color)
 	int		i;
 	int		j;
 	float	dst;
-	
+
 	i = 0;
 	while (i < 20)
 	{
