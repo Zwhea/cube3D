@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:52:33 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 14:45:17 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,11 @@ enum e_keycode
 
 enum e_keycode
 {
+	m_left_key	=	1,
+	scroll_key	=	2,
+	m_right_key	=	3,
+	m_down_key	=	4,
+	m_up_key	=	5,
 	a_key		=	0,
 	s_key		=	1,
 	d_key		=	2,

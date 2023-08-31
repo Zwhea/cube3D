@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 07:41:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/28 16:28:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 14:50:18 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void	down_left_corner(t_game *g)
 			if (g->map.map[y][x] == wall)
 				draw_square_map(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
+			else if (g->map.map[y][x] == door)
+				draw_square_map(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
 				g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
