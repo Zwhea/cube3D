@@ -14,21 +14,19 @@
 
 int	w_move(t_game *g)
 {
-	// float	test_x;
-	// float	test_y;
+	printf("g->player.posf.x=%f\n", g->player.posf.x);
+	printf("g->player.posf.x +0.1=%f\n", g->player.posf.x + 0.10000 * cos(g->player.angle_view));
 
-	// test_x = g->player.posf.x + 0.10000 * cos(g->player.angle_view) * 100;
-	// printf("%f ET %d\n", test_x, (int)test_x);
-	// test_y = g->player.posf.y + 0.10000 * sin(g->player.angle_view) * 100;
-	// if (my_mlx_pixel_get(g, (int)test_x, (int)test_y) == H_GREY)
+	// if (check_w_move(g))
 	// 	return (0);
 	puts(GREEN"je bouge avec w"END);
-	g->player.posf.x = g->player.posf.x + 0.10000 * cos(g->player.angle_view);
+
 	g->player.posf.y = g->player.posf.y + 0.10000 * sin(g->player.angle_view);
-	if (g->player.pos.x != g->player.posf.x)
-		g->player.pos.x = g->player.posf.x;
-	if (g->player.pos.y != g->player.posf.y)
-		g->player.pos.y = g->player.posf.y;
+	g->player.posf.x = g->player.posf.x + 0.10000 * cos(g->player.angle_view);
+	// if (g->player.pos.y != g->player.posf.y && g->map.map[g->player.pos.y])
+	g->player.pos.y = g->player.posf.y;
+	// if (g->player.pos.x != g->player.posf.x && g->map.map[g->player.pos.y][g->player.pos.x])
+	g->player.pos.x = g->player.posf.x;
 	map_render(g);
 	return (0);
 }
