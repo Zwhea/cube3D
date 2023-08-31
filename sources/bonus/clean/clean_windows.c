@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_windows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/24 10:34:05 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 11:56:24 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	clean_legend(t_game *g)
 	g->legend_window = NULL;
 	return (0);
 }
+
+# ifndef MACOS
 
 int	clean(t_game *g)
 {
@@ -34,3 +36,19 @@ int	clean(t_game *g)
 	free(g->mlx);
 	exit(0);
 }
+# else
+
+int	clean(t_game *g)
+{
+	printf(RED"closing program\n"END);
+	clean_maps(g);
+	clean_textures(g);
+	if (g->window)
+		mlx_destroy_window(g->mlx, g->window);
+	if (g->legend_window)
+		clean_legend(g);
+	free(g->mlx);
+	exit(0);
+}
+
+# endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:11:31 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 12:01:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static int	_key_press(t_keycode key, t_game *g)
 										{right_key, &view_right}};
 
 	i = -1;
+	if (g->player.diff_pov != 1 && g->player.last_pov > 0)
+		g->player.diff_pov = 1;
 	while (++i < 10)
 	{
 		if (key == react_tab[i].key)
