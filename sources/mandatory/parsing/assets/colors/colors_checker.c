@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/21 16:00:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	extract_colors(t_game *g, char *line, t_keyassets color_id)
 	id = 0;
 	while (color[id])
 	{
-		extract_nbrs(g, color_id, id, color[id]);
+		extrct_nbrs(g, color_id, id, color[id]);
 		id++;
 	}
 	free_split(color, 5);

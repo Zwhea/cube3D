@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:47:46 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void			handle_no_asset(t_game *g, char *line);
 
 /*------------------------- utils.c ------------------------------------------*/
 
-void			extract_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
+void			extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int				create_rgb(int r, int g, int b);
 
 /*---------------------- textures/ -------------------------------------------*/

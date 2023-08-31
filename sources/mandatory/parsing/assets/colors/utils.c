@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:46:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 10:19:09 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	_extract_floor_color(t_game *g, int i, char *line);
 
 /*----------------------------------------------------------------------------*/
 
-void	extract_nbrs(t_game *g, t_keyassets color_id, int i, char *line)
+void	extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line)
 {
 	if (color_id == ceiling_color)
 		_extract_ceiling_color(g, i, line);
