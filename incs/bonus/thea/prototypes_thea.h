@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 14:43:35 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:30:47 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,7 +174,6 @@ void			draw_line(t_game *g, t_vector start, t_vector end, int color);
 /*------------------------- draw_square.c ------------------------------------*/
 
 void			draw_square(t_game *g, int x, int y, int color);
-void			draw_square_map(t_game *g, int x, int y, int color);
 void			draw_circle(t_game *g, int x, int y, int color);
 
 /*------------------------- fill_background.c --------------------------------*/
