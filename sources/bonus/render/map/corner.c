@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 07:41:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/01 15:55:35 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:07:40 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,14 @@ void	down_left_corner(t_game *g)
 				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
 			else if (g->map.map[y][x] == door)
-				draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
-					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			{
+				if (door_direction(g, x, y) != 1)
+					draw_v_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+				if (door_direction(g, x, y) != 0)
+					draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			}
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
 				g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
@@ -56,8 +62,14 @@ void	down_right_corner(t_game *g)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 					45 + (4 + y - g->player.posf.y) * 30, H_GREY);
 			else if (g->map.map[y][x] == door)
-				draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+			{
+				if (door_direction(g, x, y) != 1)
+					draw_v_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
 					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+				if (door_direction(g, x, y) != 0)
+					draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			}
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
@@ -84,8 +96,14 @@ void	up_right_corner(t_game *g)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
 			else if (g->map.map[y][x] == door)
-				draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
-					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			{
+				if (door_direction(g, x, y) != 1)
+					draw_v_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+				if (door_direction(g, x, y) != 0)
+					draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			}
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
@@ -112,8 +130,14 @@ void	up_left_corner(t_game *g)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
 			else if (g->map.map[y][x] == door)
-				draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
-					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			{
+				if (door_direction(g, x, y) != 1)
+					draw_v_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+				if (door_direction(g, x, y) != 0)
+					draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+			}
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
