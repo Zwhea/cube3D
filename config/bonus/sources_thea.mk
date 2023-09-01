@@ -6,7 +6,7 @@
 #    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/09/01 12:32:26 by wangthea         ###   ########.fr        #
+#    Updated: 2023/09/01 15:29:53 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SOURCES_BONUS +=															\
 					sources/bonus/render/draw/mlx_pixel_put.c				\
 					sources/bonus/render/legend/core.c						\
 					sources/bonus/render/map/core.c							\
+					sources/bonus/render/map/utils.c						\
 					sources/bonus/viewing_range/view_left.c					\
 					sources/bonus/viewing_range/view_right.c				\
 					sources/bonus/main.c

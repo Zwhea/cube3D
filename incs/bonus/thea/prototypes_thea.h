@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/01 12:30:47 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/01 15:29:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 
 
 int				move_door(t_game *g);
+void			draw_h_rectangle(t_game *g, int x, int y, int color);
+void			draw_v_rectangle(t_game *g, int x, int y, int color);
+int				door_direction(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
 /*---- clean/ ----------------------------------------------------------------*/
