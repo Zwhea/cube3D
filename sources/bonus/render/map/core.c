@@ -26,6 +26,7 @@ void	map_render(t_game *g)
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
+	raycasting(g);
 	init_map(g);
 	show_fov(g);
 	draw_circle(g, 155, 155, H_DARKGREEN);

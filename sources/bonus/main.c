@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 		if (parsing(&g, ac, av) != 0)
 			return (close_n_free(&g, true));
 		map_render(&g);
+		// raycasting(&g);
 		init_mlx_functions(&g);
 		clean(&g);
 	}

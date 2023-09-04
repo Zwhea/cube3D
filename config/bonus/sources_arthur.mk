@@ -16,4 +16,5 @@ SOURCES_BONUS =																	\
 					sources/bonus/render/map/show_fov.c							\
 					sources/bonus/render/map/ray_minimap.c						\
 					sources/bonus/render/draw/mlx_pixel_get.c					\
-					sources/bonus/motions/check_if_movable.c
+					sources/bonus/motions/check_if_movable.c					\
+					sources/bonus/render/raycasting/raycasting.c

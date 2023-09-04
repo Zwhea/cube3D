@@ -20,7 +20,6 @@ void	ray_minimap(t_game *g, float angle)
 	float	throw_y;
 	float	degree;
 
-	// printf("%f\n", angle);
 	degree = angle + M_PI / 6;
 	while (degree >= angle - M_PI / 6)
 	{
