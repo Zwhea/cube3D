@@ -33,4 +33,10 @@ void	ray_minimap(t_game *g, float angle);
 // mlx_pixel_get.c
 unsigned int	my_mlx_pixel_get(t_game *g, int x, int y);
 
+// check_if_movable.c
+int	check_w_move(t_game *g);
+int	check_s_move(t_game *g);
+int	check_a_move(t_game *g);
+int	check_d_move(t_game *g);
+
 #endif

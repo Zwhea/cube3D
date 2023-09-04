@@ -31,14 +31,14 @@ void	down_left_corner(t_game *g)
 		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
 		{
 			if (g->map.map[y][x] == wall)
-				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_GREY);
 			else if (g->map.map[y][x] == door)
 				_draw_door(g, x, y);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
 				g->map.map[y][x] == north || g->map.map[y][x] == west \
 				|| g->map.map[y][x] == east)
-				draw_square(g, 45 + ((4 + x - g->player.posf.x)) * 30, \
+				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x--;
 		}
