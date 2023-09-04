@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/04 13:28:09 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/04 13:42:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-static int _view_switch(t_keycode key, t_game *g);
+static int	_view_switch(t_keycode key, t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
@@ -27,7 +27,7 @@ int	key_press(t_keycode key, t_game *g)
 	return (0);
 }
 
-int key_switch(t_keycode key, t_game *g)
+int	key_switch(t_keycode key, t_game *g)
 {
 	if (key == w_key)
 		w_move(g);
@@ -46,7 +46,7 @@ int key_switch(t_keycode key, t_game *g)
 	return (0);
 }
 
-static int _view_switch(t_keycode key, t_game *g)
+static int	_view_switch(t_keycode key, t_game *g)
 {
 	if (g->player.diff_pov != 1 && g->player.last_pov > 0)
 		g->player.diff_pov = 1;
