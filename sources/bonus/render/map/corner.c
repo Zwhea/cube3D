@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   corner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 07:41:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/01 18:07:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:15:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,10 @@ void	down_right_corner(t_game *g)
 			{
 				if (door_direction(g, x, y) != 1)
 					draw_v_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
-					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
 				if (door_direction(g, x, y) != 0)
 					draw_h_rectangle(g, 45 + (4 + x - g->player.posf.x) * 30, \
-					45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
+						45 + (4 + y - g->player.posf.y) * 30, H_BLACK);
 			}
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \

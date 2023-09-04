@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/09/01 18:16:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/04 08:05:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ static int	_key_press(t_keycode key, t_game *g)
 	}
 	return (0);
 }
+
 static int	_key_click(t_keycode key, t_game *g)
 {
 	int					i;
@@ -96,6 +97,7 @@ static int	_key_click(t_keycode key, t_game *g)
 	}
 	return (0);
 }
+
 static int	open_door(t_game *g)
 {
 	(void)g;
