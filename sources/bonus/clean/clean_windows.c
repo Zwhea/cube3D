@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 11:56:24 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:04:20 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	clean_legend(t_game *g)
 	return (0);
 }
 
-# ifndef MACOS
+#ifndef MACOS
 
 int	clean(t_game *g)
 {
@@ -36,7 +36,7 @@ int	clean(t_game *g)
 	free(g->mlx);
 	exit(0);
 }
-# else
+#else
 
 int	clean(t_game *g)
 {
@@ -51,4 +51,4 @@ int	clean(t_game *g)
 	exit(0);
 }
 
-# endif
+#endif

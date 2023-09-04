@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 12:48:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/08/31 14:45:17 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ enum e_tile
 	south	= 'S',
 	east	= 'E',
 	west	= 'W',
-	bloup	= '-'
+	door	= '-'
 };
 
 enum e_keyerror
@@ -46,7 +46,7 @@ enum e_keyerror
 	wrong_map,
 	wrong_char,
 	wrong_player,
-	trapped_player
+	wrong_door
 };
 
 enum e_keyassets
@@ -140,6 +140,11 @@ enum e_keycode
 
 enum e_keycode
 {
+	m_left_key	=	1,
+	scroll_key	=	2,
+	m_right_key	=	3,
+	m_down_key	=	4,
+	m_up_key	=	5,
 	a_key		=	0,
 	s_key		=	1,
 	d_key		=	2,

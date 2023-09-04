@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/29 10:34:40 by twang            ###   ########.fr        #
+#    Updated: 2023/09/01 12:32:26 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/map/utils.c						\
 					sources/bonus/parsing/parsing.c							\
 					sources/bonus/render/draw/draw_line.c					\
-					sources/bonus/render/draw/draw_square.c					\
 					sources/bonus/render/draw/fill_background.c				\
 					sources/bonus/render/draw/mlx_pixel_put.c				\
 					sources/bonus/render/legend/core.c						\
