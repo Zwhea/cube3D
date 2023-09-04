@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/01 15:29:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:40:57 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 # include "structures_thea.h"
 
-
 int				move_door(t_game *g);
-void			draw_h_rectangle(t_game *g, int x, int y, int color);
-void			draw_v_rectangle(t_game *g, int x, int y, int color);
+
 int				door_direction(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
@@ -77,6 +75,12 @@ int				legend_init(t_game *g);
 void			init_mlx(t_game *g);
 void			init_mlx_functions(t_game *g);
 
+/*------------------------- key_switchman.c ----------------------------------*/
+
+int				key_click(t_keycode key, t_game *g);
+int				key_press(t_keycode key, t_game *g);
+int				mouse_move(int x, int y, t_game *g);
+
 /*--------------- struct/ ----------------------------------------------------*/
 /*------------------------- init.c -------------------------------------------*/
 
@@ -92,6 +96,10 @@ int				a_move(t_game *g);
 /*------------------------- d_move.c -----------------------------------------*/
 
 int				d_move(t_game *g);
+
+/*------------------------- doors.c ------------------------------------------*/
+
+int				open_door(t_game *g);
 
 /*------------------------- s_move.c -----------------------------------------*/
 
@@ -170,19 +178,21 @@ float			get_angle_degree(t_game *g);
 
 /*---- render/ ---------------------------------------------------------------*/
 /*--------------- draw/ ------------------------------------------------------*/
+/*------------------------- draw_forms.c -------------------------------------*/
+
+void			draw_frame(t_game *g, int size_x, int size_y, int color);
+void			draw_square(t_game *g, int x, int y, int color);
+void			draw_circle(t_game *g, int x, int y, int color);
+void			draw_v_rectangle(t_game *g, int x, int y, int color);
+void			draw_h_rectangle(t_game *g, int x, int y, int color);
+
 /*------------------------- draw_line.c --------------------------------------*/
 
 void			draw_line(t_game *g, t_vector start, t_vector end, int color);
 
-/*------------------------- draw_square.c ------------------------------------*/
-
-void			draw_square(t_game *g, int x, int y, int color);
-void			draw_circle(t_game *g, int x, int y, int color);
-
 /*------------------------- fill_background.c --------------------------------*/
 
 void			fill_background(t_game *g, int size_x, int size_y, int color);
-void			draw_frame(t_game *g, int size_x, int size_y, int color);
 void			init_map(t_game *g);
 
 /*------------------------- mlx_pixel_put.c ----------------------------------*/

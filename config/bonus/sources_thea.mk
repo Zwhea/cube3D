@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/09/01 15:29:53 by wangthea         ###   ########.fr        #
+#    Updated: 2023/09/04 09:42:51 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,11 @@ SOURCES_BONUS +=															\
 					sources/bonus/errors/error_switchman.c					\
 					sources/bonus/init/legend/init.c						\
 					sources/bonus/init/mlx/init.c							\
+					sources/bonus/init/mlx/key_switchman.c					\
 					sources/bonus/init/struct/init.c						\
 					sources/bonus/motions/a_move.c							\
 					sources/bonus/motions/d_move.c							\
+					sources/bonus/motions/doors.c							\
 					sources/bonus/motions/s_move.c							\
 					sources/bonus/motions/w_move.c							\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\

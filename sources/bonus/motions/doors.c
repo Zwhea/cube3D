@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   doors.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/01 15:24:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/04 09:19:51 by twang            ###   ########.fr       */
+/*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
+/*   Updated: 2023/09/04 09:39:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-int	door_direction(t_game *g, int x, int y)
+int	open_door(t_game *g)
 {
-	if (y < g->map.size.y && x < g->map.size.x \
-			&& g->map.map[y][x] == door)
-	{
-		if (g->map.map[y - 1][x] == wall)
-			return (0);
-		else
-			return (1);
-	}
-	else
-		return (-1);
+	(void)g;
+	puts("ouvrir porte");
+	puts("si ouvert, fermer porte");
+	return (0);
 }
