@@ -15,7 +15,7 @@
 int	view_left(t_game *g)
 {
 	puts("je regarde a gauche");
-	g->player.angle_view -= M_PI * g->player.diff_pov / 48;
+	g->player.angle_view -= M_PI / 48;
 	map_render(g);
 	return (0);
 }

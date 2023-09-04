@@ -55,8 +55,8 @@ struct s_vector
 
 struct s_vector_f
 {
-	float	x;
-	float	y;
+	double	x;
+	double	y;
 };
 
 struct s_lst_assets
