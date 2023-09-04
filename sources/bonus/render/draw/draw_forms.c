@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/01 12:36:34 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/01 18:22:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,56 @@ void	draw_circle(t_game *g, int x, int y, int color)
 			j++;
 		}
 		i++;
+	}
+}
+
+void	draw_v_rectangle(t_game *g, int x, int y, int color)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i <= 30)
+	{
+		j = -1;
+		while (++j <= 10)
+			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+				&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+				my_mlx_pixel_put(&g->draw, x + j, y + i, H_WHITE);
+		while (++j <= 20)
+			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+				&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+		while (++j <= 30)
+			if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+				&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+				my_mlx_pixel_put(&g->draw, x + j, y + i, H_WHITE);
+	}
+}
+
+void	draw_h_rectangle(t_game *g, int x, int y, int color)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i <= 30)
+	{
+		if (i >= 10 && i <= 20)
+		{
+			j = -1;
+			while (++j <= 30)
+				if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+					&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+					my_mlx_pixel_put(&g->draw, x + j, y + i, color);
+		}
+		else
+		{
+			j = -1;
+			while (++j <= 30)
+				if (x + j <= 30 + MINI_MAP_X && x + j >= 30 \
+					&& y + i <= 30 + MINI_MAP_Y && y + i >= 30)
+					my_mlx_pixel_put(&g->draw, x + j, y + i, H_WHITE);
+		}
 	}
 }
