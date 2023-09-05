@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/04 13:42:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/05 12:36:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,9 @@ static int	_view_switch(t_keycode key, t_game *g)
 
 int	mouse_click(t_keycode key, t_game *g)
 {
-	int					i;
-	const t_lst_react	react_tab[] = {{m_left_key, &open_door}};
-
-	i = -1;
-	while (++i < 1)
-	{
-		if (key == react_tab[i].key)
-			return (react_tab[i].func(g));
-	}
+	printf("%p\n",g->map);
+	if (key == m_left_key)
+		open_door(g);
 	return (0);
 }
 
