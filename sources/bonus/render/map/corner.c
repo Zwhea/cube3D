@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 07:41:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/04 09:23:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/06 17:11:35 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	down_left_corner(t_game *g)
 				_draw_door(g, x, y);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south || \
 				g->map.map[y][x] == north || g->map.map[y][x] == west \
-				|| g->map.map[y][x] == east)
+				|| g->map.map[y][x] == east || g->map.map[y][x] == o_door)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x--;
@@ -64,7 +64,7 @@ void	down_right_corner(t_game *g)
 				_draw_door(g, x, y);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
-				|| g->map.map[y][x] == east)
+				|| g->map.map[y][x] == east || g->map.map[y][x] == o_door)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 					45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x++;
@@ -91,7 +91,7 @@ void	up_right_corner(t_game *g)
 				_draw_door(g, x, y);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
-				|| g->map.map[y][x] == east)
+				|| g->map.map[y][x] == east || g->map.map[y][x] == o_door)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x++;
@@ -118,7 +118,7 @@ void	up_left_corner(t_game *g)
 				_draw_door(g, x, y);
 			else if (g->map.map[y][x] == space || g->map.map[y][x] == south \
 				|| g->map.map[y][x] == north || g->map.map[y][x] == west \
-				|| g->map.map[y][x] == east)
+				|| g->map.map[y][x] == east || g->map.map[y][x] == o_door)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
 				45 + (4 + y - g->player.posf.y) * 30, H_WHITE);
 			x--;

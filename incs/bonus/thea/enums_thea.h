@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   enums_thea.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 14:45:17 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:39:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ enum e_tile
 	south	= 'S',
 	east	= 'E',
 	west	= 'W',
-	door	= '-'
+	door	= '-',
+	o_door	= '+'
 };
 
 enum e_keyerror
