@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_windows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:04:20 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:53:05 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	clean(t_game *g)
 	free(g->mlx);
 	exit(0);
 }
+
 #else
 
 int	clean(t_game *g)

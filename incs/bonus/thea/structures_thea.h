@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:01:10 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/07 15:51:16 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ struct s_game
 	t_tex		textures;
 	t_color		color[2];
 	t_draw		draw;
+	bool		mouse;
 	void		*mlx;
 	void		*window;
 	void		*legend_window;
