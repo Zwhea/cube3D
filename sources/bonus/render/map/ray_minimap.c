@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_minimap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 17:50:18 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:08:07 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/07 08:56:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ray_minimap(t_game *g, float angle)
 	float	throw_y;
 	float	degree;
 
-	// printf("%f\n", angle);
 	degree = angle + M_PI / 6;
 	while (degree >= angle - M_PI / 6)
 	{

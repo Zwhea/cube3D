@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/06 17:11:54 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/07 15:56:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	key_switch(t_keycode key, t_game *g)
 		s_move(g);
 	if (key == left_key || key == right_key)
 		_view_switch(key, g);
+	if (key == space_key)
+		open_door(g);
 	return (0);
 }
 
@@ -62,13 +64,35 @@ int	mouse_click(t_keycode key, int x, int y,t_game *g)
 	(void)x;
 	(void)y;
 	if (key == m_left_key)
-		open_door(g);
+		open_door(g);	
+	if (key == m_right_key)
+		g->mouse = true;
+	return (0);
+}
+
+int	mouse_release(t_keycode key, int x, int y,t_game *g)
+{
+	(void)x;
+	(void)y;
+	if (key == m_right_key)
+		g->mouse = false;
 	return (0);
 }
 
 int	mouse_move(int x, int y, t_game *g)
 {
 	(void)y;
+	int	x_mouse;
+	int	y_mouse;
+	
+	if (g->mouse == true)
+		return (0);
+	x_mouse = 0;
+	y_mouse = 0;
+	mlx_mouse_get_pos(g->mlx, g->window, &x_mouse, &y_mouse);
+	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
+		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->mouse == false)
+		mlx_mouse_move(g->mlx, g->window, WINDOW_X / 2, WINDOW_Y / 2);
 	if (g->player.last_pov > x + 0.5)
 	{
 		g->player.diff_pov = (g->player.last_pov - x) / 5;
