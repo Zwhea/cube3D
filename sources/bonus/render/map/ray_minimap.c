@@ -28,8 +28,7 @@ void	ray_minimap(t_game *g, float angle)
 		{
 			throw_x = 165 + plane_y * cos(degree);
 			throw_y = 165 + plane_y * sin(degree);
-			if (my_mlx_pixel_get(g, throw_x, throw_y) == H_GREY ||
-				my_mlx_pixel_get(g, throw_x, throw_y) == H_BLACK)
+			if (my_mlx_pixel_get(g, throw_x, throw_y) == H_BLACK || my_mlx_pixel_get(g, throw_x, throw_y) == H_GREY)
 				break ;
 			if (throw_x >= 0 && throw_y >= 0)
 				my_mlx_pixel_put(&g->draw, (int)throw_x, (int)throw_y, H_GREEN);
