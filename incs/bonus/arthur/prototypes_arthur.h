@@ -40,6 +40,6 @@ int	check_a_move(t_game *g);
 int	check_d_move(t_game *g);
 
 // raycasting.c
-void	raycasting(t_game *g);
+void	raycasting(t_game *g, float angle);
 
 #endif
