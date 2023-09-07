@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/06 10:38:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/07 15:54:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void			init_mlx_functions(t_game *g);
 int				key_press(t_keycode key, t_game *g);
 int				key_switch(t_keycode key, t_game *g);
 int				mouse_click(t_keycode key, int x, int y,t_game *g);
+int				mouse_release(t_keycode key, int x, int y,t_game *g);
 int				mouse_move(int x, int y, t_game *g);
 
 /*--------------- struct/ ----------------------------------------------------*/
