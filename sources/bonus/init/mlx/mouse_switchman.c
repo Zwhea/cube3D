@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_switchman.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:40:31 by twang             #+#    #+#             */
-/*   Updated: 2023/09/08 14:53:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/11 09:31:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	mouse_release(t_keycode key, int x, int y, t_game *g)
 	return (0);
 }
 
+#ifndef MACOS
+
 static void	_mouse_check(t_game *g)
 {
 	int	x_mouse;
@@ -71,3 +73,20 @@ static void	_mouse_check(t_game *g)
 		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->mouse == false)
 		mlx_mouse_move(g->mlx, g->window, WINDOW_X / 2, WINDOW_Y / 2);
 }
+
+# else
+
+static void	_mouse_check(t_game *g)
+{
+	int	x_mouse;
+	int	y_mouse;
+
+	x_mouse = 0;
+	y_mouse = 0;
+	mlx_mouse_get_pos(g->window, &x_mouse, &y_mouse);
+	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
+		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->mouse == false)
+		mlx_mouse_move(g->window, WINDOW_X / 2, WINDOW_Y / 2);
+}
+
+#endif
