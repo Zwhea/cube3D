@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/09/07 09:01:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/08 14:39:18 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	_check_door(t_game *g, int y, int x);
 
 int	open_door(t_game *g)
 {
-	//vers ou je regarde?
 	//si je regarde en haut:
 	_check_door(g, g->player.pos.y - 1, g->player.pos.x);
 	//si je regarde en bas:
@@ -30,7 +29,6 @@ int	open_door(t_game *g)
 	_check_door(g, g->player.pos.y, g->player.pos.x - 1);
 	//si je regarde a droite:
 	_check_door(g, g->player.pos.y, g->player.pos.x + 1);
-
 	return (0);
 }
 
