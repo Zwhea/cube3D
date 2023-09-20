@@ -41,7 +41,7 @@ void	map_render(t_game *g)
 		// printf("ICI:%f\n", angle);
 	}
 	init_map(g);
-	show_fov(g);
+	ray_minimap(g, g->player.angle_view);
 	draw_circle(g, 155, 155, H_DARKGREEN);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
