@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 09:57:31 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 16:00:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_lst_react	t_lst_react;
 typedef struct s_vector		t_vector;
 typedef struct s_vector_f	t_vector_f;
 typedef struct s_draw		t_draw;
+typedef struct s_switches	t_switches;
 
 /*---- typedef function pointer ----------------------------------------------*/
 
@@ -37,6 +38,19 @@ typedef void				(*t_assets_ft)(t_game *g, char *line);
 typedef int					(*t_keys_ft)(t_game *g);
 
 /*---- structures ------------------------------------------------------------*/
+
+struct s_switches
+{
+	bool	mouse;
+	bool	w_key;
+	bool	a_key;
+	bool	s_key;
+	bool	d_key;
+	bool	up_key;
+	bool	down_key;
+	bool	left_key;
+	bool	right_key;
+};
 
 struct s_draw
 {
@@ -121,8 +135,8 @@ struct s_map
 
 struct s_file
 {
-	int		fd;
-	char	*file;
+	int			fd;
+	char		*file;
 };
 
 struct s_game
@@ -136,7 +150,7 @@ struct s_game
 	t_tex		textures;
 	t_color		color[2];
 	t_draw		draw;
-	bool		mouse;
+	t_switches	switches;
 	void		*mlx;
 	void		*window;
 	void		*legend_window;

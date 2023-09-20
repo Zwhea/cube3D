@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:37 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/05 11:17:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 15:42:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	main(int ac, char **av)
 		if (parsing(&g, ac, av) != 0)
 			return (close_n_free(&g, true));
 		map_render(&g);
-		// raycasting(&g);
 		init_mlx_functions(&g);
 		clean(&g);
 	}
