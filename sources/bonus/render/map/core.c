@@ -46,3 +46,9 @@ void	map_render(t_game *g)
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
 }
+
+/*
+	refacto :
+	-	game / render / core / maths
+	-	mini_map / render / core / maths
+*/
