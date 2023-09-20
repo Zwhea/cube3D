@@ -25,22 +25,21 @@ void	init_map(t_game *g)
 void	map_render(t_game *g)
 {
 	double	angle;
-	// double	ratio;
+	double	ratio;
 
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
 	angle = g->player.angle_view - (30 * M_PI / 180);
-	// ratio = (60 * M_PI / 180) / 1920;
+	ratio = (60 * M_PI / 180) / 1920;
 	// printf("dddddd%f\n", angle);
-	// while (angle <= g->player.angle_view + (30 * M_PI / 180))
-	// {
-	// 	raycasting(g, angle);
-	// 	g->size.x++;
-	// 	angle += ratio;
-	// 	printf("ICI:%f\n", angle);
-	// }
-	printf("angle arthur :\t%f\n", g->player.angle_view);
+	while (angle <= g->player.angle_view + (30 * M_PI / 180))
+	{
+		raycasting(g, angle);
+		g->size.x++;
+		angle += ratio;
+		// printf("ICI:%f\n", angle);
+	}
 	init_map(g);
 	show_fov(g);
 	draw_circle(g, 155, 155, H_DARKGREEN);

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/08 14:44:19 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 14:59:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	key_press(t_keycode key, t_game *g)
 		clean(g);
 	if (key == l_key)
 		legend_init(g);
+	if (key == space_key)
+		open_door(g);
 	return (0);
 }
 
@@ -44,8 +46,6 @@ int	key_switch(t_keycode key, t_game *g)
 		s_move(g);
 	if (key == left_key || key == right_key)
 		_view_switch(key, g);
-	if (key == space_key)
-		open_door(g);
 	return (0);
 }
 

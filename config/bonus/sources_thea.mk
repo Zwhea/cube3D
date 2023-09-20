@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/09/08 14:45:37 by twang            ###   ########.fr        #
+#    Updated: 2023/09/20 15:00:43 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ SOURCES_BONUS +=															\
 					sources/bonus/errors/error_switchman.c					\
 					sources/bonus/init/legend/init.c						\
 					sources/bonus/init/mlx/init.c							\
-					sources/bonus/init/mlx/key_switchman.c					\
-					sources/bonus/init/mlx/mouse_switchman.c				\
 					sources/bonus/init/struct/init.c						\
+					sources/bonus/init/switchmans/key_switchman.c			\
+					sources/bonus/init/switchmans/mouse_switchman.c			\
 					sources/bonus/motions/a_move.c							\
 					sources/bonus/motions/d_move.c							\
 					sources/bonus/motions/doors.c							\
