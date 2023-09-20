@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/07 15:51:16 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 09:57:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ struct s_player
 	t_vector_f	posf;
 	t_vector_f	start;
 	t_vector_f	view;
-	float		angle_view;
+	double		angle_view;
 	int			player;
 	int			last_pov;
 	int			diff_pov;

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/05 11:19:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 09:32:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include "enums_thea.h"
 # include "prototypes_thea.h"
 # include "structures_thea.h"
+
 # include <math.h>
 
 #endif
