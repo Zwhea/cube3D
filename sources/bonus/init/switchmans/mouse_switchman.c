@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_switchman.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:40:31 by twang             #+#    #+#             */
-/*   Updated: 2023/09/11 09:31:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:15:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ static void	_mouse_check(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
-int	mouse_click(t_keycode key, int x, int y, t_game *g)
+int	mouse_switch(t_keycode key, int x, int y, t_game *g)
 {
 	(void)x;
 	(void)y;
 	if (key == m_left_key)
 		open_door(g);
 	if (key == m_right_key)
-		g->mouse = true;
+		g->switches.mouse = true;
 	return (0);
 }
 
 int	mouse_move(int x, int y, t_game *g)
 {
 	(void)y;
-	if (g->mouse == true)
+	if (g->switches.mouse == true)
 		return (0);
 	_mouse_check(g);
 	if (g->player.last_pov > x + 0.5)
@@ -55,7 +55,7 @@ int	mouse_release(t_keycode key, int x, int y, t_game *g)
 	(void)x;
 	(void)y;
 	if (key == m_right_key)
-		g->mouse = false;
+		g->switches.mouse = false;
 	return (0);
 }
 
@@ -70,7 +70,7 @@ static void	_mouse_check(t_game *g)
 	y_mouse = 0;
 	mlx_mouse_get_pos(g->mlx, g->window, &x_mouse, &y_mouse);
 	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
-		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->mouse == false)
+		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
 		mlx_mouse_move(g->mlx, g->window, WINDOW_X / 2, WINDOW_Y / 2);
 }
 
@@ -85,7 +85,7 @@ static void	_mouse_check(t_game *g)
 	y_mouse = 0;
 	mlx_mouse_get_pos(g->window, &x_mouse, &y_mouse);
 	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
-		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->mouse == false)
+		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
 		mlx_mouse_move(g->window, WINDOW_X / 2, WINDOW_Y / 2);
 }
 

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/08 14:57:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/20 15:54:46 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,12 +73,12 @@ void			init_mlx_functions(t_game *g);
 
 /*------------------------- key_switchman.c ----------------------------------*/
 
-int				key_press(t_keycode key, t_game *g);
 int				key_switch(t_keycode key, t_game *g);
+int				key_release(t_keycode key, t_game *g);
 
 /*------------------------- mouse_switchman.c --------------------------------*/
 
-int				mouse_click(t_keycode key, int x, int y, t_game *g);
+int				mouse_switch(t_keycode key, int x, int y, t_game *g);
 int				mouse_move(int x, int y, t_game *g);
 int				mouse_release(t_keycode key, int x, int y, t_game *g);
 
@@ -209,7 +209,7 @@ void			legend_render(t_game *g);
 /*--------------- map/ -------------------------------------------------------*/
 /*------------------------- core.c -------------------------------------------*/
 
-void			map_render(t_game *g);
+void				map_render(t_game *g);
 
 /*------------------------- utils.c ------------------------------------------*/
 
