@@ -20,8 +20,8 @@ int	d_move(t_game *g)
 	puts(BLUE"je bouge avec d"END);
 	g->player.posf.x = g->player.posf.x - 0.1 * sin(g->player.angle_view);
 	g->player.posf.y = g->player.posf.y + 0.1 * cos(g->player.angle_view);
-	g->player.pos.x = g->player.posf.x;
-	g->player.pos.y = g->player.posf.y;
+	g->player.pos.x = (int)g->player.posf.x;
+	g->player.pos.y = (int)g->player.posf.y;
 	map_render(g);
 	return (0);
 }

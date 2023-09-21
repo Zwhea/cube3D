@@ -28,7 +28,7 @@ void	down_left_corner(t_game *g)
 	while (g->map.map[y] && y < g->player.pos.y + 6)
 	{
 		x = g->player.pos.x;
-		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
+		while (x < g->map.line_len[y] && x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
 		{
 			if (g->map.map[y][x] == wall)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
@@ -55,7 +55,7 @@ void	down_right_corner(t_game *g)
 	while (g->map.map[y] && y < g->player.pos.y + 6)
 	{
 		x = g->player.pos.x;
-		while (g->map.map[y][x] && x < g->player.pos.x + 6)
+		while (x < g->map.line_len[y] && g->map.map[y][x] && x < g->player.pos.x + 6)
 		{
 			if (g->map.map[y][x] == wall)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
@@ -82,7 +82,7 @@ void	up_right_corner(t_game *g)
 	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 6)
 	{
 		x = g->player.pos.x;
-		while (g->map.map[y][x] && x < g->player.pos.x + 6)
+		while (x < g->map.line_len[y] && g->map.map[y][x] && x < g->player.pos.x + 6)
 		{
 			if (g->map.map[y][x] == wall)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
@@ -109,7 +109,7 @@ void	up_left_corner(t_game *g)
 	while (y >= 0 && g->map.map[y] && y > g->player.pos.y - 6)
 	{
 		x = g->player.pos.x;
-		while (x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
+		while (x < g->map.line_len[y] && x >= 0 && g->map.map[y][x] && x > g->player.pos.x - 6)
 		{
 			if (g->map.map[y][x] == wall)
 				draw_square(g, 45 + (4 + x - g->player.posf.x) * 30, \
