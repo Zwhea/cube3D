@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/04 13:05:32 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/09/21 14:22:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	raycasting(t_game *g, float angle)
 	t_vector	check;
 	t_vector	step;
 	int			wall;
+	int			door;
 	double		dist;
 	t_vector_f	intersection;
 
@@ -52,8 +53,9 @@ void	raycasting(t_game *g, float angle)
 		ray_len.y = ((float)(check.y + 1) - ray_start.y) * ray_unit.y;
 	}
 	wall = 0;
+	door = 0;
 	dist = 0;
-	while (wall == 0)
+	while (wall == 0 && door == 0)
 	{
 		if (ray_len.x < ray_len.y)
 		{
@@ -69,6 +71,8 @@ void	raycasting(t_game *g, float angle)
 		}
 		if (g->map.map[check.y][check.x] == '1')
 			wall = 1;
+		else if (g->map.map[check.y][check.x] == '-')
+			door = 1;
 	}
 	dist -= 1;
 	intersection.x = ray_start.x + ray_dir.x * dist;
@@ -86,7 +90,12 @@ void	raycasting(t_game *g, float angle)
 	while (g->size.y <= WINDOW_Y)
 	{
 		if (g->size.y >= over_wall && g->size.y <= under_wall)
-			my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
+		{
+			if (wall)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
+			else if (door)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
+		}
 		g->size.y++;
 	}
 }
