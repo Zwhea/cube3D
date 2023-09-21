@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 09:32:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 15:42:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ static int	_view_switch(t_keycode key, t_game *g);
 
 int	key_manager(t_game *g)
 {
-	if (g->switches.w_key)
+	if (g->switches.w_key && !g->switches.s_key && !g->switches.down_key)
 		w_move(g);
-	if (g->switches.a_key)
+	if (g->switches.a_key && !g->switches.d_key)
 		a_move(g);
-	if (g->switches.s_key)
+	if (g->switches.s_key && !g->switches.w_key && !g->switches.up_key)
 		s_move(g);
-	if (g->switches.d_key)
+	if (g->switches.d_key && !g->switches.a_key)
 		d_move(g);
-	if (g->switches.up_key)
+	if (g->switches.up_key && !g->switches.down_key && !g->switches.s_key)
 		w_move(g);
-	if (g->switches.down_key)
+	if (g->switches.down_key && !g->switches.up_key && !g->switches.w_key)
 		s_move(g);
-	if (g->switches.left_key)
+	if (g->switches.left_key && !g->switches.right_key)
 		view_left(g);
-	if (g->switches.right_key)
+	if (g->switches.right_key && !g->switches.left_key)
 		view_right(g);
 	return (0);
 }
