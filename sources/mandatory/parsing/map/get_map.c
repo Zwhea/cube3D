@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:58:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/21 16:02:51 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 14:07:16 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	get_map(t_game *g, int fd, int start_map)
 	tmp_line = NULL;
 	g->map.map = (char **)ft_calloc(set_map_height(g, fd) + 1, sizeof(char *));
 	if (!g->map.map)
-		clean(g); //one leak left
+		clean(g);
 	g->map.line_len = (int *)ft_calloc(g->map.size.y + 1, sizeof(int));
 	if (!g->map.line_len)
 		clean(g);

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:40:31 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 15:15:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:55:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ static void	_mouse_check(t_game *g)
 	y_mouse = 0;
 	mlx_mouse_get_pos(g->mlx, g->window, &x_mouse, &y_mouse);
 	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
-		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
+	|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
 		mlx_mouse_move(g->mlx, g->window, WINDOW_X / 2, WINDOW_Y / 2);
 }
 
-# else
+#else
 
 static void	_mouse_check(t_game *g)
 {
@@ -85,7 +85,7 @@ static void	_mouse_check(t_game *g)
 	y_mouse = 0;
 	mlx_mouse_get_pos(g->window, &x_mouse, &y_mouse);
 	if ((x_mouse >= WINDOW_X - 50 || y_mouse >= WINDOW_Y - 50 \
-		|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
+	|| x_mouse <= 0 + 50 || y_mouse <= 0 + 50) && g->switches.mouse == false)
 		mlx_mouse_move(g->window, WINDOW_X / 2, WINDOW_Y / 2);
 }
 
