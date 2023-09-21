@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+#ifdef LINUX
+
 void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
 	t_list	*lst_ptr;
@@ -27,3 +29,5 @@ void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	}
 	ft_lstremove_if(&lst_ptr->next, data_ref, cmp);
 }
+
+#endif

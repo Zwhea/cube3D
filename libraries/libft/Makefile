@@ -19,10 +19,15 @@ include		config/sources.mk
 #--static library--------------------------------------------------------------#
 
 NAME	=	libft.a
+OS		=	$(shell uname)
 
 #--compilation flags-----------------------------------------------------------#
 
 CFLAGS	=	-Wall -Wextra -Werror -I .
+
+ifeq ($(OS), Linux)
+CFLAGS	+=	-D LINUX
+endif
 
 #--directory variables---------------------------------------------------------#
 
