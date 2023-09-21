@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_if_movable.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/21 10:00:07 by twang             #+#    #+#             */
+/*   Updated: 2023/09/21 13:44:14 by twang            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
@@ -16,7 +28,8 @@ int	check_w_move(t_game *g)
 		dist_x = ceil(g->player.posf.x + 0.1 * cos(g->player.angle_view) - 1);
 	if (dist_x < 0 || dist_y < 0)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && (g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
+	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
+	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
 		return (0);
 	return (1);
 }
@@ -36,7 +49,8 @@ int	check_s_move(t_game *g)
 		dist_y = ceil(g->player.posf.y - 0.1 * sin(g->player.angle_view) - 1);
 	if (dist_x < 0 || dist_y < 0)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && (g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
+	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
+	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
 		return (0);
 	return (1);
 }
@@ -56,7 +70,8 @@ int	check_a_move(t_game *g)
 		dist_y = ceil(g->player.posf.y - 0.1 * cos(g->player.angle_view) - 1);
 	if (dist_x < 0 || dist_y < 0)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && (g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
+	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
+	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
 		return (0);
 	return (1);
 }
@@ -76,7 +91,8 @@ int	check_d_move(t_game *g)
 		dist_y = ceil(g->player.posf.y + 0.1 * cos(g->player.angle_view) - 1);
 	if (dist_x < 0 || dist_y < 0)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && (g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
+	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
+	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 16:07:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 09:32:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,27 @@
 static int	_view_switch(t_keycode key, t_game *g);
 
 /*----------------------------------------------------------------------------*/
+
+int	key_manager(t_game *g)
+{
+	if (g->switches.w_key)
+		w_move(g);
+	if (g->switches.a_key)
+		a_move(g);
+	if (g->switches.s_key)
+		s_move(g);
+	if (g->switches.d_key)
+		d_move(g);
+	if (g->switches.up_key)
+		w_move(g);
+	if (g->switches.down_key)
+		s_move(g);
+	if (g->switches.left_key)
+		view_left(g);
+	if (g->switches.right_key)
+		view_right(g);
+	return (0);
+}
 
 int	key_switch(t_keycode key, t_game *g)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:56:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	extract_colors(t_game *g, char *line, t_keyassets color_id)
 
 	color = ft_split(line, ',');
 	if (!color)
-		clean(g); //one leak left
+		clean(g);
 	id = 0;
 	while (color[id])
 	{

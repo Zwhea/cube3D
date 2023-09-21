@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 10:28:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 09:43:27 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,11 @@ static void	_check_door(t_game *g, int y, int x)
 	if (g->map.map[y][x] == door)
 	{
 		g->map.map[y][x] = o_door;
-		map_render(g);
+		game_display(g);
 	}
 	else if (g->map.map[y][x] == o_door)
 	{
 		g->map.map[y][x] = door;
-		map_render(g);
+		game_display(g);
 	}
 }
