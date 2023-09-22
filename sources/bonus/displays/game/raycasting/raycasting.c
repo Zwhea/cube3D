@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/21 14:22:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/22 11:12:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ void	raycasting(t_game *g, float angle)
 	intersection.x = ray_start.x + ray_dir.x * dist;
 	intersection.y = ray_start.y + ray_dir.y * dist;
 	double	cam_dist;
-	cam_dist = (WINDOW_X / 2) / cos(30);
-	cam_dist = abs(cam_dist);
+	cam_dist = fabs((WINDOW_X / 2) / cos(30));
 	double	wall_ratio;
 	wall_ratio = 128 / (dist * cam_dist);
 	int	wall_size;
