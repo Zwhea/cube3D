@@ -75,20 +75,25 @@ void	raycasting(t_game *g, float angle)
 			door = 1;
 	}
 	dist -= 1;
+	dist *= 20;
+	printf("distance = %f\n", dist);
 	intersection.x = ray_start.x + ray_dir.x * dist;
 	intersection.y = ray_start.y + ray_dir.y * dist;
 	double	cam_dist;
-	cam_dist = (WINDOW_X / 2) / cos(30);
-	cam_dist = abs(cam_dist);
 	double	wall_ratio;
-	wall_ratio = 128 / (dist * cam_dist);
-	int	wall_size;
-	wall_size = wall_ratio * WINDOW_Y;
-	int	over_wall = (WINDOW_Y / 2) - (wall_size / 2);
-	int	under_wall = WINDOW_Y / 2 + (wall_size / 2);
+	double	wall_size;
+	cam_dist = (540) / tan(M_PI / 6);
+	wall_ratio = 128 * cam_dist / dist;
+	// wall_size = wall_ratio * WINDOW_Y;
+	if (angle - g->player.angle_view > 0)
+		wall_size = wall_ratio * cos(0.5235);
+	else
+		wall_size = wall_ratio * cos(-0.5235);
+	int	top_wall = (960) - (wall_size / 2);
+	int	bottom_wall = (960) + (wall_size / 2);
 	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0 && g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
-		if (g->size.y >= over_wall && g->size.y <= under_wall)
+		if (g->size.y >= top_wall && g->size.y <= bottom_wall)
 		{
 			if (wall)
 				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
