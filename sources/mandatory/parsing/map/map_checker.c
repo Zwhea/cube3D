@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 14:02:49 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/26 13:43:13 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 static void	_check_char(t_game *g);
+static void	_set_player(t_game *g, int i, int j);
 static void	_backtracking(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
@@ -47,13 +48,18 @@ static void	_check_char(t_game *g)
 			if (!ft_strchr(MAP_CHARSET, g->map.map[i][j]))
 				error_switchman(g, wrong_char);
 			if (ft_strchr(PLAYER_CHARSET, g->map.map[i][j]))
-			{
-				g->player.player++;
-				set_direction(g, g->map.map[i][j]);
-				set_vector(&g->player.pos, j, i);
-			}
+				_set_player(g, i, j);
 		}
 	}
+}
+
+static void	_set_player(t_game *g, int i, int j)
+{
+	g->player.player++;
+	set_direction(g, g->map.map[i][j]);
+	set_vector(&g->player.pos, j, i);
+	set_vector_f(&g->player.posf, j + 0.5, i + 0.5);
+	set_vector_f(&g->player.start, j + 0.5, i + 0.5);
 }
 
 static void	_backtracking(t_game *g, int x, int y)

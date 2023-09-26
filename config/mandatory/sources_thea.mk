@@ -3,15 +3,24 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
+#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/28 12:18:26 by twang            ###   ########.fr        #
+#    Updated: 2023/09/26 14:13:49 by wangthea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES +=																	\
-			sources/mandatory/clean/clean.c									\
+			sources/mandatory/clean/clean_assets.c							\
+			sources/mandatory/clean/clean_windows.c							\
+			sources/mandatory/displays/draw/draw_forms.c					\
+			sources/mandatory/displays/draw/mlx_pixel_get.c					\
+			sources/mandatory/displays/draw/mlx_pixel_put.c					\
+			sources/mandatory/displays/game/raycasting/raycasting.c			\
+			sources/mandatory/displays/game/core.c							\
+			sources/mandatory/displays/motions/check_if_movable.c			\
+			sources/mandatory/displays/motions/motions.c					\
+			sources/mandatory/displays/viewing_range/viewing_range.c		\
 			sources/mandatory/errors/inventory/argument.c					\
 			sources/mandatory/errors/inventory/asset.c						\
 			sources/mandatory/errors/inventory/file.c						\
@@ -19,10 +28,7 @@ SOURCES +=																	\
 			sources/mandatory/errors/error_switchman.c						\
 			sources/mandatory/init/mlx/init.c								\
 			sources/mandatory/init/struct/init.c							\
-			sources/mandatory/motions/a_move.c								\
-			sources/mandatory/motions/d_move.c								\
-			sources/mandatory/motions/s_move.c								\
-			sources/mandatory/motions/w_move.c								\
+			sources/mandatory/init/switches/key_switchman.c					\
 			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
 			sources/mandatory/parsing/assets/colors/utils.c					\
@@ -33,8 +39,4 @@ SOURCES +=																	\
 			sources/mandatory/parsing/map/map_checker.c						\
 			sources/mandatory/parsing/map/utils.c							\
 			sources/mandatory/parsing/parsing.c								\
-			sources/mandatory/render/draw/draw_line.c						\
-			sources/mandatory/render/draw/draw_square.c						\
-			sources/mandatory/render/draw/mlx_pixel_put.c					\
-			sources/mandatory/render/game/ceiling_n_floor.c					\
 			sources/mandatory/main.c

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/28 16:30:21 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/26 13:40:42 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	_monitor(t_game *g);
 
 int	parsing(t_game *g, char **av)
 {
-	if (_check_file(g, av[1]) != -1)
+	if (_check_file(g, av[1]) > 0)
 	{
 		init_mlx(g);
 		_pathfinder(g);
