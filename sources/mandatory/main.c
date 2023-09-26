@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 08:47:22 by aascedu           #+#    #+#             */
-/*   Updated: 2023/08/28 13:19:04 by twang            ###   ########.fr       */
+/*   Created: 2023/08/23 08:46:37 by aascedu           #+#    #+#             */
+/*   Updated: 2023/09/26 13:40:14 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int	main(int ac, char **av)
 		error_switchman(&g, no_args);
 	else
 	{
-		if (parsing(&g, av))
+		if (parsing(&g, av) != 0)
 			return (close_n_free(&g, true));
+		game_display(&g);
 		init_mlx_functions(&g);
 		clean(&g);
 	}

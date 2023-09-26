@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/22 16:09:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/26 14:20:16 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@
 # define H_BLACK			0x000000
 # define H_RED				0xff0000
 # define H_GREEN			0x00ff00
+# define H_DARKGREEN		0x01452c
 # define H_BLUE				0x0000ff
 # define H_YELLOW			0xffff00
 # define H_ORANGE			0xffa500
