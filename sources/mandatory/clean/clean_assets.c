@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean.c                                            :+:      :+:    :+:   */
+/*   clean_assets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:09:40 by wangthea         ###   ########.fr       */
+/*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
+/*   Updated: 2023/09/26 13:51:15 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,37 +34,10 @@ void	clean_textures(t_game *g)
 	}
 }
 
-void	clean_map(t_game *g)
+void	clean_maps(t_game *g)
 {
-	free_split(g->map.map, g->map.size.y);
+	if (g->map.map)
+		free_split(g->map.map, g->map.size.y);
 	free(g->map.line_len);
 	return ;
 }
-#ifndef MACOS
-
-int	clean(t_game *g)
-{
-	printf(RED"closing program\n"END);
-	clean_map(g);
-	clean_textures(g);
-	if (g->window)
-		mlx_destroy_window(g->mlx, g->window);
-	if (g->mlx)
-		mlx_destroy_display(g->mlx);
-	free(g->mlx);
-	exit(0);
-}
-#else
-
-int	clean(t_game *g)
-{
-	printf(RED"closing program\n"END);
-	clean_map(g);
-	clean_textures(g);
-	if (g->window)
-		mlx_destroy_window(g->mlx, g->window);
-	free(g->mlx);
-	exit(0);
-}
-
-#endif

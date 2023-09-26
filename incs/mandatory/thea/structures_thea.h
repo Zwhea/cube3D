@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 11:51:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/26 14:42:31 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_lst_react	t_lst_react;
 typedef struct s_vector		t_vector;
+typedef struct s_vector_f	t_vector_f;
 typedef struct s_draw		t_draw;
+typedef struct s_switches	t_switches;
 
 /*---- typedef function pointer ----------------------------------------------*/
 
@@ -36,6 +38,18 @@ typedef void				(*t_assets_ft)(t_game *g, char *line);
 typedef int					(*t_keys_ft)(t_game *g);
 
 /*---- structures ------------------------------------------------------------*/
+
+struct s_switches
+{
+	bool	w_key;
+	bool	a_key;
+	bool	s_key;
+	bool	d_key;
+	bool	up_key;
+	bool	down_key;
+	bool	left_key;
+	bool	right_key;
+};
 
 struct s_draw
 {
@@ -50,6 +64,12 @@ struct s_vector
 {
 	int		x;
 	int		y;
+};
+
+struct s_vector_f
+{
+	double	x;
+	double	y;
 };
 
 struct s_lst_assets
@@ -86,7 +106,13 @@ struct s_tex
 struct s_player
 {
 	t_vector	pos;
+	t_vector_f	posf;
+	t_vector_f	start;
+	t_vector_f	view;
+	double		angle_view;
 	int			player;
+	int			last_pov;
+	int			diff_pov;
 	bool		north;
 	bool		south;
 	bool		west;
@@ -99,13 +125,12 @@ struct s_map
 	int			*line_len;
 	char		**map;
 	char		**b_map;
-	bool		error;
 };
 
 struct s_file
 {
-	int		fd;
-	char	*file;
+	int			fd;
+	char		*file;
 };
 
 struct s_game
@@ -118,6 +143,7 @@ struct s_game
 	t_tex		textures;
 	t_color		color[2];
 	t_draw		draw;
+	t_switches	switches;
 	void		*mlx;
 	void		*window;
 };
