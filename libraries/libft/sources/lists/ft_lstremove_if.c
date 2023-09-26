@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstremove_if.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 00:02:12 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 17:18:30 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/26 15:00:46 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#ifdef LINUX
 
 void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 {
@@ -29,5 +27,3 @@ void	ft_lstremove_if(t_list **begin_list, void *data_ref, int (*cmp)())
 	}
 	ft_lstremove_if(&lst_ptr->next, data_ref, cmp);
 }
-
-#endif
