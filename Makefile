@@ -154,7 +154,7 @@ debug:
 leaks:
 	clear
 	$(MAKE) -j VALGRIND=yes BONUS=yes
-	$(LEAKS) ./cub3D assets/maps/map.cub
+	$(LEAKS) ./cub3D assets/maps/textures.cub
 
 bonus:
 	$(MAKE) re -j BONUS=yes

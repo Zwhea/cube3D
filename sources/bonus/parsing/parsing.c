@@ -60,6 +60,7 @@ static void	_pathfinder(t_game *g)
 	while (line && !(is_map(line)))
 	{
 		asset_switchman(g, line);
+		printf("Je free la line : %s\n", line);
 		free(line);
 		line = get_next_line(g->file.fd);
 		start_map++;
