@@ -15,40 +15,52 @@
 
 void	init_var(t_game *g, float angle)
 {
-
-}
-
-void	raycasting(t_game *g, float angle)
-{
 	g->ray.ray_unit.x = sqrt(1 + pow(tan(angle), 2));
 	g->ray.ray_unit.y = sqrt(1 + pow(1 / tan(angle), 2));
 	g->ray.ray_dir.x = cos(angle);
 	g->ray.ray_dir.y = sin(angle);
 	g->ray.ray_start = g->player.posf;
 	g->ray.check = g->player.pos;
+	g->ray.wall = 0;
+	g->ray.door = 0;
+	g->ray.dist = 0;
+	g->ray.cam_dist = (960) / tan(M_PI / 6);
+	g->ray.wall_ratio = 0;
+	g->ray.wall_size = 0;
+	g->ray.top_wall = 0;
+	g->ray.bottom_wall = 0;
+}
+
+void	init_ray(t_game *g)
+{
 	if (g->ray.ray_dir.x < 0)
 	{
 		g->ray.step.x = -1;
-		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x) * g->ray.ray_unit.x;
+		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x) 
+			* g->ray.ray_unit.x;
 	}
 	else
 	{
 		g->ray.step.x = 1;
-		g->ray.ray_len.x = ((float)(g->ray.check.x + 1) - g->ray.ray_start.x) * g->ray.ray_unit.x;
+		g->ray.ray_len.x = ((float)(g->ray.check.x + 1) - g->ray.ray_start.x)
+			* g->ray.ray_unit.x;
 	}
 	if (g->ray.ray_dir.y < 0)
 	{
 		g->ray.step.y = -1;
-		g->ray.ray_len.y = (g->ray.ray_start.y - (float)g->ray.check.y) * g->ray.ray_unit.y;
+		g->ray.ray_len.y = (g->ray.ray_start.y - (float)g->ray.check.y)
+			* g->ray.ray_unit.y;
 	}
 	else
 	{
 		g->ray.step.y = 1;
-		g->ray.ray_len.y = ((float)(g->ray.check.y + 1) - g->ray.ray_start.y) * g->ray.ray_unit.y;
+		g->ray.ray_len.y = ((float)(g->ray.check.y + 1) - g->ray.ray_start.y)
+			* g->ray.ray_unit.y;
 	}
-	g->ray.wall = 0;
-	g->ray.door = 0;
-	g->ray.dist = 0;
+}
+
+void	find_dist(t_game *g, float angle)
+{
 	while (g->ray.wall == 0 && g->ray.door == 0)
 	{
 		if (g->ray.ray_len.x < g->ray.ray_len.y)
@@ -69,21 +81,24 @@ void	raycasting(t_game *g, float angle)
 			g->ray.door = 1;
 	}
 	g->ray.dist *= cos(angle - g->player.angle_view);
-	double	cam_dist;
-	double	wall_ratio;
-	double	wall_size;
-	cam_dist = (960) / tan(M_PI / 6);
-	wall_ratio = cam_dist / g->ray.dist;
-	// wall_size = wall_ratio * WINDOW_Y;
+}
+
+void	raycasting(t_game *g, float angle)
+{
+	init_var(g, angle);
+	init_ray(g);
+	find_dist(g, angle);
+	g->ray.wall_ratio = g->ray.cam_dist / g->ray.dist;
 	if (angle - g->player.angle_view > 0)
-		wall_size = wall_ratio * cos(0.5235);
+		g->ray.wall_size = g->ray.wall_ratio * cos(0.5235);
 	else
-		wall_size = wall_ratio * cos(-0.5235);
-	int	top_wall = (540) - (wall_size / 2);
-	int	bottom_wall = (540) + (wall_size / 2);
-	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0 && g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
+		g->ray.wall_size = g->ray.wall_ratio * cos(-0.5235);
+	g->ray.top_wall = (540) - (g->ray.wall_size / 2);
+	g->ray.bottom_wall = (540) + (g->ray.wall_size / 2);
+	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0
+		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
-		if (g->size.y >= top_wall && g->size.y <= bottom_wall)
+		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
 		{
 			if (g->ray.wall)
 				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);

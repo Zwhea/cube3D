@@ -152,6 +152,11 @@ struct s_raycast
 	int			door;
 	double		dist;
 	t_vector_f	intersection;
+	double		cam_dist;
+	double		wall_ratio;
+	double		wall_size;
+	int			top_wall;
+	int			bottom_wall;
 };
 
 struct s_game
