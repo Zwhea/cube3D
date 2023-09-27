@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/26 14:59:11 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:05:32 by aascedu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	raycasting(t_game *g, float angle)
 	t_vector	check;
 	t_vector	step;
 	int			wall;
-	int			door;
 	double		dist;
 	t_vector_f	intersection;
 
@@ -53,48 +52,41 @@ void	raycasting(t_game *g, float angle)
 		ray_len.y = ((float)(check.y + 1) - ray_start.y) * ray_unit.y;
 	}
 	wall = 0;
-	door = 0;
 	dist = 0;
-	while (wall == 0 && door == 0)
+	while (wall == 0)
 	{
 		if (ray_len.x < ray_len.y)
 		{
 			check.x += step.x;
-			dist = ray_len.x;
 			ray_len.x += ray_unit.x;
+			dist = ray_len.x;
 		}
 		else
 		{
 			check.y += step.y;
-			dist = ray_len.y;
 			ray_len.y += ray_unit.y;
+			dist = ray_len.y;
 		}
 		if (g->map.map[check.y][check.x] == '1')
 			wall = 1;
-		else if (g->map.map[check.y][check.x] == '-')
-			door = 1;
 	}
-	double	cam_dist;
+	dist -= 1;
+	intersection.x = ray_start.x + ray_dir.x * dist;
+	intersection.y = ray_start.y + ray_dir.y * dist;
+	int	cam_dist;
+	cam_dist = (WINDOW_X / 2) / tan(30);
+	cam_dist = abs(cam_dist);
 	double	wall_ratio;
-	double	wall_size;
-	cam_dist = (960) / tan(M_PI / 6);
-	wall_ratio = cam_dist / dist;
-	// wall_size = wall_ratio * WINDOW_Y;
-	if (angle - g->player.angle_view > 0)
-		wall_size = wall_ratio * cos(0.5235);
-	else
-		wall_size = wall_ratio * cos(-0.5235);
-	int	top_wall = (540) - (wall_size / 2);
-	int	bottom_wall = (540) + (wall_size / 2);
-	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0 && g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
+	wall_ratio = 128 / (dist * cam_dist);
+	int	wall_size;
+	wall_size = wall_ratio * WINDOW_Y;
+	set_vector(&g->size, g->size.x, 0);
+	int	over_wall = (WINDOW_Y / 2) - (wall_size / 2);
+	int	under_wall = WINDOW_Y / 2 + (wall_size / 2);
+	while (g->size.y <= WINDOW_Y)
 	{
-		if (g->size.y >= top_wall && g->size.y <= bottom_wall)
-		{
-			if (wall)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
-			else if (door)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
-		}
+		if (g->size.y >= over_wall && g->size.y <= under_wall)
+			my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
 		g->size.y++;
 	}
 }

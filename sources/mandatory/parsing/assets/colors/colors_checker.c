@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/21 14:06:55 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/21 13:56:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	extract_colors(t_game *g, char *line, t_keyassets color_id)
 		extrct_nbrs(g, color_id, id, color[id]);
 		id++;
 	}
-	free_split(color, 5);
+	free_split(color, 4);
 }

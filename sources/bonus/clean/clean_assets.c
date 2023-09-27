@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   clean_assets.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/23 12:39:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/26 13:47:26 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	clean_textures(t_game *g)
 	int	i;
 
 	i = 0;
+	if (g->textures.walls[ceiling_texture].sprite)
+		mlx_destroy_image(g->mlx, g->textures.walls[ceiling_texture].sprite);
+	if (g->textures.walls[floor_texture].sprite)
+		mlx_destroy_image(g->mlx, g->textures.walls[floor_texture].sprite);
 	while (i < 4)
 	{
 		if (i < 4 && (g->textures.walls[i].sprite))

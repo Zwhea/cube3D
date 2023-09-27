@@ -1,35 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ceiling_n_floor.c                                  :+:      :+:    :+:   */
+/*   core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/28 10:20:59 by twang             #+#    #+#             */
-/*   Updated: 2023/08/28 16:30:39 by twang            ###   ########.fr       */
+/*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
+/*   Updated: 2023/09/26 14:16:03 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
+#include "cub3D_arthur.h"
 
-void	render_colored_ceil_floor(t_game *g)
+/*---- prototypes ------------------------------------------------------------*/
+
+static void	_init_game(t_game *g);
+
+/*----------------------------------------------------------------------------*/
+
+void	game_display(t_game *g)
 {
-	int	i;
-
-	i = -1;
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
-	while (++i < WINDOW_Y / 2)
-	{
-		draw_line(g, g->size, g->window_size, g->color[0].color);
-		g->size.y++;
-	}
-	while (++i < WINDOW_Y)
-	{
-		draw_line(g, g->size, g->window_size, g->color[1].color);
-		g->size.y++;
-	}
+	_init_game(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);
+}
+
+static void	_init_game(t_game *g)
+{
+	double	angle;
+	double	ratio;
+
+	angle = g->player.angle_view - (30 * M_PI / 180);
+	ratio = (60 * M_PI / 180) / 1920;
+	while (angle <= g->player.angle_view + (30 * M_PI / 180))
+	{
+		raycasting(g, angle);
+		g->size.x++;
+		angle += ratio;
+	}
 }
