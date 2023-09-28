@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   viewing_range.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:29:04 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 10:30:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 08:48:16 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
-
-/*il faut regarder / proteger dans les cas ou l'angle rendu va depasser
-les 360 degres, sauf que il faut le faire avec les radiant je pense et je
-ne sais pas faire */
 
 int	view_left(t_game *g)
 {

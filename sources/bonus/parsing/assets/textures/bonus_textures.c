@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:02:23 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 09:31:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 08:47:00 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	handle_ceiling_texture(t_game *g, char *line)
 	i = 0;
 	if (g->textures.bonus == false)
 	{
-		puts("c'est cette petite pute la");
-		printf("Je free la line : %s", line);
 		free(line);
 		error_switchman(g, wrong_texture);
 	}

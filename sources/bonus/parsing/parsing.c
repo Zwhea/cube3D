@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/24 08:50:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 08:47:59 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static void	_pathfinder(t_game *g)
 	while (line && !(is_map(line)))
 	{
 		asset_switchman(g, line);
-		printf("Je free la line : %s\n", line);
 		free(line);
 		line = get_next_line(g->file.fd);
 		start_map++;
