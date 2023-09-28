@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 16:00:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:50:23 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_sprite		t_sprite;
 typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_lst_react	t_lst_react;
+typedef struct s_lst_moves	t_lst_moves;
 typedef struct s_vector		t_vector;
 typedef struct s_vector_f	t_vector_f;
 typedef struct s_draw		t_draw;
@@ -37,6 +38,7 @@ typedef struct s_raycast	t_raycast;
 typedef void				(*t_errors_ft)(t_game *g);
 typedef void				(*t_assets_ft)(t_game *g, char *line);
 typedef int					(*t_keys_ft)(t_game *g);
+typedef int					(*t_moves_ft)(t_game *g);
 
 /*---- structures ------------------------------------------------------------*/
 
@@ -84,6 +86,12 @@ struct s_lst_react
 {
 	t_keycode	key;
 	t_keys_ft	func;
+};
+
+struct s_lst_moves
+{
+	bool		switcher;
+	t_moves_ft	func;
 };
 
 struct s_color

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 10:04:05 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 11:03:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,20 @@ static int	_view_switch(t_keycode key, t_game *g);
 
 int	key_manager(t_game *g)
 {
-	if (g->switches.w_key)
-		w_move(g);
-	if (g->switches.a_key)
-		a_move(g);
-	if (g->switches.s_key)
-		s_move(g);
-	if (g->switches.d_key)
-		d_move(g);
-	if (g->switches.up_key)
-		w_move(g);
-	if (g->switches.down_key)
-		s_move(g);
-	if (g->switches.left_key)
-		view_left(g);
-	if (g->switches.right_key)
-		view_right(g);
+	int			i;
+	const t_lst_moves	list[] = {{g->switches.w_key, &w_move}, \
+									{g->switches.a_key, &a_move}, \
+									{g->switches.s_key, &s_move}, \
+									{g->switches.d_key, &d_move}, \
+									{g->switches.up_key, &w_move}, \
+									{g->switches.down_key, &s_move}, \
+									{g->switches.left_key, &view_left}, \
+									{g->switches.right_key, &view_right}};
+
+	i = -1;
+	while (++i < 8)
+		if (list[i].switcher)
+			list[i].func(g);
 	game_display(g);
 	return (0);
 }
