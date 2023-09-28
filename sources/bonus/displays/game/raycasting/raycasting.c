@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/28 13:33:06 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:55:54 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,7 @@ void	raycasting(t_game *g, float angle)
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
-		{
 			draw_textures(g);
-		}
 		g->size.y++;
 	}
 }
