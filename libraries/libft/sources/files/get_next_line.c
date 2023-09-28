@@ -12,83 +12,148 @@
 
 #include "libft.h"
 
-static char	*get_stash(char *stash)
+void	ft_bzero(void *s, size_t n)
 {
-	int		i;
-	int		j;
-	char	*new_stash;
+	size_t	i;
 
 	i = 0;
-	if (!stash)
-		return (NULL);
-	while (stash[i] && stash[i] != '\n')
-		i++;
-	if (stash[i] == '\0')
+	if (n > 0)
 	{
-		free(stash);
-		return (NULL);
+		while (i < n)
+		{
+			((char *)s)[i] = 0;
+			i++;
+		}
 	}
-	new_stash = get_calloc((ft_strlen(stash) - i) + 1, sizeof(char));
-	if (!new_stash)
-		return (NULL);
-	i++;
-	j = 0;
-	while (stash[i])
-		new_stash[j++] = stash[i++];
-	free(stash);
-	return (new_stash);
 }
 
-static char	*get_line(char *stash)
+int	ft_newline(char *buff)
 {
-	int		i;
-	char	*line;
+	int	i;
 
 	i = 0;
-	if (!stash[0])
-		return (NULL);
-	while (stash[i] && stash[i] != '\n')
-		i++;
-	if (stash[i] == '\n')
-		i++;
-	line = get_calloc(i + 1, sizeof(char));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (stash[i] && stash[i] != '\n')
+	while (buff[i])
 	{
-		line[i] = stash[i];
+		if (buff[i] == '\n')
+			return (1);
 		i++;
 	}
-	if (stash[i] == '\n')
-		line[i] = '\n';
-	return (line);
+	return (0);
+}
+
+int	ft_index_nl(char *buff)
+{
+	int	i;
+
+	i = -1;
+	while (buff[++i])
+	{
+		if (buff[i] == '\n')
+		{
+			i++;
+			break ;
+		}
+	}
+	return (i);
+}
+
+char	*ft_strjoin_free(char *line, char *temp)
+{
+	char	*result;
+	int		line_len;
+	int		temp_len;
+	int		i;
+
+	line_len = ft_strlen(line);
+	temp_len = ft_strlen(temp);
+	result = (char *)malloc(sizeof(char) * (line_len + temp_len + 1));
+	if (!result)
+	{
+		free(line);
+		free(temp);
+		return (NULL);
+	}
+	i = -1;
+	while (line[++i])
+		result[i] = line[i];
+	i = -1;
+	while (temp[++i])
+		result[line_len + i] = temp[i];
+	result[line_len + temp_len] = '\0';
+	free(line);
+	free(temp);
+	return (result);
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t	i;
+
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	i = 0;
+	if (dst > src)
+	{
+		while (i < len)
+		{
+			((char *)dst)[len - i - 1] = ((char *)src)[len - i - 1];
+			i++;
+		}
+	}
+	else
+	{
+		while (i < len)
+		{
+			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
+}
+
+char	*add_buffer(char *line, char *buff)
+{
+	char	*temp;
+	int		i;
+	int		j;
+
+	i = ft_index_nl(buff);
+	temp = (char *)malloc(sizeof(char) * (i + 1));
+	if (!temp)
+		return (NULL);
+	j = -1;
+	while (++j < i)
+		temp[j] = buff[j];
+	temp[j] = '\0';
+	temp = ft_strjoin_free(line, temp);
+	ft_memmove(buff, buff + i, BUFFER_SIZE - i);
+	ft_bzero(buff + (BUFFER_SIZE - i), ft_strlen(buff + (BUFFER_SIZE - i)));
+	return (temp);
 }
 
 char	*get_next_line(int fd)
 {
-	int			i;
+	static char	buff[BUFFER_SIZE + 1] = {0};
 	char		*line;
-	static char	*stash = NULL;
-	char		buffer[BUFFER_SIZE + 1];
+	int			byte_read;
 
-	line = NULL;
-	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (ft_bzero(buff, BUFFER_SIZE + 1), NULL);
+	line = (char *)malloc(sizeof(char));
+	if (!line)
 		return (NULL);
-	i = 1;
-	while (i > 0 && get_strchr(stash, '\n') == 0)
+	*line = 0;
+	byte_read = 1;
+	if (!buff[0])
+		byte_read = read(fd, buff, BUFFER_SIZE);
+	if (byte_read <= 0)
+		return (free(line), NULL);
+	while (byte_read)
 	{
-		i = read(fd, buffer, BUFFER_SIZE);
-		if (i == -1)
-		{
-			free(stash);
-			stash = NULL;
-			return (NULL);
-		}
-		buffer[i] = '\0';
-		stash = get_strjoin(stash, buffer);
+		if (ft_newline(buff))
+			return (add_buffer(line, buff));
+		line = add_buffer(line, buff);
+		byte_read = read(fd, buff, BUFFER_SIZE);
 	}
-	line = get_line(stash);
-	stash = get_stash(stash);
-	return (line);
+	return (add_buffer(line, buff));
 }

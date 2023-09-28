@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_arthur.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 14:05:00 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:15:47 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ void			ray_minimap(t_game *g, float angle);
 
 // mlx_pixel_get.c
 unsigned int	my_mlx_pixel_get(t_game *g, int x, int y);
-
-// check_if_movable.c
-int				check_w_move(t_game *g);
-int				check_s_move(t_game *g);
-int				check_a_move(t_game *g);
-int				check_d_move(t_game *g);
 
 // raycasting.c
 void			raycasting(t_game *g, float angle);

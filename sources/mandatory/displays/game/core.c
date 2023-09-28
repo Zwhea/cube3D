@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:16:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 09:30:10 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,10 @@ static void	_init_game(t_game *g)
 
 	angle = g->player.angle_view - (30 * M_PI / 180);
 	ratio = (60 * M_PI / 180) / 1920;
+	g->size.x = 0;
 	while (angle <= g->player.angle_view + (30 * M_PI / 180))
 	{
+		g->size.y = 0;
 		raycasting(g, angle);
 		g->size.x++;
 		angle += ratio;

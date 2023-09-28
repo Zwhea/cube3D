@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_textures.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 13:02:23 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 09:31:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 08:47:00 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ void	handle_ceiling_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.bonus == false)
+	{
+		free(line);
 		error_switchman(g, wrong_texture);
+	}
 	if (g->textures.walls[ceiling_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_CEILING, line[i]))
 		i++;
 	s = &line[i];
@@ -42,7 +48,10 @@ void	handle_floor_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.bonus == false)
+	{
+		free(line);
 		error_switchman(g, wrong_texture);
+	}
 	if (g->textures.walls[floor_texture].sprite)
 		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_FLOOR, line[i]))
