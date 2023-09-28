@@ -19,9 +19,17 @@ void	handle_ceiling_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.bonus == false)
+	{
+		puts("c'est cette petite pute la");
+		printf("Je free la line : %s", line);
+		free(line);
 		error_switchman(g, wrong_texture);
+	}
 	if (g->textures.walls[ceiling_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_CEILING, line[i]))
 		i++;
 	s = &line[i];
@@ -42,7 +50,10 @@ void	handle_floor_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.bonus == false)
+	{
+		free(line);
 		error_switchman(g, wrong_texture);
+	}
 	if (g->textures.walls[floor_texture].sprite)
 		error_switchman(g, wrong_textures);
 	while (line[i] && ft_strchr(TEXTURE_FLOOR, line[i]))

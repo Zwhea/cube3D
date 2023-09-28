@@ -19,7 +19,10 @@ void	handle_north_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.walls[north_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_NORTH, line[i]))
 		i++;
 	s = &line[i];
@@ -39,7 +42,10 @@ void	handle_south_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.walls[south_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_SOUTH, line[i]))
 		i++;
 	s = &line[i];
@@ -59,7 +65,10 @@ void	handle_west_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.walls[west_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_WEST, line[i]))
 		i++;
 	s = &line[i];
@@ -79,7 +88,10 @@ void	handle_east_texture(t_game *g, char *line)
 
 	i = 0;
 	if (g->textures.walls[east_texture].sprite)
+	{
+		free(line);
 		error_switchman(g, wrong_textures);
+	}
 	while (line[i] && ft_strchr(TEXTURE_EAST, line[i]))
 		i++;
 	s = &line[i];
