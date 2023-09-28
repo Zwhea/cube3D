@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_switchman.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 15:42:36 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:16:24 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	key_manager(t_game *g)
 		view_left(g);
 	if (g->switches.right_key && !g->switches.left_key)
 		view_right(g);
+	game_display(g);
 	return (0);
 }
 
