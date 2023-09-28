@@ -64,12 +64,12 @@ void	find_dist_door(t_game *g)
 			g->ray.dist = g->ray.ray_len.y;
 			g->ray.ray_len.y += g->ray.ray_unit.y;
 		}
-		if (g->ray.dist < 3 && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
+		if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 && g->map.map[g->ray.check.y] && g->ray.check.x < g->map.line_len[g->ray.check.y] && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 		{
 			g->map.map[g->ray.check.y][g->ray.check.x] = '+';
 			g->ray.door = 1;
 		}
-		else if (g->ray.dist < 3 && g->map.map[g->ray.check.y][g->ray.check.x] == '+')
+		else if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 && g->map.map[g->ray.check.y] && g->ray.check.x < g->map.line_len[g->ray.check.y] && g->map.map[g->ray.check.y][g->ray.check.x] == '+')
 		{
 			g->map.map[g->ray.check.y][g->ray.check.x] = '-';
 			g->ray.door = 1;

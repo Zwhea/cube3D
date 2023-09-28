@@ -31,8 +31,10 @@ int	w_move(t_game *g)
 int	a_move(t_game *g)
 {
 	if (check_x(g, g->player.posf.x + 0.1 * sin(g->player.angle_view)))
+	{
 		g->player.posf.x = g->player.posf.x + 0.1 * sin(g->player.angle_view);
 		g->player.pos.x = g->player.posf.x;
+	}
 	if (check_y(g, g->player.posf.y - 0.1 * cos(g->player.angle_view)))
 	{
 		g->player.posf.y = g->player.posf.y - 0.1 * cos(g->player.angle_view);
@@ -44,8 +46,10 @@ int	a_move(t_game *g)
 int	s_move(t_game *g)
 {
 	if (check_x(g, g->player.posf.x - 0.1 * cos(g->player.angle_view)))
+	{
 		g->player.posf.x = g->player.posf.x - 0.1 * cos(g->player.angle_view);
 		g->player.pos.x = g->player.posf.x;
+	}
 	if (check_y(g, g->player.posf.y - 0.1 * sin(g->player.angle_view)))
 	{
 		g->player.posf.y = g->player.posf.y - 0.1 * sin(g->player.angle_view);
