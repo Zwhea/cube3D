@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:51:40 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:04:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ static int	_view_switch(t_keycode key, t_game *g);
 int	key_manager(t_game *g)
 {
 	if (g->switches.w_key)
-	{
 		w_move(g);
-	}
 	if (g->switches.a_key)
 		a_move(g);
 	if (g->switches.s_key)
@@ -39,6 +37,7 @@ int	key_manager(t_game *g)
 		view_left(g);
 	if (g->switches.right_key)
 		view_right(g);
+	game_display(g);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:42:31 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 09:29:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_vector		t_vector;
 typedef struct s_vector_f	t_vector_f;
 typedef struct s_draw		t_draw;
 typedef struct s_switches	t_switches;
+typedef struct s_raycast	t_raycast;
 
 /*---- typedef function pointer ----------------------------------------------*/
 
@@ -133,6 +134,25 @@ struct s_file
 	char		*file;
 };
 
+struct s_raycast
+{
+	t_vector_f	ray_start;
+	t_vector_f	ray_dir;
+	t_vector_f	ray_unit;
+	t_vector_f	ray_len;
+	t_vector	check;
+	t_vector	step;
+	int			wall;
+	int			door;
+	double		dist;
+	t_vector_f	intersection;
+	double		cam_dist;
+	double		wall_ratio;
+	double		wall_size;
+	int			top_wall;
+	int			bottom_wall;
+};
+
 struct s_game
 {
 	t_file		file;
@@ -144,6 +164,7 @@ struct s_game
 	t_color		color[2];
 	t_draw		draw;
 	t_switches	switches;
+	t_raycast	ray;
 	void		*mlx;
 	void		*window;
 };

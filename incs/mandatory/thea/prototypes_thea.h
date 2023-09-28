@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:41:35 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:01:31 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,8 @@ void			game_display(t_game *g);
 float			get_angle_degree(t_game *g);
 /*--------------- motions/ ---------------------------------------------------*/
 /*------------------------- check_if_movable.c -------------------------------*/
-int				check_s_move(t_game *g);
-int				check_w_move(t_game *g);
-int				check_a_move(t_game *g);
-int				check_d_move(t_game *g);
+int				check_x(t_game *g, int next_x);
+int				check_y(t_game *g, int next_y);
 /*------------------------- motions.c ----------------------------------------*/
 int				w_move(t_game *g);
 int				a_move(t_game *g);

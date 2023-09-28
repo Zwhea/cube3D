@@ -42,6 +42,8 @@ int	clean(t_game *g)
 int	clean(t_game *g)
 {
 	printf(RED"closing program\n"END);
+	if (g->file.fd)
+		close(g->file.fd);
 	clean_maps(g);
 	clean_textures(g);
 	if (g->window)

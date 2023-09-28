@@ -3,96 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   check_if_movable.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:00:07 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 13:44:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:20:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
-int	check_w_move(t_game *g)
+int	check_x(t_game *g, int next_x)
 {
-	int	dist_x;
-	int	dist_y;
-
-	if (sin(g->player.angle_view) < 0)
-		dist_y = floor(g->player.posf.y + 0.1 * sin(g->player.angle_view));
-	else
-		dist_y = ceil(g->player.posf.y + 0.1 * sin(g->player.angle_view) - 1);
-	if (cos(g->player.angle_view) < 0)
-		dist_x = floor(g->player.posf.x + 0.1 * cos(g->player.angle_view));
-	else
-		dist_x = ceil(g->player.posf.x + 0.1 * cos(g->player.angle_view) - 1);
-	if (dist_x < 0 || dist_y < 0)
+	if (g->map.map[(int)g->player.posf.y][(int)next_x] != wall \
+			&& g->map.map[(int)g->player.posf.y][(int)next_x] != door)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
-	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
-		return (0);
-	return (1);
+	return (0);
 }
 
-int	check_s_move(t_game *g)
+int	check_y(t_game *g, int next_y)
 {
-	int	dist_x;
-	int	dist_y;
-
-	if (sin(g->player.angle_view) < 0)
-		dist_x = floor(g->player.posf.x - 0.1 * cos(g->player.angle_view));
-	else
-		dist_x = ceil(g->player.posf.x - 0.1 * cos(g->player.angle_view) - 1);
-	if (cos(g->player.angle_view) > 0)
-		dist_y = floor(g->player.posf.y - 0.1 * sin(g->player.angle_view));
-	else
-		dist_y = ceil(g->player.posf.y - 0.1 * sin(g->player.angle_view) - 1);
-	if (dist_x < 0 || dist_y < 0)
+	if (g->map.map[(int)next_y][(int)g->player.posf.x] != wall \
+			&& g->map.map[(int)next_y][(int)g->player.posf.x] != door)
 		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
-	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
-		return (0);
-	return (1);
-}
-
-int	check_a_move(t_game *g)
-{
-	int	dist_x;
-	int	dist_y;
-
-	if (sin(g->player.angle_view) < 0)
-		dist_x = floor(g->player.posf.x + 0.1 * sin(g->player.angle_view));
-	else
-		dist_x = ceil(g->player.posf.x + 0.1 * sin(g->player.angle_view) - 1);
-	if (cos(g->player.angle_view) > 0)
-		dist_y = floor(g->player.posf.y - 0.1 * cos(g->player.angle_view));
-	else
-		dist_y = ceil(g->player.posf.y - 0.1 * cos(g->player.angle_view) - 1);
-	if (dist_x < 0 || dist_y < 0)
-		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
-	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
-		return (0);
-	return (1);
-}
-
-int	check_d_move(t_game *g)
-{
-	int	dist_x;
-	int	dist_y;
-
-	if (sin(g->player.angle_view) > 0)
-		dist_x = floor(g->player.posf.x - 0.1 * sin(g->player.angle_view));
-	else
-		dist_x = ceil(g->player.posf.x - 0.1 * sin(g->player.angle_view) - 1);
-	if (cos(g->player.angle_view) < 0)
-		dist_y = floor(g->player.posf.y + 0.1 * cos(g->player.angle_view));
-	else
-		dist_y = ceil(g->player.posf.y + 0.1 * cos(g->player.angle_view) - 1);
-	if (dist_x < 0 || dist_y < 0)
-		return (1);
-	if (g->map.map[dist_y] && g->map.map[dist_y][dist_x] && \
-	(g->map.map[dist_y][dist_x] != wall && g->map.map[dist_y][dist_x] != door))
-		return (0);
-	return (1);
+	return (0);
 }
