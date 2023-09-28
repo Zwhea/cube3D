@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/28 12:10:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:31:34 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_ray(t_game *g)
 	if (g->ray.ray_dir.x < 0)
 	{
 		g->ray.step.x = -1;
-		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x) 
+		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x)
 			* g->ray.ray_unit.x;
 	}
 	else

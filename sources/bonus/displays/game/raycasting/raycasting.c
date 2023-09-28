@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/28 11:18:49 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:33:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_ray(t_game *g)
 	if (g->ray.ray_dir.x < 0)
 	{
 		g->ray.step.x = -1;
-		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x) 
+		g->ray.ray_len.x = (g->ray.ray_start.x - (float)g->ray.check.x)
 			* g->ray.ray_unit.x;
 	}
 	else
@@ -69,7 +69,6 @@ void	find_dir_wall(t_game *g, int check)
 		else if (g->ray.check.y > g->player.pos.y)
 			g->ray.wall_dir = 4;
 	}
-
 }
 
 void	find_dist(t_game *g, float angle)
@@ -100,16 +99,16 @@ void	find_dist(t_game *g, float angle)
 
 void	draw_textures(t_game *g)
 {
-			if (g->ray.wall && g->ray.wall_dir == 1)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
-			else if (g->ray.wall && g->ray.wall_dir == 2)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
-			else if (g->ray.wall && g->ray.wall_dir == 3)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
-			else if (g->ray.wall && g->ray.wall_dir == 4)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
-			else if (g->ray.door)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
+	if (g->ray.wall && g->ray.wall_dir == 1)
+		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
+	else if (g->ray.wall && g->ray.wall_dir == 2)
+		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
+	else if (g->ray.wall && g->ray.wall_dir == 3)
+		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
+	else if (g->ray.wall && g->ray.wall_dir == 4)
+		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
+	else if (g->ray.door)
+		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
 }
 
 void	raycasting(t_game *g, float angle)

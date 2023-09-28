@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 10:50:23 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:50:00 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ struct s_switches
 	bool	down_key;
 	bool	left_key;
 	bool	right_key;
+	bool	l_key;
 };
 
 struct s_draw
