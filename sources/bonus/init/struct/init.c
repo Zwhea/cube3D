@@ -23,6 +23,7 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)&g->textures, sizeof(t_tex));
 	ft_bzero((void *)&g->color, sizeof(t_color));
 	ft_bzero((void *)&g->draw, sizeof(t_draw));
+	ft_bzero((void *)&g->ray, sizeof(t_raycast));
 	g->player.diff_pov = 1;
 }
 
