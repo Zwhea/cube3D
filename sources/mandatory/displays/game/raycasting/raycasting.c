@@ -6,7 +6,7 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/26 15:04:28 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:10:36 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,14 @@
 
 void	init_var(t_game *g, float angle)
 {
+	ft_bzero((void *)&g->ray, sizeof(t_raycast));
 	g->ray.ray_unit.x = sqrt(1 + pow(tan(angle), 2));
 	g->ray.ray_unit.y = sqrt(1 + pow(1 / tan(angle), 2));
 	g->ray.ray_dir.x = cos(angle);
 	g->ray.ray_dir.y = sin(angle);
 	g->ray.ray_start = g->player.posf;
 	g->ray.check = g->player.pos;
-	g->ray.wall = 0;
-	g->ray.door = 0;
-	g->ray.dist = 0;
 	g->ray.cam_dist = (960) / tan(M_PI / 6);
-	g->ray.wall_ratio = 0;
-	g->ray.wall_size = 0;
-	g->ray.top_wall = 0;
-	g->ray.bottom_wall = 0;
 }
 
 void	init_ray(t_game *g)
