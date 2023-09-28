@@ -115,7 +115,7 @@ void	draw_textures(t_game *g)
 				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
 			else if (g->ray.wall && g->ray.wall_dir == 4)
 				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
-			else if (g->ray.door)
+			else if (g->ray.door == 1)
 				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
 }
 
@@ -135,9 +135,7 @@ void	raycasting(t_game *g, float angle)
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
-		{
 			draw_textures(g);
-		}
 		g->size.y++;
 	}
 }
