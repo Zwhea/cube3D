@@ -29,6 +29,7 @@ void	init_var(t_game *g, float angle)
 	g->ray.wall_size = 0;
 	g->ray.top_wall = 0;
 	g->ray.bottom_wall = 0;
+	g->ray.wall_dir = 0;
 }
 
 void	init_ray(t_game *g)
@@ -59,6 +60,25 @@ void	init_ray(t_game *g)
 	}
 }
 
+void	find_dir_wall(t_game *g, int check)
+{
+	if (check == 1) // Vertical
+	{
+		if (g->ray.check.x < g->player.pos.x)
+			g->ray.wall_dir = 1;
+		else if (g->ray.check.x > g->player.pos.x)
+			g->ray.wall_dir = 3;
+	}
+	else
+	{
+		if (g->ray.check.y < g->player.pos.y)
+			g->ray.wall_dir = 2;
+		else if (g->ray.check.y > g->player.pos.y)
+			g->ray.wall_dir = 4;
+	}
+
+}
+
 void	find_dist(t_game *g, float angle)
 {
 	while (g->ray.wall == 0 && g->ray.door == 0)
@@ -68,12 +88,14 @@ void	find_dist(t_game *g, float angle)
 			g->ray.check.x += g->ray.step.x;
 			g->ray.dist = g->ray.ray_len.x;
 			g->ray.ray_len.x += g->ray.ray_unit.x;
+			find_dir_wall(g, 1);
 		}
 		else
 		{
 			g->ray.check.y += g->ray.step.y;
 			g->ray.dist = g->ray.ray_len.y;
 			g->ray.ray_len.y += g->ray.ray_unit.y;
+			find_dir_wall(g, 2);
 		}
 		if (g->map.map[g->ray.check.y][g->ray.check.x] == '1')
 			g->ray.wall = 1;
@@ -81,6 +103,20 @@ void	find_dist(t_game *g, float angle)
 			g->ray.door = 1;
 	}
 	g->ray.dist *= cos(angle - g->player.angle_view);
+}
+
+void	draw_textures(t_game *g)
+{
+			if (g->ray.wall && g->ray.wall_dir == 1)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
+			else if (g->ray.wall && g->ray.wall_dir == 2)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
+			else if (g->ray.wall && g->ray.wall_dir == 3)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
+			else if (g->ray.wall && g->ray.wall_dir == 4)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
+			else if (g->ray.door)
+				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
 }
 
 void	raycasting(t_game *g, float angle)
@@ -100,10 +136,7 @@ void	raycasting(t_game *g, float angle)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
 		{
-			if (g->ray.wall)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
-			else if (g->ray.door)
-				my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
+			draw_textures(g);
 		}
 		g->size.y++;
 	}

@@ -165,6 +165,7 @@ struct s_raycast
 	double		wall_size;
 	int			top_wall;
 	int			bottom_wall;
+	int			wall_dir;
 };
 
 struct s_game
