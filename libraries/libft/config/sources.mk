@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/08/09 14:32:41 by wangthea         ###   ########.fr        #
+#    Updated: 2023/09/29 10:21:55 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,6 @@ SOURCES =																	\
 			sources/convertions/ft_toupper.c								\
 			sources/files/check_extension.c									\
 			sources/files/close_file.c										\
-			sources/files/get_next_line_utils.c								\
 			sources/files/get_next_line.c									\
 			sources/files/open_file.c										\
 			sources/lists/ft_lstadd_back.c									\

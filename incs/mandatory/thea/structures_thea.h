@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 11:04:07 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:30:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,7 @@ struct s_raycast
 	double		wall_size;
 	int			top_wall;
 	int			bottom_wall;
+	int			wall_dir;
 };
 
 struct s_game

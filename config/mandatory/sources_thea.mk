@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    sources_thea.mk                                    :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+         #
+#    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/09/26 14:13:49 by wangthea         ###   ########.fr        #
+#    Updated: 2023/09/29 10:25:35 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SOURCES +=																	\
 			sources/mandatory/displays/draw/mlx_pixel_get.c					\
 			sources/mandatory/displays/draw/mlx_pixel_put.c					\
 			sources/mandatory/displays/game/raycasting/raycasting.c			\
+			sources/mandatory/displays/game/texturing/texturing.c			\
 			sources/mandatory/displays/game/core.c							\
 			sources/mandatory/displays/motions/check_if_movable.c			\
 			sources/mandatory/displays/motions/motions.c					\

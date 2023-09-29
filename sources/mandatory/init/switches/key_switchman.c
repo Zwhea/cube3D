@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_switchman.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 11:03:10 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/29 09:49:40 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	_view_switch(t_keycode key, t_game *g);
 
 int	key_manager(t_game *g)
 {
-	int			i;
+	int					i;
 	const t_lst_moves	list[] = {{g->switches.w_key, &w_move}, \
 									{g->switches.a_key, &a_move}, \
 									{g->switches.s_key, &s_move}, \

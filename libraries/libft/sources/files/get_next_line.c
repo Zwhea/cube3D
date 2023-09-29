@@ -6,26 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:27:25 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/21 15:58:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/29 10:20:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (n > 0)
-	{
-		while (i < n)
-		{
-			((char *)s)[i] = 0;
-			i++;
-		}
-	}
-}
 
 int	ft_newline(char *buff)
 {
@@ -83,32 +68,6 @@ char	*ft_strjoin_free(char *line, char *temp)
 	free(line);
 	free(temp);
 	return (result);
-}
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	size_t	i;
-
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	i = 0;
-	if (dst > src)
-	{
-		while (i < len)
-		{
-			((char *)dst)[len - i - 1] = ((char *)src)[len - i - 1];
-			i++;
-		}
-	}
-	else
-	{
-		while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
 }
 
 char	*add_buffer(char *line, char *buff)
