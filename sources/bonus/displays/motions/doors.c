@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/09/29 09:38:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/03 10:16:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
 	{
+		// door_animations(g, 1);
 		g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
 		return (1);
 	}
@@ -106,6 +107,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
 	{
+		// door_animations(g, 0);
 		g->map.map[g->ray.check.y][g->ray.check.x] = door;
 		return (1);
 	}
