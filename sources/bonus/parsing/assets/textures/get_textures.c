@@ -31,7 +31,7 @@ void	handle_north_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[north_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+									&g->textures.size[north_texture].x, &g->textures.size[north_texture].y);
 	return ;
 }
 
@@ -54,7 +54,7 @@ void	handle_south_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[south_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+									&g->textures.size[south_texture].x, &g->textures.size[south_texture].y);
 	return ;
 }
 
@@ -77,7 +77,7 @@ void	handle_west_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[west_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+									&g->textures.size[west_texture].x, &g->textures.size[west_texture].y);
 	return ;
 }
 
@@ -100,6 +100,6 @@ void	handle_east_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[east_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+									&g->textures.size[east_texture].x, &g->textures.size[east_texture].y);
 	return ;
 }

@@ -27,7 +27,7 @@ void	asset_switchman(t_game *g, char *line)
 	i = 0;
 	j = 1;
 	i += ft_skipwhitespace(i, line);
-	set_vector(&g->textures.size, 96, 96);
+	// set_vector(&g->textures.size, 96, 96);
 	while (j < 7)
 	{
 		if (!(ft_strncmp(&line[i], list[j].asset, ft_strlen(list[j].asset))))
