@@ -36,7 +36,7 @@ void	handle_ceiling_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[ceiling_texture].sprite = mlx_xpm_file_to_image(g->mlx, \
-								s, &g->textures.size.x, &g->textures.size.y);
+								s, &g->textures.size[ceiling_texture].x, &g->textures.size[ceiling_texture].y);
 	g->textures.ceiling = true;
 	return ;
 }
@@ -62,7 +62,7 @@ void	handle_floor_texture(t_game *g, char *line)
 	if (line[i])
 		line[i] = '\0';
 	g->textures.walls[floor_texture].sprite = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.size.x, &g->textures.size.y);
+									&g->textures.size[floor_texture].x, &g->textures.size[floor_texture].y);
 	g->textures.floor = true;
 	return ;
 }

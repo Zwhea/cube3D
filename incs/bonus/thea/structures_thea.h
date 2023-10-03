@@ -111,7 +111,7 @@ struct s_sprite
 struct s_tex
 {
 	t_sprite	walls[6];
-	t_vector	size;
+	t_vector	size[6];
 	t_vector_f	impact;
 	double		h_ratio;
 	double		l_ratio;
