@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:24:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/03 13:56:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/03 15:21:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	door_direction(t_game *g, int x, int y)
 	if (y < g->map.size.y && x < g->map.size.x && g->map.map[y][x] == door)
 	{
 		if (g->map.map[y - 1][x] == wall && g->map.map[y + 1][x] == wall \
-			&& g->map.map[y][x - 1] != wall && g->map.map[y][x + 1] != wall)
+			&& (g->map.map[y][x - 1] != wall || g->map.map[y][x + 1] != wall))
 			return (0);
-		else if (g->map.map[y - 1][x] != wall && g->map.map[y + 1][x] != wall \
+		else if ((g->map.map[y - 1][x] != wall || g->map.map[y + 1][x] != wall) \
 			&& g->map.map[y][x - 1] == wall && g->map.map[y][x + 1] == wall)
 			return (1);
 	}
