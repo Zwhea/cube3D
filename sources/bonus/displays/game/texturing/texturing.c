@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/03 12:55:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/03 16:07:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,7 @@ static void	_texturing_vertical(t_game *g)
 	wall_x = wall_x - floor(wall_x);
 	texture.x = wall_x * g->textures.walls[north_texture].width;
 	texture.x = g->textures.walls[north_texture].width - texture.x - 1;
-	// printf("%d\n", g->size.y);
 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
-	// texture.y = 
-	// printf("x=%d y=%d\n", texture.x, texture.y);
-	printf("x: %d\ty: %d\n", g->textures.walls[north_texture].bits_per_pixel, g->textures.walls[north_texture].line_length);
 	color = my_mlx_pixel_get(&g->textures.walls[north_texture], texture.x, texture.y);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
