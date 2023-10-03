@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures_thea.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 12:50:00 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/03 10:42:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,9 @@ struct s_tex
 {
 	t_sprite	walls[6];
 	t_vector	size;
+	t_vector_f	impact;
+	double		h_ratio;
+	double		l_ratio;
 	bool		bonus;
 	bool		ceiling;
 	bool		floor;
