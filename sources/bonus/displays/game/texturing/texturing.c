@@ -48,7 +48,6 @@ void	draw_textures(t_game *g)
 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
 }
 
-<<<<<<< HEAD
 static void	_texturing_vertical(t_game *g)
 {
 	double		wall_x;
@@ -86,34 +85,3 @@ void	draw_textures(t_game *g)
 	else
 		_texturing_vertical(g);
 }
-=======
-// void	textures_switchman(t_game *g)
-// {
-// 	if (g->ray.wall && g->ray.wall_dir == west)
-// 		_draw_textures(g, west);
-// 	else if (g->ray.wall && g->ray.wall_dir == north)
-// 		_draw_textures(g, north);
-// 	else if (g->ray.wall && g->ray.wall_dir == east)
-// 		_draw_textures(g, east);
-// 	else if (g->ray.wall && g->ray.wall_dir == south)
-// 		_draw_textures(g, south);
-// 	else if (g->ray.door == 1)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
-// }
-
-// static void	_draw_textures(t_game *g)
-// {
-// 	_texturing_vertical(g);
-// 	_texturing_horizontal(g);
-// }
-
-// static void	_texturing_vertical(t_game *g)
-// {
-// 	g->textures.h_ratio = g->textures.size.y * g->ray.wall_size;
-// 	while ()
-// }
-
-// static void	_texturing_horizontal(t_game *g)
-// {
-// }
->>>>>>> d1dc7fa948b650fadff1ab1efcd80828ce658a30
