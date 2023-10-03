@@ -33,7 +33,7 @@ void	raycasting(t_game *g, float angle)
 		g->ray.wall_size = g->ray.wall_ratio * cos(-0.5235);
 	g->ray.top_wall = (540) - (g->ray.wall_size / 2);
 	g->ray.bottom_wall = (540) + (g->ray.wall_size / 2);
-	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0
+	while (g->ray.dist < 10 && g->size.y <= WINDOW_Y - 1 && g->size.y >= 0
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
@@ -84,7 +84,7 @@ static void	_init_ray(t_game *g)
 
 static void	_find_dist(t_game *g, float angle)
 {
-	while (g->ray.wall == 0 && g->ray.door == 0)
+	while (g->ray.wall == 0 && g->ray.door == 0 && g->ray.dist < 10)
 	{
 		if (g->ray.ray_len.x < g->ray.ray_len.y)
 		{
@@ -105,5 +105,6 @@ static void	_find_dist(t_game *g, float angle)
 		else if (g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 			g->ray.door = 1;
 	}
-	g->ray.dist *= cos(angle - g->player.angle_view);
+	if (g->ray.dist < 10)
+		g->ray.dist *= cos(angle - g->player.angle_view);
 }

@@ -34,32 +34,39 @@ void	find_dir_wall(t_game *g, int check)
 	}
 }
 
-void	draw_textures(t_game *g)
-{
-	if (g->ray.wall && g->ray.wall_dir == west)
-		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
-	else if (g->ray.wall && g->ray.wall_dir == north)
-		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
-	else if (g->ray.wall && g->ray.wall_dir == east)
-		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
-	else if (g->ray.wall && g->ray.wall_dir == south)
-		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
-	else if (g->ray.door == 1)
-		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
-}
+// void	draw_textures(t_game *g)
+// {
+// 	if (g->ray.wall && g->ray.wall_dir == west)
+// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
+// 	else if (g->ray.wall && g->ray.wall_dir == north)
+// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
+// 	else if (g->ray.wall && g->ray.wall_dir == east)
+// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
+// 	else if (g->ray.wall && g->ray.wall_dir == south)
+// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
+// 	else if (g->ray.door == 1)
+// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
+// }
 
 static void	_texturing_vertical(t_game *g)
 {
 	double		wall_x;
+	double		ratio;
 	t_vector	texture;
+	unsigned int	color;
 
+	ratio = g->textures.walls[north_texture].width / g->ray.wall_size;
 	wall_x = g->ray.ray_start.y + g->ray.dist * g->ray.ray_dir.y;
 	wall_x = wall_x - floor(wall_x);
-	texture.x = wall_x * g->textures.size[north_texture].x;
-	texture.x = g->textures.size[north_texture].x - texture.x - 1;
-	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.size[north_texture].x / 2) / g->ray.wall_size;
+	texture.x = wall_x * g->textures.walls[north_texture].width;
+	texture.x = g->textures.walls[north_texture].width - texture.x - 1;
+	// printf("%d\n", g->size.y);
+	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
+	// texture.y = 
 	// printf("x=%d y=%d\n", texture.x, texture.y);
-	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, my_mlx_pixel_get(g, texture.x, texture.y));
+	printf("x: %d\ty: %d\n", g->textures.walls[north_texture].bits_per_pixel, g->textures.walls[north_texture].line_length);
+	color = my_mlx_pixel_get(&g->textures.walls[north_texture], texture.x, texture.y);
+	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
 // ICI texture.x et texture.y sont les coordonnes sur la texture pour trouver la couleur que l'on veut afficher !
@@ -71,11 +78,11 @@ static void	_texturing_horizontal(t_game *g)
 
 	wall_x = g->ray.ray_start.y + g->ray.dist * g->ray.ray_dir.y;
 	wall_x = wall_x - floor(wall_x);
-	texture.x = wall_x * g->textures.size[north_texture].x;
-	texture.x = g->textures.size[north_texture].x - texture.x - 1;
-	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.size[north_texture].x / 2) / g->ray.wall_size;
+	texture.x = wall_x * g->textures.walls[north_texture].width;
+	texture.x = g->textures.walls[north_texture].width - texture.x - 1;
+	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
 	// printf("x=%d y=%d\n", texture.x, texture.y);
-	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, );
+	// my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, );
 }
 
 void	draw_textures(t_game *g)

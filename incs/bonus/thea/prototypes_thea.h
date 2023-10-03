@@ -45,7 +45,7 @@ void			init_minimap(t_game *g);
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 void			my_mlx_pixel_put(t_draw *data, int x, int y, int color);
 /*------------------------- mlx_pixel_get.c ----------------------------------*/
-unsigned int	my_mlx_pixel_get(t_game *g, int x, int y);
+unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
 /*--------------- game/ ------------------------------------------------------*/
 /*---------------------- raycasting/ -----------------------------------------*/
 /*------------------------- raycasting.c -------------------------------------*/

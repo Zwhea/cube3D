@@ -22,7 +22,6 @@ typedef struct s_file		t_file;
 typedef struct s_map		t_map;
 typedef struct s_player		t_player;
 typedef struct s_tex		t_tex;
-typedef struct s_sprite		t_sprite;
 typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
 typedef struct s_lst_react	t_lst_react;
@@ -63,6 +62,8 @@ struct s_draw
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		width;
+	int		height;
 };
 
 struct s_vector
@@ -103,15 +104,9 @@ struct s_color
 	unsigned char	b;
 };
 
-struct s_sprite
-{
-	void	*sprite;
-};
-
 struct s_tex
 {
-	t_sprite	walls[6];
-	t_vector	size[6];
+	t_draw		walls[6];
 	t_vector_f	impact;
 	double		h_ratio;
 	double		l_ratio;

@@ -26,14 +26,14 @@ void	clean_textures(t_game *g)
 	int	i;
 
 	i = 0;
-	if (g->textures.walls[ceiling_texture].sprite)
-		mlx_destroy_image(g->mlx, g->textures.walls[ceiling_texture].sprite);
-	if (g->textures.walls[floor_texture].sprite)
-		mlx_destroy_image(g->mlx, g->textures.walls[floor_texture].sprite);
+	if (g->textures.walls[ceiling_texture].img)
+		mlx_destroy_image(g->mlx, g->textures.walls[ceiling_texture].img);
+	if (g->textures.walls[floor_texture].img)
+		mlx_destroy_image(g->mlx, g->textures.walls[floor_texture].img);
 	while (i < 4)
 	{
-		if (i < 4 && (g->textures.walls[i].sprite))
-			mlx_destroy_image(g->mlx, g->textures.walls[i].sprite);
+		if (i < 4 && (g->textures.walls[i].img))
+			mlx_destroy_image(g->mlx, g->textures.walls[i].img);
 		i++;
 	}
 }
