@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/09/04 17:07:02 by twang            ###   ########.fr        #
+#    Updated: 2023/10/04 15:14:55 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,9 +60,9 @@ SRC_B_DIR	=	sources/bonus
 #--flags mandatory & bonus ----------------------------------------------------#
 
 ifeq ($(BONUS), no)
-CFLAGS		=	-Wall -Wextra -O3 -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
 else
-CFLAGS		=	-Wall -Wextra -O3 -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
 endif
 
 #--mlx flags-------------------------------------------------------------------#
@@ -158,6 +158,9 @@ leaks:
 
 bonus:
 	$(MAKE) re -j BONUS=yes
+
+youpi:
+	echo youpi
 
 #--print header----------------------------------------------------------------#
 

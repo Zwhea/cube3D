@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 13:50:33 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 15:19:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ int				clean(t_game *g);
 /*--------------- animations/ ------------------------------------------------*/
 /*------------------------- doors.c ------------------------------------------*/
 void			door_animations(t_game *g, int door_state);
+void			init_door_sprites(t_game *g);
+/*------------------------- player.c -----------------------------------------*/
+void			player_animations(t_game *g);
+void			init_player_sprites(t_game *g);
 /*--------------- draw/ ------------------------------------------------------*/
 /*------------------------- draw_forms.c -------------------------------------*/
 void			draw_frame(t_game *g, int size_x, int size_y, int color);
@@ -52,7 +56,7 @@ unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
 /*---------------------- texturing/ ------------------------------------------*/
 /*------------------------- texturing.c --------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
-void			draw_textures(t_game *g, float angle);
+void			draw_textures(t_game *g, double angle);
 /*--------------- core.c -----------------------------------------------------*/
 void			game_display(t_game *g);
 /*--------------- legend/ ----------------------------------------------------*/

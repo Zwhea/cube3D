@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 13:26:09 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 15:06:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,6 +182,7 @@ struct s_game
 	t_vector		size;
 	t_vector		window_size;
 	t_vector		legend_window_size;
+	t_animations	animations;
 	t_tex			textures;
 	t_color			color[2];
 	t_draw			draw;
