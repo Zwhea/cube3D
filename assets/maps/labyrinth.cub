@@ -1,7 +1,7 @@
-NO ./assets/textures/xpm/brick_wall.xpm
-SO ./assets/textures/xpm/brick_wall.xpm
-EA ./assets/textures/xpm/brick_wall.xpm
-WE ./assets/textures/xpm/brick_wall.xpm
+NO ./assets/textures/xpm/tech_wall_north.xpm
+SO ./assets/textures/xpm/tech_wall_south.xpm
+EA ./assets/textures/xpm/tech_wall_east.xpm
+WE ./assets/textures/xpm/tech_wall_west.xpm
  
 C 149,242,223
 F 229,241,217
@@ -10,7 +10,7 @@ F 229,241,217
 100100100000001
 10000011111111111111111111
 10000010000000000000010001
-1000001000000S0000000-0001
+100000100000000000000-0001
 10000010000000000000010001
 111-1111111-11111111110001
 111000110000001      100011
@@ -24,7 +24,7 @@ F 229,241,217
               1000000000000000000010001
               1000000000000000000010001
               1000000000000000000000001
-              1000000000000000000010001
+              100000000000S000000010001
               1000000000000000000010001
               1001000000000000010010001
               1001100000000000110010001
