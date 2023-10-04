@@ -37,7 +37,7 @@ void	raycasting(t_game *g, float angle)
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
-			draw_textures(g);
+			draw_textures(g, angle);
 		g->size.y++;
 	}
 }
@@ -105,6 +105,7 @@ static void	_find_dist(t_game *g, float angle)
 		else if (g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 			g->ray.door = 1;
 	}
+	printf("%f\n", g->ray.dist * cos(angle - g->player.angle_view));
 	if (g->ray.dist < 10)
-		g->ray.dist *= cos(angle - g->player.angle_view);
+		g->ray.dist = g->ray.dist * cos(angle - g->player.angle_view);
 }
