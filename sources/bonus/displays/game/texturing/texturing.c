@@ -54,31 +54,33 @@ void	find_dir_wall(t_game *g, int check)
 
 static void	_texturing_vertical(t_game *g)
 {
-	double		wall_x;
-	t_vector	texture;
+	double			wall_x;
+	t_vector		texture;
 	unsigned int	color;
 
 	wall_x = g->ray.intersection.y;
 	wall_x = wall_x - floor(wall_x);
 	texture.x = wall_x * g->textures.walls[north_texture].width;
- 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
-	color = my_mlx_pixel_get(&g->textures.walls[north_texture], texture.x, texture.y);
+	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
+		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
+	color = my_mlx_pixel_get(&g->textures.walls[north_texture], \
+			texture.x, texture.y);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
-// ICI texture.x et texture.y sont les coordonnes sur la texture pour trouver la couleur que l'on veut afficher !
-
 static void	_texturing_horizontal(t_game *g)
 {
-	double		wall_x;
-	t_vector	texture;
+	double			wall_x;
+	t_vector		texture;
 	unsigned int	color;
 
 	wall_x = g->ray.intersection.x;
 	wall_x = wall_x - floor(wall_x);
 	texture.x = wall_x * g->textures.walls[north_texture].width;
-	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size) * (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
-	color = my_mlx_pixel_get(&g->textures.walls[north_texture], texture.x, texture.y);
+	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
+		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
+	color = my_mlx_pixel_get(&g->textures.walls[north_texture], \
+			texture.x, texture.y);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 

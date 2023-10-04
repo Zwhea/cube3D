@@ -86,7 +86,7 @@ static void	_init_ray(t_game *g)
 
 static void	_find_dist(t_game *g, float angle)
 {
-	while (g->ray.wall == 0 && g->ray.door == 0)
+	while (g->ray.dist < 10 && g->ray.wall == 0 && g->ray.door == 0)
 	{
 		if (g->ray.ray_len.x < g->ray.ray_len.y)
 		{
@@ -109,6 +109,6 @@ static void	_find_dist(t_game *g, float angle)
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	g->ray.intersection.y = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
-	g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
-
+	if (g->ray.dist < 10)
+		g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
 }
