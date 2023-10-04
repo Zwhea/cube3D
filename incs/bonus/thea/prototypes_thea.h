@@ -52,7 +52,7 @@ unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
 /*---------------------- texturing/ ------------------------------------------*/
 /*------------------------- texturing.c --------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
-void			draw_textures(t_game *g, float angle);
+void			draw_textures(t_game *g, double angle);
 /*--------------- core.c -----------------------------------------------------*/
 void			game_display(t_game *g);
 /*--------------- legend/ ----------------------------------------------------*/
