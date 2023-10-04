@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/29 13:33:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 13:31:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ static void	_find_dist(t_game *g, float angle)
 		else if (g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 			g->ray.door = 1;
 	}
-	printf("%f\n", g->ray.dist * cos(angle - g->player.angle_view));
+	// printf("%f\n", g->ray.dist * cos(angle - g->player.angle_view));
 	if (g->ray.dist < 10)
 		g->ray.dist = g->ray.dist * cos(angle - g->player.angle_view);
 }
