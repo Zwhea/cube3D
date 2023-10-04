@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/04 15:18:19 by twang            ###   ########.fr        #
+#    Updated: 2023/10/04 15:44:45 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SOURCES_BONUS +=															\
 					sources/bonus/init/struct/init.c						\
 					sources/bonus/init/switches/key_switchman.c				\
 					sources/bonus/init/switches/mouse_switchman.c			\
+					sources/bonus/parsing/assets/animations/init_textures.c	\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\
 					sources/bonus/parsing/assets/colors/get_colors.c		\
 					sources/bonus/parsing/assets/colors/utils.c				\
@@ -40,7 +41,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/assets/asset_switchman.c			\
 					sources/bonus/parsing/map/get_map.c						\
 					sources/bonus/parsing/map/map_checker.c					\
-					sources/bonus/parsing/map/mini_map.c					\
 					sources/bonus/parsing/map/utils.c						\
 					sources/bonus/parsing/parsing.c							\
 					sources/bonus/main.c

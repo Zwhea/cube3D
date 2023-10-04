@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:19:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 15:48:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ int				clean(t_game *g);
 /*--------------- animations/ ------------------------------------------------*/
 /*------------------------- doors.c ------------------------------------------*/
 void			door_animations(t_game *g, int door_state);
-void			init_door_sprites(t_game *g);
 /*------------------------- player.c -----------------------------------------*/
 void			player_animations(t_game *g);
-void			init_player_sprites(t_game *g);
 /*--------------- draw/ ------------------------------------------------------*/
 /*------------------------- draw_forms.c -------------------------------------*/
 void			draw_frame(t_game *g, int size_x, int size_y, int color);
@@ -56,7 +54,7 @@ unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
 /*---------------------- texturing/ ------------------------------------------*/
 /*------------------------- texturing.c --------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
-void			draw_textures(t_game *g, double angle);
+void			draw_textures(t_game *g, float angle);
 /*--------------- core.c -----------------------------------------------------*/
 void			game_display(t_game *g);
 /*--------------- legend/ ----------------------------------------------------*/
@@ -135,6 +133,10 @@ int				mouse_release(t_keycode key, int x, int y, t_game *g);
 
 /*---- parsing/ --------------------------------------------------------------*/
 /*--------------- assets/ ----------------------------------------------------*/
+/*---------------------- animations/ -----------------------------------------*/
+/*------------------------- init_textures.c ----------------------------------*/
+void			init_door_sprites(t_game *g);
+void			init_player_sprites(t_game *g);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 void			colors_checker(t_game *g, char *line);
@@ -166,8 +168,6 @@ void			get_map(t_game *g, int fd, int start_map);
 /*------------------------- map_checker.c ------------------------------------*/
 void			map_checker(t_game *g);
 void			minimap_display(t_game *g);
-/*------------------------- mini_map.c --------------------------------------*/
-void			get_mini_map(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/
 bool			is_map(char *s);
 size_t			set_map_height(t_game *g, int fd);
