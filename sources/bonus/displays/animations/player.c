@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:08:43 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:34:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/05 10:21:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void	player_animations(t_game *g)
 {
 	(void)g;
-	puts("hey ca doit mettre des mains yoloooooo");
+	// puts("hey ca doit mettre des mains yoloooooo");
 }
