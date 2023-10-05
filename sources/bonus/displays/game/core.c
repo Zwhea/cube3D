@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 14:04:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 15:36:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	game_display(t_game *g)
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
 	_init_game(g);
+	player_animations(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 11:24:33 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/05 13:19:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,6 @@ void	find_dir_wall(t_game *g, int check)
 		g->ray.intersection.y = g->ray.ray_len.y - g->ray.ray_unit.y;
 	}
 }
-
-// void	draw_textures(t_game *g, double dist)
-// {
-// 	if (g->ray.wall && g->ray.wall_dir == west)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREY);
-// 	else if (g->ray.wall && g->ray.wall_dir == north)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLUE);
-// 	else if (g->ray.wall && g->ray.wall_dir == east)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_WHITE);
-// 	else if (g->ray.wall && g->ray.wall_dir == south)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
-// 	else if (g->ray.door == 1)
-// 		my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_GREEN);
-// }
 
 static void	_texturing_vertical(t_game *g)
 {

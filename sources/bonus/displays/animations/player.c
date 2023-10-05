@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   doors.c                                            :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:31:20 by twang            ###   ########.fr       */
+/*   Created: 2023/10/04 12:08:43 by twang             #+#    #+#             */
+/*   Updated: 2023/10/05 10:21:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
-void	door_animations(t_game *g, int door_state)
+void	player_animations(t_game *g)
 {
-	int	i;
-
-	i = -1;
-	while (++i < 500000)
-	{
-		g->map.map[g->ray.check.y][g->ray.check.x] = h_door;
-		if (door_state)
-			puts(GREEN"we need to open the door"END);
-		else
-			puts(RED"we need to close the door"END);
-	}
+	(void)g;
+	// puts("hey ca doit mettre des mains yoloooooo");
 }

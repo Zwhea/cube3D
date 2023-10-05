@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:38:16 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/03 15:59:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/04 13:55:50 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void	handle_north_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	g->textures.walls[north_texture].img = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.walls[north_texture].width, &g->textures.walls[north_texture].height);
-	g->textures.walls[north_texture].addr = mlx_get_data_addr(g->textures.walls[north_texture].img, &g->textures.walls[north_texture].bits_per_pixel, &g->textures.walls[north_texture].line_length, &g->textures.walls[north_texture].endian);
+	init_textures(g, s, north_texture);
 	return ;
 }
 
@@ -54,9 +52,7 @@ void	handle_south_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	g->textures.walls[south_texture].img = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.walls[south_texture].width, &g->textures.walls[south_texture].height);
-	g->textures.walls[south_texture].addr = mlx_get_data_addr(g->textures.walls[south_texture].img, &g->textures.walls[south_texture].bits_per_pixel, &g->textures.walls[south_texture].line_length, &g->textures.walls[south_texture].endian);
+	init_textures(g, s, south_texture);
 	return ;
 }
 
@@ -78,9 +74,7 @@ void	handle_west_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	g->textures.walls[west_texture].img = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.walls[west_texture].width, &g->textures.walls[west_texture].height);
-	g->textures.walls[west_texture].addr = mlx_get_data_addr(g->textures.walls[west_texture].img, &g->textures.walls[west_texture].bits_per_pixel, &g->textures.walls[west_texture].line_length, &g->textures.walls[west_texture].endian);
+	init_textures(g, s, west_texture);
 	return ;
 }
 
@@ -102,8 +96,17 @@ void	handle_east_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	g->textures.walls[east_texture].img = mlx_xpm_file_to_image(g->mlx, s, \
-									&g->textures.walls[east_texture].width, &g->textures.walls[east_texture].height);
-	g->textures.walls[east_texture].addr = mlx_get_data_addr(g->textures.walls[east_texture].img, &g->textures.walls[east_texture].bits_per_pixel, &g->textures.walls[east_texture].line_length, &g->textures.walls[east_texture].endian);
+	init_textures(g, s, east_texture);
 	return ;
+}
+
+void	init_textures(t_game *g, char *s, int id)
+{
+	g->textures.walls[id].img = mlx_xpm_file_to_image(g->mlx, s, \
+									&g->textures.walls[id].width, \
+									&g->textures.walls[id].height);
+	g->textures.walls[id].addr = mlx_get_data_addr(g->textures.walls[id].img, \
+										&g->textures.walls[id].bits_per_pixel, \
+										&g->textures.walls[id].line_length, \
+										&g->textures.walls[id].endian);
 }
