@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   asset_switchman.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 13:40:26 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/26 13:43:43 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:58:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	asset_switchman(t_game *g, char *line)
 	i = 0;
 	j = 1;
 	i += ft_skipwhitespace(i, line);
-	// set_vector(&g->textures.size, 96, 96);
 	while (j < 7)
 	{
 		if (!(ft_strncmp(&line[i], list[j].asset, ft_strlen(list[j].asset))))

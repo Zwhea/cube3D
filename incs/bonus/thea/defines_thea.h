@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 13:53:12 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/04 14:34:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,15 @@
 # define H_PINK				0xffc0cb
 # define H_PURPLE			0x800080
 # define H_GREY				0x808080
+
+/*---- animations xpm --------------------------------------------------------*/
+
+# define XPM_DOOR_00 "./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR_01 "./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR_02 "./assets/textures/xpm/door_closed.xpm"
+
+# define XPM_PLAYER_00 "./assets/textures/xpm/floor.xpm"
+# define XPM_PLAYER_01 "./assets/textures/xpm/floor.xpm"
+# define XPM_PLAYER_02 "./assets/textures/xpm/floor.xpm"
 
 #endif

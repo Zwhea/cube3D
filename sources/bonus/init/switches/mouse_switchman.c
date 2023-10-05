@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 14:40:31 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 13:55:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/05 11:09:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ int	mouse_move(int x, int y, t_game *g)
 	if (g->player.last_pov > x + 0.5)
 	{
 		g->player.diff_pov = (g->player.last_pov - x) / 5;
-		view_left(g);
+		if (g->player.diff_pov * 6 < WINDOW_X / 2 + 1)
+			view_left(g);
 	}
 	if (g->player.last_pov < x - 0.5)
 	{
 		g->player.diff_pov = (x - g->player.last_pov) / 5;
-		view_right(g);
+		if (g->player.diff_pov * 6 < WINDOW_X / 2 + 1)
+			view_right(g);
 	}
 	g->player.last_pov = x;
 	return (0);

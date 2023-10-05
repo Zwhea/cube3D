@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/29 11:58:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/05 13:18:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int				clean(t_game *g);
 /*--------------- animations/ ------------------------------------------------*/
 /*------------------------- doors.c ------------------------------------------*/
 void			door_animations(t_game *g, int door_state);
+/*------------------------- player.c -----------------------------------------*/
+void			player_animations(t_game *g);
 /*--------------- draw/ ------------------------------------------------------*/
 /*------------------------- draw_forms.c -------------------------------------*/
 void			draw_frame(t_game *g, int size_x, int size_y, int color);
@@ -131,6 +133,10 @@ int				mouse_release(t_keycode key, int x, int y, t_game *g);
 
 /*---- parsing/ --------------------------------------------------------------*/
 /*--------------- assets/ ----------------------------------------------------*/
+/*---------------------- animations/ -----------------------------------------*/
+/*------------------------- init_textures.c ----------------------------------*/
+void			init_door_sprites(t_game *g);
+void			init_player_sprites(t_game *g);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 void			colors_checker(t_game *g, char *line);
@@ -151,6 +157,7 @@ void			handle_north_texture(t_game *g, char *line);
 void			handle_south_texture(t_game *g, char *line);
 void			handle_west_texture(t_game *g, char *line);
 void			handle_east_texture(t_game *g, char *line);
+void			init_textures(t_game *g, char *s, int id);
 /*------------------------- textures_checker.c -------------------------------*/
 void			textures_checker(t_game *g);
 /*--------------- asset_switchman.c ------------------------------------------*/
@@ -161,8 +168,6 @@ void			get_map(t_game *g, int fd, int start_map);
 /*------------------------- map_checker.c ------------------------------------*/
 void			map_checker(t_game *g);
 void			minimap_display(t_game *g);
-/*------------------------- mini_map.c --------------------------------------*/
-void			get_mini_map(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/
 bool			is_map(char *s);
 size_t			set_map_height(t_game *g, int fd);

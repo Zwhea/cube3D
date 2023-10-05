@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/09/04 17:07:02 by twang            ###   ########.fr        #
+#    Updated: 2023/10/05 10:50:54 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,8 @@ endif
 
 #--leaks flags-----------------------------------------------------------------#
 
-LEAKS	=	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes
+LEAKS		=	valgrind --leak-check=full --show-leak-kinds=all --quiet
+LEAKS_FULL	=	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes --log-file=valgrind_report.txt #-v
 
 #--define flags----------------------------------------------------------------#
 
@@ -154,10 +155,18 @@ debug:
 leaks:
 	clear
 	$(MAKE) -j VALGRIND=yes BONUS=yes
-	$(LEAKS) ./cub3D assets/maps/textures.cub
+	$(LEAKS) ./cub3D assets/maps/labyrinth.cub
+
+leaks_full:
+	clear
+	$(MAKE) -j VALGRIND=yes BONUS=yes
+	$(LEAKS_FULL) ./cub3D assets/maps/labyrinth.cub
 
 bonus:
 	$(MAKE) re -j BONUS=yes
+
+youpi:
+	echo youpi
 
 #--print header----------------------------------------------------------------#
 
