@@ -49,15 +49,16 @@ static void	_texturing_vertical(t_game *g)
 	texture.x = wall_x * g->textures.walls[north_texture].width;
 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
 		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
-	if (g->ray.wall_dir == east)
+	if (g->ray.wall && g->ray.wall_dir == east)
 		color = my_mlx_pixel_get(&g->textures.walls[east_texture], \
 				texture.x, texture.y);
-	else if (g->ray.wall_dir == west)
+	else if (g->ray.wall && g->ray.wall_dir == west)
 		color = my_mlx_pixel_get(&g->textures.walls[west_texture], \
 				texture.x, texture.y);
 	else if (g->ray.door)
 		color = my_mlx_pixel_get(&g->animations.door[0], \
 				texture.x, texture.y);
+	color = (color >> 1) & 8355711;
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
