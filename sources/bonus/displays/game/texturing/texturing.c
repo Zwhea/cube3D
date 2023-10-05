@@ -66,7 +66,7 @@ static void	_texturing_vertical(t_game *g)
 	if (g->ray.wall_dir == east)
 		color = my_mlx_pixel_get(&g->textures.walls[east_texture], \
 				texture.x, texture.y);
-	else if (g->ray.wall_dir == west)
+	else
 		color = my_mlx_pixel_get(&g->textures.walls[west_texture], \
 				texture.x, texture.y);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
@@ -83,12 +83,13 @@ static void	_texturing_horizontal(t_game *g)
 	texture.x = wall_x * g->textures.walls[north_texture].width;
 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
 		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
-	if (g->ray.wall_dir == north)
+	if (g->ray.wall && g->ray.wall_dir == north)
 		color = my_mlx_pixel_get(&g->textures.walls[north_texture], \
 				texture.x, texture.y);
-	else if (g->ray.wall_dir == south)
-		color = my_mlx_pixel_get(&g->textures.walls[north_texture], \
+	else if (g->ray.wall && g->ray.wall_dir == south)
+		color = my_mlx_pixel_get(&g->textures.walls[south_texture], \
 				texture.x, texture.y);
+
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
