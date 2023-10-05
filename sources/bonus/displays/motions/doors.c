@@ -98,7 +98,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
 	{
-		// door_animations(g, 1);
+		door_animations(g, 1);
 		g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
 		return (1);
 	}
@@ -107,7 +107,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
 	{
-		// door_animations(g, 0);
+		door_animations(g, 0);
 		g->map.map[g->ray.check.y][g->ray.check.x] = door;
 		return (1);
 	}
