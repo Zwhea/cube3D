@@ -38,6 +38,26 @@ void	find_dir_wall(t_game *g, int check)
 	}
 }
 
+unsigned int	get_shade(t_game *game, unsigned int color)
+{
+	int		r;
+	int		g;
+	int		b;
+	double	ratio;
+
+	r = (color >> 16) & 0xff;
+	g = (color >> 8) & 0xff;
+	b = color & 0xff;
+	if (game->ray.dist > 6)
+	{
+		ratio = 1 - ((game->ray.dist - 6) * 0.1);
+		r = (int)(r * ratio);
+		g = (int)(g * ratio);
+		b = (int)(b * ratio);
+	}
+	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
+}
+
 static void	_texturing_vertical(t_game *g)
 {
 	double			wall_x;
@@ -59,6 +79,7 @@ static void	_texturing_vertical(t_game *g)
 		color = my_mlx_pixel_get(&g->animations.door[0], \
 				texture.x, texture.y);
 	color = (color >> 1) & 8355711;
+	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
@@ -82,6 +103,7 @@ static void	_texturing_horizontal(t_game *g)
 	else if (g->ray.door)
 		color = my_mlx_pixel_get(&g->animations.door[0], \
 				texture.x, texture.y);
+	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
