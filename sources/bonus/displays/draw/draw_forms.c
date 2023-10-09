@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_forms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/01 18:22:12 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:10:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,22 @@ void	draw_square(t_game *g, int x, int y, int color)
 	}
 }
 
-void	draw_circle(t_game *g, int x, int y, int color)
+void	draw_circle(t_game *g, t_vector *pos, int rayon, int color)
 {
-	int		i;
-	int		j;
-	float	dst;
+	t_vector	indic;
 
-	i = 0;
-	while (i <= 20)
+	set_vector(&indic, pos->x - rayon, pos->y - rayon);
+	while (indic.y < rayon + pos->y)
 	{
-		j = 0;
-		while (j <= 20)
+		indic.x = pos->x - rayon;
+		while (indic.x < rayon + pos->x)
 		{
-			dst = sqrt(pow((i - 10), 2) + pow((j - 10), 2));
-			if (dst < 5)
-				my_mlx_pixel_put(&g->draw, x + j, y + i, color);
-			j++;
+			if (((indic.x - pos->x) * (indic.x - pos->x)) \
+				+ ((indic.y - pos->y) * (indic.y - pos->y)) < (rayon * rayon))
+				my_mlx_pixel_put(&g->draw, indic.x, indic.y, color);
+			indic.x++;
 		}
-		i++;
+		indic.y++;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/05 13:18:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:12:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			player_animations(t_game *g);
 /*------------------------- draw_forms.c -------------------------------------*/
 void			draw_frame(t_game *g, int size_x, int size_y, int color);
 void			draw_square(t_game *g, int x, int y, int color);
-void			draw_circle(t_game *g, int x, int y, int color);
+void			draw_circle(t_game *g, t_vector *pos, int rayon, int color);
 void			draw_v_rectangle(t_game *g, int x, int y, int color);
 void			draw_h_rectangle(t_game *g, int x, int y, int color);
 /*------------------------- fill_background.c --------------------------------*/
@@ -47,7 +47,7 @@ void			init_minimap(t_game *g);
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 void			my_mlx_pixel_put(t_draw *data, int x, int y, int color);
 /*------------------------- mlx_pixel_get.c ----------------------------------*/
-unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
+unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
 /*--------------- game/ ------------------------------------------------------*/
 /*---------------------- raycasting/ -----------------------------------------*/
 /*------------------------- raycasting.c -------------------------------------*/
@@ -149,9 +149,6 @@ void			handle_no_asset(t_game *g, char *line);
 void			extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int				create_rgb(int r, int g, int b);
 /*---------------------- textures/ -------------------------------------------*/
-/*------------------------- bonus_textures.c ---------------------------------*/
-void			handle_ceiling_texture(t_game *g, char *line);
-void			handle_floor_texture(t_game *g, char *line);
 /*------------------------- get_textures.c -----------------------------------*/
 void			handle_north_texture(t_game *g, char *line);
 void			handle_south_texture(t_game *g, char *line);
@@ -175,6 +172,6 @@ void			set_map_width(t_game *g, char *line);
 void			set_direction(t_game *g, char c);
 void			check_around(t_game *g, int x, int y);
 /*---- parsing.c -------------------------------------------------------------*/
-int				parsing(t_game *g, int ac, char **av);
+int				parsing(t_game *g, char **av);
 
 #endif

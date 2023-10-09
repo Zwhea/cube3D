@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/05 13:19:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:15:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ static void	_texturing_vertical(t_game *g)
 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
 		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
 	if (g->ray.wall && g->ray.wall_dir == east)
-		color = my_mlx_pixel_get(&g->textures.walls[east_texture], \
+		color = my_mlx_pix_get(&g->textures.walls[east_texture], \
 				texture.x, texture.y);
 	else if (g->ray.wall && g->ray.wall_dir == west)
-		color = my_mlx_pixel_get(&g->textures.walls[west_texture], \
+		color = my_mlx_pix_get(&g->textures.walls[west_texture], \
 				texture.x, texture.y);
 	else if (g->ray.door)
-		color = my_mlx_pixel_get(&g->animations.door[0], \
+		color = my_mlx_pix_get(&g->sprites.door[0], \
 				texture.x, texture.y);
 	else
 		color = 0;
@@ -97,13 +97,13 @@ static void	_texturing_horizontal(t_game *g)
 	texture.y = (g->size.y * 2 - 1080 + g->ray.wall_size)
 		* (g->textures.walls[north_texture].width / 2) / g->ray.wall_size;
 	if (g->ray.wall && g->ray.wall_dir == north)
-		color = my_mlx_pixel_get(&g->textures.walls[north_texture], \
+		color = my_mlx_pix_get(&g->textures.walls[north_texture], \
 				texture.x, texture.y);
 	else if (g->ray.wall && g->ray.wall_dir == south)
-		color = my_mlx_pixel_get(&g->textures.walls[south_texture], \
+		color = my_mlx_pix_get(&g->textures.walls[south_texture], \
 				texture.x, texture.y);
 	else if (g->ray.door)
-		color = my_mlx_pixel_get(&g->animations.door[0], \
+		color = my_mlx_pix_get(&g->sprites.door[0], \
 				texture.x, texture.y);
 	else
 		color = 0;

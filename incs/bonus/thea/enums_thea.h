@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/09/29 11:46:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 16:52:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ enum e_keyassets
 	south_texture,
 	west_texture,
 	east_texture,
-	ceiling_texture,
-	floor_texture,
 	ceiling_color,
 	floor_color,
 	no_asset

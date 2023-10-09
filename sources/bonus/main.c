@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:37 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/21 09:43:27 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:01:33 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 		error_switchman(&g, no_args);
 	else
 	{
-		if (parsing(&g, ac, av) != 0)
+		if (parsing(&g, av) != 0)
 			return (close_n_free(&g, true));
 		game_display(&g);
 		init_mlx_functions(&g);

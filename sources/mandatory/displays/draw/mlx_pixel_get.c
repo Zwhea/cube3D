@@ -6,14 +6,14 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 17:12:09 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:15:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:12:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
-unsigned int	my_mlx_pixel_get(t_game *g, int x, int y)
+unsigned int	my_mlx_pix_get(t_game *g, int x, int y)
 {
 	char	*dst;
 

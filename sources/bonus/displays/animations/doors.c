@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:31:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:24:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,6 @@
 
 void	door_animations(t_game *g, int door_state)
 {
-	int	i;
-
-	i = -1;
-	while (++i < 500000)
-	{
-		g->map.map[g->ray.check.y][g->ray.check.x] = h_door;
-		if (door_state)
-			puts(GREEN"we need to open the door"END);
-		else
-			puts(RED"we need to close the door"END);
-	}
+	(void)g;
+	(void)door_state;
 }
