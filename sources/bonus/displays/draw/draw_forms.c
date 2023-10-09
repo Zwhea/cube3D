@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:26:46 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/09 11:10:50 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:10:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void	draw_circle(t_game *g, t_vector *pos, int rayon, int color)
 		indic.x = pos->x - rayon;
 		while (indic.x < rayon + pos->x)
 		{
-			if (((indic.x - pos->x) * (indic.x - pos->x)) + ((indic.y - pos->y) * (indic.y - pos->y)) < (rayon * rayon))
+			if (((indic.x - pos->x) * (indic.x - pos->x)) \
+				+ ((indic.y - pos->y) * (indic.y - pos->y)) < (rayon * rayon))
 				my_mlx_pixel_put(&g->draw, indic.x, indic.y, color);
 			indic.x++;
 		}

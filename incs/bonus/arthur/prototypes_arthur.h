@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 16:40:46 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:12:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void			show_fov(t_game *g);
 void			ray_minimap(t_game *g, t_minimap *mini);
 
 // mlx_pixel_get.c
-unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);
+unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
 
 // raycasting.c
 void			raycasting(t_game *g, double angle);
