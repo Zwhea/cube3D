@@ -19,7 +19,7 @@ int	view_left(t_game *g)
 		g->player.angle_view -= 2 * M_PI;
 	else if (g->player.angle_view <= -2 * M_PI)
 		g->player.angle_view += 2 * M_PI;
-	g->player.angle_view -= M_PI * g->player.diff_pov / 90;
+	g->player.angle_view -= M_PI * g->player.diff_pov / 45;
 	return (0);
 }
 
@@ -29,6 +29,6 @@ int	view_right(t_game *g)
 		g->player.angle_view -= 2 * M_PI;
 	else if (g->player.angle_view <= -2 * M_PI)
 		g->player.angle_view += 2 * M_PI;
-	g->player.angle_view += M_PI * g->player.diff_pov / 90;
+	g->player.angle_view += M_PI * g->player.diff_pov / 45;
 	return (0);
 }

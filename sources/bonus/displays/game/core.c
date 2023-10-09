@@ -27,6 +27,7 @@ void	game_display(t_game *g)
 	fill_background(g, 1920, 1080, 0);
 	_init_game(g);
 	player_animations(g);
+	draw_crosshair(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_destroy_image(g->mlx, g->draw.img);

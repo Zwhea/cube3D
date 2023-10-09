@@ -12,6 +12,7 @@
 
 SOURCES_BONUS =																\
 					sources/bonus/displays/draw/draw_forms.c				\
+					sources/bonus/displays/draw/draw_crosshair.c			\
 					sources/bonus/displays/draw/fill_background.c			\
 					sources/bonus/displays/draw/mlx_pixel_get.c				\
 					sources/bonus/displays/draw/mlx_pixel_put.c				\
