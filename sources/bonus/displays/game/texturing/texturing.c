@@ -78,6 +78,8 @@ static void	_texturing_vertical(t_game *g)
 	else if (g->ray.door)
 		color = my_mlx_pixel_get(&g->animations.door[0], \
 				texture.x, texture.y);
+	else
+		color = 0;
 	color = (color >> 1) & 8355711;
 	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
@@ -103,6 +105,8 @@ static void	_texturing_horizontal(t_game *g)
 	else if (g->ray.door)
 		color = my_mlx_pixel_get(&g->animations.door[0], \
 				texture.x, texture.y);
+	else
+		color = 0;
 	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }

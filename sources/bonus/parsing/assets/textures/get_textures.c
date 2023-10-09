@@ -105,8 +105,10 @@ void	init_textures(t_game *g, char *s, int id)
 	g->textures.walls[id].img = mlx_xpm_file_to_image(g->mlx, s, \
 									&g->textures.walls[id].width, \
 									&g->textures.walls[id].height);
+	// IL FAUT PROTEGER LES TEXTURES (NOM DE TEXTURES)
 	g->textures.walls[id].addr = mlx_get_data_addr(g->textures.walls[id].img, \
 										&g->textures.walls[id].bits_per_pixel, \
 										&g->textures.walls[id].line_length, \
 										&g->textures.walls[id].endian);
+	// PROTEGER MLX_GET_DATA_ADDR
 }
