@@ -21,15 +21,13 @@ void	asset_switchman(t_game *g, char *line)
 								{"SO ", &handle_south_texture}, \
 								{"WE ", &handle_west_texture}, \
 								{"EA ", &handle_east_texture}, \
-								{"CE ", &handle_ceiling_texture}, \
-								{"FL ", &handle_floor_texture}, \
 								{"F ", &handle_floor_color}, \
 								{"C ", &handle_ceiling_color}};
 
 	i = 0;
 	j = 1;
 	i += ft_skipwhitespace(i, line);
-	while (j < 9)
+	while (j < 7)
 	{
 		if (!(ft_strncmp(&line[i], list[j].asset, ft_strlen(list[j].asset))))
 			return (list[j].func(g, line));

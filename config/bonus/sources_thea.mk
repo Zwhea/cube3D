@@ -35,7 +35,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\
 					sources/bonus/parsing/assets/colors/get_colors.c		\
 					sources/bonus/parsing/assets/colors/utils.c				\
-					sources/bonus/parsing/assets/textures/bonus_textures.c	\
 					sources/bonus/parsing/assets/textures/get_textures.c	\
 					sources/bonus/parsing/assets/textures/textures_checker.c\
 					sources/bonus/parsing/assets/asset_switchman.c			\

@@ -160,7 +160,7 @@ leaks:
 leaks_full:
 	clear
 	$(MAKE) -j VALGRIND=yes BONUS=yes
-	$(LEAKS_FULL) ./cub3D assets/maps/labyrinth.cub
+	$(LEAKS_FULL) ./cub3D assets/maps/vector.cub
 
 bonus:
 	$(MAKE) re -j BONUS=yes
