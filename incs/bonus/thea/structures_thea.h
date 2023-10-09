@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:06:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 13:56:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_game		t_game;
 typedef struct s_raycast	t_raycast;
 typedef struct s_file		t_file;
 typedef struct s_map		t_map;
+typedef struct s_minimap	t_minimap;
 typedef struct s_player		t_player;
 typedef struct s_animations	t_animations;
 typedef struct s_tex		t_tex;
@@ -148,6 +149,23 @@ struct s_map
 	bool			error;
 };
 
+struct s_minimap
+{
+	int				center;
+	int				rayon;
+	float			ratio;
+	float			monitor_start;
+	float			indic_start;
+	t_vector_f		indic;
+	t_vector_f		monitor;
+	float			plane_y;
+	float			throw_x;
+	float			throw_y;
+	float			degree;
+	int				fader;
+	unsigned int	color;
+};
+
 struct s_file
 {
 	int				fd;
@@ -178,6 +196,7 @@ struct s_game
 {
 	t_file			file;
 	t_map			map;
+	t_minimap		mini_map;
 	t_player		player;
 	t_vector		size;
 	t_vector		window_size;

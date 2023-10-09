@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes_arthur.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 10:15:47 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:40:46 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ float			get_angle_degree(t_game *g);
 void			show_fov(t_game *g);
 
 // raycasting.c
-void			ray_minimap(t_game *g, float angle);
+void			ray_minimap(t_game *g, t_minimap *mini);
 
 // mlx_pixel_get.c
 unsigned int	my_mlx_pixel_get(t_draw *draw, int x, int y);

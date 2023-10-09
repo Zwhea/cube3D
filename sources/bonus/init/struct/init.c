@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/08/30 17:54:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 16:36:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)g, sizeof(t_game));
 	ft_bzero((void *)&g->file, sizeof(t_file));
 	ft_bzero((void *)&g->map, sizeof(t_map));
+	ft_bzero((void *)&g->mini_map, sizeof(t_minimap));
 	ft_bzero((void *)&g->player, sizeof(t_player));
 	ft_bzero((void *)&g->window_size, sizeof(t_vector));
 	ft_bzero((void *)&g->legend_window_size, sizeof(t_vector));

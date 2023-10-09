@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/05 13:18:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 11:06:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void			player_animations(t_game *g);
 /*------------------------- draw_forms.c -------------------------------------*/
 void			draw_frame(t_game *g, int size_x, int size_y, int color);
 void			draw_square(t_game *g, int x, int y, int color);
-void			draw_circle(t_game *g, int x, int y, int color);
+void			draw_circle(t_game *g, t_vector *pos, int rayon, int color);
 void			draw_v_rectangle(t_game *g, int x, int y, int color);
 void			draw_h_rectangle(t_game *g, int x, int y, int color);
 /*------------------------- fill_background.c --------------------------------*/
