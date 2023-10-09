@@ -24,6 +24,7 @@ void	game_display(t_game *g)
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
+	fill_background(g, 1920, 1080, 0);
 	_init_game(g);
 	player_animations(g);
 	minimap_display(g);
