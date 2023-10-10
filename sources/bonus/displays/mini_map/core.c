@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/10 15:14:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 15:21:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	draw_north(t_game *g)
 	t_vector	north;
 	float		tmp;
 
-	set_vector(&north, 0, 0 + g->mini_map.rayon);
+	set_vector(&north, 0, 0 - g->mini_map.rayon);
 	tmp = north.x;
 	north.x = ((north.x * cos((-1) * g->player.angle_view - M_PI_2)) \
 				- (north.y * sin((-1) * g->player.angle_view - M_PI_2)));
@@ -37,7 +37,6 @@ void	draw_north(t_game *g)
 	north.y += g->mini_map.center;
 	draw_circle(g, &north, 12, H_BLACK);
 	draw_circle(g, &north, 10, H_WHITE);
-	// mlx_string_put(g->mlx, g->window, north.x, north.y, H_RED, "N");
 	g->mini_map.north = north;
 }
 
