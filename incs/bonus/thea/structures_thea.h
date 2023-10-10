@@ -135,6 +135,7 @@ struct s_player
 	bool			south;
 	bool			west;
 	bool			east;
+	double			hand_move;
 };
 
 struct s_map
