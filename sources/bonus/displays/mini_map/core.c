@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/09 17:22:49 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:51:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 		|| g->map.map[(int)monitor.y][(int)monitor.x] == north \
 		|| g->map.map[(int)monitor.y][(int)monitor.x] == east \
 		|| g->map.map[(int)monitor.y][(int)monitor.x] == west \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == south))
+		|| g->map.map[(int)monitor.y][(int)monitor.x] == south \
+		|| g->map.map[(int)monitor.y][(int)monitor.x] == o_door))
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_WHITE);
 	else if (g->map.map[(int)monitor.y][(int)monitor.x] \
 		&& g->map.map[(int)monitor.y][(int)monitor.x] == door)

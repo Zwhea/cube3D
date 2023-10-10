@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 17:24:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:42:09 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ struct s_switches
 	bool			left_key;
 	bool			right_key;
 	bool			l_key;
+	bool			space_key;
 };
 
 struct s_draw

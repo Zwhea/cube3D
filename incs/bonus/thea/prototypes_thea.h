@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 17:12:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 11:26:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,15 @@ int				mouse_release(t_keycode key, int x, int y, t_game *g);
 /*------------------------- init_textures.c ----------------------------------*/
 void			init_door_sprites(t_game *g);
 void			init_player_sprites(t_game *g);
+/*------------------------- utils.c ------------------------------------------*/
+void			init_image(t_game *g, t_sprites *sprites, int size, \
+															bool id_img);
+void			init_image_settings(t_sprites *sprites, int size, \
+															bool id_img);
+void			check_image(t_game *g, t_sprites *sprites, int size, \
+															bool id_img);
+void			check_image_settings(t_game *g, t_sprites *sprites, int size, \
+															bool id);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 void			colors_checker(t_game *g, char *line);
@@ -155,8 +164,6 @@ void			handle_south_texture(t_game *g, char *line);
 void			handle_west_texture(t_game *g, char *line);
 void			handle_east_texture(t_game *g, char *line);
 void			init_textures(t_game *g, char *s, int id);
-/*------------------------- textures_checker.c -------------------------------*/
-void			textures_checker(t_game *g);
 /*--------------- asset_switchman.c ------------------------------------------*/
 void			asset_switchman(t_game *g, char *line);
 /*--------------- map/ -------------------------------------------------------*/
