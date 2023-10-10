@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 17:24:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 15:17:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ void	game_display(t_game *g)
 	draw_crosshair(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
+	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 2, g->mini_map.north.y + 3, H_RED, "N");
 	mlx_destroy_image(g->mlx, g->draw.img);
+	
 }
 
 static void	_init_game(t_game *g)
