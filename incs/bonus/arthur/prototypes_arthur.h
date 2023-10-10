@@ -34,6 +34,7 @@ void			ray_minimap(t_game *g, t_minimap *mini);
 unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
 
 void			draw_crosshair(t_game *g);
+void			draw_hands(t_game *g);
 
 // raycasting.c
 void			raycasting(t_game *g, double angle);

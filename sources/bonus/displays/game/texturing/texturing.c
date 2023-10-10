@@ -107,6 +107,7 @@ static void	_texturing_horizontal(t_game *g)
 				texture.x, texture.y);
 	else
 		color = 0;
+	color = (color >> 1) & 8355711;
 	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
