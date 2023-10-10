@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/04 15:06:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/09 17:24:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ typedef struct s_game		t_game;
 typedef struct s_raycast	t_raycast;
 typedef struct s_file		t_file;
 typedef struct s_map		t_map;
+typedef struct s_minimap	t_minimap;
 typedef struct s_player		t_player;
-typedef struct s_animations	t_animations;
+typedef struct s_sprites	t_sprites;
 typedef struct s_tex		t_tex;
 typedef struct s_color		t_color;
 typedef struct s_lst_assets	t_lst_assets;
@@ -105,7 +106,7 @@ struct s_color
 	unsigned char	b;
 };
 
-struct s_animations
+struct s_sprites
 {
 	t_draw			player[3];
 	t_draw			door[3];
@@ -113,13 +114,10 @@ struct s_animations
 
 struct s_tex
 {
-	t_draw			walls[6];
+	t_draw			walls[4];
 	t_vector_f		impact;
 	double			h_ratio;
 	double			l_ratio;
-	bool			bonus;
-	bool			ceiling;
-	bool			floor;
 };
 
 struct s_player
@@ -144,8 +142,23 @@ struct s_map
 	int				*line_len;
 	char			**map;
 	char			**b_map;
-	char			**mini_map;
-	bool			error;
+};
+
+struct s_minimap
+{
+	int				center;
+	int				rayon;
+	float			ratio;
+	float			monitor_start;
+	float			indic_start;
+	t_vector_f		indic;
+	t_vector_f		monitor;
+	float			plane_y;
+	float			throw_x;
+	float			throw_y;
+	float			degree;
+	int				fader;
+	unsigned int	color;
 };
 
 struct s_file
@@ -178,11 +191,12 @@ struct s_game
 {
 	t_file			file;
 	t_map			map;
+	t_minimap		mini_map;
 	t_player		player;
 	t_vector		size;
 	t_vector		window_size;
 	t_vector		legend_window_size;
-	t_animations	animations;
+	t_sprites		sprites;
 	t_tex			textures;
 	t_color			color[2];
 	t_draw			draw;
