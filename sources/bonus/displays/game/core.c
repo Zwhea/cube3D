@@ -28,18 +28,12 @@ void	game_display(t_game *g)
 	_init_game(g);
 	player_animations(g);
 	draw_crosshair(g);
-	if ((g->switches.w_key || g->switches.a_key || g->switches.d_key
-			|| g->switches.s_key || g->switches.down_key || g->switches.up_key)
-		&& g->player.hand_move + (M_PI * 0.125) > 2 * M_PI)
-		g->player.hand_move = 0;
-	else if (g->switches.w_key || g->switches.a_key || g->switches.d_key
-		|| g->switches.s_key || g->switches.down_key || g->switches.up_key)
-		g->player.hand_move += (M_PI * 0.125);
 	draw_hands(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
-	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 2,
-		g->mini_map.north.y + 3, H_RED, "N");
+	mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");
+	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
+		g->mini_map.north.y + 5, H_RED, "N");
 	mlx_destroy_image(g->mlx, g->draw.img);
 }
 
