@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 11:42:09 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 15:13:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ struct s_minimap
 	float			degree;
 	int				fader;
 	unsigned int	color;
+	t_vector		north;
 };
 
 struct s_file

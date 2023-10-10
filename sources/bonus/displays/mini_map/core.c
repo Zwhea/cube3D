@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/10 11:51:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 15:21:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,26 @@ static void	_init_minimap(t_game *g, t_minimap *mini);
 static void	_start_minimap(t_game *g, t_minimap *mini);
 static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 															t_vector_f monitor);
-static void	_rotate_minimap(t_game *g, t_vector_f *indic);
+static void	_rotate(t_game *g, t_vector_f *indic);
 
 /*----------------------------------------------------------------------------*/
+void	draw_north(t_game *g)
+{
+	t_vector	north;
+	float		tmp;
+
+	set_vector(&north, 0, 0 - g->mini_map.rayon);
+	tmp = north.x;
+	north.x = ((north.x * cos((-1) * g->player.angle_view - M_PI_2)) \
+				- (north.y * sin((-1) * g->player.angle_view - M_PI_2)));
+	north.x += g->mini_map.center;
+	north.y = ((tmp * sin((-1) * g->player.angle_view - M_PI_2)) \
+				+ (north.y * cos((-1) * g->player.angle_view - M_PI_2)));
+	north.y += g->mini_map.center;
+	draw_circle(g, &north, 12, H_BLACK);
+	draw_circle(g, &north, 10, H_WHITE);
+	g->mini_map.north = north;
+}
 
 void	minimap_display(t_game *g)
 {
@@ -32,6 +49,7 @@ void	minimap_display(t_game *g)
 	_start_minimap(g, &g->mini_map);
 	ray_minimap(g, &g->mini_map);
 	draw_circle(g, &player, 6, H_DARKGREEN);
+	draw_north(g);
 }
 
 static void	_init_minimap(t_game *g, t_minimap *mini)
@@ -81,7 +99,7 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 {
 	if (monitor.x < 0 || monitor.y < 0)
 		return ;
-	_rotate_minimap(g, &indic);
+	_rotate(g, &indic);
 	if (g->map.map[(int)monitor.y][(int)monitor.x] \
 		&& g->map.map[(int)monitor.y][(int)monitor.x] == wall)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_GREY);
@@ -98,7 +116,7 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_BLACK);
 }
 
-static void	_rotate_minimap(t_game *g, t_vector_f *indic)
+static void	_rotate(t_game *g, t_vector_f *indic)
 {
 	float	tmp;
 
