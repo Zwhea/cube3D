@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 11:44:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/10 16:11:43 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int	_view_switch(t_keycode key, t_game *g);
 
 int	key_manager(t_game *g)
 {
+	static int			frame;
 	int					i;
 	const t_lst_moves	list[] = {{g->switches.w_key, &w_move}, \
 									{g->switches.a_key, &a_move}, \
@@ -37,6 +38,10 @@ int	key_manager(t_game *g)
 		if (list[i].switcher)
 			list[i].func(g);
 	game_display(g);
+	frame++;
+	printf("%d\n", frame);
+	if (frame > 50000)
+		frame = 0;
 	return (0);
 }
 
