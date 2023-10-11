@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/05 15:10:21 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/11 17:04:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,10 @@
 
 /*---- animations xpm --------------------------------------------------------*/
 
-# define XPM_DOOR_00 "./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_01 "./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_02 "./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR_00	"./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR_01	"./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR_02	"./assets/textures/xpm/door_closed.xpm"
 
-# define XPM_PLAYER_00 "./assets/textures/xpm/floor.xpm"
-# define XPM_PLAYER_01 "./assets/textures/xpm/floor.xpm"
-# define XPM_PLAYER_02 "./assets/textures/xpm/floor.xpm"
+# define XPM_PLAYER		"./assets/textures/xpm/hands.xpm"
 
 #endif

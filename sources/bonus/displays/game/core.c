@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 15:21:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/11 17:17:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	game_display(t_game *g)
 										&g->draw.line_length, &g->draw.endian);
 	fill_background(g, 1920, 1080, 0);
 	_init_game(g);
-	player_animations(g);
+	// player_animations(g);
 	draw_crosshair(g);
-	draw_hands(g);
+	// draw_hands(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");

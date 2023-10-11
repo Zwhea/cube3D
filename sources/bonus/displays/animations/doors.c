@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 16:48:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/11 17:43:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,36 @@ void	door_animations(t_game *g, int door_state)
 	long long int	i;
 
 	i = -1;
-	while (++i < 100000000)
+	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
+		&& g->map.map[g->ray.check.y] \
+		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
+		&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
 	{
-		if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-			&& g->map.map[g->ray.check.y] \
-			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-			&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
+		while (++i < 10000)
 		{
-			g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
-			puts("ouvert");
+				g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
+				puts("ouvert");
 		}
 	}
 	game_display(g);
-	while (++i < 200000000)
+	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
+		&& g->map.map[g->ray.check.y] \
+		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
+		&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
 	{
-		if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-			&& g->map.map[g->ray.check.y] \
-			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-			&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
+		while (++i < 20000)
 		{
-			g->map.map[g->ray.check.y][g->ray.check.x] = door;
-			puts("ferme");
+				g->map.map[g->ray.check.y][g->ray.check.x] = door;
+				puts("ferme");
 		}
 	}
 	game_display(g);
-	while (++i < 300000000)
+	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
+		&& g->map.map[g->ray.check.y] \
+		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
+		&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
 	{
-		if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-			&& g->map.map[g->ray.check.y] \
-			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-			&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
+		while (++i < 30000)
 		{
 			g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
 			puts("ouvert");

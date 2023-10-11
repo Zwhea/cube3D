@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_hands.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:53:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/10 13:53:24 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/10/11 17:13:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,17 @@ void	draw_hands(t_game *g)
 
 	_get_hand_pos(g);
 	x_text = 0;
-	while (x_text < g->sprites.player[0].width * 4)
+	while (x_text < g->sprites.player.width * 4)
 	{
 		y_text = 0;
-		while (y_text < g->sprites.player[0].width * 4)
+		while (y_text < g->sprites.player.width * 4)
 		{
-			color = my_mlx_pix_get(&g->sprites.player[0], \
+			color = my_mlx_pix_get(&g->sprites.player, \
 				x_text / 4, y_text / 4);
 			if (color != H_GREEN)
 				my_mlx_pixel_put(&g->draw, ((1920 * 0.5) - 4
-						* g->sprites.player[0].width - 1) + y_text,
-					(1080 - 4 * g->sprites.player[0].width + 15) + x_text
+						* g->sprites.player.width - 1) + y_text,
+					(1080 - 4 * g->sprites.player.width + 15) + x_text
 					+ (int)(cos(g->player.hand_move) * 10), color);
 			y_text++;
 		}
