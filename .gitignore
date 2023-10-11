@@ -57,3 +57,4 @@ dkms.conf
 *.json
 # Parasite files
 cub3D
+valgrind_report.txt
