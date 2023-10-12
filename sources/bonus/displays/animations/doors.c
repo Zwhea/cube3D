@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/11 17:43:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 10:39:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	door_animations(t_game *g, int door_state)
 				puts("ouvert");
 		}
 	}
-	game_display(g);
 	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
 		&& g->map.map[g->ray.check.y] \
 		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
@@ -42,7 +41,6 @@ void	door_animations(t_game *g, int door_state)
 				puts("ferme");
 		}
 	}
-	game_display(g);
 	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
 		&& g->map.map[g->ray.check.y] \
 		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
@@ -54,6 +52,5 @@ void	door_animations(t_game *g, int door_state)
 			puts("ouvert");
 		}
 	}
-	game_display(g);
 	puts("n'importe quoi");
 }
