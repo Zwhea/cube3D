@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:53:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/11 17:13:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 10:33:37 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,14 @@ void	draw_hands(t_game *g)
 
 	_get_hand_pos(g);
 	x_text = 0;
-	while (x_text < g->sprites.player.width * 4)
+	while (x_text < g->sprites.player.width)
 	{
 		y_text = 0;
-		while (y_text < g->sprites.player.width * 4)
+		while (y_text < g->sprites.player.height)
 		{
-			color = my_mlx_pix_get(&g->sprites.player, \
-				x_text / 4, y_text / 4);
-			if (color != H_GREEN)
-				my_mlx_pixel_put(&g->draw, ((1920 * 0.5) - 4
-						* g->sprites.player.width - 1) + y_text,
-					(1080 - 4 * g->sprites.player.width + 15) + x_text
-					+ (int)(cos(g->player.hand_move) * 10), color);
+			color = my_mlx_pix_get(&g->sprites.player, x_text, y_text);
+			if (color != H_WHITE)
+				my_mlx_pixel_put(&g->draw, x_text, y_text + (int)(cos(g->player.hand_move) * 10), color);
 			y_text++;
 		}
 		x_text++;
