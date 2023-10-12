@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/09 17:14:45 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/11 17:17:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	clean_textures(t_game *g)
 	{
 		if (i < 4 && (g->textures.walls[i].img))
 			mlx_destroy_image(g->mlx, g->textures.walls[i].img);
-		if (i < 3 && (g->sprites.player[i].img))
-			mlx_destroy_image(g->mlx, g->sprites.player[i].img);
 		if (i < 3 && (g->sprites.door[i].img))
 			mlx_destroy_image(g->mlx, g->sprites.door[i].img);
 		i++;
 	}
+	if (g->sprites.player.img)
+		mlx_destroy_image(g->mlx, g->sprites.player.img);
 }
 
 void	clean_maps(t_game *g)

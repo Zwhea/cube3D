@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 11:44:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/11 17:36:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	key_manager(t_game *g)
 									{g->switches.up_key, &w_move}, \
 									{g->switches.down_key, &s_move}, \
 									{g->switches.left_key, &view_left}, \
-									{g->switches.right_key, &view_right}, \
-									{g->switches.space_key, &open_door}};
+									{g->switches.right_key, &view_right}};
 
 	i = -1;
-	while (++i < 9)
+	while (++i < 8)
 		if (list[i].switcher)
 			list[i].func(g);
+	////raycasting que en fonction du rayon pile en face de nous, pas par rapport au fov
 	game_display(g);
 	return (0);
 }
@@ -44,6 +44,8 @@ int	key_switch(t_keycode key, t_game *g)
 {
 	if (key == esc_key)
 		clean(g);
+	if (key == space_key)
+		open_door(g);
 	if (key == l_key)
 		legend_init(g);
 	if (key == space_key)
