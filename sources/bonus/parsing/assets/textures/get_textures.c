@@ -30,7 +30,11 @@ void	handle_north_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	init_textures(g, s, north_texture);
+	if (init_textures(g, s, north_texture))
+	{
+		free(line);
+		error_switchman(g, wrong_texture);
+	}
 	return ;
 }
 
@@ -52,7 +56,11 @@ void	handle_south_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	init_textures(g, s, south_texture);
+	if (init_textures(g, s, south_texture))
+	{
+		free(line);
+		error_switchman(g, wrong_texture);
+	}
 	return ;
 }
 
@@ -74,7 +82,11 @@ void	handle_west_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	init_textures(g, s, west_texture);
+	if (init_textures(g, s, west_texture))
+	{
+		free(line);
+		error_switchman(g, wrong_texture);
+	}
 	return ;
 }
 
@@ -96,21 +108,26 @@ void	handle_east_texture(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	init_textures(g, s, east_texture);
+	if (init_textures(g, s, east_texture))
+	{
+		free(line);
+		error_switchman(g, wrong_texture);
+	}
 	return ;
 }
 
-void	init_textures(t_game *g, char *s, int id)
+int	init_textures(t_game *g, char *s, int id)
 {
 	g->textures.walls[id].img = mlx_xpm_file_to_image(g->mlx, s, \
 									&g->textures.walls[id].width, \
 									&g->textures.walls[id].height);
 	if (!g->textures.walls[id].img)
-		error_switchman(g, wrong_texture);
+		return (1);
 	g->textures.walls[id].addr = mlx_get_data_addr(g->textures.walls[id].img, \
 										&g->textures.walls[id].bits_per_pixel, \
 										&g->textures.walls[id].line_length, \
 										&g->textures.walls[id].endian);
 	if (!g->textures.walls[id].addr)
-		error_switchman(g, wrong_texture);
+		return (1);
+	return (0);
 }

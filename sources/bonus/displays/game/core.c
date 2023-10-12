@@ -32,7 +32,7 @@ void	game_display(t_game *g)
 	// if (animations)
 	// 	door_animations(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
-	mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");
+	// mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");
 	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
 		g->mini_map.north.y + 5, H_RED, "N");
 	mlx_destroy_image(g->mlx, g->draw.img);
