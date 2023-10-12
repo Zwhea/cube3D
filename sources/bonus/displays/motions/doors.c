@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 16:50:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 14:49:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,10 @@ static void	_raycasting_door(t_game *g)
 			g->ray.ray_len.y += g->ray.ray_unit.y;
 		}
 		if (_check_door(g))
+		{
+			g->sprites.animation = true;
 			break ;
+		}
 	}
 }
 
@@ -98,8 +101,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
 	{
-		door_animations(g, 1);
-		g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
+		g->sprites.is_open = false;
 		return (1);
 	}
 	else if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
@@ -107,8 +109,7 @@ static int	_check_door(t_game *g)
 			&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
 			&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
 	{
-		door_animations(g, 0);
-		g->map.map[g->ray.check.y][g->ray.check.x] = door;
+		g->sprites.is_open = true;
 		return (1);
 	}
 	return (0);

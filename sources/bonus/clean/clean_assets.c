@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/11 17:17:44 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:40:31 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	clean_maps(t_game *g)
 {
 	if (g->map.map)
 		free_split(g->map.map, g->map.size.y);
+	if (g->map.mini_map)
+		free_split(g->map.mini_map, g->map.size.y);
 	free(g->map.line_len);
 	return ;
 }

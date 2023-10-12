@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/11 17:05:37 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:58:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ struct s_color
 
 struct s_sprites
 {
+	bool			animation;
+	bool			is_open;
 	t_draw			player;
 	t_draw			door[3];
 };
@@ -144,6 +146,7 @@ struct s_map
 	int				*line_len;
 	char			**map;
 	char			**b_map;
+	char			**mini_map;
 };
 
 struct s_minimap
@@ -203,6 +206,7 @@ struct s_game
 	t_tex			textures;
 	t_color			color[2];
 	t_draw			draw;
+	t_draw			legend;
 	t_switches		switches;
 	t_raycast		ray;
 	void			*mlx;

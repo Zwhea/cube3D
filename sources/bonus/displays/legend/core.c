@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 10:29:39 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/10 12:02:16 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/12 16:03:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	legend_render(t_game *g)
 {
-	t_vector	start;
-	t_vector	end;
-
-	start.x = 0;
-	start.y = 0;
-	end.x = LEGEND_Y;
-	end.y = LEGEND_X;
-	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
-	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
-										&g->draw.line_length, &g->draw.endian);
-	fill_background(g, LEGEND_X, LEGEND_Y, H_BLUE);
-	mlx_put_image_to_window(g->mlx, g->legend_window, g->draw.img, 0, 0);
-	mlx_destroy_image(g->mlx, g->draw.img);
+	(void)g;
+	puts("legend is open");
+	// g->legend.img = mlx_new_image(g->mlx, LEGEND_X, LEGEND_Y);
+	// if (g->legend.img)
+	// 	puts("ET BEN");
+	// g->draw.addr = mlx_get_data_addr(g->legend.img, &g->draw.bits_per_pixel, \
+	// 									&g->draw.line_length, &g->draw.endian);
+	// if (g->draw.addr)
+	// 	puts("ET BAN");
+	// mlx_put_image_to_window(g->mlx, g->legend_window, g->legend.img, 0, 0);
+	// mlx_destroy_image(g->mlx, g->legend.img);
 }

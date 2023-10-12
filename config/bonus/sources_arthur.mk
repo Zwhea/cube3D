@@ -6,15 +6,15 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/10 12:01:29 by twang            ###   ########.fr        #
+#    Updated: 2023/10/12 12:52:15 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES_BONUS =																\
+					sources/bonus/displays/animations/draw_hands.c			\
 					sources/bonus/displays/draw/draw_forms.c				\
 					sources/bonus/displays/draw/draw_crosshair.c			\
-					sources/bonus/displays/draw/draw_hands.c				\
-					sources/bonus/displays/draw/fill_background.c			\
+					sources/bonus/displays/draw/draw_ceiling_n_floor.c		\
 					sources/bonus/displays/draw/mlx_pixel_get.c				\
 					sources/bonus/displays/draw/mlx_pixel_put.c				\
 					sources/bonus/displays/game/raycasting/raycasting.c		\

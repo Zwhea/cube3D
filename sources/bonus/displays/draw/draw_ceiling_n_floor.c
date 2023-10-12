@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_background.c                                  :+:      :+:    :+:   */
+/*   draw_ceiling_n_floor.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/10 11:51:33 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/09 13:44:39 by twang            ###   ########.fr       */
+/*   Created: 2023/10/12 15:43:59 by twang             #+#    #+#             */
+/*   Updated: 2023/10/12 15:44:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 
-static unsigned int	_shade_background_2(int j, unsigned int color)
+static unsigned int	_shade_floor(int j, unsigned int color)
 {
 	int		r;
 	int		g;
@@ -38,7 +38,7 @@ static unsigned int	_shade_background_2(int j, unsigned int color)
 	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
 }
 
-static unsigned int	_shade_background_1(int j, unsigned int color)
+static unsigned int	_shade_ceiling(int j, unsigned int color)
 {
 	int		r;
 	int		g;
@@ -64,7 +64,7 @@ static unsigned int	_shade_background_1(int j, unsigned int color)
 	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
 }
 
-void	fill_background(t_game *g, int size_x, int size_y, int color)
+void	draw_ceiling_n_floor(t_game *g, int size_x, int size_y, int color)
 {
 	int	i;
 	int	j;
@@ -77,12 +77,12 @@ void	fill_background(t_game *g, int size_x, int size_y, int color)
 		{
 			if (j <= 539)
 			{
-				color = _shade_background_1(j, H_BLUE);
+				color = _shade_ceiling(j, g->color[0].color);
 				my_mlx_pixel_put(&g->draw, i, j, color);
 			}
 			else
 			{
-				color = _shade_background_2(j, H_GREY);
+				color = _shade_floor(j, g->color[1].color);
 				my_mlx_pixel_put(&g->draw, i, j, color);
 			}
 			j++;
