@@ -6,51 +6,51 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 10:39:59 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:48:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
 #include "cub3D_arthur.h"
 
-void	door_animations(t_game *g, int door_state)
-{
-	(void)door_state;
-	long long int	i;
+/*---- prototypes ------------------------------------------------------------*/
 
-	i = -1;
-	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-		&& g->map.map[g->ray.check.y] \
-		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-		&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
+static void	_open_door(t_game *g);
+static void	_close_door(t_game *g);
+
+/*----------------------------------------------------------------------------*/
+
+void	door_animations(t_game *g)
+{
+	if (!g->sprites.is_open)
+		_open_door(g);
+	else
+		_close_door(g);
+	g->sprites.animation = false;
+}
+
+static void	_open_door(t_game *g)
+{
+	float	door_state;
+
+	door_state = 1;
+	while (door_state > 0)
 	{
-		while (++i < 10000)
-		{
-				g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
-				puts("ouvert");
-		}
+		door_state -= 0.01;
+		printf(GREEN"%f\n"END, door_state);
 	}
-	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-		&& g->map.map[g->ray.check.y] \
-		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-		&& g->map.map[g->ray.check.y][g->ray.check.x] == o_door)
+	g->map.map[g->ray.check.y][g->ray.check.x - 1] = o_door;
+}
+
+static void	_close_door(t_game *g)
+{
+	float	door_state;
+
+	door_state = 0;
+	while (door_state < 1)
 	{
-		while (++i < 20000)
-		{
-				g->map.map[g->ray.check.y][g->ray.check.x] = door;
-				puts("ferme");
-		}
+		door_state += 0.01;
+		printf(RED"%f\n"END, door_state);
 	}
-	if (g->ray.dist < 3 && g->ray.check.x >= 0 && g->ray.check.y >= 0 \
-		&& g->map.map[g->ray.check.y] \
-		&& g->ray.check.x < g->map.line_len[g->ray.check.y] \
-		&& g->map.map[g->ray.check.y][g->ray.check.x] == door)
-	{
-		while (++i < 30000)
-		{
-			g->map.map[g->ray.check.y][g->ray.check.x] = o_door;
-			puts("ouvert");
-		}
-	}
-	puts("n'importe quoi");
+	g->map.map[g->ray.check.y][g->ray.check.x - 1] = door;
 }

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 16:36:54 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:12:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)&g->player, sizeof(t_player));
 	ft_bzero((void *)&g->window_size, sizeof(t_vector));
 	ft_bzero((void *)&g->legend_window_size, sizeof(t_vector));
+	ft_bzero((void *)&g->sprites, sizeof(t_sprites));
 	ft_bzero((void *)&g->textures, sizeof(t_tex));
 	ft_bzero((void *)&g->color, sizeof(t_color));
 	ft_bzero((void *)&g->draw, sizeof(t_draw));
+	ft_bzero((void *)&g->legend, sizeof(t_draw));
 	ft_bzero((void *)&g->ray, sizeof(t_raycast));
 	g->player.diff_pov = 1;
 }

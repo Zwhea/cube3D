@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/10 11:25:50 by twang            ###   ########.fr        #
+#    Updated: 2023/10/12 12:22:34 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ SOURCES_BONUS +=															\
 					sources/bonus/clean/clean_assets.c						\
 					sources/bonus/clean/clean_windows.c						\
 					sources/bonus/displays/animations/doors.c				\
-					sources/bonus/displays/animations/player.c				\
 					sources/bonus/displays/game/texturing/texturing.c		\
 					sources/bonus/displays/legend/core.c					\
 					sources/bonus/displays/motions/check_if_movable.c		\
