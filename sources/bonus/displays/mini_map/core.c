@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/10 15:21:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:45:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,6 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 static void	_rotate(t_game *g, t_vector_f *indic);
 
 /*----------------------------------------------------------------------------*/
-void	draw_north(t_game *g)
-{
-	t_vector	north;
-	float		tmp;
-
-	set_vector(&north, 0, 0 - g->mini_map.rayon);
-	tmp = north.x;
-	north.x = ((north.x * cos((-1) * g->player.angle_view - M_PI_2)) \
-				- (north.y * sin((-1) * g->player.angle_view - M_PI_2)));
-	north.x += g->mini_map.center;
-	north.y = ((tmp * sin((-1) * g->player.angle_view - M_PI_2)) \
-				+ (north.y * cos((-1) * g->player.angle_view - M_PI_2)));
-	north.y += g->mini_map.center;
-	draw_circle(g, &north, 12, H_BLACK);
-	draw_circle(g, &north, 10, H_WHITE);
-	g->mini_map.north = north;
-}
 
 void	minimap_display(t_game *g)
 {
@@ -80,7 +63,7 @@ static void	_start_minimap(t_game *g, t_minimap *mini)
 		mini->indic.x = mini->indic_start;
 		mini->monitor.x = mini->monitor_start;
 		while (mini->indic.x < mini->rayon \
-				&& g->map.map[(int)mini->monitor.y][(int)mini->monitor.x])
+				&& g->map.mini_map[(int)mini->monitor.y][(int)mini->monitor.x])
 		{
 			if ((mini->indic.x * mini->indic.x) \
 				+ (mini->indic.y * mini->indic.y) \
@@ -100,19 +83,19 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 	if (monitor.x < 0 || monitor.y < 0)
 		return ;
 	_rotate(g, &indic);
-	if (g->map.map[(int)monitor.y][(int)monitor.x] \
-		&& g->map.map[(int)monitor.y][(int)monitor.x] == wall)
+	if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
+		&& g->map.mini_map[(int)monitor.y][(int)monitor.x] == wall)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_GREY);
-	else if (g->map.map[(int)monitor.y][(int)monitor.x] \
-		&& (g->map.map[(int)monitor.y][(int)monitor.x] == space \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == north \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == east \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == west \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == south \
-		|| g->map.map[(int)monitor.y][(int)monitor.x] == o_door))
+	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
+		&& (g->map.mini_map[(int)monitor.y][(int)monitor.x] == space \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == north \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == east \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == west \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == south \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == o_door))
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_WHITE);
-	else if (g->map.map[(int)monitor.y][(int)monitor.x] \
-		&& g->map.map[(int)monitor.y][(int)monitor.x] == door)
+	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
+		&& g->map.mini_map[(int)monitor.y][(int)monitor.x] == door)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_BLACK);
 }
 

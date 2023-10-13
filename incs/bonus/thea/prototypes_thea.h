@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/10 11:26:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:50:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int				clean(t_game *g);
 /*---- displays/ -------------------------------------------------------------*/
 /*--------------- animations/ ------------------------------------------------*/
 /*------------------------- doors.c ------------------------------------------*/
-void			door_animations(t_game *g, int door_state);
+void			door_animations(t_game *g);
 /*------------------------- player.c -----------------------------------------*/
 void			player_animations(t_game *g);
 /*--------------- draw/ ------------------------------------------------------*/
@@ -41,8 +41,9 @@ void			draw_square(t_game *g, int x, int y, int color);
 void			draw_circle(t_game *g, t_vector *pos, int rayon, int color);
 void			draw_v_rectangle(t_game *g, int x, int y, int color);
 void			draw_h_rectangle(t_game *g, int x, int y, int color);
-/*------------------------- fill_background.c --------------------------------*/
-void			fill_background(t_game *g, int size_x, int size_y, int color);
+/*------------------------- draw_ceiling_n_floor.c ---------------------------*/
+void			draw_ceiling_n_floor(t_game *g, int size_x, int size_y, \
+																	int color);
 void			init_minimap(t_game *g);
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 void			my_mlx_pixel_put(t_draw *data, int x, int y, int color);
@@ -56,6 +57,7 @@ unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
 void			find_dir_wall(t_game *g, int check);
 void			draw_textures(t_game *g);
 /*--------------- core.c -----------------------------------------------------*/
+void			init_img(t_game *g);
 void			game_display(t_game *g);
 /*--------------- legend/ ----------------------------------------------------*/
 /*------------------------- core.c -------------------------------------------*/
@@ -67,6 +69,7 @@ float			get_angle_degree(t_game *g);
 /*---------------------- utils/ ----------------------------------------------*/
 /*------------------------- utils.c ------------------------------------------*/
 int				door_direction(t_game *g, int x, int y);
+void			draw_north(t_game *g);
 /*--------------- core.c -----------------------------------------------------*/
 
 /*--------------- corner.c ---------------------------------------------------*/
@@ -169,6 +172,7 @@ void			asset_switchman(t_game *g, char *line);
 /*--------------- map/ -------------------------------------------------------*/
 /*------------------------- get_map.c ----------------------------------------*/
 void			get_map(t_game *g, int fd, int start_map);
+void			get_mini_map(t_game *g);
 /*------------------------- map_checker.c ------------------------------------*/
 void			map_checker(t_game *g);
 void			minimap_display(t_game *g);

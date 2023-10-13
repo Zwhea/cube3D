@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:58:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/21 13:54:13 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:41:20 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,28 @@ void	get_map(t_game *g, int fd, int start_map)
 	}
 	g->map.map[i] = NULL;
 	close(fd);
+}
+
+void	get_mini_map(t_game *g)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	g->map.mini_map = (char **)ft_calloc(g->map.size.y + 1, sizeof(char *));
+	if (!g->map.mini_map)
+		clean(g);
+	while (g->map.map[i])
+	{
+		j = 0;
+		g->map.mini_map[i] = (char *)ft_calloc(g->map.size.x + 1, sizeof(char));
+		if (!g->map.mini_map[i])
+			clean(g);
+		while (g->map.map[i][j])
+		{
+			g->map.mini_map[i][j] = g->map.map[i][j];
+			j++;
+		}
+		i++;
+	}
 }

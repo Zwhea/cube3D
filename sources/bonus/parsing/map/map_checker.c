@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/09/21 15:04:58 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:28:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	map_checker(t_game *g)
 	_backtracking(g, g->player.pos.y, g->player.pos.x);
 	if (g->map.b_map)
 		free_split(g->map.b_map, g->map.size.y);
+	g->sprites.door_state = (float *)ft_calloc(g->sprites.nb_of_doors + 1, \
+																sizeof(float));
+	if (!g->sprites.door_state)
+		clean(g);
 }
 
 static void	_check_char(t_game *g)
@@ -70,6 +74,7 @@ static void	_check_door(t_game *g, int i, int j)
 	if (g->map.map[i][j + 1] != wall || g->map.map[i][j - 1] != wall)
 		if (g->map.map[i + 1][j] != wall || g->map.map[i - 1][j] != wall)
 			error_switchman(g, wrong_door);
+	g->sprites.nb_of_doors++;
 }
 
 static void	_backtracking(t_game *g, int x, int y)

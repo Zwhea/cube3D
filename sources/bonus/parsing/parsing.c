@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/10 11:25:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/12 15:29:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,5 @@ static void	_monitor(t_game *g)
 	init_player_sprites(g);
 	init_door_sprites(g);
 	map_checker(g);
+	get_mini_map(g);
 }
