@@ -27,6 +27,7 @@ void	init_struct(t_game *g)
 	ft_bzero((void *)&g->draw, sizeof(t_draw));
 	ft_bzero((void *)&g->legend, sizeof(t_draw));
 	ft_bzero((void *)&g->ray, sizeof(t_raycast));
+	ft_bzero((void *)&g->door, sizeof(t_doorcast));
 	g->player.diff_pov = 1;
 }
 

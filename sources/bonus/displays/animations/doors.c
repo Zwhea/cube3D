@@ -39,7 +39,7 @@ static void	_open_door(t_game *g)
 		door_state -= 0.01;
 		printf(GREEN"%f\n"END, door_state);
 	}
-	g->map.map[g->ray.check.y][g->ray.check.x - 1] = o_door;
+	g->map.map[g->door.check.y][g->door.check.x] = o_door;
 }
 
 static void	_close_door(t_game *g)
@@ -52,5 +52,5 @@ static void	_close_door(t_game *g)
 		door_state += 0.01;
 		printf(RED"%f\n"END, door_state);
 	}
-	g->map.map[g->ray.check.y][g->ray.check.x - 1] = door;
+	g->map.map[g->door.check.y][g->door.check.x] = door;
 }

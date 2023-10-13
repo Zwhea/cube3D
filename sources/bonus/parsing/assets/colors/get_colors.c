@@ -27,7 +27,11 @@ void	handle_ceiling_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	colors_checker(g, s);
+	if (colors_checker(g, s))
+	{
+		free(line);
+		error_switchman(g, wrong_color);
+	}
 	extract_colors(g, s, ceiling_color);
 	g->color[0].color = create_rgb(g->color[0].r, g->color[0].g, g->color[0].b);
 	return ;
@@ -48,7 +52,11 @@ void	handle_floor_color(t_game *g, char *line)
 		i++;
 	if (line[i])
 		line[i] = '\0';
-	colors_checker(g, s);
+	if (colors_checker(g, s))
+	{
+		free(line);
+		error_switchman(g, wrong_color);
+	}
 	extract_colors(g, s, floor_color);
 	g->color[1].color = create_rgb(g->color[1].r, g->color[1].g, g->color[1].b);
 	return ;
