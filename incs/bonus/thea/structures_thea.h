@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 15:58:48 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:09:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,12 @@ struct s_color
 
 struct s_sprites
 {
-	bool			animation;
-	bool			is_open;
 	t_draw			player;
 	t_draw			door[3];
+	int				nb_of_doors;
+	float			*door_state;
+	bool			is_open;
+	bool			animation;
 };
 
 struct s_tex
