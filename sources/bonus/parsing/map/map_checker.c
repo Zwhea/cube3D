@@ -35,7 +35,6 @@ void	map_checker(t_game *g)
 	if (!g->sprites.door_state)
 		clean(g);
 	g->sprites.door_state = ft_memset_float(g->sprites.door_state, 1.f, g->sprites.nb_of_doors);
-	printf("%f\n", g->sprites.door_state[0]);
 }
 
 static void	_check_char(t_game *g)
