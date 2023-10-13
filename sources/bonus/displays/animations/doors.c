@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 15:48:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 11:23:11 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,34 @@ void	door_animations(t_game *g)
 
 static void	_open_door(t_game *g)
 {
-	float	door_state;
+	int	i;
 
-	door_state = 1;
-	while (door_state > 0)
+	i = 0;
+	while (g->sprites.door_state[i] < 0.999)
+		i++;
+	while (g->sprites.door_state[i] > 0)
 	{
-		door_state -= 0.01;
-		printf(GREEN"%f\n"END, door_state);
+		if (!((g->sprites.door_state[i] - 0.01) < 0))
+			g->sprites.door_state[i] -= 0.01;
+		else
+			break ;
+		printf(GREEN"%f\n"END, g->sprites.door_state[i]);
 	}
 	g->map.map[g->ray.check.y][g->ray.check.x - 1] = o_door;
 }
 
 static void	_close_door(t_game *g)
 {
-	float	door_state;
+	puts("connasse");
+	int	i;
 
-	door_state = 0;
-	while (door_state < 1)
+	i = 0;
+	while (g->sprites.door_state[i] > 0.01)
+		i++;
+	while (g->sprites.door_state[i] < 1)
 	{
-		door_state += 0.01;
-		printf(RED"%f\n"END, door_state);
+		g->sprites.door_state[i] += 0.01;
+		printf(RED"%f\n"END, g->sprites.door_state[i]);
 	}
 	g->map.map[g->ray.check.y][g->ray.check.x - 1] = door;
 }

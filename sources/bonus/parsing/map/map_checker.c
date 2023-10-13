@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 10:28:54 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:59:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	map_checker(t_game *g)
 																sizeof(float));
 	if (!g->sprites.door_state)
 		clean(g);
+	g->sprites.door_state = ft_memset_float(g->sprites.door_state, 1.f, g->sprites.nb_of_doors);
+	printf("%f\n", g->sprites.door_state[0]);
 }
 
 static void	_check_char(t_game *g)
