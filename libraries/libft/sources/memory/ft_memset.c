@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:56:39 by twang             #+#    #+#             */
-/*   Updated: 2023/08/02 15:33:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 11:01:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,17 @@ void	*ft_memset(void *b, int c, size_t len)
 		array[i] = (unsigned char)c;
 		i++;
 	}
+	return (b);
+}
+
+float	*ft_memset_float(float	*b, float c, size_t len)
+{
+	size_t	i;
+	float	*array;
+
+	i = -1;
+	array = b;
+	while (++i < len)
+		array[i] = c;
 	return (b);
 }

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 12:13:47 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/02 15:46:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:59:54 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_memdel(void **p);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+float	*ft_memset_float(float	*b, float c, size_t len);
 
 #endif
