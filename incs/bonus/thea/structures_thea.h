@@ -19,6 +19,7 @@
 
 typedef struct s_game		t_game;
 typedef struct s_raycast	t_raycast;
+typedef struct s_doorcast	t_doorcast;
 typedef struct s_file		t_file;
 typedef struct s_map		t_map;
 typedef struct s_minimap	t_minimap;
@@ -195,6 +196,26 @@ struct s_raycast
 	int				wall_dir;
 };
 
+struct s_doorcast
+{
+	t_vector_f		ray_start;
+	t_vector_f		ray_dir;
+	t_vector_f		ray_unit;
+	t_vector_f		ray_len;
+	t_vector		check;
+	t_vector		step;
+	int				wall;
+	int				door;
+	double			dist;
+	t_vector_f		intersection;
+	double			cam_dist;
+	double			wall_ratio;
+	double			wall_size;
+	int				top_wall;
+	int				bottom_wall;
+	int				wall_dir;
+};
+
 struct s_game
 {
 	t_file			file;
@@ -211,6 +232,7 @@ struct s_game
 	t_draw			legend;
 	t_switches		switches;
 	t_raycast		ray;
+	t_doorcast		door;
 	void			*mlx;
 	void			*window;
 	void			*legend_window;

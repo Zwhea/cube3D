@@ -151,7 +151,7 @@ void			check_image_settings(t_game *g, t_sprites *sprites, int size, \
 															bool id);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
-void			colors_checker(t_game *g, char *line);
+int				colors_checker(t_game *g, char *line);
 void			extract_colors(t_game *g, char *line, t_keyassets color_id);
 /*------------------------- get_colors.c -------------------------------------*/
 void			handle_ceiling_color(t_game *g, char *line);
@@ -166,7 +166,7 @@ void			handle_north_texture(t_game *g, char *line);
 void			handle_south_texture(t_game *g, char *line);
 void			handle_west_texture(t_game *g, char *line);
 void			handle_east_texture(t_game *g, char *line);
-void			init_textures(t_game *g, char *s, int id);
+int				init_textures(t_game *g, char *s, int id);
 /*--------------- asset_switchman.c ------------------------------------------*/
 void			asset_switchman(t_game *g, char *line);
 /*--------------- map/ -------------------------------------------------------*/
