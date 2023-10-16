@@ -23,7 +23,7 @@ static int	_close_door(t_game *g);
 int	door_animations(t_game *g)
 {
 	int	i;
-	
+
 	if (!g->sprites.is_open)
 		i = _open_door(g);
 	else

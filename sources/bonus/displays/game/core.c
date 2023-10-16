@@ -21,8 +21,8 @@ static void	_init_game(t_game *g);
 
 void	game_display(t_game *g)
 {
-	int i;
-	
+	int	i;
+
 	i = -1;
 	draw_ceiling_n_floor(g, 1920, 1080, 0);
 	_init_game(g);
