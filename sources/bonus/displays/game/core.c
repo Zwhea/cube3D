@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 11:32:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 15:22:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	game_display(t_game *g)
 	
 	i = -1;
 	draw_ceiling_n_floor(g, 1920, 1080, 0);
-	_init_game(g);
+	_init_game(g, i);
 	draw_crosshair(g);
 	draw_hands(g);
 	minimap_display(g);
