@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 15:22:28 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 17:12:06 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,17 @@ static void	_init_game(t_game *g);
 
 void	game_display(t_game *g)
 {
-	int	i;
+	int	id;
 
-	i = -1;
+	id = 0;
 	draw_ceiling_n_floor(g, 1920, 1080, 0);
-	_init_game(g, i);
+	ray_door(g);
+	if (g->sprites.animation && id != -1)
+		door_animations(g);
+	_init_game(g);
 	draw_crosshair(g);
 	draw_hands(g);
 	minimap_display(g);
-	if (g->sprites.animation)
-		i = door_animations(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
 		g->mini_map.north.y + 5, H_RED, "N");

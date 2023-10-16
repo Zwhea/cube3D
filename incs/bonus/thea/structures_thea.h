@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 10:09:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:57:17 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_file		t_file;
 typedef struct s_map		t_map;
 typedef struct s_minimap	t_minimap;
 typedef struct s_player		t_player;
+typedef struct s_door		t_door;
 typedef struct s_sprites	t_sprites;
 typedef struct s_tex		t_tex;
 typedef struct s_color		t_color;
@@ -113,8 +114,6 @@ struct s_sprites
 	t_draw			player;
 	t_draw			door[3];
 	int				nb_of_doors;
-	float			*door_state;
-	bool			is_open;
 	bool			animation;
 };
 
@@ -141,6 +140,13 @@ struct s_player
 	bool			west;
 	bool			east;
 	double			hand_move;
+};
+
+struct s_door
+{
+	t_vector		pos;
+	float			move;
+	t_door_stat		status;
 };
 
 struct s_map
@@ -222,6 +228,7 @@ struct s_game
 	t_map			map;
 	t_minimap		mini_map;
 	t_player		player;
+	t_door			*doors;
 	t_vector		size;
 	t_vector		window_size;
 	t_vector		legend_window_size;

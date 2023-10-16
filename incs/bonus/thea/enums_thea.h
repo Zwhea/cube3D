@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:47:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 16:52:41 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:55:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 /*---- typedef enums ---------------------------------------------------------*/
 
 typedef enum e_tile			t_tile;
+typedef enum e_door_stat	t_door_stat;
 typedef enum e_keyerror		t_keyerror;
 typedef enum e_keyassets	t_keyassets;
 typedef enum e_keycode		t_keycode;
 
 /*---- enums -----------------------------------------------------------------*/
+
+enum e_door_stat
+{
+	neutral,
+	opening,
+	closing
+};
 
 enum e_tile
 {

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/13 10:29:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 16:46:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@
 
 static void	_init_var(t_game *g, float angle);
 static void	_init_ray(t_game *g);
-static void	_find_dist(t_game *g, float angle);
+static void	_find_dist(t_game *g, float angle, int i);
 
 /*----------------------------------------------------------------------------*/
 
-int	dstate(t_game *g)
+int	dstate(t_game *g, int i)
 {
 	double	inter;
 
@@ -30,9 +30,9 @@ int	dstate(t_game *g)
 	else
 		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > 0.5)
+	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > g->sprites.door_state[i])
 		return (1);
-	if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < 0.5)
+	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < g->sprites.door_state[i])
 		return (1);
 	return (0);
 }
@@ -41,7 +41,7 @@ void	raycasting(t_game *g, double angle)
 {
 	_init_var(g, angle);
 	_init_ray(g);
-	_find_dist(g, angle);
+	_find_dist(g, angle, 1);
 	g->ray.wall_ratio = g->ray.cam_dist / g->ray.dist;
 	if (angle - g->player.angle_view > 0)
 		g->ray.wall_size = g->ray.wall_ratio * cos(0.5235);
@@ -100,7 +100,7 @@ static void	_init_ray(t_game *g)
 	}
 }
 
-static void	_find_dist(t_game *g, float angle)
+static void	_find_dist(t_game *g, float angle, int i)
 {
 	while (g->ray.dist < 15 && g->ray.wall == 0 && g->ray.door == 0)
 	{
@@ -120,7 +120,7 @@ static void	_find_dist(t_game *g, float angle)
 		}
 		if (g->map.map[g->ray.check.y][g->ray.check.x] == '1')
 			g->ray.wall = 1;
-		else if (dstate(g) && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
+		else if (dstate(g, i) && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 			g->ray.door = 1;
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;

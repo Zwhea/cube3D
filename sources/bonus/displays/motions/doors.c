@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 14:49:13 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 17:12:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ static int	_check_door(t_game *g);
 
 int	open_door(t_game *g)
 {
+	g->sprites.animation = true;
+	return (0);
+}
+
+void	ray_door(t_game *g)
+{
 	_init_raycasting(g);
 	_init_ray_door(g);
 	_raycasting_door(g);
-	return (0);
 }
 
 static void	_init_raycasting(t_game *g)
@@ -88,7 +93,6 @@ static void	_raycasting_door(t_game *g)
 		}
 		if (_check_door(g))
 		{
-			g->sprites.animation = true;
 			break ;
 		}
 	}
@@ -101,7 +105,7 @@ static int	_check_door(t_game *g)
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
 			&& g->map.map[g->door.check.y][g->door.check.x] == door)
 	{
-		g->sprites.is_open = false;
+		get_id_door();
 		return (1);
 	}
 	else if (g->door.dist < 3 && g->door.check.x >= 0 && g->door.check.y >= 0 \
