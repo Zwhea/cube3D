@@ -24,7 +24,7 @@ static void	_close_door(t_game *g, int id);
 int	door_animations(t_game *g)
 {
 	int	i;
-	
+
 	if (!g->sprites.is_open)
 	{
 		i = _get_door_id(g, true);
