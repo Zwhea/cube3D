@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   doors.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/16 17:12:34 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/17 12:52:35 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ static int	_check_door(t_game *g)
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
 			&& g->map.map[g->door.check.y][g->door.check.x] == door)
 	{
-		get_id_door();
 		return (1);
 	}
 	else if (g->door.dist < 3 && g->door.check.x >= 0 && g->door.check.y >= 0 \
@@ -113,7 +112,6 @@ static int	_check_door(t_game *g)
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
 			&& g->map.map[g->door.check.y][g->door.check.x] == o_door)
 	{
-		g->sprites.is_open = true;
 		return (1);
 	}
 	return (0);

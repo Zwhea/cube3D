@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_hands.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 13:53:23 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/12 12:23:19 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/17 13:07:34 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	draw_hands(t_game *g)
 		while (y_text < g->sprites.player.height)
 		{
 			color = my_mlx_pix_get(&g->sprites.player, x_text, y_text);
-			if (color != H_WHITE && \
+			if (color != H_GREEN && \
 				(y_text + (int)(cos(g->player.hand_move) * 10) + 10) < WINDOW_Y)
 				my_mlx_pixel_put(&g->draw, x_text, y_text \
 					+ (int)(cos(g->player.hand_move) * 10) + 10, color);

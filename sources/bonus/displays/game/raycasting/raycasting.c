@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/16 16:46:59 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/17 12:52:06 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	_find_dist(t_game *g, float angle, int i);
 
 int	dstate(t_game *g, int i)
 {
+	(void)i;
 	double	inter;
 
 	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
@@ -30,9 +31,9 @@ int	dstate(t_game *g, int i)
 	else
 		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > g->sprites.door_state[i])
+	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > 0.5)
 		return (1);
-	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < g->sprites.door_state[i])
+	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < 0.5)
 		return (1);
 	return (0);
 }
