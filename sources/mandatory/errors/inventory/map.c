@@ -6,11 +6,11 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:03:17 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/26 13:49:13 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:54:04 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	_wrong_map(t_game *g)
 {

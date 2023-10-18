@@ -6,11 +6,11 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:06:00 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/26 13:49:24 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:54:24 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	error_switchman(t_game *g, t_keyerror error_key)
 {

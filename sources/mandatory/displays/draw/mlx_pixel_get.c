@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
-unsigned int	my_mlx_pix_get(t_game *g, int x, int y)
+unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y)
 {
 	char	*dst;
 
-	dst = g->draw.addr + (y * g->draw.line_length + x * \
-												(g->draw.bits_per_pixel / 8));
+	dst = draw->addr + (y * draw->line_length + x * \
+												(draw->bits_per_pixel / 8));
 	return (*(unsigned int *)dst);
 }

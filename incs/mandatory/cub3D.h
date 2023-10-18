@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D_thea.h                                       :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:56:22 by wangthea         ###   ########.fr       */
+/*   Created: 2023/10/18 13:12:38 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/18 13:12:40 by aascedu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_THEA_H
-# define CUB3D_THEA_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
 /*---- libraries -------------------------------------------------------------*/
-
-# include <math.h>
 
 /*---- includes --------------------------------------------------------------*/
 
 # include "libft.h"
 # include "mlx.h"
-# include "defines_thea.h"
-# include "enums_thea.h"
-# include "prototypes_thea.h"
-# include "structures_thea.h"
+# include "defines.h"
+# include "enums.h"
+# include "prototypes.h"
+# include "structures.h"
+
+# include <math.h>
 
 #endif

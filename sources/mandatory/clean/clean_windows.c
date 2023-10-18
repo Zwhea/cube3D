@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   clean_windows.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 13:51:04 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/12 11:15:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 #ifndef MACOS
 
@@ -19,6 +19,8 @@ int	clean(t_game *g)
 	printf(RED"closing program\n"END);
 	clean_maps(g);
 	clean_textures(g);
+	if (g->draw.img)
+		mlx_destroy_image(g->mlx, g->draw.img);
 	if (g->window)
 		mlx_destroy_window(g->mlx, g->window);
 	if (g->mlx)
@@ -32,6 +34,8 @@ int	clean(t_game *g)
 int	clean(t_game *g)
 {
 	printf(RED"closing program\n"END);
+	if (g->file.fd)
+		close(g->file.fd);
 	clean_maps(g);
 	clean_textures(g);
 	if (g->window)

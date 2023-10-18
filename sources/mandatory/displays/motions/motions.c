@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   motions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:58:32 by twang             #+#    #+#             */
-/*   Updated: 2023/09/29 10:19:24 by twang            ###   ########.fr       */
+/*   Updated: 2023/09/28 10:13:12 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 int	w_move(t_game *g)
 {

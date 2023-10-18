@@ -10,12 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES +=																	\
+SOURCES =																	\
 			sources/mandatory/clean/clean_assets.c							\
 			sources/mandatory/clean/clean_windows.c							\
-			sources/mandatory/displays/draw/draw_forms.c					\
 			sources/mandatory/displays/draw/mlx_pixel_get.c					\
 			sources/mandatory/displays/draw/mlx_pixel_put.c					\
+			sources/mandatory/displays/draw/draw_ceiling_n_floor.c			\
+			sources/mandatory/displays/draw/draw_crosshair.c				\
 			sources/mandatory/displays/game/raycasting/raycasting.c			\
 			sources/mandatory/displays/game/texturing/texturing.c			\
 			sources/mandatory/displays/game/core.c							\
@@ -33,6 +34,7 @@ SOURCES +=																	\
 			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
 			sources/mandatory/parsing/assets/colors/utils.c					\
+			sources/mandatory/parsing/assets/textures/textures_checker.c	\
 			sources/mandatory/parsing/assets/textures/get_textures.c		\
 			sources/mandatory/parsing/assets/textures/textures_checker.c	\
 			sources/mandatory/parsing/assets/asset_switchman.c				\
