@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/18 13:19:26 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/18 13:44:00 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void	game_display(t_game *g)
 {
 	draw_ceiling_n_floor(g, 1920, 1080, 0);
 	if (g->sprites.animation)
+	{
+		puts("game display");
 		door_animations(g);
+	}
 	_init_game(g);
 	draw_crosshair(g);
 	draw_hands(g);
