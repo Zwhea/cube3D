@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 13:43:13 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/13 10:59:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -19,6 +19,16 @@ static void	_set_player(t_game *g, int i, int j);
 static void	_backtracking(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
+
+float	get_angle_degree(t_game *g)
+{
+	float	scalar;
+
+	scalar = g->player.view.x;
+	if (g->player.view.y > 0)
+		return ((acos(scalar) * 3));
+	return (acos(scalar));
+}
 
 void	map_checker(t_game *g)
 {

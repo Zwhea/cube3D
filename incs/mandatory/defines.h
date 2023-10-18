@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines_thea.h                                     :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/09/26 14:20:16 by wangthea         ###   ########.fr       */
+/*   Created: 2023/10/18 13:12:45 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/18 13:12:46 by aascedu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_THEA_H
-# define DEFINES_THEA_H
+#ifndef DEFINES_H
+# define DEFINES_H
 
 /*---- error messages --------------------------------------------------------*/
 
@@ -59,5 +59,10 @@
 # define H_PINK				0xffc0cb
 # define H_PURPLE			0x800080
 # define H_GREY				0x808080
+
+/*---- messages --------------------------------------------------------------*/
+
+# define ERROR "error: "
+# define WARNING "warning: "
 
 #endif

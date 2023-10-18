@@ -6,11 +6,11 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 10:04:52 by twang             #+#    #+#             */
-/*   Updated: 2023/08/31 14:10:15 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/26 14:17:58 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 bool	is_map(char *s)
 {

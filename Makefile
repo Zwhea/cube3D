@@ -11,10 +11,8 @@
 # **************************************************************************** #
 
 include config/print.mk
-include config/mandatory/sources_arthur.mk
-include config/mandatory/headers_arthur.mk
-include config/mandatory/sources_thea.mk
-include config/mandatory/headers_thea.mk
+include config/mandatory/sources.mk
+include config/mandatory/headers.mk
 include config/bonus/sources_arthur.mk
 include config/bonus/headers_arthur.mk
 include config/bonus/sources_thea.mk
@@ -60,7 +58,7 @@ SRC_B_DIR	=	sources/bonus
 #--flags mandatory & bonus ----------------------------------------------------#
 
 ifeq ($(BONUS), no)
-CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)arthur -I $(INC_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR) -I $(INC_DIR) 
 else
 CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
 endif

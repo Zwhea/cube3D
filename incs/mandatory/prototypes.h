@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prototypes_thea.h                                  :+:      :+:    :+:   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 17:12:37 by twang            ###   ########.fr       */
+/*   Created: 2023/10/18 13:12:57 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/18 13:15:48 by aascedu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PROTOTYPES_THEA_H
-# define PROTOTYPES_THEA_H
+#ifndef PROTOTYPES_H
+# define PROTOTYPES_H
 
 /*---- includes --------------------------------------------------------------*/
 
-# include "structures_thea.h"
+# include "structures.h"
+
+// corner.c
+void			down_left_corner(t_game *g);
+void			down_right_corner(t_game *g);
+void			up_right_corner(t_game *g);
+void			up_left_corner(t_game *g);
+
+// show_fov.c
+float			get_angle_degree(t_game *g);
+void			show_fov(t_game *g);
+
+// mlx_pixel_get.c
+unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
+
+void			draw_crosshair(t_game *g);
+
+// raycasting.c
+void			raycasting(t_game *g, double angle);
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -25,31 +43,36 @@ int				close_n_free(t_game *g, bool is_error);
 void			clean_textures(t_game *g);
 void			clean_maps(t_game *g);
 /*------------------------- clean_windows.c ----------------------------------*/
+int				clean_legend(t_game *g);
 int				clean(t_game *g);
 
 /*---- displays/ -------------------------------------------------------------*/
 /*--------------- draw/ ------------------------------------------------------*/
-/*------------------------- draw_forms.c -------------------------------------*/
-void			draw_frame(t_game *g, int size_x, int size_y, int color);
-void			draw_square(t_game *g, int x, int y, int color);
-void			draw_circle(t_game *g, int x, int y, int color);
+/*------------------------- draw_ceiling_n_floor.c ---------------------------*/
+void			draw_ceiling_n_floor(t_game *g, int size_x, int size_y, \
+																	int color);
 /*------------------------- mlx_pixel_put.c ----------------------------------*/
 void			my_mlx_pixel_put(t_draw *data, int x, int y, int color);
 /*------------------------- mlx_pixel_get.c ----------------------------------*/
-unsigned int	my_mlx_pix_get(t_game *g, int x, int y);
+unsigned int	my_mlx_pix_get(t_draw *draw, int x, int y);
 /*--------------- game/ ------------------------------------------------------*/
 /*---------------------- raycasting/ -----------------------------------------*/
 /*------------------------- raycasting.c -------------------------------------*/
-void			raycasting(t_game *g, float angle);
 /*---------------------- texturing/ ------------------------------------------*/
 /*------------------------- texturing.c --------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
 void			draw_textures(t_game *g);
 /*--------------- core.c -----------------------------------------------------*/
+void			init_img(t_game *g);
 void			game_display(t_game *g);
+/*--------------- legend/ ----------------------------------------------------*/
+/*------------------------- core.c -------------------------------------------*/
+/*---------------------- raycasting/ -----------------------------------------*/
 /*---------------------- utils/ ----------------------------------------------*/
-/*------------------------- utils.c ------------------------------------------*/
-float			get_angle_degree(t_game *g);
+/*--------------- core.c -----------------------------------------------------*/
+
+/*--------------- corner.c ---------------------------------------------------*/
+
 /*--------------- motions/ ---------------------------------------------------*/
 /*------------------------- check_if_movable.c -------------------------------*/
 int				check_x(t_game *g, int next_x);
@@ -63,7 +86,6 @@ int				d_move(t_game *g);
 /*------------------------- viewing_range.c ----------------------------------*/
 int				view_left(t_game *g);
 int				view_right(t_game *g);
-float			get_angle_degree(t_game *g);
 
 /*---- errors/ ---------------------------------------------------------------*/
 /*--------------- inventory/ -------------------------------------------------*/
@@ -86,6 +108,9 @@ void			error_switchman(t_game *g, t_keyerror error_key);
 void			ft_error(bool how_to, char *msg);
 
 /*---- init/ -----------------------------------------------------------------*/
+/*--------------- legend/ ----------------------------------------------------*/
+/*------------------------- init.c -------------------------------------------*/
+int				legend_init(t_game *g);
 /*--------------- mlx/ -------------------------------------------------------*/
 /*------------------------- init.c -------------------------------------------*/
 void			init_mlx(t_game *g);
@@ -105,7 +130,7 @@ int				key_release(t_keycode key, t_game *g);
 /*--------------- assets/ ----------------------------------------------------*/
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
-void			colors_checker(t_game *g, char *line);
+int				colors_checker(t_game *g, char *line);
 void			extract_colors(t_game *g, char *line, t_keyassets color_id);
 /*------------------------- get_colors.c -------------------------------------*/
 void			handle_ceiling_color(t_game *g, char *line);
@@ -120,8 +145,7 @@ void			handle_north_texture(t_game *g, char *line);
 void			handle_south_texture(t_game *g, char *line);
 void			handle_west_texture(t_game *g, char *line);
 void			handle_east_texture(t_game *g, char *line);
-/*------------------------- textures_checker.c -------------------------------*/
-void			textures_checker(t_game *g);
+int				init_textures(t_game *g, char *s, int id);
 /*--------------- asset_switchman.c ------------------------------------------*/
 void			asset_switchman(t_game *g, char *line);
 /*--------------- map/ -------------------------------------------------------*/
@@ -129,6 +153,7 @@ void			asset_switchman(t_game *g, char *line);
 void			get_map(t_game *g, int fd, int start_map);
 /*------------------------- map_checker.c ------------------------------------*/
 void			map_checker(t_game *g);
+float			get_angle_degree(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/
 bool			is_map(char *s);
 size_t			set_map_height(t_game *g, int fd);

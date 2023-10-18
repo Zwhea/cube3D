@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/09/29 13:30:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/13 10:29:56 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -21,7 +20,23 @@ static void	_find_dist(t_game *g, float angle);
 
 /*----------------------------------------------------------------------------*/
 
-void	raycasting(t_game *g, float angle)
+int	dstate(t_game *g)
+{
+	double	inter;
+
+	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
+		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
+	else
+		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
+	inter = inter - floor(inter);
+	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > 0.5)
+		return (1);
+	if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < 0.5)
+		return (1);
+	return (0);
+}
+
+void	raycasting(t_game *g, double angle)
 {
 	_init_var(g, angle);
 	_init_ray(g);
@@ -33,11 +48,13 @@ void	raycasting(t_game *g, float angle)
 		g->ray.wall_size = g->ray.wall_ratio * cos(-0.5235);
 	g->ray.top_wall = (540) - (g->ray.wall_size / 2);
 	g->ray.bottom_wall = (540) + (g->ray.wall_size / 2);
-	while (g->size.y <= WINDOW_Y - 1 && g->size.y >= 0
+	while (g->ray.dist < 15 && g->size.y <= WINDOW_Y - 1 && g->size.y >= 0
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
+		{
 			draw_textures(g);
+		}
 		g->size.y++;
 	}
 }
@@ -84,7 +101,7 @@ static void	_init_ray(t_game *g)
 
 static void	_find_dist(t_game *g, float angle)
 {
-	while (g->ray.wall == 0 && g->ray.door == 0)
+	while (g->ray.dist < 15 && g->ray.wall == 0)
 	{
 		if (g->ray.ray_len.x < g->ray.ray_len.y)
 		{
@@ -103,5 +120,8 @@ static void	_find_dist(t_game *g, float angle)
 		if (g->map.map[g->ray.check.y][g->ray.check.x] == '1')
 			g->ray.wall = 1;
 	}
-	g->ray.dist *= cos(angle - g->player.angle_view);
+	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
+	g->ray.intersection.y = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
+	if (g->ray.dist < 15)
+		g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
 }

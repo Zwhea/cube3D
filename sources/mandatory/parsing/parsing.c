@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/26 13:40:42 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:29:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
 static int	_check_file(t_game *g, char *file);
 static void	_pathfinder(t_game *g);
-static void	_monitor(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
@@ -26,7 +25,7 @@ int	parsing(t_game *g, char **av)
 	{
 		init_mlx(g);
 		_pathfinder(g);
-		_monitor(g);
+		map_checker(g);
 	}
 	else
 	{
@@ -66,10 +65,4 @@ static void	_pathfinder(t_game *g)
 		free(line);
 		get_map(g, g->file.fd, start_map);
 	}
-}
-
-static void	_monitor(t_game *g)
-{
-	textures_checker(g);
-	map_checker(g);
 }
