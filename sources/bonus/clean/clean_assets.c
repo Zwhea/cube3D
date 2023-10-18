@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/13 10:28:34 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/18 13:10:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	clean_maps(t_game *g)
 		free_split(g->map.mini_map, g->map.size.y);
 	if (g->map.line_len)
 		free(g->map.line_len);
-	if (g->sprites.door_state)
-		free(g->sprites.door_state);
+	if (g->doors)
+		free(g->doors);
 	return ;
 }

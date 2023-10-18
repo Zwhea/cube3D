@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/16 17:12:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/18 12:38:15 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,8 @@ static void	_init_game(t_game *g);
 
 void	game_display(t_game *g)
 {
-	int	id;
-
-	id = 0;
 	draw_ceiling_n_floor(g, 1920, 1080, 0);
-	ray_door(g);
-	if (g->sprites.animation && id != -1)
+	if (g->sprites.animation)
 		door_animations(g);
 	_init_game(g);
 	draw_crosshair(g);
