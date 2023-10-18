@@ -61,16 +61,6 @@ void	set_map_width(t_game *g, char *line)
 		g->map.size.x = ft_strlen_char(line, '\n');
 }
 
-float	get_angle_degree(t_game *g)
-{
-	float	scalar;
-
-	scalar = g->player.view.x;
-	if (g->player.view.y > 0)
-		return ((acos(scalar) * 3));
-	return (acos(scalar));
-}
-
 void	set_direction(t_game *g, char c)
 {
 	if (c == north)

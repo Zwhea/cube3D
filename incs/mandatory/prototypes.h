@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prototypes.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 13:12:57 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/18 13:15:48 by aascedu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PROTOTYPES_H
 # define PROTOTYPES_H
 
@@ -36,11 +48,6 @@ int				clean(t_game *g);
 
 /*---- displays/ -------------------------------------------------------------*/
 /*--------------- draw/ ------------------------------------------------------*/
-/*------------------------- draw_forms.c -------------------------------------*/
-void			draw_square(t_game *g, int x, int y, int color);
-void			draw_circle(t_game *g, t_vector *pos, int rayon, int color);
-void			draw_v_rectangle(t_game *g, int x, int y, int color);
-void			draw_h_rectangle(t_game *g, int x, int y, int color);
 /*------------------------- draw_ceiling_n_floor.c ---------------------------*/
 void			draw_ceiling_n_floor(t_game *g, int size_x, int size_y, \
 																	int color);
@@ -121,15 +128,6 @@ int				key_release(t_keycode key, t_game *g);
 
 /*---- parsing/ --------------------------------------------------------------*/
 /*--------------- assets/ ----------------------------------------------------*/
-/*------------------------- utils.c ------------------------------------------*/
-// void			init_image(t_game *g, t_sprites *sprites, int size, \
-// 															bool id_img);
-// void			init_image_settings(t_sprites *sprites, int size, \
-// 															bool id_img);
-// void			check_image(t_game *g, t_sprites *sprites, int size, \
-// 															bool id_img);
-// void			check_image_settings(t_game *g, t_sprites *sprites, int size, \
-// 															bool id);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 int				colors_checker(t_game *g, char *line);
@@ -155,6 +153,7 @@ void			asset_switchman(t_game *g, char *line);
 void			get_map(t_game *g, int fd, int start_map);
 /*------------------------- map_checker.c ------------------------------------*/
 void			map_checker(t_game *g);
+float			get_angle_degree(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/
 bool			is_map(char *s);
 size_t			set_map_height(t_game *g, int fd);

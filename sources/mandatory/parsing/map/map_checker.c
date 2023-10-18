@@ -20,6 +20,16 @@ static void	_backtracking(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
 
+float	get_angle_degree(t_game *g)
+{
+	float	scalar;
+
+	scalar = g->player.view.x;
+	if (g->player.view.y > 0)
+		return ((acos(scalar) * 3));
+	return (acos(scalar));
+}
+
 void	map_checker(t_game *g)
 {
 	_check_char(g);
