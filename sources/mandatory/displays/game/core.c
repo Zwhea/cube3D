@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   core.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 09:30:10 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/13 11:32:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -21,12 +20,13 @@ static void	_init_game(t_game *g);
 
 void	game_display(t_game *g)
 {
-	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
-	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
-										&g->draw.line_length, &g->draw.endian);
+	int	i;
+
+	i = -1;
+	draw_ceiling_n_floor(g, 1920, 1080, 0);
 	_init_game(g);
+	draw_crosshair(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
-	mlx_destroy_image(g->mlx, g->draw.img);
 }
 
 static void	_init_game(t_game *g)

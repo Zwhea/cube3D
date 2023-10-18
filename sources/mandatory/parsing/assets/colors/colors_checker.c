@@ -10,13 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
-void	colors_checker(t_game *g, char *line)
+int	colors_checker(t_game *g, char *line)
 {
 	int	coma_nb;
 	int	i;
 
+	(void)g;
 	coma_nb = 0;
 	i = -1;
 	while (line[++i] && ft_strchr(COLOR_CHARSET, line[i]))
@@ -25,7 +26,8 @@ void	colors_checker(t_game *g, char *line)
 			coma_nb++;
 	}
 	if (line[i] != '\0' || coma_nb != 2)
-		error_switchman(g, wrong_color);
+		return (1);
+	return (0);
 }
 
 void	extract_colors(t_game *g, char *line, t_keyassets color_id)

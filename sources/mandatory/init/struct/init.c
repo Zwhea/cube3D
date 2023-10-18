@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 16:48:31 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 09:29:49 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/13 10:12:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	init_struct(t_game *g)
 {

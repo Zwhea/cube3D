@@ -6,12 +6,11 @@
 /*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:00:07 by twang             #+#    #+#             */
-/*   Updated: 2023/09/28 10:20:02 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/09/28 10:20:05 by wangthea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 int	check_x(t_game *g, int next_x)
 {

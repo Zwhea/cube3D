@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	my_mlx_pixel_put(t_draw *data, int x, int y, int color)
 {
