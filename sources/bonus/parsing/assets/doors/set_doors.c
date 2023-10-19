@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:48:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/16 16:58:00 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:12:10 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	set_doors(t_game *g)
 
 static void	_init_struct(t_game *g, int id, int i, int j)
 {
-	g->doors[id].pos.x = i;
-	g->doors[id].pos.y = j;
+	g->doors[id].pos.x = j;
+	g->doors[id].pos.y = i;
 	g->doors[id].move = 1.f;
 	g->doors[id].status = neutral;
 }

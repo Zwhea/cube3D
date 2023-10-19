@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/18 14:20:08 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:13:08 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ static int	_check_door(t_game *g);
 
 int	open_door(t_game *g)
 {
-	puts("open_door");
 	int	id;
 	
 	id = ray_door(g);
-	// printf("%d\n\n", id);
 	if (id != -1)
 		g->sprites.animation = true;
 	return (0);
@@ -42,7 +40,6 @@ int	ray_door(t_game *g)
 	_init_raycasting(g);
 	_init_ray_door(g);
 	id = _raycasting_door(g);
-	// printf(BLUE"%d\n\n"END, id);
 	return (id);
 }
 
@@ -90,7 +87,7 @@ static int	_raycasting_door(t_game *g)
 {
 	int	id;
 	
-	while (g->door.dist < 3 && g->door.door == 0)
+	while (g->door.dist < 3)
 	{
 		if (g->door.ray_len.x < g->door.ray_len.y)
 		{
@@ -115,7 +112,7 @@ static int	_check_door(t_game *g)
 {
 	int	id;
 	
-	if (g->door.dist < 3 && g->door.check.x >= 0 && g->door.check.y >= 0 \
+	if (g->door.check.x >= 0 && g->door.check.y >= 0 \
 			&& g->map.map[g->door.check.y] \
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
 			&& (g->map.map[g->door.check.y][g->door.check.x] == door\
@@ -124,7 +121,6 @@ static int	_check_door(t_game *g)
 		id = get_id(g, g->door.check.x, g->door.check.y);
 		if (id == -1)
 			return (-1);
-		printf(RED"%d\n\n"END, id);
 		if (g->doors[id].status == neutral && g->doors[id].move > 0)
 			g->doors[id].status = closing;
 		else if (g->doors[id].status == neutral && g->doors[id].move > 0)

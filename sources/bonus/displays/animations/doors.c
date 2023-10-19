@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/18 14:02:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:19:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ void	door_animations(t_game *g)
 	while (++id < g->sprites.nb_of_doors)
 	{
 		if (g->doors[id].status == opening)
+		{
+			
+			printf("%f\n", g->doors[1].status);
 			_open_door(g, id);
+		}
 		else if (g->doors[id].status == closing)
 			_close_door(g, id);
 	}
