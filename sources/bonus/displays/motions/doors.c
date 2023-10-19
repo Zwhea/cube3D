@@ -52,6 +52,7 @@ static void	_init_raycasting(t_game *g)
 	g->door.check = g->player.pos;
 	g->door.door = 0;
 	g->door.dist = 0;
+	g->door.wall = 0;
 }
 
 static void	_init_ray_door(t_game *g)
@@ -86,7 +87,7 @@ static int	_raycasting_door(t_game *g)
 {
 	int	id;
 	
-	while (g->door.dist < 3)
+	while (g->door.dist < 3 && g->door.wall == 0)
 	{
 		if (g->door.ray_len.x < g->door.ray_len.y)
 		{
@@ -103,6 +104,8 @@ static int	_raycasting_door(t_game *g)
 		id = _check_door(g);
 		if (id != -1)
 			return (id);
+		if (g->map.map[g->door.check.y][g->door.check.x] == wall)
+			g->door.wall = 1;
 	}
 	return (-1);
 }
