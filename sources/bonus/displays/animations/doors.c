@@ -28,7 +28,10 @@ int	get_id(t_game *g, int x, int y)
 	while (id < g->sprites.nb_of_doors)
 	{
 		if (g->doors[id].pos.x == x && g->doors[id].pos.y == y)
+		{
+			g->id = id;
 			return (id);
+		}
 		id++;
 	}
 	return (-1);

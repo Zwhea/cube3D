@@ -110,7 +110,7 @@ static int	_raycasting_door(t_game *g)
 static int	_check_door(t_game *g)
 {
 	int	id;
-	
+
 	if (g->door.check.x >= 0 && g->door.check.y >= 0 \
 			&& g->map.map[g->door.check.y] \
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
@@ -118,6 +118,7 @@ static int	_check_door(t_game *g)
 			|| g->map.map[g->door.check.y][g->door.check.x] == o_door))
 	{
 		id = get_id(g, g->door.check.x, g->door.check.y);
+		g->id = id;
 		if (id == -1)
 			return (-1);
 		if (g->doors[id].status == neutral && g->doors[id].move < 0.01)

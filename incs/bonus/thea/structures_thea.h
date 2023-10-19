@@ -240,6 +240,7 @@ struct s_game
 	t_switches		switches;
 	t_raycast		ray;
 	t_doorcast		door;
+	int				id;
 	void			*mlx;
 	void			*window;
 	void			*legend_window;
