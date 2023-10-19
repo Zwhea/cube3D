@@ -15,8 +15,8 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-static void	_open_door(t_game *g, int id);
-static void	_close_door(t_game *g, int id);
+static float	_open_door(t_game *g, int id, float ratio);
+static float	_close_door(t_game *g, int id, float ratio);
 
 /*----------------------------------------------------------------------------*/
 
@@ -39,32 +39,34 @@ int	get_id(t_game *g, int x, int y)
 
 void	door_animations(t_game *g)
 {
-	int	id;
+	int		id;
+	float	ratio;
 
 	id = -1;
+	ratio = 0.01;
 	while (++id < g->sprites.nb_of_doors)
 	{
 		if (g->doors[id].status == opening)
-			_open_door(g, id);
+			_open_door(g, id, ratio);
 		else if (g->doors[id].status == closing)
-			_close_door(g, id);
+			_close_door(g, id, ratio);
 	}
 }
 
-static void	_open_door(t_game *g, int id)
+static float	_open_door(t_game *g, int id, float ratio)
 {
-	if (!((g->doors[id].move - 0.01) < 0))
-		g->doors[id].move -= 0.01;
+	if (!((g->doors[id].move - sin(g->doors[id].move))) < 0)
+		g->doors[id].move -= sin(g->doors[id].move;
 	else
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 0.f;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 	}
-	return ;
+	return (2 * ratio + 0.01);
 }
 
-static void	_close_door(t_game *g, int id)
+static float	_close_door(t_game *g, int id, float ratio)
 {
 	if (!((g->doors[id].move + 0.01) > 1))
 		g->doors[id].move += 0.01;
@@ -74,5 +76,5 @@ static void	_close_door(t_game *g, int id)
 		g->doors[id].move = 1.f;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
-	return ;
+	return (2 * ratio + 0.01);
 }
