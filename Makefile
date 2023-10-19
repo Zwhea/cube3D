@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/10/18 14:51:42 by twang            ###   ########.fr        #
+#    Updated: 2023/10/19 13:45:47 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,7 @@ endif
 
 #--leaks flags-----------------------------------------------------------------#
 
-LEAKS		=	valgrind --leak-check=full --show-leak-kinds=all --quiet
+LEAKS		=	valgrind --leak-check=full --show-leak-kinds=all #--quiet
 LEAKS_FULL	=	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes --log-file=valgrind_report.txt #-v
 
 #--define flags----------------------------------------------------------------#
@@ -148,11 +148,11 @@ lib:
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re -j DEBUG=yes BONUS=yes
+	$(MAKE) re -j DEBUG=yes
 
 leaks:
 	clear
-	$(MAKE) -j VALGRIND=yes BONUS=yes
+	$(MAKE) -j VALGRIND=yes
 	$(LEAKS) ./cub3D assets/maps/map.cub
 
 leaks_full:
