@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 11:33:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:19:26 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,65 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-static int	_open_door(t_game *g);
-static int	_close_door(t_game *g);
+static void	_open_door(t_game *g, int id);
+static void	_close_door(t_game *g, int id);
 
 /*----------------------------------------------------------------------------*/
 
-int	door_animations(t_game *g)
+int	get_id(t_game *g, int x, int y)
 {
-	int	i;
+	int	id;
 
-	if (!g->sprites.is_open)
-		i = _open_door(g);
+	id = 0;
+	while (id < g->sprites.nb_of_doors)
+	{
+		if (g->doors[id].pos.x == x && g->doors[id].pos.y == y)
+			return (id);
+		id++;
+	}
+	return (-1);
+}
+
+void	door_animations(t_game *g)
+{
+	int	id;
+
+	id = -1;
+	while (++id < g->sprites.nb_of_doors)
+	{
+		if (g->doors[id].status == opening)
+		{
+			
+			printf("%f\n", g->doors[1].status);
+			_open_door(g, id);
+		}
+		else if (g->doors[id].status == closing)
+			_close_door(g, id);
+	}
+}
+
+static void	_open_door(t_game *g, int id)
+{
+	if (!((g->doors[id].move - 0.01) < 0))
+		g->doors[id].move -= 0.01;
 	else
-		i = _close_door(g);
-	g->sprites.animation = false;
-	return (i);
+	{
+		g->doors[id].status = neutral;
+		g->doors[id].move = 0.f;
+		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
+	}
+	return ;
 }
 
-static int	_open_door(t_game *g)
+static void	_close_door(t_game *g, int id)
 {
-	int	i;
-
-	i = 0;
-	while (g->sprites.door_state[i] < 0.999)
-		i++;
-	while (g->sprites.door_state[i] > 0)
+	if (!((g->doors[id].move + 0.01) > 1))
+		g->doors[id].move += 0.01;
+	else
 	{
-		if (!((g->sprites.door_state[i] - 0.01) < 0))
-			g->sprites.door_state[i] -= 0.01;
-		else
-			break ;
+		g->doors[id].status = neutral;
+		g->doors[id].move = 1.f;
+		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
-	g->map.map[g->door.check.y][g->door.check.x] = o_door;
-	return (i);
-}
-
-static int	_close_door(t_game *g)
-{
-	int	i;
-
-	i = 0;
-	while (g->sprites.door_state[i] > 0.01)
-		i++;
-	while (g->sprites.door_state[i] < 1)
-	{
-		g->sprites.door_state[i] += 0.01;
-	}
-	g->map.map[g->door.check.y][g->door.check.x] = door;
-	return (i);
+	return ;
 }

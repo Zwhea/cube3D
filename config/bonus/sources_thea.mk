@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/12 12:22:34 by twang            ###   ########.fr        #
+#    Updated: 2023/10/16 16:08:25 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SOURCES_BONUS +=															\
 					sources/bonus/parsing/assets/colors/colors_checker.c	\
 					sources/bonus/parsing/assets/colors/get_colors.c		\
 					sources/bonus/parsing/assets/colors/utils.c				\
+					sources/bonus/parsing/assets/doors/set_doors.c			\
 					sources/bonus/parsing/assets/textures/get_textures.c	\
 					sources/bonus/parsing/assets/asset_switchman.c			\
 					sources/bonus/parsing/map/get_map.c						\

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 14:49:13 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:13:08 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,30 @@
 
 static void	_init_raycasting(t_game *g);
 static void	_init_ray_door(t_game *g);
-static void	_raycasting_door(t_game *g);
+static int	_raycasting_door(t_game *g);
 static int	_check_door(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
 int	open_door(t_game *g)
 {
+	int	id;
+	
+	id = ray_door(g);
+	if (id != -1)
+		g->sprites.animation = true;
+	return (0);
+}
+
+int	ray_door(t_game *g)
+{
+	puts("ray_door");
+	int	id;
+
 	_init_raycasting(g);
 	_init_ray_door(g);
-	_raycasting_door(g);
-	return (0);
+	id = _raycasting_door(g);
+	return (id);
 }
 
 static void	_init_raycasting(t_game *g)
@@ -70,8 +83,10 @@ static void	_init_ray_door(t_game *g)
 	}
 }
 
-static void	_raycasting_door(t_game *g)
+static int	_raycasting_door(t_game *g)
 {
+	int	id;
+	
 	while (g->door.dist < 3)
 	{
 		if (g->door.ray_len.x < g->door.ray_len.y)
@@ -86,31 +101,31 @@ static void	_raycasting_door(t_game *g)
 			g->door.dist = g->door.ray_len.y;
 			g->door.ray_len.y += g->door.ray_unit.y;
 		}
-		if (_check_door(g))
-		{
-			g->sprites.animation = true;
-			break ;
-		}
+		id = _check_door(g);
+		if (id != -1)
+			return (id);
 	}
+	return (-1);
 }
 
 static int	_check_door(t_game *g)
 {
-	if (g->door.dist < 3 && g->door.check.x >= 0 && g->door.check.y >= 0 \
+	int	id;
+	
+	if (g->door.check.x >= 0 && g->door.check.y >= 0 \
 			&& g->map.map[g->door.check.y] \
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
-			&& g->map.map[g->door.check.y][g->door.check.x] == door)
+			&& (g->map.map[g->door.check.y][g->door.check.x] == door\
+			|| g->map.map[g->door.check.y][g->door.check.x] == o_door))
 	{
-		g->sprites.is_open = false;
-		return (1);
+		id = get_id(g, g->door.check.x, g->door.check.y);
+		if (id == -1)
+			return (-1);
+		if (g->doors[id].status == neutral && g->doors[id].move > 0)
+			g->doors[id].status = closing;
+		else if (g->doors[id].status == neutral && g->doors[id].move > 0)
+			g->doors[id].status = opening;
+		return (id);
 	}
-	else if (g->door.dist < 3 && g->door.check.x >= 0 && g->door.check.y >= 0 \
-			&& g->map.map[g->door.check.y] \
-			&& g->door.check.x < g->map.line_len[g->door.check.y] \
-			&& g->map.map[g->door.check.y][g->door.check.x] == o_door)
-	{
-		g->sprites.is_open = true;
-		return (1);
-	}
-	return (0);
+	return (-1);
 }

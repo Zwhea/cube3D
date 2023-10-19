@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/12 15:45:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/16 13:38:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	_start_minimap(t_game *g, t_minimap *mini)
 	{
 		mini->indic.x = mini->indic_start;
 		mini->monitor.x = mini->monitor_start;
-		while (mini->indic.x < mini->rayon \
+		while (mini->monitor.x < g->map.size.x && mini->indic.x < mini->rayon \
 				&& g->map.mini_map[(int)mini->monitor.y][(int)mini->monitor.x])
 		{
 			if ((mini->indic.x * mini->indic.x) \

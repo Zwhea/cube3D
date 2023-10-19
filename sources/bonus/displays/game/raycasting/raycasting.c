@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/13 10:29:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 09:37:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,27 @@ static void	_find_dist(t_game *g, float angle);
 
 /*----------------------------------------------------------------------------*/
 
-int	dstate(t_game *g)
+int	dstate(t_game *g, int x, int y)
 {
+	int		id;
 	double	inter;
 
+	id = -1;
+	while (++id < g->sprites.nb_of_doors)
+	{
+		if (g->doors[id].status == opening || g->doors[id].status == closing)
+			break ;
+	}
 	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
 		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
 	else
 		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > 0.5)
+	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && \
+			inter > g->doors[id].move)
 		return (1);
-	if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < 0.5)
+	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) \
+			&& inter < g->doors[id].move)
 		return (1);
 	return (0);
 }
@@ -120,7 +129,8 @@ static void	_find_dist(t_game *g, float angle)
 		}
 		if (g->map.map[g->ray.check.y][g->ray.check.x] == '1')
 			g->ray.wall = 1;
-		else if (dstate(g) && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
+		else if (dstate(g, g->ray.check.y, g->ray.check.x) \
+					&& g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 			g->ray.door = 1;
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
