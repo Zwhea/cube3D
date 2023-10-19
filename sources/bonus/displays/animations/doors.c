@@ -15,8 +15,8 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-static float	_open_door(t_game *g, int id, float ratio);
-static float	_close_door(t_game *g, int id, float ratio);
+static void	_open_door(t_game *g, int id);
+static void	_close_door(t_game *g, int id);
 
 /*----------------------------------------------------------------------------*/
 
@@ -40,23 +40,24 @@ int	get_id(t_game *g, int x, int y)
 void	door_animations(t_game *g)
 {
 	int		id;
-	float	ratio;
 
 	id = -1;
-	ratio = 0.01;
 	while (++id < g->sprites.nb_of_doors)
 	{
 		if (g->doors[id].status == opening)
-			_open_door(g, id, ratio);
+			_open_door(g, id);
 		else if (g->doors[id].status == closing)
-			_close_door(g, id, ratio);
+			_close_door(g, id);
 	}
 }
 
-static float	_open_door(t_game *g, int id, float ratio)
+static void	_open_door(t_game *g, int id)
 {
-	if (!((g->doors[id].move - sin(g->doors[id].move))) < 0)
-		g->doors[id].move -= sin(g->doors[id].move;
+	double	ratio;
+
+	ratio = (sin(g->doors[id].move) * 0.1) + 0.01;
+	if (!((g->doors[id].move - ratio) < 0))
+		g->doors[id].move -= ratio;
 	else
 	{
 		g->doors[id].status = neutral;
@@ -64,13 +65,16 @@ static float	_open_door(t_game *g, int id, float ratio)
 		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 	}
-	return (2 * ratio + 0.01);
+	return ;
 }
 
-static float	_close_door(t_game *g, int id, float ratio)
+static void	_close_door(t_game *g, int id)
 {
-	if (!((g->doors[id].move + 0.01) > 1))
-		g->doors[id].move += 0.01;
+	double	ratio;
+
+	ratio = (sin(g->doors[id].move) * 0.1) + 0.01;
+	if (!((g->doors[id].move + ratio) > 1))
+		g->doors[id].move += ratio;
 	else
 	{
 		g->doors[id].status = neutral;
@@ -78,5 +82,5 @@ static float	_close_door(t_game *g, int id, float ratio)
 		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
-	return (2 * ratio + 0.01);
+	return ;
 }
