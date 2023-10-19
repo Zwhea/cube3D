@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 10:58:38 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 13:12:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ static float	_open_door(t_game *g, int id, float ratio)
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 0.f;
+		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 	}
 	return (2 * ratio + 0.01);
@@ -74,6 +75,7 @@ static float	_close_door(t_game *g, int id, float ratio)
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 1.f;
+		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
 	return (2 * ratio + 0.01);
