@@ -26,13 +26,7 @@ int	dstate(t_game *g, int x, int y)
 	int		id;
 	double	inter;
 
-	id = -1;
-	while (++id < g->sprites.nb_of_doors)
-	{
-		if (g->doors[id].status == opening || g->doors[id].status == closing)
-			break ;
-	}
-	
+	id = get_id(g, y, x);
 	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
 		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
 	else
@@ -134,9 +128,9 @@ static void	_find_dist(t_game *g, float angle)
 		}
 		if (g->map.map[g->ray.check.y][g->ray.check.x] == '1')
 			g->ray.wall = 1;
-		else if (dstate(g, g->ray.check.y, g->ray.check.x) \
-					&& (g->map.map[g->ray.check.y][g->ray.check.x] == '-' \
-					|| g->map.map[g->ray.check.y][g->ray.check.x] == '+'))
+		else if ((g->map.map[g->ray.check.y][g->ray.check.x] == '-' \
+					|| g->map.map[g->ray.check.y][g->ray.check.x] == '+') \
+					&& dstate(g, g->ray.check.y, g->ray.check.x))
 			g->ray.door = 1;
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
