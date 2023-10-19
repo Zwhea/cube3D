@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/18 13:07:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 14:51:29 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,10 @@ void			handle_south_texture(t_game *g, char *line);
 void			handle_west_texture(t_game *g, char *line);
 void			handle_east_texture(t_game *g, char *line);
 int				init_textures(t_game *g, char *s, int id);
+/*------------------------- get_textures.c -----------------------------------*/
+void			textures_checker(t_game *g);
+void			color_checker(t_game *g);
+
 /*--------------- asset_switchman.c ------------------------------------------*/
 void			asset_switchman(t_game *g, char *line);
 /*--------------- map/ -------------------------------------------------------*/

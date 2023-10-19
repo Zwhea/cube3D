@@ -1,11 +1,10 @@
-NOO ./assets/textures/xpm/tech_wall_north.xpm
+NO ./assets/textures/xpm/tech_wall_north.xpm
 SO ./assets/textures/xpm/tech_wall_south.xpm
 WE ./assets/textures/xpm/tech_wall_west.xpm
-NO ./assets/textures/xpm/tech_wall_north.xpm
 EA ./assets/textures/xpm/tech_wall_east.xpm
 
-F 220,100,0
-C 225,255,0
+F 0,0,0
+C 225,0,0
 
         1111111111111111111111111
         1000000000110000000000011
