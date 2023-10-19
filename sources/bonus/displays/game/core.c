@@ -16,6 +16,7 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 static void	_init_game(t_game *g);
+static void	_help_open(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
@@ -30,6 +31,15 @@ void	game_display(t_game *g)
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
 		g->mini_map.north.y + 5, H_RED, "N");
+	_help_open(g);
+}
+
+static void	_help_open(t_game *g)
+{
+	raycasting(g, g->player.angle_view);
+	if (g->ray.dist < 3 && g->map.map[g->ray.check.y][g->ray.check.x] == door)
+		mlx_string_put(g->mlx, g->window, WINDOW_X / 2 - 60, WINDOW_Y / 2 - 40,
+		H_GREEN, "Press Space To Open");
 }
 
 static void	_init_game(t_game *g)
