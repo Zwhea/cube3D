@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 10:13:08 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 10:48:42 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	open_door(t_game *g)
 
 int	ray_door(t_game *g)
 {
-	puts("ray_door");
 	int	id;
 
 	_init_raycasting(g);
@@ -121,9 +120,9 @@ static int	_check_door(t_game *g)
 		id = get_id(g, g->door.check.x, g->door.check.y);
 		if (id == -1)
 			return (-1);
-		if (g->doors[id].status == neutral && g->doors[id].move > 0)
+		if (g->doors[id].status == neutral && g->doors[id].move < 0.01)
 			g->doors[id].status = closing;
-		else if (g->doors[id].status == neutral && g->doors[id].move > 0)
+		else if (g->doors[id].status == neutral && g->doors[id].move > 0.99)
 			g->doors[id].status = opening;
 		return (id);
 	}
