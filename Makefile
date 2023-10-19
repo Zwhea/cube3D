@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/10/19 13:45:47 by twang            ###   ########.fr        #
+#    Updated: 2023/10/19 16:32:48 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ SRC_B_DIR	=	sources/bonus
 ifeq ($(BONUS), no)
 CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR) -I $(INC_DIR) 
 else
-CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea
 endif
 
 #--mlx flags-------------------------------------------------------------------#
@@ -152,8 +152,8 @@ debug:
 
 leaks:
 	clear
-	$(MAKE) -j VALGRIND=yes
-	$(LEAKS) ./cub3D assets/maps/map.cub
+	$(MAKE) -j VALGRIND=yes BONUS=yes
+	$(LEAKS) ./cub3D assets/maps/doors.cub
 
 leaks_full:
 	clear

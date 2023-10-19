@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/19 14:54:34 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 15:22:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	parsing(t_game *g, char **av)
 		init_mlx(g);
 		_pathfinder(g);
 		map_checker(g);
+		textures_checker(g);
+		color_checker(g);
 	}
 	else
 	{
@@ -65,4 +67,6 @@ static void	_pathfinder(t_game *g)
 		free(line);
 		get_map(g, g->file.fd, start_map);
 	}
+	else
+		error_switchman(g, wrong_map);
 }

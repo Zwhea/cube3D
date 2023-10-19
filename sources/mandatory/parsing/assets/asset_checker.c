@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   textures_checker.c                                 :+:      :+:    :+:   */
+/*   asset_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:13:28 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/19 14:51:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 16:00:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	color_checker(t_game *g)
 	i = 0;
 	while (i < 2)
 	{
-		if (i < 2 && !(g->color[i].color))
-			error_switchman(g, wrong_colors);
+		if (i < 2 && !(g->color[i].get))
+			error_switchman(g, wrong_color);
 		i++;
 	}
 }

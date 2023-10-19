@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/10/13 10:59:28 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 15:17:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ float	get_angle_degree(t_game *g)
 
 void	map_checker(t_game *g)
 {
-	_check_char(g);
+	if (g->map.map)
+		_check_char(g);
 	if (g->player.player != 1)
 		error_switchman(g, wrong_player);
 	g->map.b_map = ft_copy_split(g->map.map, g->map.b_map);

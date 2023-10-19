@@ -1,17 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors_checker.c                                   :+:      :+:    :+:   */
+/*   asset_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/08 11:13:02 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/19 16:17:39 by twang            ###   ########.fr       */
+/*   Created: 2023/10/18 13:13:28 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/19 16:26:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D_thea.h"
+#include "cub3D_arthur.h"
 
+void	textures_checker(t_game *g)
+{
+	int	i;
 
+	i = 0;
+	while (i < 3)
+	{
+		if (i < 3 && !(g->textures.walls[i].img))
+			error_switchman(g, wrong_texture);
+		i++;
+	}
+}
 
+void	color_checker(t_game *g)
+{
+	int	i;
 
+	i = 0;
+	while (i < 2)
+	{
+		if (i < 2 && !(g->color[i].get))
+			error_switchman(g, wrong_color);
+		i++;
+	}
+}
