@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/16 13:38:39 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 13:11:47 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,20 +83,12 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 	if (monitor.x < 0 || monitor.y < 0)
 		return ;
 	_rotate(g, &indic);
-	if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
-		&& g->map.mini_map[(int)monitor.y][(int)monitor.x] == wall)
+	if (g->map.mini_map[(int)monitor.y][(int)monitor.x] == wall)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_GREY);
-	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
-		&& (g->map.mini_map[(int)monitor.y][(int)monitor.x] == space \
-		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == north \
-		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == east \
-		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == west \
-		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == south \
-		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == o_door))
-		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_WHITE);
-	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] \
-		&& g->map.mini_map[(int)monitor.y][(int)monitor.x] == door)
+	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] == door)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_BLACK);
+	else
+		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_WHITE);
 }
 
 static void	_rotate(t_game *g, t_vector_f *indic)
