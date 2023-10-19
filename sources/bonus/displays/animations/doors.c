@@ -39,7 +39,7 @@ int	get_id(t_game *g, int x, int y)
 
 void	door_animations(t_game *g)
 {
-	int	id;
+	int		id;
 
 	id = -1;
 	while (++id < g->sprites.nb_of_doors)
@@ -53,8 +53,11 @@ void	door_animations(t_game *g)
 
 static void	_open_door(t_game *g, int id)
 {
-	if (!((g->doors[id].move - 0.03) < 0))
-		g->doors[id].move -= 0.03;
+	double	ratio;
+
+	ratio = (sin(g->doors[id].move) * 0.1) + 0.01;
+	if (!((g->doors[id].move - ratio) < 0))
+		g->doors[id].move -= ratio;
 	else
 	{
 		g->doors[id].status = neutral;
@@ -67,8 +70,11 @@ static void	_open_door(t_game *g, int id)
 
 static void	_close_door(t_game *g, int id)
 {
-	if (!((g->doors[id].move + 0.01) > 1))
-		g->doors[id].move += 0.01;
+	double	ratio;
+
+	ratio = (sin(g->doors[id].move) * 0.1) + 0.01;
+	if (!((g->doors[id].move + ratio) > 1))
+		g->doors[id].move += ratio;
 	else
 	{
 		g->doors[id].status = neutral;
