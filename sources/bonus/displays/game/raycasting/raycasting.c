@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/19 10:55:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 12:33:07 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int	dstate(t_game *g, int x, int y)
 		if (g->doors[id].status == opening || g->doors[id].status == closing)
 			break ;
 	}
-	
 	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
 		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
 	else
