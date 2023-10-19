@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 12:39:11 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/19 13:12:48 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	get_id(t_game *g, int x, int y)
 	while (id < g->sprites.nb_of_doors)
 	{
 		if (g->doors[id].pos.x == x && g->doors[id].pos.y == y)
+		{
+			g->id = id;
 			return (id);
+		}
 		id++;
 	}
 	return (-1);
@@ -56,6 +59,7 @@ static void	_open_door(t_game *g, int id)
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 0.f;
+		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = o_door;
 	}
 	return ;
@@ -69,6 +73,7 @@ static void	_close_door(t_game *g, int id)
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 1.f;
+		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
 	return ;
