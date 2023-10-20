@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:29:37 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 12:52:06 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:34:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -45,8 +44,6 @@ int	key_switch(t_keycode key, t_game *g)
 		clean(g);
 	if (key == space_key)
 		open_door(g);
-	if (key == l_key)
-		legend_init(g);
 	if (key == w_key && !g->switches.s_key && !g->switches.down_key)
 		g->switches.w_key = true;
 	if (key == a_key && !g->switches.d_key)

@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 15:24:19 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/12 15:45:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 int	door_direction(t_game *g, int x, int y)
 {

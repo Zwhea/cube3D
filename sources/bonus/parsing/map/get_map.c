@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:58:49 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/16 15:51:13 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	get_map(t_game *g, int fd, int start_map)
 {

@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 16:41:16 by twang             #+#    #+#             */
-/*   Updated: 2023/09/08 12:58:28 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	my_mlx_pixel_put(t_draw *data, int x, int y, int color)
 {

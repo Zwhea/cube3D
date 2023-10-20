@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:13:28 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/19 16:26:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:35:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 void	textures_checker(t_game *g)
 {

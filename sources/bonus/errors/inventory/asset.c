@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   asset.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 17:02:59 by wangthea          #+#    #+#             */
-/*   Updated: 2023/09/28 08:42:44 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 void	_wrong_asset(t_game *g)
 {

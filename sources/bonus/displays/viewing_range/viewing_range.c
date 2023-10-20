@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 10:29:04 by twang             #+#    #+#             */
-/*   Updated: 2023/10/03 09:32:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:41:38 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 int	view_left(t_game *g)
 {

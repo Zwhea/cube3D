@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structures_arthur.h                                :+:      :+:    :+:   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 10:21:58 by twang            ###   ########.fr       */
+/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
+/*   Updated: 2023/10/20 15:41:12 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTURES_ARTHUR_H
-# define STRUCTURES_ARTHUR_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
-# include "enums_arthur.h"
+/*---- libraries -------------------------------------------------------------*/
 
-/*---- typedef structures ----------------------------------------------------*/
+# include <math.h>
 
-/*---- structures ------------------------------------------------------------*/
+/*---- includes --------------------------------------------------------------*/
+
+# include "libft.h"
+# include "mlx.h"
+# include "defines.h"
+# include "enums.h"
+# include "prototypes.h"
+# include "structures.h"
 
 #endif

@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:48:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 10:12:10 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:35:43 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -34,7 +33,7 @@ void	set_doors(t_game *g)
 		{
 			if (g->map.map[i][j] == door)
 			{
-				_init_struct(g, id, i , j);
+				_init_struct(g, id, i, j);
 				id++;
 			}
 			j++;

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 11:40:54 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/20 12:29:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:25:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ void	clean_textures(t_game *g)
 {
 	int	i;
 
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
 		if (i < 4 && (g->textures.walls[i].img))
 			mlx_destroy_image(g->mlx, g->textures.walls[i].img);
-		i++;
 	}
 }
 
