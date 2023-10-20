@@ -6,13 +6,18 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/09 17:15:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:25:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
+
+static void			_texturing_vertical(t_game *g);
+static void			_texturing_horizontal(t_game *g);
+static unsigned int	_get_shade(t_game *game, unsigned int color);
+
 /*----------------------------------------------------------------------------*/
 
 void	find_dir_wall(t_game *g, int check)
@@ -37,24 +42,12 @@ void	find_dir_wall(t_game *g, int check)
 	}
 }
 
-unsigned int	get_shade(t_game *game, unsigned int color)
+void	draw_textures(t_game *g)
 {
-	int		r;
-	int		g;
-	int		b;
-	double	ratio;
-
-	r = (color >> 16) & 0xff;
-	g = (color >> 8) & 0xff;
-	b = color & 0xff;
-	if (game->ray.dist > 6)
-	{
-		ratio = 1 - ((game->ray.dist - 6) * 0.1);
-		r = (int)(r * ratio);
-		g = (int)(g * ratio);
-		b = (int)(b * ratio);
-	}
-	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
+	if (g->ray.wall_dir == north || g->ray.wall_dir == south)
+		_texturing_horizontal(g);
+	else if (g->ray.wall_dir == east || g->ray.wall_dir == west)
+		_texturing_vertical(g);
 }
 
 static void	_texturing_vertical(t_game *g)
@@ -77,7 +70,7 @@ static void	_texturing_vertical(t_game *g)
 	else
 		color = 0;
 	color = (color >> 1) & 8355711;
-	color = get_shade(g, color);
+	color = _get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
@@ -101,14 +94,26 @@ static void	_texturing_horizontal(t_game *g)
 	else
 		color = 0;
 	color = (color >> 1) & 8355711;
-	color = get_shade(g, color);
+	color = _get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
-void	draw_textures(t_game *g)
+static unsigned int	_get_shade(t_game *game, unsigned int color)
 {
-	if (g->ray.wall_dir == north || g->ray.wall_dir == south)
-		_texturing_horizontal(g);
-	else if (g->ray.wall_dir == east || g->ray.wall_dir == west)
-		_texturing_vertical(g);
+	int		r;
+	int		g;
+	int		b;
+	double	ratio;
+
+	r = (color >> 16) & 0xff;
+	g = (color >> 8) & 0xff;
+	b = color & 0xff;
+	if (game->ray.dist > 6)
+	{
+		ratio = 1 - ((game->ray.dist - 6) * 0.1);
+		r = (int)(r * ratio);
+		g = (int)(g * ratio);
+		b = (int)(b * ratio);
+	}
+	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
 }

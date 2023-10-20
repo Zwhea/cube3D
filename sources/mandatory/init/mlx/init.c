@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:38:50 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 12:29:18 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:36:59 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,12 @@ void	init_mlx(t_game *g)
 void	init_img(t_game *g)
 {
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
+	if (!g->draw.img)
+		clean(g);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
+	if (!g->draw.addr)
+		clean(g);
 }
 
 void	init_mlx_functions(t_game *g)

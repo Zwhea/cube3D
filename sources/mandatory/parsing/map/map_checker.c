@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 15:17:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:31:45 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static void	_set_player(t_game *g, int i, int j)
 	set_vector(&g->player.pos, j, i);
 	set_vector_f(&g->player.posf, j + 0.5, i + 0.5);
 	set_vector_f(&g->player.start, j + 0.5, i + 0.5);
+	g->map.map[i][j] = player;
 }
 
 static void	_backtracking(t_game *g, int x, int y)

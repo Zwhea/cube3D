@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:37 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/12 11:14:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 12:31:32 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	else
 	{
 		if (parsing(&g, av) != 0)
-			return (close_n_free(&g, true));
+			return (close_file(g.file.fd));
 		init_img(&g);
 		game_display(&g);
 		init_mlx_functions(&g);

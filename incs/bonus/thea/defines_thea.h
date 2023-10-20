@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   defines_thea.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/17 13:02:55 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:35:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,7 @@
 
 /*---- animations xpm --------------------------------------------------------*/
 
-# define XPM_DOOR_00	"./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_01	"./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_02	"./assets/textures/xpm/door_closed.xpm"
-
-# define XPM_PLAYER		"./assets/textures/xpm/handz.xpm"
+# define XPM_DOOR			"./assets/textures/xpm/door_closed.xpm"
+# define XPM_PLAYER			"./assets/textures/xpm/hands.xpm"
 
 #endif

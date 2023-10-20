@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/13 10:29:56 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:00:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,6 @@ static void	_init_ray(t_game *g);
 static void	_find_dist(t_game *g, float angle);
 
 /*----------------------------------------------------------------------------*/
-
-int	dstate(t_game *g)
-{
-	double	inter;
-
-	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
-		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
-	else
-		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
-	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && inter > 0.5)
-		return (1);
-	if ((g->ray.wall_dir == east || g->ray.wall_dir == south) && inter < 0.5)
-		return (1);
-	return (0);
-}
 
 void	raycasting(t_game *g, double angle)
 {

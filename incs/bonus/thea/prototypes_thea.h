@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 14:51:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 12:52:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 /*---- clean/ ----------------------------------------------------------------*/
 /*------------------------- clean_assets.c -----------------------------------*/
-int				close_n_free(t_game *g, bool is_error);
 void			clean_textures(t_game *g);
 void			clean_maps(t_game *g);
 /*------------------------- clean_windows.c ----------------------------------*/
@@ -143,14 +142,10 @@ int				mouse_release(t_keycode key, int x, int y, t_game *g);
 void			init_door_sprites(t_game *g);
 void			init_player_sprites(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/
-void			init_image(t_game *g, t_sprites *sprites, int size, \
-															bool id_img);
-void			init_image_settings(t_sprites *sprites, int size, \
-															bool id_img);
-void			check_image(t_game *g, t_sprites *sprites, int size, \
-															bool id_img);
-void			check_image_settings(t_game *g, t_sprites *sprites, int size, \
-															bool id);
+void			init_img(t_game *g, t_sprites *sprites, bool id_img);
+void			init_img_settings(t_sprites *sprites, bool id_img);
+void			check_img(t_game *g, t_sprites *sprites, bool id_img);
+void			check_img_settings(t_game *g, t_sprites *sprites, bool id_img);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 int				colors_checker(t_game *g, char *line);

@@ -1,7 +1,7 @@
-NO ./assets/textures/xpm/tech_wall_east.xpm
-SO ./assets/textures/xpm/brick_wall.xpm
-EA ./assets/textures/xpm/brick_wall.xpm
-WE ./assets/textures/xpm/brick_wall.xpm
+NO ./assets/textures/xpm/tech_wall_north.xpm
+SO ./assets/textures/xpm/tech_wall_south.xpm
+WE ./assets/textures/xpm/tech_wall_west.xpm
+EA ./assets/textures/xpm/tech_wall_east.xpm
  
 C 149,242,223
 F 229,241,217
