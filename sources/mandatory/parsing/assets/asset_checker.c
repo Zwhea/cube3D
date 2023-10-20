@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structures_arthur.h                                :+:      :+:    :+:   */
+/*   asset_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/07/20 10:21:58 by twang            ###   ########.fr       */
+/*   Created: 2023/10/18 13:13:28 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/19 16:00:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTURES_ARTHUR_H
-# define STRUCTURES_ARTHUR_H
+#include "cub3D.h"
 
-# include "enums_arthur.h"
+void	textures_checker(t_game *g)
+{
+	int	i;
 
-/*---- typedef structures ----------------------------------------------------*/
+	i = 0;
+	while (i < 3)
+	{
+		if (i < 3 && !(g->textures.walls[i].img))
+			error_switchman(g, wrong_texture);
+		i++;
+	}
+}
 
-/*---- structures ------------------------------------------------------------*/
+void	color_checker(t_game *g)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (i < 2)
+	{
+		if (i < 2 && !(g->color[i].get))
+			error_switchman(g, wrong_color);
+		i++;
+	}
+}

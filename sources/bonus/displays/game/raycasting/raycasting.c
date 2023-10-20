@@ -6,44 +6,20 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/19 13:00:35 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:40:41 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
 static void	_init_var(t_game *g, float angle);
 static void	_init_ray(t_game *g);
 static void	_find_dist(t_game *g, float angle);
+static int	_dstate(t_game *g, int x, int y);
 
 /*----------------------------------------------------------------------------*/
-
-int	dstate(t_game *g, int x, int y)
-{
-	int		id;
-	double	inter;
-
-	id = get_id(g, y, x);
-	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
-		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
-	else
-		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
-	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && \
-			inter <= g->doors[id].move && g->doors[id].status != neutral)
-		return (1);
-	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) \
-			&& inter <= g->doors[id].move && g->doors[id].status != neutral)
-		return (1);
-	else if ((g->ray.wall_dir == west || g->ray.wall_dir == north \
-		|| g->ray.wall_dir == east || g->ray.wall_dir == south) \
-		&& g->doors[id].status == neutral && g->map.map[g->ray.check.y][g->ray.check.x] == '-')
-		return (1);
-	return (0);
-}
 
 void	raycasting(t_game *g, double angle)
 {
@@ -130,11 +106,36 @@ static void	_find_dist(t_game *g, float angle)
 			g->ray.wall = 1;
 		else if ((g->map.map[g->ray.check.y][g->ray.check.x] == '-' \
 					|| g->map.map[g->ray.check.y][g->ray.check.x] == '+') \
-					&& dstate(g, g->ray.check.y, g->ray.check.x))
+					&& _dstate(g, g->ray.check.y, g->ray.check.x))
 			g->ray.door = 1;
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	g->ray.intersection.y = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
 	if (g->ray.dist < 15)
 		g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
+}
+
+static int	_dstate(t_game *g, int x, int y)
+{
+	int		id;
+	double	inter;
+
+	id = get_id(g, y, x);
+	if (g->ray.wall_dir == east || g->ray.wall_dir == west)
+		inter = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
+	else
+		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
+	inter = inter - floor(inter);
+	if ((g->ray.wall_dir == west || g->ray.wall_dir == north) && \
+			inter <= g->doors[id].move && g->doors[id].status != neutral)
+		return (1);
+	else if ((g->ray.wall_dir == east || g->ray.wall_dir == south) \
+			&& inter <= g->doors[id].move && g->doors[id].status != neutral)
+		return (1);
+	else if ((g->ray.wall_dir == west || g->ray.wall_dir == north \
+		|| g->ray.wall_dir == east || g->ray.wall_dir == south) \
+		&& g->doors[id].status == neutral \
+		&& g->map.map[g->ray.check.y][g->ray.check.x] == '-')
+		return (1);
+	return (0);
 }

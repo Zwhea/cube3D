@@ -1,12 +1,13 @@
-NO ./assets/textures/xpm/brick_wall.xpm
-SO ./assets/textures/xpm/brick_wall.xpm
-WE ./assets/textures/xpm/brick_wall.xpm fhgbkj
-EA ./assets/textures/xpm/brick_wall.xpm
+NO ./assets/textures/xpm/tech_wall_north.xpm
+SO ./assets/textures/xpm/tech_wall_south.xpm
+WE ./assets/textures/xpm/tech_wall_west.xpm
+EA ./assets/textures/xpm/tech_wall_east.xpm
 
 F 220,100,0
 C 225,30,0
 
-1111
-1001
-10N1
-1111
+11111
+10001
+10N01
+10001
+11111

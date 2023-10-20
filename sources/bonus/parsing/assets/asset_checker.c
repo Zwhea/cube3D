@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D_thea.h                                       :+:      :+:    :+:   */
+/*   asset_checker.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 17:11:55 by twang             #+#    #+#             */
-/*   Updated: 2023/09/20 09:32:54 by twang            ###   ########.fr       */
+/*   Created: 2023/10/18 13:13:28 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/20 15:35:58 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_THEA_H
-# define CUB3D_THEA_H
+#include "cub3D.h"
 
-/*---- libraries -------------------------------------------------------------*/
+void	textures_checker(t_game *g)
+{
+	int	i;
 
-/*---- includes --------------------------------------------------------------*/
+	i = 0;
+	while (i < 3)
+	{
+		if (i < 3 && !(g->textures.walls[i].img))
+			error_switchman(g, wrong_texture);
+		i++;
+	}
+}
 
-# include "libft.h"
-# include "mlx.h"
-# include "defines_thea.h"
-# include "enums_thea.h"
-# include "prototypes_thea.h"
-# include "structures_thea.h"
+void	color_checker(t_game *g)
+{
+	int	i;
 
-# include <math.h>
-
-#endif
+	i = 0;
+	while (i < 2)
+	{
+		if (i < 2 && !(g->color[i].get))
+			error_switchman(g, wrong_color);
+		i++;
+	}
+}

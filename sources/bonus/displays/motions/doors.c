@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 10:48:42 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:38:53 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -25,7 +24,7 @@ static int	_check_door(t_game *g);
 int	open_door(t_game *g)
 {
 	int	id;
-	
+
 	id = ray_door(g);
 	if (id != -1)
 		g->sprites.animation = true;
@@ -86,7 +85,7 @@ static void	_init_ray_door(t_game *g)
 static int	_raycasting_door(t_game *g)
 {
 	int	id;
-	
+
 	while (g->door.dist < 3 && g->door.wall == 0)
 	{
 		if (g->door.ray_len.x < g->door.ray_len.y)
@@ -117,7 +116,7 @@ static int	_check_door(t_game *g)
 	if (g->door.check.x >= 0 && g->door.check.y >= 0 \
 			&& g->map.map[g->door.check.y] \
 			&& g->door.check.x < g->map.line_len[g->door.check.y] \
-			&& (g->map.map[g->door.check.y][g->door.check.x] == door\
+			&& (g->map.map[g->door.check.y][g->door.check.x] == door \
 			|| g->map.map[g->door.check.y][g->door.check.x] == o_door))
 	{
 		id = get_id(g, g->door.check.x, g->door.check.y);

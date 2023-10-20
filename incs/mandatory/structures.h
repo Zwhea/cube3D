@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aascedu <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:13:02 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/18 13:13:04 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/10/19 15:03:55 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ struct s_color
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
+	bool			get;
 };
 
 struct s_tex

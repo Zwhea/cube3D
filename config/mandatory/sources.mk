@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    sources_thea.mk                                    :+:      :+:    :+:    #
+#    sources.mk                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/09/29 10:25:35 by twang            ###   ########.fr        #
+#    Updated: 2023/10/19 15:26:32 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,11 @@ SOURCES =																	\
 			sources/mandatory/init/mlx/init.c								\
 			sources/mandatory/init/struct/init.c							\
 			sources/mandatory/init/switches/key_switchman.c					\
-			sources/mandatory/parsing/assets/colors/colors_checker.c		\
 			sources/mandatory/parsing/assets/colors/get_colors.c			\
 			sources/mandatory/parsing/assets/colors/utils.c					\
-			sources/mandatory/parsing/assets/textures/textures_checker.c	\
 			sources/mandatory/parsing/assets/textures/get_textures.c		\
-			sources/mandatory/parsing/assets/textures/textures_checker.c	\
 			sources/mandatory/parsing/assets/asset_switchman.c				\
+			sources/mandatory/parsing/assets/asset_checker.c				\
 			sources/mandatory/parsing/map/get_map.c							\
 			sources/mandatory/parsing/map/map_checker.c						\
 			sources/mandatory/parsing/map/utils.c							\

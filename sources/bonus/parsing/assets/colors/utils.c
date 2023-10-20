@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 13:46:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/08/31 13:09:03 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -18,6 +18,23 @@ static void	_extract_ceiling_color(t_game *g, int i, char *line);
 static void	_extract_floor_color(t_game *g, int i, char *line);
 
 /*----------------------------------------------------------------------------*/
+
+void	extract_colors(t_game *g, char *line, t_keyassets color_id)
+{
+	char	**color;
+	int		id;
+
+	color = ft_split(line, ',');
+	if (!color)
+		clean(g);
+	id = 0;
+	while (color[id])
+	{
+		extrct_nbrs(g, color_id, id, color[id]);
+		id++;
+	}
+	free_split(color, 4);
+}
 
 void	extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line)
 {

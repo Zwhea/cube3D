@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structures_thea.h                                  :+:      :+:    :+:   */
+/*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:07:42 by twang             #+#    #+#             */
-/*   Updated: 2023/10/16 16:57:17 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 14:19:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTURES_THEA_H
-# define STRUCTURES_THEA_H
+#ifndef STRUCTURES_H
+# define STRUCTURES_H
 
-# include "enums_thea.h"
+# include "enums.h"
 
 /*---- typedef structures ----------------------------------------------------*/
 
@@ -107,12 +107,13 @@ struct s_color
 	unsigned char	r;
 	unsigned char	g;
 	unsigned char	b;
+	bool			get;
 };
 
 struct s_sprites
 {
 	t_draw			player;
-	t_draw			door[3];
+	t_draw			door;
 	int				nb_of_doors;
 	bool			animation;
 };
@@ -231,7 +232,6 @@ struct s_game
 	t_door			*doors;
 	t_vector		size;
 	t_vector		window_size;
-	t_vector		legend_window_size;
 	t_sprites		sprites;
 	t_tex			textures;
 	t_color			color[2];
@@ -243,7 +243,6 @@ struct s_game
 	int				id;
 	void			*mlx;
 	void			*window;
-	void			*legend_window;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 11:43:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/12 11:15:29 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:27:03 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 int	clean(t_game *g)
 {
 	printf(RED"closing program\n"END);
+	if (g->file.fd)
+		close_file(g->file.fd);
 	clean_maps(g);
 	clean_textures(g);
 	if (g->draw.img)
@@ -38,6 +40,8 @@ int	clean(t_game *g)
 		close(g->file.fd);
 	clean_maps(g);
 	clean_textures(g);
+	if (g->draw.img)
+		mlx_destroy_image(g->mlx, g->draw.img);
 	if (g->window)
 		mlx_destroy_window(g->mlx, g->window);
 	free(g->mlx);

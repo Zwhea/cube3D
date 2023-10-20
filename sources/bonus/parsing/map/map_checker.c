@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 12:19:40 by twang             #+#    #+#             */
-/*   Updated: 2023/10/16 16:30:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -66,6 +66,7 @@ static void	_set_player(t_game *g, int i, int j)
 	set_vector(&g->player.pos, j, i);
 	set_vector_f(&g->player.posf, j + 0.5, i + 0.5);
 	set_vector_f(&g->player.start, j + 0.5, i + 0.5);
+	g->map.map[i][j] = player;
 }
 
 static void	_check_door(t_game *g, int i, int j)

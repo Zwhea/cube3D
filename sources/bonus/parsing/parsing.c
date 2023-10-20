@@ -6,11 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:19:50 by wangthea          #+#    #+#             */
-/*   Updated: 2023/10/16 15:50:32 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 13:55:44 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -27,6 +27,8 @@ int	parsing(t_game *g, char **av)
 		init_mlx(g);
 		_pathfinder(g);
 		_monitor(g);
+		textures_checker(g);
+		color_checker(g);
 	}
 	else
 	{
@@ -66,6 +68,8 @@ static void	_pathfinder(t_game *g)
 		free(line);
 		get_map(g, g->file.fd, start_map);
 	}
+	else
+		error_switchman(g, wrong_map);
 }
 
 static void	_monitor(t_game *g)

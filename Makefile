@@ -6,17 +6,15 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/20 14:09:46 by twang             #+#    #+#              #
-#    Updated: 2023/10/18 14:51:42 by twang            ###   ########.fr        #
+#    Updated: 2023/10/20 15:48:22 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include config/print.mk
-include config/mandatory/sources.mk
 include config/mandatory/headers.mk
-include config/bonus/sources_arthur.mk
-include config/bonus/headers_arthur.mk
-include config/bonus/sources_thea.mk
-include config/bonus/headers_thea.mk
+include config/mandatory/sources.mk
+include config/bonus/headers.mk
+include config/bonus/sources.mk
 
 .SILENT:
 
@@ -49,18 +47,16 @@ endif
 #--sources & objects-----------------------------------------------------------#
 
 SRC_DIR		=	sources/mandatory
+SRC_B_DIR	=	sources/bonus
 OBJ_DIR		=	.objs
 
-#--sources & objects bonus ----------------------------------------------------#
-
-SRC_B_DIR	=	sources/bonus
 
 #--flags mandatory & bonus ----------------------------------------------------#
 
 ifeq ($(BONUS), no)
-CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR) -I $(INC_DIR) 
+CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_DIR)
 else
-CFLAGS		=	-Wall -Wextra -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)arthur -I $(INC_B_DIR)thea #-Werror
+CFLAGS		=	-Wall -Wextra -Werror -O3 -pipe -g3 -I $(LIBFT_DIR) -I $(MLX_DIR) -I $(INC_B_DIR)
 endif
 
 #--mlx flags-------------------------------------------------------------------#
@@ -83,7 +79,7 @@ endif
 
 #--leaks flags-----------------------------------------------------------------#
 
-LEAKS		=	valgrind --leak-check=full --show-leak-kinds=all --quiet
+LEAKS		=	valgrind --leak-check=full --show-leak-kinds=all #--quiet
 LEAKS_FULL	=	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes --log-file=valgrind_report.txt #-v
 
 #--define flags----------------------------------------------------------------#
@@ -153,12 +149,12 @@ debug:
 leaks:
 	clear
 	$(MAKE) -j VALGRIND=yes BONUS=yes
-	$(LEAKS) ./cub3D assets/maps/map.cub
+	$(LEAKS) ./cub3D assets/maps/textures.cub
 
 leaks_full:
 	clear
 	$(MAKE) -j VALGRIND=yes BONUS=yes
-	$(LEAKS_FULL) ./cub3D assets/maps/vector.cub
+	$(LEAKS_FULL) ./cub3D assets/maps/textures.cub
 
 bonus:
 	$(MAKE) re -j BONUS=yes

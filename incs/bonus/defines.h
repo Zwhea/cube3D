@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines_thea.h                                     :+:      :+:    :+:   */
+/*   defines.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/17 13:02:55 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:20:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_THEA_H
-# define DEFINES_THEA_H
+#ifndef DEFINES_H
+# define DEFINES_H
 
 /*---- error messages --------------------------------------------------------*/
 
+# define ERROR "error: "
+# define WARNING "warning: "
 # define NO_ARG "program needs a map you fool !!!\n"
 # define WRONG_FILE "program encounter issues with given file\n"
 # define WRONG_ASSET "program encounter issues with given informations\n"
@@ -50,8 +52,6 @@
 # define WINDOW_Y			1080
 # define MINI_MAP_X			270
 # define MINI_MAP_Y			270
-# define LEGEND_X			600
-# define LEGEND_Y			400
 # define TILE				30
 
 /*---- colors ----------------------------------------------------------------*/
@@ -70,10 +70,7 @@
 
 /*---- animations xpm --------------------------------------------------------*/
 
-# define XPM_DOOR_00	"./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_01	"./assets/textures/xpm/door_closed.xpm"
-# define XPM_DOOR_02	"./assets/textures/xpm/door_closed.xpm"
-
-# define XPM_PLAYER		"./assets/textures/xpm/handz.xpm"
+# define XPM_DOOR			"./assets/textures/xpm/door_closed.xpm"
+# define XPM_PLAYER			"./assets/textures/xpm/hands.xpm"
 
 #endif

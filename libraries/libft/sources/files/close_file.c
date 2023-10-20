@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wangthea <wangthea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:41:35 by wangthea          #+#    #+#             */
-/*   Updated: 2023/07/12 13:57:36 by wangthea         ###   ########.fr       */
+/*   Updated: 2023/10/20 12:24:46 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	close_file(int file)
 {
-	return (close(file) == 0);
+	if (file)
+		return (close(file) == 0);
+	else
+		return (-1);
 }

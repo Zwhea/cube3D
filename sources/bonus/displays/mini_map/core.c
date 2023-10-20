@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 08:46:47 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/19 13:11:47 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:39:52 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -87,7 +86,9 @@ static void	_draw_minimap(t_game *g, int center, t_vector_f indic, \
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_GREY);
 	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] == door)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_BLACK);
-	else
+	else if (g->map.mini_map[(int)monitor.y][(int)monitor.x] == o_door \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == space \
+		|| g->map.mini_map[(int)monitor.y][(int)monitor.x] == player)
 		my_mlx_pixel_put(&g->draw, indic.x + center, indic.y + center, H_WHITE);
 }
 

@@ -6,12 +6,11 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 09:37:35 by twang             #+#    #+#             */
-/*   Updated: 2023/10/19 12:35:20 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:42:13 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D_thea.h"
-#include "cub3D_arthur.h"
+#include "cub3D.h"
 
 /*---- prototypes ------------------------------------------------------------*/
 
@@ -26,7 +25,7 @@ void	game_display(t_game *g)
 	door_animations(g);
 	_init_game(g);
 	draw_crosshair(g);
-	draw_hands(g);
+	player_animation(g);
 	minimap_display(g);
 	mlx_put_image_to_window(g->mlx, g->window, g->draw.img, 0, 0);
 	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
@@ -39,7 +38,7 @@ static void	_help_open(t_game *g)
 	raycasting(g, g->player.angle_view);
 	if (g->ray.dist < 3 && g->map.map[g->ray.check.y][g->ray.check.x] == door)
 		mlx_string_put(g->mlx, g->window, WINDOW_X / 2 - 60, WINDOW_Y / 2 - 40,
-		H_GREEN, "Press Space To Open");
+			H_GREEN, "Press Space To Open");
 }
 
 static void	_init_game(t_game *g)
