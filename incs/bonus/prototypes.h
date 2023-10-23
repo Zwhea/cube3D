@@ -53,7 +53,7 @@ int				depth_door(t_game *g, float dx, double angle);
 /*------------------------- raycasting.c -------------------------------------*/
 void			raycasting(t_game *g, double angle);
 /*---------------------- texturing/ ------------------------------------------*/
-/*------------------------- utils.c --------------------------------------*/
+/*------------------------- utils.c ------------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
 unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x);
 /*------------------------- texturing.c --------------------------------------*/
@@ -63,6 +63,9 @@ void			find_dir_wall(t_game *g, int check);
 unsigned int	get_shade(t_game *game, unsigned int color);
 /*--------------- core.c -----------------------------------------------------*/
 void			game_display(t_game *g);
+/*--------------- easter_egg.c -----------------------------------------------*/
+void			thx_henri(t_game *g);
+void			switch_henri(t_game *g);
 /*--------------- mini_map/ --------------------------------------------------*/
 /*---------------------- raycasting/ -----------------------------------------*/
 /*------------------------- ray_minimap.c ------------------------------------*/

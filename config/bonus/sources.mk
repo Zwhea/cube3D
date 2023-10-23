@@ -25,6 +25,7 @@ SOURCES_BONUS =																\
 					sources/bonus/displays/game/texturing/texturing.c		\
 					sources/bonus/displays/game/texturing/utils.c			\
 					sources/bonus/displays/game/core.c						\
+					sources/bonus/displays/game/easter_egg.c				\
 					sources/bonus/displays/mini_map/raycasting/ray_minimap.c\
 					sources/bonus/displays/mini_map/utils/utils.c			\
 					sources/bonus/displays/mini_map/core.c					\

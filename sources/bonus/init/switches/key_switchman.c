@@ -44,6 +44,8 @@ int	key_switch(t_keycode key, t_game *g)
 		clean(g);
 	if (key == space_key)
 		open_door(g);
+	if (key == h_key)
+		switch_henri(g);
 	if (key == w_key && !g->switches.s_key && !g->switches.down_key)
 		g->switches.w_key = true;
 	if (key == a_key && !g->switches.d_key)

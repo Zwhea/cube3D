@@ -58,6 +58,7 @@ struct s_switches
 	bool			right_key;
 	bool			l_key;
 	bool			space_key;
+	bool			h_henri;
 };
 
 struct s_draw
@@ -241,6 +242,7 @@ struct s_game
 	t_raycast		ray;
 	t_doorcast		door;
 	int				id;
+	int				henri;
 	void			*mlx;
 	void			*window;
 };
