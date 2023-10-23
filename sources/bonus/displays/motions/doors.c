@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 09:39:28 by twang             #+#    #+#             */
-/*   Updated: 2023/10/20 15:38:53 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:36:21 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 /*---- prototypes ------------------------------------------------------------*/
 
-static void	_init_raycasting(t_game *g);
 static void	_init_ray_door(t_game *g);
 static int	_raycasting_door(t_game *g);
 static int	_check_door(t_game *g);
@@ -35,14 +34,6 @@ int	ray_door(t_game *g)
 {
 	int	id;
 
-	_init_raycasting(g);
-	_init_ray_door(g);
-	id = _raycasting_door(g);
-	return (id);
-}
-
-static void	_init_raycasting(t_game *g)
-{
 	g->door.ray_unit.x = sqrt(1 + pow(tan(g->player.angle_view), 2));
 	g->door.ray_unit.y = sqrt(1 + pow(1 / tan(g->player.angle_view), 2));
 	g->door.ray_dir.x = cos(g->player.angle_view);
@@ -52,6 +43,9 @@ static void	_init_raycasting(t_game *g)
 	g->door.door = 0;
 	g->door.dist = 0;
 	g->door.wall = 0;
+	_init_ray_door(g);
+	id = _raycasting_door(g);
+	return (id);
 }
 
 static void	_init_ray_door(t_game *g)
