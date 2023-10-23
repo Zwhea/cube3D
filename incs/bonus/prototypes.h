@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 11:02:14 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:13:40 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void			my_mlx_pixel_put(t_draw *data, int x, int y, int color);
 /*---------------------- raycasting/ -----------------------------------------*/
 /*------------------------- ray_door.c ---------------------------------------*/
 int				dstate(t_game *g, int x, int y, float angle);
-int				depth_door(t_game *g, float	dx, double angle);
+int				depth_door(t_game *g, float dx, double angle);
 /*------------------------- raycasting.c -------------------------------------*/
 void			raycasting(t_game *g, double angle);
 /*---------------------- texturing/ ------------------------------------------*/

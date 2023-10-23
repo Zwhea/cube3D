@@ -6,11 +6,17 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:17:39 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 11:24:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:10:28 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3D.h"
+
+/*---- prototypes ------------------------------------------------------------*/
+
+static int	_depth_door(t_game *g, int id, double inter, double angle);
+
+/*----------------------------------------------------------------------------*/
 
 int	dstate(t_game *g, int x, int y, float angle)
 {
@@ -35,35 +41,40 @@ int	dstate(t_game *g, int x, int y, float angle)
 					&& g->map.map[g->ray.check.y][g->ray.check.x] == '-')
 		return (1);
 	else if (g->doors[id].status != neutral)
-		if (depth_door(g, inter - g->doors[id].move, angle))
+		if (_depth_door(g, id, inter, angle))
 			return (1);
 	return (0);
 }
 
-int	depth_door(t_game *g, float	dx, double angle)
+static int	_depth_door(t_game *g, int id, double inter, double angle)
 {
 	float	dy;
+	float	dx;
 
 	if (angle > (3 * M_PI_2))
 	{
+		dx = inter - g->doors[id].move;
 		if (g->ray.wall_dir != east)
 			return (0);
 		dy = dx * tanf(M_PI_2 - ((2 * M_PI) - angle));
 	}
 	else if (angle > (M_PI))
 	{
+		dx = inter - (g->doors[id].move);
 		if (g->ray.wall_dir != north)
 			return (0);
 		dy = dx * tanf(M_PI_2 - ((3 * M_PI_2) - angle));
 	}
 	else if (angle > (M_PI_2))
 	{
+		dx = 1 - g->doors[id].move - inter;
 		if (g->ray.wall_dir != west)
 			return (0);
-		dy = dx * tanf(M_PI_2 - (M_PI - angle));
+		dy = dx * tanf(angle - M_PI_2);
 	}
 	else
 	{
+		dx = 1 - g->doors[id].move - inter;
 		if (g->ray.wall_dir != south)
 			return (0);
 		dy = dx * tanf(M_PI_2 - ((M_PI_2) - angle));
