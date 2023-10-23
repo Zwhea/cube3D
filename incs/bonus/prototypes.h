@@ -53,8 +53,10 @@ int				dstate(t_game *g, int x, int y);
 /*------------------------- raycasting.c -------------------------------------*/
 void			raycasting(t_game *g, double angle);
 /*---------------------- texturing/ ------------------------------------------*/
-/*------------------------- texturing.c --------------------------------------*/
+/*------------------------- utils.c --------------------------------------*/
 void			find_dir_wall(t_game *g, int check);
+unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x);
+/*------------------------- texturing.c --------------------------------------*/
 void			draw_textures(t_game *g);
 /*--------------- core.c -----------------------------------------------------*/
 void			game_display(t_game *g);
