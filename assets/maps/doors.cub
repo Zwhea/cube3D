@@ -4,7 +4,7 @@ WE ./assets/textures/xpm/west_wall.xpm
 EA ./assets/textures/xpm/east_wall.xpm
 
 F 0,0,0
-C 0,30,225
+C 0,100,225
 
 11111111111111
 10000000000001
