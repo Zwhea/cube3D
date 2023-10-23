@@ -48,51 +48,47 @@ int	dstate(t_game *g, int x, int y, float angle)
 
 static int	_depth_door(t_game *g, int id, double inter, double angle)
 {
-	t_vector_f	f;
-
-	f.x = 0;
-	f.y = 0;
 	if (angle > 2 * M_PI)
 	{
-		f.x = 1 - g->doors[id].move - inter;
+		g->ray.f.x = 1 - g->doors[id].move - inter;
 		if (g->ray.wall_dir != south)
-			return (0);
-		f.y = f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
+			return ( 0);
+		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
 	}
 	if (angle > (3 * M_PI_2))
 	{
-		f.x = inter - g->doors[id].move;
+		g->ray.f.x = inter - g->doors[id].move;
 		if (g->ray.wall_dir != east)
 			return (0);
-		f.y = f.x * tanf(M_PI_2 - ((2 * M_PI) - angle));
+		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((2 * M_PI) - angle));
 	}
 	else if (angle > (M_PI))
 	{
-		f.x = inter - (g->doors[id].move);
+		g->ray.f.x = inter - (g->doors[id].move);
 		if (g->ray.wall_dir != north)
 			return (0);
-		f.y = f.x * tanf(M_PI_2 - ((3 * M_PI_2) - angle));
+		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((3 * M_PI_2) - angle));
 	}
 	else if (angle > (M_PI_2))
 	{
-		f.x = 1 - g->doors[id].move - inter;
+		g->ray.f.x = 1 - g->doors[id].move - inter;
 		if (g->ray.wall_dir != west)
 			return (0);
-		f.y = f.x * tanf(angle - M_PI_2);
+		g->ray.f.y = g->ray.f.x * tanf(angle - M_PI_2);
 	}
 	else
 	{
-		f.x = 1 - g->doors[id].move - inter;
+		g->ray.f.x = 1 - g->doors[id].move - inter;
 		if (g->ray.wall_dir != south)
 			return (0);
-		f.y = f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
+		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
 	}
-	if (f.y > 1)
+	if (g->ray.f.y > 1)
 		return (0);
 	if (g->ray.ray_len.x < g->ray.ray_len.y)
-		g->ray.dist += sqrt((f.x * f.x) + (f.y * f.y));
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) + (g->ray.f.y * g->ray.f.y));
 	else
-		g->ray.dist += sqrt((f.x * f.x) + (f.y * f.y));
-	g->ray.wall_dir = side;
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) + (g->ray.f.y * g->ray.f.y));
+	g->ray.side = 1;
 	return (1);
 }

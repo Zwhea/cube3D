@@ -190,10 +190,12 @@ struct s_raycast
 	t_vector_f		ray_dir;
 	t_vector_f		ray_unit;
 	t_vector_f		ray_len;
+	t_vector_f		f;
 	t_vector		check;
 	t_vector		step;
 	int				wall;
 	int				door;
+	int				side;
 	double			dist;
 	t_vector_f		intersection;
 	double			cam_dist;
