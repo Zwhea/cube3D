@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 09:48:57 by aascedu          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:02:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void			_texturing_vertical(t_game *g);
 static void			_texturing_horizontal(t_game *g);
-static unsigned int	_get_shade(t_game *game, unsigned int color);
+static void			_texturing_side(t_game *g);
 
 /*----------------------------------------------------------------------------*/
 
@@ -26,6 +26,8 @@ void	draw_textures(t_game *g)
 		_texturing_horizontal(g);
 	else if (g->ray.wall_dir == east || g->ray.wall_dir == west)
 		_texturing_vertical(g);
+	else if (g->ray.wall_dir == side)
+		_texturing_side(g);
 }
 
 static void	_texturing_vertical(t_game *g)
@@ -51,7 +53,7 @@ static void	_texturing_vertical(t_game *g)
 		color = 0;
 	color = (color >> 1) & 8355711;
 	color = (color >> 1) & 8355711;
-	color = _get_shade(g, color);
+	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
@@ -77,26 +79,11 @@ static void	_texturing_horizontal(t_game *g)
 	else
 		color = 0;
 	color = (color >> 1) & 8355711;
-	color = _get_shade(g, color);
+	color = get_shade(g, color);
 	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, color);
 }
 
-static unsigned int	_get_shade(t_game *game, unsigned int color)
+static void	_texturing_side(t_game *g)
 {
-	int		r;
-	int		g;
-	int		b;
-	double	ratio;
-
-	r = (color >> 16) & 0xff;
-	g = (color >> 8) & 0xff;
-	b = color & 0xff;
-	if (game->ray.dist > 6)
-	{
-		ratio = 1 - ((game->ray.dist - 6) * 0.1);
-		r = (int)(r * ratio);
-		g = (int)(g * ratio);
-		b = (int)(b * ratio);
-	}
-	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
+	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
 }
