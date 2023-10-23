@@ -1,0 +1,21 @@
+   WE                            ./assets/textures/xpm/west_wall.xpm
+NO      ./assets/textures/xpm/north_wall.xpm
+
+
+
+SO ./assets/textures/xpm/south_wall.xpm
+
+F      17,    38,     64
+
+EA ./assets/textures/xpm/east_wall.xpm
+
+
+
+C 218, 234, 235
+
+1111111111111111111111111
+10S0110000100000000000001
+1000110000000000111111001
+1000110000000000110001001
+1000000000100000000001001
+1111111111111111111111111
