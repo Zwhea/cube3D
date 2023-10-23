@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/20 14:20:04 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 13:52:22 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@
 
 /*---- animations xpm --------------------------------------------------------*/
 
-# define XPM_DOOR			"./assets/textures/xpm/door_closed.xpm"
+# define XPM_DOOR			"./assets/textures/xpm/door.xpm"
 # define XPM_PLAYER			"./assets/textures/xpm/hands.xpm"
 
 #endif
