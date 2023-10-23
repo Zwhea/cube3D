@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 11:02:25 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 14:20:34 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,5 @@ static void	_texturing_horizontal(t_game *g)
 
 static void	_texturing_side(t_game *g)
 {
-	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_RED);
+	my_mlx_pixel_put(&g->draw, g->size.x, g->size.y, H_BLACK);
 }
