@@ -34,8 +34,7 @@ The main objective is to create a maze-like 3D environment where the player can 
 
 ## Screenshots
 
-[To do]
-
+![Cub3D](https://your_image_url.png)
 
 ## Usage
 
