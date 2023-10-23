@@ -15,6 +15,7 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 static int	_depth_door(t_game *g, int id, double inter, double angle);
+static int	_which_angle(t_game *g, int id, double inter, double angle);
 
 /*----------------------------------------------------------------------------*/
 
@@ -48,47 +49,44 @@ int	dstate(t_game *g, int x, int y, float angle)
 
 static int	_depth_door(t_game *g, int id, double inter, double angle)
 {
-	if (angle > 2 * M_PI)
-	{
-		g->ray.f.x = 1 - g->doors[id].move - inter;
-		if (g->ray.wall_dir != south)
-			return ( 0);
-		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
-	}
-	if (angle > (3 * M_PI_2))
-	{
-		g->ray.f.x = inter - g->doors[id].move;
-		if (g->ray.wall_dir != east)
-			return (0);
-		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((2 * M_PI) - angle));
-	}
-	else if (angle > (M_PI))
-	{
-		g->ray.f.x = inter - (g->doors[id].move);
-		if (g->ray.wall_dir != north)
-			return (0);
-		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((3 * M_PI_2) - angle));
-	}
-	else if (angle > (M_PI_2))
-	{
-		g->ray.f.x = 1 - g->doors[id].move - inter;
-		if (g->ray.wall_dir != west)
-			return (0);
-		g->ray.f.y = g->ray.f.x * tanf(angle - M_PI_2);
-	}
-	else
-	{
-		g->ray.f.x = 1 - g->doors[id].move - inter;
-		if (g->ray.wall_dir != south)
-			return (0);
-		g->ray.f.y = g->ray.f.x * tanf(M_PI_2 - ((M_PI_2) - angle));
-	}
+	if (!_which_angle(g, id, inter, angle))
+		return (0);
 	if (g->ray.f.y > 1)
 		return (0);
 	if (g->ray.ray_len.x < g->ray.ray_len.y)
-		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) + (g->ray.f.y * g->ray.f.y));
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) \
+		+ (g->ray.f.y * g->ray.f.y));
 	else
-		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) + (g->ray.f.y * g->ray.f.y));
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) \
+		+ (g->ray.f.y * g->ray.f.y));
 	g->ray.side = 1;
+	return (1);
+}
+
+static int	_which_angle(t_game *g, int id, double inter, double angle)
+{
+	if (angle > 2 * M_PI)
+	{
+		if (!get_south(g, id, inter, angle))
+			return (0);
+	}
+	else if (angle > (3 * M_PI_2))
+	{
+		if (!get_east(g, id, inter, angle))
+			return (0);
+	}
+	else if (angle > (M_PI))
+	{
+		if (!get_north(g, id, inter, angle))
+			return (0);
+	}
+	else if (angle > (M_PI_2))
+	{
+		if (!get_west(g, id, inter, angle))
+			return (0);
+	}
+	else
+		if (!get_south(g, id, inter, angle))
+			return (0);
 	return (1);
 }

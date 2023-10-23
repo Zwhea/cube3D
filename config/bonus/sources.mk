@@ -22,6 +22,7 @@ SOURCES_BONUS =																\
 					sources/bonus/displays/draw/mlx_pixel_put.c				\
 					sources/bonus/displays/game/raycasting/ray_door.c		\
 					sources/bonus/displays/game/raycasting/raycasting.c		\
+					sources/bonus/displays/game/raycasting/utils.c			\
 					sources/bonus/displays/game/texturing/texturing.c		\
 					sources/bonus/displays/game/texturing/utils.c			\
 					sources/bonus/displays/game/core.c						\
