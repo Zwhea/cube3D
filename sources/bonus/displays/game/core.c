@@ -31,10 +31,13 @@ void	game_display(t_game *g)
 	mlx_string_put(g->mlx, g->window, g->mini_map.north.x - 3,
 		g->mini_map.north.y + 5, H_RED, "N");
 	_help_open(g);
+	thx_henri(g);
 }
 
 static void	_help_open(t_game *g)
 {
+	if (g->switches.h_henri == 1)
+		return ;
 	raycasting(g, g->player.angle_view);
 	if (g->ray.dist < 3 && g->map.map[g->ray.check.y][g->ray.check.x] == door)
 		mlx_string_put(g->mlx, g->window, WINDOW_X / 2 - 60, WINDOW_Y / 2 - 40,

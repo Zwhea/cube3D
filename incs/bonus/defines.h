@@ -67,6 +67,7 @@
 # define H_PINK				0xffc0cb
 # define H_PURPLE			0x800080
 # define H_GREY				0x808080
+# define H_ORANGE			0xffa500
 
 /*---- animations xpm --------------------------------------------------------*/
 
