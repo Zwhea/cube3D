@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/20 15:42:38 by twang            ###   ########.fr        #
+#    Updated: 2023/10/23 09:19:44 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SOURCES_BONUS =																\
 					sources/bonus/displays/draw/draw_crosshair.c			\
 					sources/bonus/displays/draw/mlx_pixel_get.c				\
 					sources/bonus/displays/draw/mlx_pixel_put.c				\
+					sources/bonus/displays/game/raycasting/ray_door.c		\
 					sources/bonus/displays/game/raycasting/raycasting.c		\
 					sources/bonus/displays/game/texturing/texturing.c		\
 					sources/bonus/displays/game/texturing/utils.c			\
