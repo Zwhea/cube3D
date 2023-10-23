@@ -2,7 +2,7 @@
 
 # cube3D
 
-![Cub3D](https://your_image_url.png)
+![Cub3D](https://i.imgur.com/o6p3z7t.png)
 
 This project is part of the 42 school curriculum and aims to recreate a game engine using raycasting to simulate a 3D environment in the style of old-school first-person view games.
 
