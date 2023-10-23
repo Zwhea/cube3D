@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 11:43:47 by twang             #+#    #+#             */
-/*   Updated: 2023/10/20 15:29:23 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 17:43:23 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ static void	_close_door(t_game *g, int id)
 {
 	double	ratio;
 
+	g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
+	g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	ratio = (sin(g->doors[id].move) * 0.1) + 0.01;
 	if (!((g->doors[id].move + ratio) > 1))
 		g->doors[id].move += ratio;
@@ -78,8 +80,6 @@ static void	_close_door(t_game *g, int id)
 	{
 		g->doors[id].status = neutral;
 		g->doors[id].move = 1.f;
-		g->map.mini_map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
-		g->map.map[g->doors[id].pos.y][g->doors[id].pos.x] = door;
 	}
 	return ;
 }
