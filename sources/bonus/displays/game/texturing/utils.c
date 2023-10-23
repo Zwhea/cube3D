@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:49:00 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/23 11:03:02 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:23:04 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ unsigned int	get_shade(t_game *game, unsigned int color)
 
 unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x)
 {
-	texture.x = g->textures.walls[north_texture].width * \
-	(g->doors[g->id].move - wall_x);
+	if (g->door.wall_dir == north || g->door.wall_dir == east)
+		texture.x = g->textures.walls[north_texture].width * \
+			(g->doors[g->id].move - wall_x);
+	// else
+	// 	texture.x = g->textures.walls[north_texture].width * \
+	// 		(wall_x - g->doors[g->id].move);
 	return (my_mlx_pix_get(&g->sprites.door, texture.x, texture.y));
 }

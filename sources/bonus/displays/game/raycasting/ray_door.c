@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 09:17:39 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 11:01:21 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:24:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ int	dstate(t_game *g, int x, int y, float angle)
 	else
 		inter = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
 	inter = inter - floor(inter);
-	if ((g->ray.wall_dir == west || g->ray.wall_dir == north || \
-			g->ray.wall_dir == east || g->ray.wall_dir == south) && \
+	if ((g->ray.wall_dir == north || g->ray.wall_dir == east) && \
 			inter <= g->doors[id].move && g->doors[id].status != neutral)
+		return (1);
+	else if ((g->ray.wall_dir == south || g->ray.wall_dir == west) \
+			&& inter >= 1 - g->doors[id].move && g->doors[id].status != neutral)
 		return (1);
 	else if ((g->ray.wall_dir == west || g->ray.wall_dir == north \
 					|| g->ray.wall_dir == east || g->ray.wall_dir == south) \
