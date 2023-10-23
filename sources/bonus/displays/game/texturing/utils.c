@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 09:45:38 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 09:47:06 by twang            ###   ########.fr       */
+/*   Created: 2023/10/23 09:49:00 by aascedu           #+#    #+#             */
+/*   Updated: 2023/10/23 11:03:02 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ unsigned int	get_shade(t_game *game, unsigned int color)
 		b = (int)(b * ratio);
 	}
 	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
+}
+
+unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x)
+{
+	texture.x = g->textures.walls[north_texture].width * \
+	(g->doors[g->id].move - wall_x);
+	return (my_mlx_pix_get(&g->sprites.door, texture.x, texture.y));
 }

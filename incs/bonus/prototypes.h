@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:25:03 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 10:21:52 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:02:14 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ int				depth_door(t_game *g, float	dx, double angle);
 /*------------------------- raycasting.c -------------------------------------*/
 void			raycasting(t_game *g, double angle);
 /*---------------------- texturing/ ------------------------------------------*/
+/*------------------------- utils.c --------------------------------------*/
+void			find_dir_wall(t_game *g, int check);
+unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x);
 /*------------------------- texturing.c --------------------------------------*/
 void			draw_textures(t_game *g);
 /*------------------------- utils.c ------------------------------------------*/

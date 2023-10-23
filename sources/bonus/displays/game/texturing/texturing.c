@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 09:39:55 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 10:22:26 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 11:02:25 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ static void	_texturing_vertical(t_game *g)
 		color = my_mlx_pix_get(&g->textures.walls[west_texture], \
 				texture.x, texture.y);
 	else if (g->ray.door)
-		color = my_mlx_pix_get(&g->sprites.door, \
-				texture.x, texture.y);
+		color = get_door_color(g, texture, wall_x);
 	else
 		color = 0;
 	color = (color >> 1) & 8355711;
@@ -76,8 +75,7 @@ static void	_texturing_horizontal(t_game *g)
 		color = my_mlx_pix_get(&g->textures.walls[south_texture], \
 				texture.x, texture.y);
 	else if (g->ray.door)
-		color = my_mlx_pix_get(&g->sprites.door, \
-				texture.x, texture.y);
+		color = get_door_color(g, texture, wall_x);
 	else
 		color = 0;
 	color = (color >> 1) & 8355711;
