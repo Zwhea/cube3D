@@ -29,7 +29,7 @@ void	init_img(t_game *g)
 	g->draw.img = mlx_new_image(g->mlx, WINDOW_X, WINDOW_Y);
 	g->draw.addr = mlx_get_data_addr(g->draw.img, &g->draw.bits_per_pixel, \
 										&g->draw.line_length, &g->draw.endian);
-	mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");
+	// mlx_set_font(g->mlx, g->window, "-*-*-*-*-*-*-*-*-*-*-*-90-*-*");
 }
 
 void	init_mlx_functions(t_game *g)
