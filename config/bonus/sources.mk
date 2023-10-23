@@ -6,7 +6,7 @@
 #    By: twang <twang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/17 14:25:51 by twang             #+#    #+#              #
-#    Updated: 2023/10/23 09:19:44 by twang            ###   ########.fr        #
+#    Updated: 2023/10/23 09:47:29 by twang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SOURCES_BONUS =																\
 					sources/bonus/displays/game/raycasting/ray_door.c		\
 					sources/bonus/displays/game/raycasting/raycasting.c		\
 					sources/bonus/displays/game/texturing/texturing.c		\
+					sources/bonus/displays/game/texturing/utils.c			\
 					sources/bonus/displays/game/core.c						\
 					sources/bonus/displays/mini_map/raycasting/ray_minimap.c\
 					sources/bonus/displays/mini_map/utils/utils.c			\

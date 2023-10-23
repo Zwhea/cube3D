@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 13:05:31 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/23 09:18:31 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/23 10:15:39 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ static void	_find_dist(t_game *g, float angle)
 			g->ray.wall = 1;
 		else if ((g->map.map[g->ray.check.y][g->ray.check.x] == '-' \
 					|| g->map.map[g->ray.check.y][g->ray.check.x] == '+') \
-					&& dstate(g, g->ray.check.y, g->ray.check.x))
+					&& dstate(g, g->ray.check.y, g->ray.check.x, angle))
 			g->ray.door = 1;
 	}
 	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
