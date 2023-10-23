@@ -17,6 +17,7 @@
 static void	_init_var(t_game *g, float angle);
 static void	_init_ray(t_game *g);
 static void	_find_dist(t_game *g, float angle);
+static void	_prevent_fisheye(t_game *g, float angle);
 
 /*----------------------------------------------------------------------------*/
 
@@ -36,9 +37,7 @@ void	raycasting(t_game *g, double angle)
 		&& g->size.x <= WINDOW_X - 1 && g->size.x >= 0)
 	{
 		if (g->size.y >= g->ray.top_wall && g->size.y <= g->ray.bottom_wall)
-		{
 			draw_textures(g);
-		}
 		g->size.y++;
 	}
 }
@@ -83,6 +82,14 @@ static void	_init_ray(t_game *g)
 	}
 }
 
+static void	_prevent_fisheye(t_game *g, float angle)
+{
+	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
+	g->ray.intersection.y = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
+	if (g->ray.dist < 15)
+		g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
+}
+
 static void	_find_dist(t_game *g, float angle)
 {
 	while (g->ray.dist < 15 && g->ray.wall == 0 && g->ray.door == 0)
@@ -108,8 +115,5 @@ static void	_find_dist(t_game *g, float angle)
 					&& dstate(g, g->ray.check.y, g->ray.check.x, angle))
 			g->ray.door = 1;
 	}
-	g->ray.intersection.x = g->ray.dist * g->ray.ray_dir.x + g->player.posf.x;
-	g->ray.intersection.y = g->ray.dist * g->ray.ray_dir.y + g->player.posf.y;
-	if (g->ray.dist < 15)
-		g->ray.dist = g->ray.dist * cos(fabs(angle - g->player.angle_view));
+	_prevent_fisheye(g, angle);
 }

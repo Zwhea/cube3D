@@ -144,7 +144,7 @@ lib:
 	$(MAKE) -C $(MLX_DIR)
 
 debug:
-	$(MAKE) re -j DEBUG=yes
+	$(MAKE) re -j DEBUG=yes BONUS=yes
 
 leaks:
 	clear

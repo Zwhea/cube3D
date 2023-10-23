@@ -14,6 +14,8 @@
 
 int	check_x(t_game *g, int next_x)
 {
+	if (g->doors[g->id].status == closing)
+		return (0);
 	if (g->map.map[(int)g->player.posf.y][(int)next_x] != wall \
 			&& g->map.map[(int)g->player.posf.y][(int)next_x] != door)
 		return (1);
@@ -22,6 +24,8 @@ int	check_x(t_game *g, int next_x)
 
 int	check_y(t_game *g, int next_y)
 {
+	if (g->doors[g->id].status == closing)
+		return (0);
 	if (g->map.map[(int)next_y][(int)g->player.posf.x] != wall \
 			&& g->map.map[(int)next_y][(int)g->player.posf.x] != door)
 		return (1);

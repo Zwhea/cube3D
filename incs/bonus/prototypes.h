@@ -52,6 +52,11 @@ int				dstate(t_game *g, int x, int y, float angle);
 int				depth_door(t_game *g, float dx, double angle);
 /*------------------------- raycasting.c -------------------------------------*/
 void			raycasting(t_game *g, double angle);
+/*------------------------- utils.c ------------------------------------------*/
+int				get_south(t_game *g, int id, double inter, double angle);
+int				get_north(t_game *g, int id, double inter, double angle);
+int				get_west(t_game *g, int id, double inter, double angle);
+int				get_east(t_game *g, int id, double inter, double angle);
 /*---------------------- texturing/ ------------------------------------------*/
 /*------------------------- utils.c ------------------------------------------*/
 void			find_dir_wall(t_game *g, int check);

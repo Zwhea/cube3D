@@ -15,6 +15,7 @@
 /*---- prototypes ------------------------------------------------------------*/
 
 static int	_depth_door(t_game *g, int id, double inter, double angle);
+static int	_which_angle(t_game *g, int id, double inter, double angle);
 
 /*----------------------------------------------------------------------------*/
 
@@ -48,43 +49,44 @@ int	dstate(t_game *g, int x, int y, float angle)
 
 static int	_depth_door(t_game *g, int id, double inter, double angle)
 {
-	float	dy;
-	float	dx;
+	if (!_which_angle(g, id, inter, angle))
+		return (0);
+	if (g->ray.f.y > 1)
+		return (0);
+	if (g->ray.ray_len.x < g->ray.ray_len.y)
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) \
+		+ (g->ray.f.y * g->ray.f.y));
+	else
+		g->ray.dist += sqrt((g->ray.f.x * g->ray.f.x) \
+		+ (g->ray.f.y * g->ray.f.y));
+	g->ray.side = 1;
+	return (1);
+}
 
-	if (angle > (3 * M_PI_2))
+static int	_which_angle(t_game *g, int id, double inter, double angle)
+{
+	if (angle > 2 * M_PI)
 	{
-		dx = inter - g->doors[id].move;
-		if (g->ray.wall_dir != east)
+		if (!get_south(g, id, inter, angle))
 			return (0);
-		dy = dx * tanf(M_PI_2 - ((2 * M_PI) - angle));
+	}
+	else if (angle > (3 * M_PI_2))
+	{
+		if (!get_east(g, id, inter, angle))
+			return (0);
 	}
 	else if (angle > (M_PI))
 	{
-		dx = inter - (g->doors[id].move);
-		if (g->ray.wall_dir != north)
+		if (!get_north(g, id, inter, angle))
 			return (0);
-		dy = dx * tanf(M_PI_2 - ((3 * M_PI_2) - angle));
 	}
 	else if (angle > (M_PI_2))
 	{
-		dx = 1 - g->doors[id].move - inter;
-		if (g->ray.wall_dir != west)
+		if (!get_west(g, id, inter, angle))
 			return (0);
-		dy = dx * tanf(angle - M_PI_2);
 	}
 	else
-	{
-		dx = 1 - g->doors[id].move - inter;
-		if (g->ray.wall_dir != south)
+		if (!get_south(g, id, inter, angle))
 			return (0);
-		dy = dx * tanf(M_PI_2 - ((M_PI_2) - angle));
-	}
-	if (dy > 1)
-		return (0);
-	if (g->ray.ray_len.x < g->ray.ray_len.y)
-		g->ray.dist += sqrt((dx * dx) + (dy * dy));
-	else
-		g->ray.dist += sqrt((dx * dx) + (dy * dy));
-	g->ray.wall_dir = side;
 	return (1);
 }

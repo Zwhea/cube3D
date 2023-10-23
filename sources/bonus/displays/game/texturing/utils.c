@@ -56,7 +56,10 @@ unsigned int	get_shade(t_game *game, unsigned int color)
 
 unsigned int	get_door_color(t_game *g, t_vector texture, double wall_x)
 {
-	if (g->door.wall_dir == north || g->door.wall_dir == east)
+	if (g->ray.wall_dir == west || g->ray.wall_dir == south)
+		texture.x = g->textures.walls[north_texture].width * \
+			(g->doors[g->id].move + wall_x);
+	else if (g->ray.wall_dir == north || g->ray.wall_dir == east)
 		texture.x = g->textures.walls[north_texture].width * \
 			(g->doors[g->id].move - wall_x);
 	return (my_mlx_pix_get(&g->sprites.door, texture.x, texture.y));
