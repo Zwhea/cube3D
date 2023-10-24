@@ -66,10 +66,13 @@ $ make leaks
 
 ## Controls
 
-- `↑` : Move forward.
-- `↓` : Move backward.
-- `←` : Move left.
-- `→` : Move right.
+- `↑` or 'w' : Move forward.
+- `↓` or 's' : Move backward.
+- `a` : Move left.
+- `d` : Move right.
+- `←` : Look left.
+- `→` : Look right.
+- `esc` : close program.
 
 ## Resources
 
