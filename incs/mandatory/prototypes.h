@@ -108,8 +108,9 @@ void			handle_floor_color(t_game *g, char *line);
 void			handle_no_asset(t_game *g, char *line);
 int				colors_checker(t_game *g, char *line);
 /*------------------------- utils.c ------------------------------------------*/
-void			extract_colors(t_game *g, char *line, t_keyassets color_id);
-void			extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
+void			extract_colors(t_game *g, char *line, t_keyassets color_id, \
+				char *str);
+int				extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int				create_rgb(int r, int g, int b);
 /*---------------------- textures/ -------------------------------------------*/
 /*------------------------- get_textures.c -----------------------------------*/

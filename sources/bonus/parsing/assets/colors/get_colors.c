@@ -35,7 +35,7 @@ void	handle_ceiling_color(t_game *g, char *line)
 		free(line);
 		error_switchman(g, wrong_color);
 	}
-	extract_colors(g, s, ceiling_color);
+	extract_colors(g, s, ceiling_color, line);
 	g->color[0].color = create_rgb(g->color[0].r, g->color[0].g, g->color[0].b);
 	g->color[0].get = true;
 	return ;
@@ -64,7 +64,7 @@ void	handle_floor_color(t_game *g, char *line)
 		free(line);
 		error_switchman(g, wrong_color);
 	}
-	extract_colors(g, s, floor_color);
+	extract_colors(g, s, floor_color, line);
 	g->color[1].color = create_rgb(g->color[1].r, g->color[1].g, g->color[1].b);
 	g->color[1].get = true;
 	return ;
@@ -102,4 +102,31 @@ int	colors_checker(t_game *g, char *line)
 	if ((line[i] != '\0' && line[i] != '\n') || comma_nb != 2)
 		return (1);
 	return (0);
+}
+
+void	extract_colors(t_game *g, char *line, t_keyassets color_id, char *str)
+{
+	char	**color;
+	int		id;
+
+	color = ft_split(line, ',');
+	if (!color)
+		clean(g);
+	id = 0;
+	while (color[id])
+	{
+		if (extrct_nbrs(g, color_id, id, color[id]))
+		{
+			free(str);
+			free_split(color, ft_arraylen((void **)color));
+			error_switchman(g, wrong_color);
+		}
+		id++;
+	}
+	if (id != 3)
+	{
+		free_split(color, ft_arraylen((void **)color));
+		error_switchman(g, wrong_color);
+	}
+	free_split(color, ft_arraylen((void **)color));
 }
