@@ -1,10 +1,10 @@
-NO textures/test/north.xpm
-SO textures/test/south.xpm
-WE textures/test/west.xpm
-EA textures/test/east.xpm
+NO ./assets/textures/xpm/north_wall.xpm
+SO ./assets/textures/xpm/south_wall.xpm
+WE ./assets/textures/xpm/west_wall.xpm
+EA ./assets/textures/xpm/east_wall.xpm
 
 F 20,20,20
-C 200,200,
+C  24,200    ,   54
 
 11111
 10001

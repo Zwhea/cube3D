@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 10:02:27 by twang             #+#    #+#             */
-/*   Updated: 2023/10/23 13:52:22 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/24 09:50:36 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 
 # define COLOR_FLOOR		"F "
 # define COLOR_CEILING		"C "
-# define COLOR_CHARSET		"0123456789,"
+# define COLOR_CHARSET		"0123456789, "
 
 # define MAP_CHARSET		"01NSEW- \n"
 # define PLAYER_CHARSET		"NSEW"

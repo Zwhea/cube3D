@@ -9,7 +9,7 @@ NO    ./assets/textures/xpm/north_wall.xpm
 
  EA   ./assets/textures/xpm/east_wall.xpm
 
-F    220,   100 ,  12
+F    220,    100,  12
 
 
 C          225  ,30 , 87
