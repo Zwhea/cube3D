@@ -6,7 +6,7 @@
 /*   By: twang <twang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 13:12:45 by aascedu           #+#    #+#             */
-/*   Updated: 2023/10/23 13:52:03 by twang            ###   ########.fr       */
+/*   Updated: 2023/10/24 11:23:19 by twang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@
 /*---- authorized charset ----------------------------------------------------*/
 
 # define TEXTURE_CHARSET	"NOSOWEEA "
-# define TEXTURE_NORTH		"NO "
-# define TEXTURE_SOUTH		"SO "
-# define TEXTURE_WEST		"WE "
-# define TEXTURE_EAST		"EA "
+# define TEXTURE_NORTH		"NO 	"
+# define TEXTURE_SOUTH		"SO 	"
+# define TEXTURE_WEST		"WE 	"
+# define TEXTURE_EAST		"EA 	"
 
-# define COLOR_FLOOR		"F "
-# define COLOR_CEILING		"C "
-# define COLOR_CHARSET		"0123456789,"
+# define COLOR_FLOOR		"F 	"
+# define COLOR_CEILING		"C 	"
+# define COLOR_CHARSET		"0123456789, 	"
 
 # define MAP_CHARSET		"01NSEW \n"
 # define PLAYER_CHARSET		"NSEW"

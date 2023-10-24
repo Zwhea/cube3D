@@ -155,13 +155,14 @@ void			check_img_settings(t_game *g, t_sprites *sprites, bool id_img);
 /*---------------------- colors/ ---------------------------------------------*/
 /*------------------------- colors_checker.c ---------------------------------*/
 int				colors_checker(t_game *g, char *line);
-void			extract_colors(t_game *g, char *line, t_keyassets color_id);
+void			extract_colors(t_game *g, char *line, t_keyassets color_id, \
+				char *str);
 /*------------------------- get_colors.c -------------------------------------*/
 void			handle_ceiling_color(t_game *g, char *line);
 void			handle_floor_color(t_game *g, char *line);
 void			handle_no_asset(t_game *g, char *line);
 /*------------------------- utils.c ------------------------------------------*/
-void			extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
+int				extrct_nbrs(t_game *g, t_keyassets color_id, int i, char *line);
 int				create_rgb(int r, int g, int b);
 /*---------------------- doors/ ----------------------------------------------*/
 /*------------------------- set_door.c ---------------------------------------*/
